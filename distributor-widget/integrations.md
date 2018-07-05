@@ -282,7 +282,7 @@ A reservation was created. This event triggers when each reservation is made in 
 | reservationGroupId | id of the reservation group |
 | reservation.id | id of the reservation |
 | reservation.roomId | id of the room category |
-| reservation.rateId | if of the rate of the reservation |
+| reservation.rateId | id of the rate of the reservation |
 | reservation.number | confirmation number of the reservation |
 | reservation.roomName | name of the room |
 | reservation.startDate | start date of the reservation |
