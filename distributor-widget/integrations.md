@@ -260,6 +260,14 @@ A product was removed from the order.
 | productId | Guid of the removed product. |
 | productName | Name of product in the hotel’s default language. |
 
+#### distributorBookingPrepared {#distributorbookingprepared}
+
+A booking is prepared and user needs to enter their details. This event triggers when user reaches Checkout step.
+
+| Data Layer Variable Name | Description |
+| :--- | :--- |
+| totalCost | current total cost of the reservation group, in the hotel’s default currency |
+
 #### distributorBookingFinished {#distributorbookingfinished}
 
 A booking was made. This event triggers once every reservation group is made.
