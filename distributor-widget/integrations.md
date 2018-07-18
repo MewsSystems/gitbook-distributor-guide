@@ -200,6 +200,8 @@ Each item in the`availableRooms`array contains following data:
 | roomName | Name of the room. |
 | roomId | Guid of the room. |
 | availableRateIds | List of available rate ids for the room |
+| lowestPrice | Price of the room in hotel's default rate currency |
+| price | All prices of the room in all available currencies as `(key: currency, value: price)` dictionary/object.  |
 
 #### distributorOfferedDatesSelected {#distributoroffereddatesselected}
 
