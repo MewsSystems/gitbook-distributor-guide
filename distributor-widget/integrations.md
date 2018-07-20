@@ -201,7 +201,7 @@ Each item in the`availableRooms`array contains following data:
 | roomId | Guid of the room. |
 | availableRateIds | List of available rate ids for the room |
 | lowestPrice | Price of the room in hotel's default rate currency |
-| price | All prices of the room in all available currencies as `(key: currency, value: price)` dictionary/object.  |
+| price | All prices of the room in all available currencies as `(key: currency, value: price)` dictionary/object. |
 
 #### distributorOfferedDatesSelected {#distributoroffereddatesselected}
 
@@ -290,13 +290,13 @@ A reservation was created. This event triggers when each reservation is made in 
 | customerName | the customer’s name |
 | currencyCode | hotel’s default currency code in ISO format |
 | reservationGroupId | id of the reservation group |
-| reservation.id | id of the reservation |
-| reservation.roomId | id of the room category |
-| reservation.rateId | id of the rate of the reservation |
-| reservation.number | confirmation number of the reservation |
-| reservation.roomName | name of the room |
-| reservation.startDate | start date of the reservation |
-| reservation.endDate | end date of the reservation |
-| reservation.nights | total nights spent |
-| reservation.cost | cost of the reservation in the hotel’s default currency |
+| id | id of the reservation |
+| roomId | id of the room category |
+| rateId | id of the rate of the reservation |
+| number | confirmation number of the reservation |
+| roomName | name of the room |
+| startDate | start date of the reservation |
+| endDate | end date of the reservation |
+| nights | total nights spent |
+| cost | cost of the reservation in the hotel’s default currency |
 
