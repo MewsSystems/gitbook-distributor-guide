@@ -50,6 +50,16 @@ Each reservation is send as _Product_ with quantity set to 1. Name of the reserv
 
 ![ecommerce\_tag](../.gitbook/assets/ecommercetag.png)
 
+#### Google Enhanced Ecommerce
+
+We also publish all interesting data for enhanced ecommerce tracking. To track these,  setup a tag with `Enable overriding settings in this tag` option enabled, then under More Settings &gt; Ecommerce set option `Enable Enhanced Ecommerce Features` to `True` and check `Use Data Layer`. The trigger should be set to all distributor events as described previously.
+
+Track Type of the event shouldn't be important in this case. You can even reuse the same tag as for tracking all distributor events in analytics.
+
+Be sure to also enable Enhanced Ecommerce in you Google Analytics under Admin &gt; Ecommerce settings.
+
+![](../.gitbook/assets/image.png)
+
 **Tracking with Mews Merchant and source attribution**
 
 When you have Mews Merchant set up, a payment by a customer is legally required to happen on our domain. Therefore, all the transactions during a checkout are attributed to Mews domain. This is an unfortunate limitation of the checkout process that we cannot currently overcome.
