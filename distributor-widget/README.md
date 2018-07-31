@@ -64,7 +64,7 @@ function (distributor) {
 </script>
 ```
 
-To see a list of all available API calls, please consult [API](../distributor-api-v1/) section.
+To see a list of all available API calls, please consult [API ](reference.md#api-reference)section.
 
 Closing of Distributor is provided in the overlay by default, so you don’t have to worry about that.
 
