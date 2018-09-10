@@ -659,6 +659,51 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | :--- | :--- | :--- | :--- |
 | `PublishableKey` | string | required | Stripe Publishable key. |
 
+## Get Payment Gateway {#create-reservation-group}
+
+### Request`[PlatformAddress]/api/distributor/v1/payments/getPaymentGateway` {#request-platformaddressapidistributorv1reservationgroupscreate}
+
+```javascript
+{
+    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "Client": "My Client 1.0.0",
+    "Session": "...",
+    "LanguageCode": "en-GB",
+    "CultureCode": "en-GB"
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `HotelId` | string | required | Unique identifier of hotel |
+| `Client` |  string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization) |
+| `Session` |  number | required | Session number |
+| `LanguageCode` |  string | required | Language code |
+| `CultureCode` |  string | required | Culture Code |
+
+### Response {#response-5}
+
+```javascript
+{
+    {
+        "PaymentGatewayType": "Adyen",
+        "IsMerchant": false,
+        "SupportedCreditCardTypes": [
+            "MasterCard",
+            "Visa"
+        ],
+        "PublicKey": "..."
+    }
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen` or `Stripe`\) |
+| IsMerchant | boolean | required | Whether the gateway is processed through Mews Merchant or not |
+| SupportedCreditCardTypes | array of strings | required | The list of supported credit cards, should be used to enhance UX |
+| PublicKey | string | required |  |
+
 ## Create Reservation Group {#create-reservation-group}
 
 ### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/create` {#request-platformaddressapidistributorv1reservationgroupscreate}
