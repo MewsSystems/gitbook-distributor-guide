@@ -1,6 +1,6 @@
 # General Guidelines
 
-## Requests {#requests}
+## Requests <a id="requests"></a>
 
 The API accepts only`HTTP POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
 
@@ -15,7 +15,7 @@ The API accepts only`HTTP POST`requests with`Content-Type`set to`application/jso
 * **Operation**
   * Name of the operation to be performed.
 
-## Responses {#responses}
+## Responses <a id="responses"></a>
 
 The API responds with`Content-Type`set to`application/json`and JSON content. In case of success, the HTTP status code is 200 and the content contains result according to the call. In case of error, there are multiple HTTP status codes for different types of errors:
 

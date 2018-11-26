@@ -1,6 +1,6 @@
 # Environments
 
-## Test Environment {#test-environment}
+## Test Environment <a id="test-environment"></a>
 
 This environment is meant to be used during implementation of the client applications. We have prepared one hotel where you can fetch availability and create reservation. You can use the following information to access it:
 
@@ -13,7 +13,7 @@ You will also have access into the system so it is possible for you to check whe
 * **Email** - `distributor-api@mews.li`
 * **Password** - `distributor-api`
 
-## Production Environment {#production-environment}
+## Production Environment <a id="production-environment"></a>
 
 * **Platform Address** - `https://www.mews.li`
 * **Hotel Id** - Depends on the hotel, should be provided to you by the hotel administrator.

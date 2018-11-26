@@ -1,6 +1,6 @@
 # Distributor Widget
 
-## Script {#script}
+## Script <a id="script"></a>
 
 Include the following Distributor loader script into your website:
 
@@ -12,7 +12,7 @@ The script should be included in the`<head>`section \(do not attach the`async`at
 
 Please note that serving the script from our CDN servers ensures seamless releases of new features, bugfixes and improvements. Therefore, we discourage you from packing the contents of this script into your own JavaScript bundle. Make sure to follow the recommended way of including the scripts via`<script>`HTML tag.
 
-## Usage {#usage}
+## Usage <a id="usage"></a>
 
 Once the Distributor loader script is processed by the browser, you can initialize the Distributor widget with the following code.
 
@@ -41,7 +41,7 @@ The overlay is not visible by default - to actually display it, you should bind 
 <button class="distributor-open">Book Now</button>
 ```
 
-### Advanced usage {#advanced-usage}
+### Advanced usage <a id="advanced-usage"></a>
 
 If you need a more specific setup for opening Distributor, or you want to call some API functions on a Distributor instance, you can provide a callback function as the second argument to the initialization call - the instance is provided as an argument to the callback.
 
@@ -68,7 +68,7 @@ To see a list of all available API calls, please consult [API ](reference.md#api
 
 Closing of Distributor is provided in the overlay by default, so you don’t have to worry about that.
 
-### Chain Distributor {#chain-distributor}
+### Chain Distributor <a id="chain-distributor"></a>
 
 Distributor can run in two basic modes - for a _Single_ property or for a _Chain_. The mode is chosen automatically during initialization, based on the count of hotel ids you have provided in the options. Whenever two or more hotels are loaded, the Distributor will start in the _Chain_ mode. That means that it will add one more step to the booking flow - hotel selection. To add more hotels, simply pass ids of their configurations into the`configurationIds`array option:
 
@@ -84,11 +84,11 @@ Mews.Distributor({
 </script>
 ```
 
-## Styles {#styles}
+## Styles <a id="styles"></a>
 
 Distributor does not use separate CSS files, everything is packed inside the script. For possible customizations, consult [Customization](reference.md) section.
 
-## Done! {#done}
+## Done! <a id="done"></a>
 
 This is all you need for the basic setup of Mews Distributor.
 
