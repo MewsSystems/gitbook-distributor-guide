@@ -272,6 +272,33 @@ A product was removed from the order.
 | productId | Guid of the removed product. |
 | productName | Name of product in the hotel’s default language. |
 
+#### distributorRoomAdded <a id="distributorroomadded"></a>
+
+A room/multiple rooms were added to the order.
+
+| Data Layer Variable Name | Description |
+| :--- | :--- |
+| reservations.orderId | Unique ID used only within session to identify order items |
+| reservations.hotelId | Guid of selected hotel |
+| reservations.roomId | Guid of selected room |
+| reservations.rateId | Guid of selected rate |
+| reservations.productIds | Collection of selected product guids |
+| reservations.startDate | Reservation start date |
+| reservations.endDate | Reservation end date |
+| reservations.adultCount | Number of selected adults |
+| reservations.childCount | Number of selected children |
+
+#### distributorRoomCountChanged <a id="distributorroomcountchanged"></a>
+
+The quantity of rooms in the order was increased or decreased
+
+| Data Layer Variable Name | Description |
+| :--- | :--- |
+| orderId | Unique ID used only within session to identify order items |
+| roomId | Guid of selected room |
+| rateId | Guid of selected rate |
+| countChange | Change of quantity (e.g. 1, -1) |
+
 #### distributorBookingPrepared <a id="distributorbookingprepared"></a>
 
 A booking is prepared and user needs to enter their details. This event triggers when user reaches Checkout step.
