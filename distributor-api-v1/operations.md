@@ -1,10 +1,10 @@
 # Operations
 
-## Get Configuration Info <a id="get-configuration-info"></a>
+## Get Configuration Info  <a id="get-configuration-info"></a>
 
 Preferred initial call used to obtain all static data about distributor configuration for the client.
 
-### Request`[PlatformAddress]/api/distributor/v1/configuration/get` <a id="request-platformaddressapidistributorv1hotelsget"></a>
+### Request`[PlatformAddress]/api/distributor/v1/configuration/get`  <a id="request-platformaddressapidistributorv1hotelsget"></a>
 
 ```javascript
 {
@@ -23,7 +23,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `PrimaryId` | string | required | Primary configuration id. |
 | `Ids` | array of strings | required | List of configuration ids. |
 
-### Response <a id="response-platformaddressapidistributorv1configuratioget"></a>
+### Response  <a id="response-platformaddressapidistributorv1configuratioget"></a>
 
 ```javascript
 {
@@ -146,11 +146,11 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Theme` | string | optional | TBC |
 | `VoucherCode` | string | optional | TBC |
 
-## Get Hotel Info <a id="get-hotel-info"></a>
+## Get Hotel Info  <a id="get-hotel-info"></a>
 
 Alternative initial call used to obtain all static data about hotel relevant for the client.
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/get` <a id="request-platformaddressapidistributorv1hotelsget"></a>
+### Request`[PlatformAddress]/api/distributor/v1/hotels/get`  <a id="request-platformaddressapidistributorv1hotelsget"></a>
 
 ```javascript
 {
@@ -164,7 +164,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response <a id="response"></a>
+### Response  <a id="response"></a>
 
 ```javascript
 {
@@ -269,9 +269,9 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `TermsAndConditionsUrl` | string | optional | URL of hotel’s terms and conditions. |
 | `ImageBaseUrl` | string | required | Base URL of images. |
 
-### API Response entites <a id="entities"></a>
+### API Response entites  <a id="entities"></a>
 
-#### City <a id="city"></a>
+#### City  <a id="city"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -279,18 +279,18 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `ImageId` | string | optional | Identifier of image assigned to city. |
 | `Name` | string | required | Name of the city. |
 
-#### Configuration <a id="configuration"></a>
+#### Configuration  <a id="configuration"></a>
 
 TBC
 
-#### Country <a id="country"></a>
+#### Country  <a id="country"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Code` | string | required | ISO 3166-1 Aplha-2 code of the country. |
 | `Name` | string | required | Name of the country. |
 
-#### Currency <a id="currency"></a>
+#### Currency  <a id="currency"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -300,7 +300,7 @@ TBC
 | `DecimalPlaces` | number | required | Number of decimal places used with the currency value. |
 | `SymbolIsBehindValue` | boolean | required | Indicates whether the symbol stands behind a value in standard formatting. |
 
-#### Language <a id="language"></a>
+#### Language  <a id="language"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -308,18 +308,18 @@ TBC
 | `Name` | string | required | Name of the language. |
 | `DefaultCulture` | [Culture](operations.md#culture) | required | Specifics of a default culture for the language. |
 
-#### Culture <a id="culture"></a>
+#### Culture  <a id="culture"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `CurrencyDecimalSeparator` | string | required | Symbol used to separate decimal places in the currency value format. |
 | `CurrencyGroupSeparator` | string | required | Symbol used to separate thousands in the currency value format. |
 
-#### LocalizedText <a id="localizedtext"></a>
+#### LocalizedText  <a id="localizedtext"></a>
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
-#### Payment Gateway <a id="payment-gateway"></a>
+#### Payment Gateway  <a id="payment-gateway"></a>
 
 If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
 
@@ -329,7 +329,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | array of string | required | The list of supported credit cards, should be used to enhance UX. |
 
-#### Product <a id="product"></a>
+#### Product  <a id="product"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -342,7 +342,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
 | `Prices` | [CurrencyValues](operations.md#currencyvalues) | required | Price of the product. |
 
-#### CurrencyValues <a id="currencyvalues"></a>
+#### CurrencyValues  <a id="currencyvalues"></a>
 
 An object where field names correspond to currency ISO codes and field values to amounts. Only currencies that the hotel accepts are listed, for example:
 
@@ -354,7 +354,7 @@ An object where field names correspond to currency ISO codes and field values to
 }
 ```
 
-#### RoomCategory <a id="roomcategory"></a>
+#### RoomCategory  <a id="roomcategory"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -366,11 +366,11 @@ An object where field names correspond to currency ISO codes and field values to
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
 | `SpaceType` | string | required | Type of the room category - “Room” or “Bed”. |
 
-## Validate Voucher <a id="validate-voucher"></a>
+## Validate Voucher  <a id="validate-voucher"></a>
 
 Can be used to deterimne whether a voucher code is valid.
 
-### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate` <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
+### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate`  <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
 
 ```javascript
 {
@@ -386,7 +386,7 @@ Can be used to deterimne whether a voucher code is valid.
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `VoucherCode` | string | required | Code of voucher to validate, case sensitive. |
 
-### Response <a id="response-1"></a>
+### Response  <a id="response-1"></a>
 
 ```javascript
 {
@@ -398,11 +398,11 @@ Can be used to deterimne whether a voucher code is valid.
 | :--- | :--- | :--- | :--- |
 | `IsValid` | boolean | required | Indicates whether the voucher code is valid. |
 
-## Get Availability <a id="get-availability"></a>
+## Get Availability  <a id="get-availability"></a>
 
 Gives availabilities and pricings for given date interval with product prices included for each room category. Categorized by applicable rates and person counts from 1 to full room. If room category is not available, it is left out from response.
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/getAvailability` <a id="request-platformaddressapidistributorv1hotelsgetavailability"></a>
+### Request`[PlatformAddress]/api/distributor/v1/hotels/getAvailability`  <a id="request-platformaddressapidistributorv1hotelsgetavailability"></a>
 
 ```javascript
 {
@@ -434,7 +434,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `ChildCount` | number | optional | Requested number of children. |
 | `CategoryIds` | array of string | optional | Ids of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 
-### Response <a id="response-2"></a>
+### Response  <a id="response-2"></a>
 
 ```javascript
 {
@@ -493,7 +493,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Rates` | array of [Rate](operations.md#rate) | required | Information about all available rates. |
 | `RoomCategoryAvailabilites` | array of [RoomCategoryAvailability](operations.md#roomcategoryavailability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
 
-#### Rate <a id="rate"></a>
+#### Rate  <a id="rate"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -501,7 +501,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the rate localized into all supported languages. |
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the rate localized into all supported languages. |
 
-#### RoomCategoryAvailability <a id="roomcategoryavailability"></a>
+#### RoomCategoryAvailability  <a id="roomcategoryavailability"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -509,7 +509,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `RoomOccupancyAvailabilities` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Availabilities of rooms in the category by the room occupancy. |
 | `AvailableRoomCount` | number | required | Number of available rooms from the room category. |
 
-#### RoomOccupancyAvailability <a id="roomoccupancyavailability"></a>
+#### RoomOccupancyAvailability  <a id="roomoccupancyavailability"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -517,7 +517,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `ChildCount` | number | required | Number of childs for the associated pricing. |
 | `Pricing` | array of [Pricing](operations.md#pricing) | required | Pricing information. |
 
-#### Pricing <a id="pricing"></a>
+#### Pricing  <a id="pricing"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -525,18 +525,18 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Price` | [RoomPrice](operations.md#roomprice) | required | Price of the room. |
 | `MaxPrice` | [RoomPrice](operations.md#roomprice) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
 
-#### RoomPrice <a id="roomprice"></a>
+#### RoomPrice  <a id="roomprice"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Total` | [CurrencyValues](operations.md#currencyvalues) | required | Total price of the room for whole reservation. |
 | `AveragePerNight` | [CurrencyValues](operations.md#currencyvalues) | required | Average price per night. |
 
-## Get Reservations Pricing <a id="get-reservations-pricing"></a>
+## Get Reservations Pricing  <a id="get-reservations-pricing"></a>
 
 Gives a pricing information for the given configuration.
 
-### Request`[PlatformAddress]/api/distributor/v1/reservations/getPricing` <a id="request-platformaddressapidistributorv1reservationsgetpricing"></a>
+### Request`[PlatformAddress]/api/distributor/v1/reservations/getPricing`  <a id="request-platformaddressapidistributorv1reservationsgetpricing"></a>
 
 ```javascript
 {
@@ -569,14 +569,14 @@ Gives a pricing information for the given configuration.
 | `Occupancies` | array of [Occupancy](operations.md#occupancy) | required | Occupancies of the reservations. |
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 
-#### Occupancy <a id="occupancy"></a>
+#### Occupancy  <a id="occupancy"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
 
-### Response <a id="response-3"></a>
+### Response  <a id="response-3"></a>
 
 ```javascript
 {
@@ -606,11 +606,11 @@ Gives a pricing information for the given configuration.
 | :--- | :--- | :--- | :--- |
 | `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
 
-## Get Adyen Client Token <a id="get-adyen-client-token"></a>
+## Get Adyen Client Token  <a id="get-adyen-client-token"></a>
 
 Adyen requires a public key and a server utc time to be used for client-side credit card encryption. In case the hotel uses Adyen as a payment gateway, you need to obtain it to before processing payment.
 
-### Request`[PlatformAddress]/api/distributor/v1/payments/getAdyenClientToken` <a id="request-platformaddressapidistributorv1paymentsgetadyenclienttoken"></a>
+### Request`[PlatformAddress]/api/distributor/v1/payments/getAdyenClientToken`  <a id="request-platformaddressapidistributorv1paymentsgetadyenclienttoken"></a>
 
 ```javascript
 {
@@ -624,7 +624,7 @@ Adyen requires a public key and a server utc time to be used for client-side cre
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response <a id="response-4"></a>
+### Response  <a id="response-4"></a>
 
 ```javascript
 {
@@ -633,11 +633,11 @@ Adyen requires a public key and a server utc time to be used for client-side cre
 }
 ```
 
-## Get Stripe Client Token <a id="get-stripe-client-token"></a>
+## Get Stripe Client Token  <a id="get-stripe-client-token"></a>
 
 Stripe requires a publishable key to be used for client-side credit card encryption. In case the hotel uses Stripe as a payment gateway, you need to obtain it to before processing payment.
 
-### Request`[PlatformAddress]/api/distributor/v1/payments/getStripeClientToken` <a id="request-platformaddressapidistributorv1paymentsgetstripeclienttoken"></a>
+### Request`[PlatformAddress]/api/distributor/v1/payments/getStripeClientToken`  <a id="request-platformaddressapidistributorv1paymentsgetstripeclienttoken"></a>
 
 ```javascript
 {
@@ -651,7 +651,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response <a id="response-5"></a>
+### Response  <a id="response-5"></a>
 
 ```javascript
 {
@@ -663,9 +663,9 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | :--- | :--- | :--- | :--- |
 | `PublishableKey` | string | required | Stripe Publishable key. |
 
-## Get Payment Gateway <a id="create-reservation-group"></a>
+## Get Payment Gateway  <a id="create-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/payments/getPaymentGateway` <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
+### Request`[PlatformAddress]/api/distributor/v1/payments/getPaymentGateway`  <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
 
 ```javascript
 {
@@ -680,12 +680,12 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `HotelId` | string | required | Unique identifier of hotel |
-| `Client` |  string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization) |
-| `Session` |  number | required | Session number |
-| `LanguageCode` |  string | required | Language code |
-| `CultureCode` |  string | required | Culture Code |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization) |
+| `Session` | number | required | Session number |
+| `LanguageCode` | string | required | Language code |
+| `CultureCode` | string | required | Culture Code |
 
-### Response <a id="response-5"></a>
+### Response  <a id="response-5"></a>
 
 ```javascript
 {
@@ -706,11 +706,11 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\) |
 | IsMerchant | boolean | required | Whether the gateway is processed through Mews Merchant or not |
 | SupportedCreditCardTypes | array of strings | required | The list of supported credit cards, should be used to enhance UX |
-| PublicKey | string | required |  |
+| PublicKey | string | required | A key used by the payment gateway's client side library for authentication |
 
-## Create Reservation Group <a id="create-reservation-group"></a>
+## Create Reservation Group  <a id="create-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/create` <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
+### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/create`  <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
 
 ```javascript
 {
@@ -758,7 +758,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `Reservations` | array of [ReservationData](operations.md#reservationdata) | required | Parameters of reservations to be ordered. |
 | `CreditCardData` | [CreditCardData](operations.md#creditcarddata) | optional | Credit card data, required if hotel has payment gateway. |
 
-#### Customer <a id="customer"></a>
+#### Customer  <a id="customer"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -773,7 +773,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
 
-#### ReservationData <a id="reservationdata"></a>
+#### ReservationData  <a id="reservationdata"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -787,14 +787,14 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `Notes` | string | optional | Additional notes. |
 
-#### CreditCardData <a id="creditcarddata"></a>
+#### CreditCardData  <a id="creditcarddata"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `PaymentGatewayData` | string | required | Encoded credit card data obtained from the payment gateway specific library. More details [here](payment-gateway-data.md). |
 | `ObfuscatedCreditCardNumber` | string | required | Obfuscated credit card number, e.g.`411111******1111`. |
 
-### Response <a id="response-6"></a>
+### Response  <a id="response-6"></a>
 
 ```javascript
 {
@@ -837,7 +837,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
 | `TotalCost` | [CurrencyValues](operations.md#currencyvalues) | required | Total cost of the whole group. |
 
-### Reservation <a id="reservation"></a>
+### Reservation  <a id="reservation"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -853,7 +853,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `Notes` | string | optional | Additional notes. |
 | `Cost` | [CurrencyValues](operations.md#currencyvalues) | required | Total cost of the reservation. |
 
-### Error Response <a id="error-response"></a>
+### Error Response  <a id="error-response"></a>
 
 In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top the standard ones:
 
@@ -861,9 +861,9 @@ In case of an error caused by insufficient availability \(which might have decre
 | :--- | :--- | :--- | :--- |
 | `ExceedingReservationIndexes` | array of number | optional | Indexes of reservations from the request that are not available anymore. |
 
-## Get Reservation Group <a id="get-reservation-group"></a>
+## Get Reservation Group  <a id="get-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/get` <a id="request-platformaddressapidistributorv1reservationgroupsget"></a>
+### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/get`  <a id="request-platformaddressapidistributorv1reservationgroupsget"></a>
 
 ```javascript
 {
@@ -879,7 +879,7 @@ In case of an error caused by insufficient availability \(which might have decre
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
 
-### Response <a id="response-7"></a>
+### Response  <a id="response-7"></a>
 
 Same as in [Create Reservation Group](operations.md#create-reservation-group).
 
