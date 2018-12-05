@@ -4,4 +4,4 @@ To obtain`PaymentGatewayData`, you have to use client side encryption library pr
 
 * [Adyen](https://github.com/Adyen/CSE-JS)
 * [Stripe](https://stripe.com/docs/stripe.js)
-
+* [PCI Proxy](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes)
