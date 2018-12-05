@@ -325,7 +325,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayType` | string | required | Type of the payment gateway \(`Adyen` or `Stripe`\). |
+| `PaymentGatewayType` | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\). |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | array of string | required | The list of supported credit cards, should be used to enhance UX. |
 
@@ -703,7 +703,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen` or `Stripe`\) |
+| PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\) |
 | IsMerchant | boolean | required | Whether the gateway is processed through Mews Merchant or not |
 | SupportedCreditCardTypes | array of strings | required | The list of supported credit cards, should be used to enhance UX |
 | PublicKey | string | required |  |
