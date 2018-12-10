@@ -745,7 +745,8 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
     ],
     "CreditCardData": {
         "PaymentGatewayData": "...",
-        "ObfuscatedCreditCardNumber": "411111******1111"
+        "ObfuscatedCreditCardNumber": "411111******1111",
+        "Expiration": "2020-10"
     }
 }
 ```
@@ -793,6 +794,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | :--- | :--- | :--- | :--- |
 | `PaymentGatewayData` | string | required | Encoded credit card data obtained from the payment gateway specific library. More details [here](payment-gateway-data.md). |
 | `ObfuscatedCreditCardNumber` | string | required | Obfuscated credit card number, e.g.`411111******1111`. |
+| `Expiration` | string | required | Expiration of credit card in format `YYYY-MM`. Required with PCI Proxy payment gateway type. |
 
 ### Response  <a id="response-6"></a>
 
