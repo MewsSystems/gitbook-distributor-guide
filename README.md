@@ -5,7 +5,7 @@ Mews Distributor is a booking engine which enables guests to create reservations
 * a redirect to a standalone page hosted directly by Mews,
 * or a JavaScript Widget which can be embedded into an arbitrary website
 
-If you encounter any issue, feel free to report it on our [GitHub](https://github.com/MewsSystems/developers). For other types of requests, please contact [integrations@mewssystems.com](mailto://integrations@mewssystems.com).
+If you encounter any issue, have a question or any other other request, please contact [integrations@mewssystems.com](mailto://integrations@mewssystems.com).
 
 ## Standalone <a id="standalone"></a>
 
