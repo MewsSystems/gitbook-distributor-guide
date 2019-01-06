@@ -446,7 +446,8 @@ Gives availabilities and pricings for given date interval with product prices in
             },
             "Description": {
                 "en-US": "Best rate available."
-            }
+            },
+            "IsPrivate": false
         }
     ],
     "RoomCategoryAvailabilities": [
@@ -500,6 +501,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Id` | string | required | Unique identifier of the rate. |
 | `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the rate localized into all supported languages. |
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the rate localized into all supported languages. |
+| `IsPrivate` | boolean | required | Set to `true` for promotion rate enabled by provided `VoucherCode` |
 
 #### RoomCategoryAvailability  <a id="roomcategoryavailability"></a>
 
