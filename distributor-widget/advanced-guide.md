@@ -73,7 +73,7 @@ In addition, Distributor in multihotel mode also recoqnize:
 * presets a start date, voucher code and language, but Distributor stays closed
 
   ```text
-  http://www.yourwebsite.com/?mewsStart=2015-01-01&mewVoucherCode=special-discount&language=en-US
+  http://www.yourwebsite.com/?mewsStart=2015-01-01&mewsVoucherCode=special-discount&language=en-US
   ```
 
 * opens Distributor with preselected room and currency on rate selection step
