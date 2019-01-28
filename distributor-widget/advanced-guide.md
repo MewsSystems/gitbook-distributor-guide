@@ -39,11 +39,11 @@ function(distributor) {
 </script>
 ```
 
-#### Note <a id="note-1"></a>
+#### Note  <a id="note-1"></a>
 
 See that you have just one`<script>`tag containing`Mews.Distributor`call on your page.
 
-### Deeplinks <a id="deeplinks"></a>
+### Deeplinks  <a id="deeplinks"></a>
 
 Distributor recognises a set of parameteres passed to it in a URL query. This allows you to deeplink into booking engine from other websites. **Important: This should not be used as a standard way to open Distributor from your own website**
 
@@ -68,7 +68,7 @@ In addition, Distributor in multihotel mode also recoqnize:
 | mewsHotel | opens with specified hotel selected \(`aaaa-bbbb-cccc-dddd`\) |
 | mewsRoute | in addition to `rooms` and `rates`, supports also `hotels` step |
 
-#### Examples <a id="examples"></a>
+#### Examples  <a id="examples"></a>
 
 * presets a start date, voucher code and language, but Distributor stays closed
 
@@ -88,11 +88,11 @@ In addition, Distributor in multihotel mode also recoqnize:
   http://www.yourwebsite.com/?mewsDistributorOpened&mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
   ```
 
-#### Note <a id="note-2"></a>
+#### Note  <a id="note-2"></a>
 
 The deeplinks are also supported by standalone Distributor.
 
-### Payment Gateways <a id="payment-gateways"></a>
+### Payment Gateways  <a id="payment-gateways"></a>
 
 Payment gateway is used to safely collect information about a customer’s credit card. A configuration is done once, when the hotel is set up. Distributor would use it automatically. Currently Distributor supports these gateways:
 
@@ -104,7 +104,7 @@ Using payment gateway is not mandatory, as reservations can be created without p
 
 **Important:** PCI Security Standard requires you to use **SSL Certificate** on your website to be allowed to collect any payments info. This happens when using Braintree or Adyen gateways.
 
-#### Mews Merchant <a id="mews-merchant"></a>
+#### Mews Merchant  <a id="mews-merchant"></a>
 
 When using the Mews Merchant gateway integration in Distributor on your website, a customer will be redirected to a mirroring Distributor hosted at [https://wwww.mews.li/](https://wwww.mews.li/) just before entering their payment details. This is a requirement when using Mews Merchant. When closing the Distributor, the customer will be redirected back to your website
 

@@ -12,6 +12,16 @@ The script should be included in the`<head>`section \(do not attach the`async`at
 
 Please note that serving the script from our CDN servers ensures seamless releases of new features, bugfixes and improvements. Therefore, we discourage you from packing the contents of this script into your own JavaScript bundle. Make sure to follow the recommended way of including the scripts via`<script>`HTML tag.
 
+#### Content Security Policy
+
+If you set up a CSP on your website, obviously our domain \(`mews.li`\) should be among those enabled. However, if you also use our Merchant for collecting information about payment cards and because we rely on [PCI Proxy](https://www.pci-proxy.com/) as secure, PCI-DSS compliant solution, their library script is being downloaded just before checkout from this url:
+
+```text
+https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
+```
+
+Because of this, you should whitelist `datatrans.com` domain too.
+
 ## Usage <a id="usage"></a>
 
 Once the Distributor loader script is processed by the browser, you can initialize the Distributor widget with the following code.
