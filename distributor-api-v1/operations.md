@@ -10,10 +10,10 @@ Preferred initial call used to obtain all static data about distributor configur
 {
     "Client": "My Client 1.0.0",
     "Ids": [
-        "8dbb4b86-e6c5-4282-a996-e823afeef343",
+        "3edbe1b4-6739-40b7-81b3-d369d9469c48",
         ...
     ],
-    "PrimaryId": "8dbb4b86-e6c5-4282-a996-e823afeef343"
+    "PrimaryId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -110,7 +110,7 @@ Preferred initial call used to obtain all static data about distributor configur
                 "Telephone":"030 6926666",
                 "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
             },
-            Id: "8dbb4b86-e6c5-4282-a996-e823afeef343",
+            Id: "3edbe1b4-6739-40b7-81b3-d369d9469c48",
             OnlineTravelAgencies: [],
             PaymentGatewayEnabled: false,
         }
@@ -155,7 +155,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343"
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -375,7 +375,7 @@ Can be used to deterimne whether a voucher code is valid.
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "VoucherCode": "Discount2042"
 }
 ```
@@ -407,7 +407,7 @@ Gives availabilities and pricings for given date interval with product prices in
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "StartUtc": "2015-01-01T00:00:00Z",
     "EndUtc": "2015-01-03T00:00:00Z",
     "ProductIds": [
@@ -543,7 +543,7 @@ Gives a pricing information for the given configuration.
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "StartUtc": "2015-01-01T00:00:00Z",
     "EndUtc": "2015-01-03T00:00:00Z",
     "VoucherCode": "Discount2042",
@@ -617,7 +617,7 @@ Adyen requires a public key and a server utc time to be used for client-side cre
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343"
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -644,7 +644,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343"
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
 }
 ```
 
@@ -671,7 +671,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 
 ```javascript
 {
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Client": "My Client 1.0.0",
     "Session": "...",
     "LanguageCode": "en-GB",
@@ -717,7 +717,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Customer": {
         "Email": "hiro@snow.com",
         "FirstName": "Hiro",
@@ -872,7 +872,7 @@ In case of an error caused by insufficient availability \(which might have decre
 ```javascript
 {
     "Client": "My Client 1.0.0",
-    "HotelId": "8dbb4b86-e6c5-4282-a996-e823afeef343",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "ReservationGroupId": "f6fa7e62-eb22-4176-bc49-e521d0524dee"
 }
 ```
