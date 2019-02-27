@@ -730,6 +730,12 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
         "StateCode": "",
         "NationalityCode": ""
     },
+    "Booker": {
+        "Email": "john.doe@snow.com",
+        "FirstName": "John",
+        "LastName": "Doe",
+        "Telephone": "654257001458"
+    },
     "Reservations": [
         {
             "RoomCategoryId": "4037c0ec-a59d-43f1-9d97-d6c984764e8c",
@@ -758,6 +764,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](operations.md#customer) | required | Information about customer who creates the order. |
+| `Booker` | [Booker](operations.md#booker) | optional | Information about booker. |
 | `Reservations` | array of [ReservationData](operations.md#reservationdata) | required | Parameters of reservations to be ordered. |
 | `CreditCardData` | [CreditCardData](operations.md#creditcarddata) | optional | Credit card data, required if hotel has payment gateway. |
 
@@ -775,6 +782,15 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 | `PostalCode` | string | optional | Postal code of the address. |
 | `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
+
+#### Booker  <a id="booker"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Email` | string | required | Email of the booker. |
+| `FirstName` | string | required | First name of the booker. |
+| `LastName` | string | required | Last name of the booker. |
+| `Telephone` | string | optional | Telephone number of the booker. |
 
 #### ReservationData  <a id="reservationdata"></a>
 
