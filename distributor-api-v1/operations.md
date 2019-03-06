@@ -19,7 +19,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `PrimaryId` | string | required | Primary configuration id. |
 | `Ids` | array of strings | required | List of configuration ids. |
 
