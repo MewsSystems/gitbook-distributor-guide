@@ -336,4 +336,5 @@ A reservation was created. This event triggers when each reservation is made in 
 | endDate | end date of the reservation |
 | nights | total nights spent |
 | cost | cost of the reservation in the hotel’s default currency |
+| alternativeCost | cost of the reservation in all currencies supported by the property as (key: currency, value: price) dictionary/object. |
 
