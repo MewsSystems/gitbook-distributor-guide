@@ -161,7 +161,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response  <a id="response"></a>
@@ -382,7 +382,7 @@ Can be used to deterimne whether a voucher code is valid.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `VoucherCode` | string | required | Code of voucher to validate, case sensitive. |
 
@@ -424,7 +424,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Reservation end date \(departure date\) in ISO 8601 format. |
@@ -562,7 +562,7 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
 | `EndUtc` | string | required | End date of the reservation \(departure date\). |
@@ -623,7 +623,7 @@ Adyen requires a public key and a server utc time to be used for client-side cre
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response  <a id="response-4"></a>
@@ -650,7 +650,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response  <a id="response-5"></a>
@@ -682,7 +682,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `HotelId` | string | required | Unique identifier of hotel |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization) |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization) |
 | `Session` | number | required | Session number |
 | `LanguageCode` | string | required | Language code |
 | `CultureCode` | string | required | Culture Code |
@@ -761,7 +761,7 @@ Stripe requires a publishable key to be used for client-side credit card encrypt
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](operations.md#customer) | required | Information about customer who creates the order. |
 | `Booker` | [Booker](operations.md#booker) | optional | Information about booker. |
@@ -895,7 +895,7 @@ In case of an error caused by insufficient availability \(which might have decre
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mewssystems.github.io/public/content/distributor/api.html#authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
 
