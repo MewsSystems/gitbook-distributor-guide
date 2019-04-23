@@ -56,7 +56,7 @@ We also publish all interesting data for enhanced ecommerce tracking. To track t
 
 Track Type of the event shouldn't be important in this case. You can even reuse the same tag as for tracking all distributor events in analytics.
 
-Be sure to also enable Enhanced Ecommerce in you Google Analytics under Admin &gt; Ecommerce settings.
+Be sure to also enable Enhanced Ecommerce in you Google Analytics under Admin &gt; Ecommerce settings. The Enhanced Ecommerce plug-in should not be used alongside the Ecommerce plug-in for the same property.
 
 ![](../.gitbook/assets/image.png)
 
