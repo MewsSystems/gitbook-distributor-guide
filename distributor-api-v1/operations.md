@@ -126,6 +126,7 @@ Preferred initial call used to obtain all static data about distributor configur
     StartDateOffset: null,
     Theme: null,
     VoucherCode: null,
+    DisplayVoucherCode: null,
 }
 ```
 
