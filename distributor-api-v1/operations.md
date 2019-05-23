@@ -27,27 +27,27 @@ Preferred initial call used to obtain all static data about distributor configur
 
 ```javascript
 {
-    Cities: [
+    "Cities": [
         {
-            Id: "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
-            ImageId: "e956201e-ba2f-470f-8070-b43f9cd72194",
-            Name: { 
+            "Id": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
+            "ImageId": "e956201e-ba2f-470f-8070-b43f9cd72194",
+            "Name": { 
                 "ru-RU": "Амстердам", 
                 "en-US": "Amsterdam"
             },
         },
     ],
-    CityId: "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
-    Configurations: [
+    "CityId": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
+    "Configurations": [
         {
-            AdultCount: null,
-            ChildCount: null,
-            ChildSelectionEnabled: null,
-            DisplayAvailability: null,
-            DisplayPromoCode: null,
-            DisplayRateComparision: null,
-            DisplaySpecialRequests: null,
-            Enterprise: {
+            "AdultCount": null,
+            "ChildCount": null,
+            "ChildSelectionEnabled": null,
+            "DisplayAvailability": null,
+            "DisplayPromoCode": null,
+            "DisplayRateComparision": null,
+            "DisplaySpecialRequests": null,
+            "Enterprise": {
                 "AcceptedCurrencyCodes":["EUR"],
                 "AdditionalLegalStatements":[],
                 "Address": {
@@ -110,23 +110,23 @@ Preferred initial call used to obtain all static data about distributor configur
                 "Telephone":"030 6926666",
                 "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
             },
-            Id: "3edbe1b4-6739-40b7-81b3-d369d9469c48",
-            OnlineTravelAgencies: [],
-            PaymentGatewayEnabled: false,
+            "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
+            "OnlineTravelAgencies": [],
+            "PaymentGatewayEnabled": false,
         }
     ],
-    CurrencyCode: null,
-    CurrencyCodes: [],
-    EndDateOffset: null,
-    GtmContainerId: "",
-    IntroVideoUrl: "",
-    LanguageCode: null,
-    NowUtc: "",
-    PrimaryColor: "",
-    StartDateOffset: null,
-    Theme: null,
-    VoucherCode: null,
-    DisplayVoucherCode: null,
+    "CurrencyCode": null,
+    "CurrencyCodes": [],
+    "EndDateOffset": null,
+    "GtmContainerId": "",
+    "IntroVideoUrl: "",
+    "LanguageCode": null,
+    "NowUtc": "",
+    "PrimaryColor": "",
+    "StartDateOffset": null,
+    "Theme": null,
+    "VoucherCode": null,
+    "DisplayVoucherCode": null,
 }
 ```
 
@@ -169,85 +169,123 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 ```javascript
 {
-    "Countries": [
+    "Languages": [
         {
-            "Code": "US",
-            "Name": "United States"
+            "Code": "en-US",
+            "Name": "English (United States)",
+            "DefaultCulture": {
+                "CurrencyDecimalSeparator": ",",
+                "CurrencyGroupSeparator": "."
+            }
         }
     ],
     "Currencies": [
         {
-            "Code": "EUR",
-            "DecimalPlaces": 2,
-            "Symbol": "€",
-            "SymbolIsBehindValue": false,
-            "ValueFormat": "€#,##0.00;- €#,##0.00"
+            "Code": "CZK",
+            "Symbol": "Kč",
+            "ValueFormat": "#,##0 \"Kč\";−#,##0 \"Kč\"",
+            "DecimalPlaces": 0,
+            "SymbolIsBehindValue": true
         }
     ],
-    "DefaultCurrencyCode": "EUR",
+    "Countries": [
+        {
+            "Code": "CZ",
+            "Name": "Czech Republic"
+        }
+    ],
+    "ImageBaseUrl": "https://cdn.demo.mews.li/Media/Image",
+    "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
+    "Name": {
+        "en-US": "Distributor api hotel"
+    },
+    "Description": {
+        "en-US": ""
+    },
+    "CityId": "e5fd108e-1e0a-4cc4-9d3a-34d7e0e57527",
+    "ImageId": "87ead9b6-8c96-4b3c-a90d-fb8a02a005ad",
+    "IntroImageId": "c0dcec83-96a4-44b5-a898-de2becbbdb5e",
     "DefaultLanguageCode": "en-US",
-    "DefaultRateCurrencyCode": "CZK",
-    "Description":{
-        "en-US": "Sample Hotel Description"
-    },
-    "IanaTimeZoneIdentifier": "Europe/Prague",
-    "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-    "IntroImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-    "Languages":[
-        {
-            "Code": "en-US",
-            "DefaultCulture":{
-                "CurrencyDecimalSeparator": ".",
-                "CurrencyGroupSeparator": "."
-            },
-            "Name": "English (United States)"
-        }
+    "DefaultCurrencyCode": "EUR",
+    "DefaultRateCurrencyCode": "EUR",
+    "SupportedLanguageCodes": [
+        "cs-CZ",
+        "da-DK",
+        "de-CH",
+        "de-DE",
+        "el-GR",
+        "en-GB",
+        "ta-IN",
+        "tr-TR",
+        "uk-UA",
+        "en-US"
     ],
-    "Name":{
-        "en-US": "Sample Hotel"
-    },
-    "PaymentGateway": null,
-    "Products": [
-        {
-            "AlwaysIncluded":false,
-            "CategoryId":null,
-            "Charging":"Once",
-            "Description": {
-                "en-US": "Continental breakfast served in the morning."
-            },
-            "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
-            "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-            "IncludedByDefault":false,
-            "Ordering":0,
-            "Name": {
-                "en-US": "Breakfast"
-            },
-            "Prices": {
-                "EUR": 5,
-                "CZK": 150
-            }
-            "RelativePrice":null
-        }
+    "AcceptedCurrencyCodes": [
+        "CZK",
+        "EUR",
+        "USD"
     ],
-    "RoomCategories":[
+    "RoomCategories": [
         {
-            "Description": {
-                 "en-US": "Very cozy room with nice bed."
-            },
-            "ExtraBedCount": 1,
-            "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
-            "ImageIds": [
-                "1627aea5-8e0a-4371-9022-9b504344e724"
-            ],
+            "Id": "d79fa529-d95e-485e-b81b-e8a669a1062a",
             "Name": {
-                "en-US": "Room"
+                "en-US": "King Double Room"
             },
+            "Description": {
+                "en-US": "The double rooms have two separate beds, 2 x 105 wide."
+            },
+            "ImageIds": [],
+            "Ordering": 4,
             "NormalBedCount": 2,
+            "ExtraBedCount": 0,
             "SpaceType": "Room"
         }
     ],
-    "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html",
-    "ImageBaseUrl": "https://cdn.demo.mews.li/Media/Image"
+    "Products": [
+        {
+            "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
+            "Name": {
+                "nl-NL": "Extra bedlinnen",
+                "en-US": "Extra bedlinnen (Once Off)"
+            },
+            "Description": {},
+            "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
+            "ImageId": "ec643f33-cd6c-4250-accd-518182165ffe",
+            "IncludedByDefault": false,
+            "AlwaysIncluded": false,
+            "Prices": {
+                "CZK": 258,
+                "EUR": 10,
+            },
+            "RelativePrice": null,
+            "Charging": "Once",
+            "Ordering": 0
+        }
+    ],
+    "PaymentGateway": {
+        "PaymentGatewayType": "PciProxy",
+        "IsMerchant": true,
+        "SupportedCreditCardTypes": [
+            "MasterCard",
+            "Visa",
+            "Amex"
+        ],
+        "PublicKey": "1100016827"
+    },
+    "TermsAndConditionsUrl": "https://demo.mews.li/Commander/Home/TermsAndConditions/3edbe1b4-6739-40b7-81b3-d369d9469c48",
+    "IanaTimeZoneIdentifier": "Europe/Budapest",
+    "Email": "distributor-api@mews.li",
+    "Telephone": "+",
+    "AdditionalLegalStatements": [],
+    "Address": {
+        "Line1": "Staromestske namesti 16",
+        "Line2": "",
+        "City": "Prague",
+        "PostalCode": "11000",
+        "CountryCode": "US",
+        "Latitude": null,
+        "Longitude": null
+    }
 }
 ```
 
@@ -548,7 +586,7 @@ Gives a pricing information for the given configuration.
     "StartUtc": "2015-01-01T00:00:00Z",
     "EndUtc": "2015-01-03T00:00:00Z",
     "VoucherCode": "Discount2042",
-    "RoomCategoryId": "1627aea5-8e0a-4371-9022-9b504344e724",
+    "RoomCategoryId": "3540c7d4-e128-41e2-81d8-ff4d196c595a",
     "Occupancies": [
         {
             "AdultCount": 2,
@@ -604,67 +642,9 @@ Gives a pricing information for the given configuration.
     ]
 }
 ```
-
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
-
-## Get Adyen Client Token  <a id="get-adyen-client-token"></a>
-
-Adyen requires a public key and a server utc time to be used for client-side credit card encryption. In case the hotel uses Adyen as a payment gateway, you need to obtain it to before processing payment.
-
-### Request`[PlatformAddress]/api/distributor/v1/payments/getAdyenClientToken`  <a id="request-platformaddressapidistributorv1paymentsgetadyenclienttoken"></a>
-
-```javascript
-{
-    "Client": "My Client 1.0.0",
-    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
-}
-```
-
-|  | Property | Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
-| `HotelId` | string | required | Unique identifier of hotel. |
-
-### Response  <a id="response-4"></a>
-
-```javascript
-{
-    "NowUtc": "2015-01-01T13:42:05Z",
-    "PublicKey": "..."
-}
-```
-
-## Get Stripe Client Token  <a id="get-stripe-client-token"></a>
-
-Stripe requires a publishable key to be used for client-side credit card encryption. In case the hotel uses Stripe as a payment gateway, you need to obtain it to before processing payment.
-
-### Request`[PlatformAddress]/api/distributor/v1/payments/getStripeClientToken`  <a id="request-platformaddressapidistributorv1paymentsgetstripeclienttoken"></a>
-
-```javascript
-{
-    "Client": "My Client 1.0.0",
-    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
-}
-```
-
-|  | Property | Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
-| `HotelId` | string | required | Unique identifier of hotel. |
-
-### Response  <a id="response-5"></a>
-
-```javascript
-{
-    "PublishableKey": "..."
-}
-```
-
-|  | Property | Type | Description |
-| :--- | :--- | :--- | :--- |
-| `PublishableKey` | string | required | Stripe Publishable key. |
 
 ## Get Payment Gateway  <a id="create-reservation-group"></a>
 
