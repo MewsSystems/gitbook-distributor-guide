@@ -88,6 +88,8 @@ All events data is passed to Tag Manager through _dataLayer_. To use it in your 
 
 ![variable](../.gitbook/assets/variable.png)
 
+**All prices currently presented via the data layer are gross (including taxes and fees).**
+
 Each event is fired with a standard set of data:
 
 | Data Layer Variable Name | Description |
