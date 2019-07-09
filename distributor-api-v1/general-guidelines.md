@@ -1,8 +1,8 @@
 # General Guidelines
 
-## Implementation <a id="implementation"></a>
+## Usage <a id="Usage"></a>
 
-Distributor API is a public API with no authorization that is designed to be consumed directly by frontend clients. For server to server communication, please refer to [Connector API](https://mews-systems.gitbook.io/connector-api/)
+Distributor API is a public API with no authorization that is designed to be consumed directly by frontend clients. It is unsuitable for continuous polling by a single server due to the built in anti-scraping protection and such requests can fail. For server to server communication, please refer to [Connector API](https://mews-systems.gitbook.io/connector-api/)
 
 ## Requests <a id="requests"></a>
 
