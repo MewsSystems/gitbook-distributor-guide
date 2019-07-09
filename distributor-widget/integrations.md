@@ -4,7 +4,7 @@ The main and only source of Distributor integrations with 3rd party tags and tra
 
 ## Google Tag Manager  <a id="google-tag-manager"></a>
 
-This guide assumes at least basic knowledge of Google Tag Manager - how to create and publish a container, how to setup a triggers and custome events and how to connect them to a tags.
+This guide assumes at least basic knowledge of Google Tag Manager - how to create and publish a container, how to setup a triggers and custom events and how to connect them to a tags.
 
 ### Notice of Usage  <a id="notice-of-usage"></a>
 
