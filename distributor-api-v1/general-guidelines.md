@@ -1,5 +1,9 @@
 # General Guidelines
 
+## Implementation <a id="implementation"></a>
+
+Distributor API is a public API with no authorization that is designed to be consumed directly by frontend clients. For server to server communication, please refer to [Connector API](https://mews-systems.gitbook.io/connector-api/)
+
 ## Requests <a id="requests"></a>
 
 The API accepts only`HTTP POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
