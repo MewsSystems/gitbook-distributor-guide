@@ -1,6 +1,7 @@
 # General Guidelines
 
 ## Implementation <a id="implementation"></a>
+
 Distributor API is a public API with no authorization that is designed to be consumed directly by frontend clients. For server to server communication, please refer to [Connector API](https://mews-systems.gitbook.io/connector-api/)
 
 ## Requests <a id="requests"></a>
