@@ -709,7 +709,8 @@ Gives a pricing information for the given configuration.
         "City": "",
         "PostalCode": "",
         "StateCode": "",
-        "NationalityCode": ""
+        "NationalityCode": "",
+        "SendMarketingEmails": true
     },
     "Booker": {
         "Email": "john.doe@snow.com",
@@ -763,6 +764,7 @@ Gives a pricing information for the given configuration.
 | `PostalCode` | string | optional | Postal code of the address. |
 | `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
+| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails |
 
 #### Booker  <a id="booker"></a>
 
