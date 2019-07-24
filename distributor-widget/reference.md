@@ -72,12 +72,6 @@ Sets end date for a new availability query, currently loaded availability list i
 
 Sets a new voucher code value.
 
-#### setRooms\(rooms\) <a id="setroomsrooms"></a>
-
-* `rooms` Type: `Array` - The list of GUIDs of rooms to be displayed \(see[`rooms`](https://mewssystems.github.io/public/content/distributor/widget/reference.html#rooms)option for more details\)
-
-Sets a new list of the displayed room types, overwriting the initial Rooms option value. The currently loaded availability list is not affected.
-
 ### Only Single mode API calls <a id="only-single-mode-api-calls"></a>
 
 #### showRooms\(\) <a id="showrooms"></a>

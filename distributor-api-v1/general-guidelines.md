@@ -1,10 +1,10 @@
 # General Guidelines
 
-## Usage <a id="Usage"></a>
+## Usage  <a id="Usage"></a>
 
 Distributor API is a public API with no authorization that is designed to be consumed directly by frontend clients. It is unsuitable for continuous polling by a single server due to the built in anti-scraping protection and such requests can fail. For server to server communication, please refer to [Connector API](https://mews-systems.gitbook.io/connector-api/)
 
-## Requests <a id="requests"></a>
+## Requests  <a id="requests"></a>
 
 The API accepts only`HTTP POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
 
@@ -19,7 +19,7 @@ The API accepts only`HTTP POST`requests with`Content-Type`set to`application/jso
 * **Operation**
   * Name of the operation to be performed.
 
-## Responses <a id="responses"></a>
+## Responses  <a id="responses"></a>
 
 The API responds with`Content-Type`set to`application/json`and JSON content. In case of success, the HTTP status code is 200 and the content contains result according to the call. In case of error, there are multiple HTTP status codes for different types of errors:
 
