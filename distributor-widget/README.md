@@ -13,14 +13,16 @@ The script should be included in the`<head>`section \(do not attach the`async`at
 Please note that serving the script from our CDN servers ensures seamless releases of new features, bugfixes and improvements. Therefore, we discourage you from packing the contents of this script into your own JavaScript bundle. Make sure to follow the recommended way of including the scripts via`<script>`HTML tag.
 
 #### Content Security Policy
-
-If you set up a CSP on your website, our domain \(`mews.li`\) and our subdomains \(`*.mews.li`\) should be enabled. However, if you also use our Merchant for collecting information about payment cards and because we rely on [PCI Proxy](https://www.pci-proxy.com/) as secure, PCI-DSS compliant solution, their library script is being downloaded just before checkout from this url:
+If you have a CSP setup on your website, the following domains should be enabled for distributor to function correctly.
 
 ```text
+mews.li
+*.mews.li
 https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
 ```
 
-Because of this, you should whitelist `datatrans.com` domain too.
+The final datatrans url is for [PCI Proxy](https://www.pci-proxy.com/) which is the secure, PCI-DSS complaint solution that is used by our Merchant to process payment cards.
+
 
 ## Usage <a id="usage"></a>
 
