@@ -24,6 +24,7 @@ function(distributor) {
     // Always available api calls
     // distributor.open();
     // distributor.setLanguageCode(languageCode);
+    // distributor.setCurrencyCode(currencyCode);
     // distributor.setStartDate(date);
     // distributor.setEndDate(date);
     // distributor.setVoucherCode(code);
