@@ -229,6 +229,10 @@ Each item in the`availableRooms`array contains following data:
 | lowestPrice | Price of the room in hotel's default rate currency |
 | price | All prices of the room in all available currencies as `(key: currency, value: price)` dictionary/object. |
 
+#### distributorAlternativeDatesOffered   <a id="distributoralternativedatesoffered"></a>
+
+Alternative dates were displayed.
+
 #### distributorOfferedDatesSelected   <a id="distributoroffereddatesselected"></a>
 
 Alternative dates when there is no availability selected.
