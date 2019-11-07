@@ -90,6 +90,7 @@ Preferred initial call used to obtain all static data about distributor configur
                         "AlwaysIncluded":false,
                         "CategoryId":null,
                         "Charging":"Once",
+                        "Posting":"Once",
                         "Description": {
                             "en-US": "Continental breakfast served in the morning."
                         },
@@ -259,6 +260,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
             },
             "RelativePrice": null,
             "Charging": "Once",
+            "Posting": "Once",
             "Ordering": 0
         }
     ],
