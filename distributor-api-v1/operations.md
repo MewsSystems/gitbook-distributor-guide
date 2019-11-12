@@ -90,6 +90,7 @@ Preferred initial call used to obtain all static data about distributor configur
                         "AlwaysIncluded":false,
                         "CategoryId":null,
                         "Charging":"Once",
+                        "Posting":"Once",
                         "Description": {
                             "en-US": "Continental breakfast served in the morning."
                         },
@@ -259,6 +260,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
             },
             "RelativePrice": null,
             "Charging": "Once",
+            "Posting": "Once",
             "Ordering": 0
         }
     ],
@@ -380,6 +382,20 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
 | `Prices` | [CurrencyValues](operations.md#currencyvalues) | required | Price of the product. |
+| `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
+| `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
+
+#### Product charging
+
+* `Once`
+* `PerRoomNight`
+* `PerPersonNight`
+* `PerPerson`
+
+#### Product posting
+
+* `Once`
+* `Daily`
 
 #### CurrencyValues   <a id="currencyvalues"></a>
 
