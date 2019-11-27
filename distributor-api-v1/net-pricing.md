@@ -67,7 +67,7 @@ This "TotalAmount" object will be sent from the API and it will contain values f
 
 Following is an example request for pricing
 
-Request:
+### Request [PlatformAddress]/api/distributor/v1/reservations/getPricing:
 ```javascript
 {
     "HotelId": "...",
@@ -87,7 +87,7 @@ Request:
 }
 ```
 
-Response:
+### Response:
 ```javascript
 {
     "OccupancyPrices": [
