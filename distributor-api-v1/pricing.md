@@ -65,7 +65,7 @@ In API response it is represented as this:
 }
 ```
 
-This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount]#Amount). TotalAmount is dictionary with Currency as a key and [Amount](#Amount) as value.
+This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount](Amount). TotalAmount is dictionary with Currency as a key and [Amount](Amount) as value.
 Following is an example request for pricing
 
 ### Request [PlatformAddress]/api/distributor/v1/reservations/getPricing:
