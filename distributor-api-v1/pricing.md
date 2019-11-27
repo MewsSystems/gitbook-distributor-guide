@@ -1,16 +1,17 @@
 # Pricing
 
-**Net price** is an amount without taxes.  
-**Gross price** is a net price + taxes.
+* **Net price** is an amount without taxes.
+* **Gross price** is a net price + taxes.
 
-In order to use net pricing in distributor, the API returns the [Amount](net-pricing.md#Amount) object as part of responses.
-[Amount](net-pricing.md#Amount) represents a structure that holds gross price, net price and tax values.
+In order to use pricing in the distributor, the API returns the [Amount](Amount) object as part of responses.
+[Amount](Amount) represents a structure that holds gross price, net price and tax values.
 
-The Amount has following structure:
+The [Amount](Amount) has following structure:
+
 ```javascript
 Currency:
 {
-    "GrossValue": 100.00,
+	"GrossValue": 100.00,
 	"NetValue": 93.46,
 	"TaxValues": [
 		{
@@ -21,16 +22,16 @@ Currency:
 }
 ```
 
-### Amount <a id="amount"></a>
+### Amount
 
-|  | Property | Description |
+| Property | Type | Description |
 | :--- | :--- | :--- |
 | `GrossValue` | Number | Gross value  |
 | `NetValue` | Number | Net value |
-| `TaxValues` | [TaxValue](net-pricing.md.md#taxValue) | Tax value for the net value amount |
+| `TaxValues` | Collection of [TaxValue](TaxValue)s | Tax values for the net value amount |
 
-### TaxValue <a id="taxValue"></a>
-|  | Property | Description |
+### TaxValue
+| Property | Type | Description |
 | :--- | :--- | :--- |
 | `TaxRateCode` | string | Unique identifier of the rate. |
 | `Value` | Number | Amount of tax |
@@ -63,11 +64,12 @@ In API response it is represented as this:
     }
 }
 ```
-This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount](net-pricing.md#Amount). TotalAmount is dictionary with Currency as a key and [Amount](net-pricing.md#Amount) as value.
 
+This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount]#Amount). TotalAmount is dictionary with Currency as a key and [Amount](#Amount) as value.
 Following is an example request for pricing
 
 ### Request [PlatformAddress]/api/distributor/v1/reservations/getPricing:
+
 ```javascript
 {
     "HotelId": "...",
@@ -88,6 +90,7 @@ Following is an example request for pricing
 ```
 
 ### Response:
+
 ```javascript
 {
     "OccupancyPrices": [
