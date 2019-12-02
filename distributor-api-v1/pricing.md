@@ -11,14 +11,14 @@ The [Amount](Amount) has following structure:
 ```javascript
 Currency:
 {
-	"GrossValue": 100.00,
-	"NetValue": 93.46,
-	"TaxValues": [
-		{
-			"TaxRateCode": "DE-R",
-			"Value": 6.54
-		}
-	]
+    "GrossValue": 100.00,
+    "NetValue": 93.46,
+    "TaxValues": [
+        {
+            "TaxRateCode": "DE-R",
+            "Value": 6.54
+        }
+    ]
 }
 ```
 
@@ -42,25 +42,25 @@ In API response it is represented as this:
 {
     "TotalAmount": {
         "USD": {
-		"GrossValue": 100.00,
-		"NetValue": 93.46,
-		"TaxValues": [
-			{
-				"TaxRateCode": "DE-R",
-				"Value": 6.54
-			}
-		]
-	},
-	"GBP": {
-		"GrossValue": 90.00,
-		"NetValue": 83.46,
-		"TaxValues": [
-			{
-				"TaxRateCode": "DE-R",
-				"Value": 6.54
-			}
-		]
-	}
+        "GrossValue": 100.00,
+        "NetValue": 93.46,
+        "TaxValues": [
+            {
+                "TaxRateCode": "DE-R",
+                "Value": 6.54
+            }
+        ]
+    },
+    "GBP": {
+        "GrossValue": 90.00,
+        "NetValue": 83.46,
+        "TaxValues": [
+            {
+                "TaxRateCode": "DE-R",
+                "Value": 6.54
+            }
+        ]
+    }
     }
 }
 ```
@@ -129,3 +129,4 @@ Following is an example request for pricing
         }
     ]
 }
+```
