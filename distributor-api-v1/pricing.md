@@ -3,7 +3,7 @@
 * **Net price** is an amount without taxes.
 * **Gross price** is a net price + taxes.
 
-In order to use pricing in the distributor, the API returns the [Amount](Amount) object as part of responses.
+In order to use pricing in the Distributor, the API returns the [Amount](Amount) object as part of responses.
 [Amount](Amount) represents a structure that holds gross price, net price and tax values.
 
 The [Amount](Amount) has following structure:
@@ -42,25 +42,25 @@ In API response it is represented as this:
 {
     "TotalAmount": {
         "USD": {
-        "GrossValue": 100.00,
-        "NetValue": 93.46,
-        "TaxValues": [
-            {
-                "TaxRateCode": "DE-R",
-                "Value": 6.54
-            }
-        ]
-    },
-    "GBP": {
-        "GrossValue": 90.00,
-        "NetValue": 83.46,
-        "TaxValues": [
-            {
-                "TaxRateCode": "DE-R",
-                "Value": 6.54
-            }
-        ]
-    }
+            "GrossValue": 100.00,
+            "NetValue": 93.46,
+            "TaxValues": [
+                {
+                    "TaxRateCode": "DE-R",
+                    "Value": 6.54
+                }
+            ]
+        },
+        "GBP": {
+            "GrossValue": 90.00,
+            "NetValue": 83.46,
+            "TaxValues": [
+                {
+                    "TaxRateCode": "DE-R",
+                    "Value": 6.54
+                }
+            ]
+        }
     }
 }
 ```
