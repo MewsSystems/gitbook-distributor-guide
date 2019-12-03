@@ -9,16 +9,18 @@ In order to use pricing in the Distributor, the API returns the [Amount](Amount)
 The [Amount](Amount) has following structure:
 
 ```javascript
-Currency:
 {
-    "GrossValue": 100.00,
-    "NetValue": 93.46,
-    "TaxValues": [
+    "USD":
         {
-            "TaxRateCode": "DE-R",
-            "Value": 6.54
+            "GrossValue": 100.00,
+            "NetValue": 93.46,
+            "TaxValues": [
+                {
+                    "TaxRateCode": "DE-R",
+                    "Value": 6.54
+                }
+            ]
         }
-    ]
 }
 ```
 
