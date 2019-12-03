@@ -33,6 +33,7 @@ The [Amount](Amount) has following structure:
 | `TaxValues` | Collection of [TaxValue](TaxValue)s | Tax values for the net value amount |
 
 ### TaxValue
+
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | `TaxRateCode` | string | Unique identifier of the rate. |
@@ -100,30 +101,7 @@ Following is an example request for pricing
             "Pricing": [
                 {
                     "RateId": "2744408c-a97e-459a-b6b6-ab0400f650b0",
-                    "Price": {
-                        "TotalAmount": {
-                            "USD": {
-                                "GrossValue": 100.00,
-                                "NetValue": 93.46,
-                                "TaxValues": [
-                                    {
-                                        "TaxRateCode": "DE-R",
-                                        "Value": 6.54
-                                    }
-                                ]
-                            },
-                            "GBP": {
-                                "GrossValue": 90.00,
-                                "NetValue": 83.46,
-                                "TaxValues": [
-                                    {
-                                        "TaxRateCode": "DE-R",
-                                        "Value": 6.54
-                                    }
-                                ]
-                            }
-                        }
-                    }
+                    "TotalAmount": Amount[]
                 }
             ],
             "AdultCount": 1,
