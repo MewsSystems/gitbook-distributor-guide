@@ -3,10 +3,10 @@
 * **Net price** is an amount without taxes.
 * **Gross price** is a net price + taxes.
 
-In order to use pricing in the Distributor, the API returns the [Amount](Amount) object as part of responses.
-[Amount](Amount) represents a structure that holds gross price, net price and tax values.
+In order to use pricing in the Distributor, the API returns the [Amount](pricing.md#amount) object as part of responses.
+[Amount](pricing.md#amount) represents a structure that holds gross price, net price and tax values.
 
-The [Amount](Amount) has following structure:
+The [Amount](pricing.md#amount) has following structure:
 
 ```javascript
 {
@@ -30,7 +30,7 @@ The [Amount](Amount) has following structure:
 | :--- | :--- | :--- |
 | `GrossValue` | Number | Gross value  |
 | `NetValue` | Number | Net value |
-| `TaxValues` | Collection of [TaxValue](TaxValue)s | Tax values for the net value amount |
+| `TaxValues` | Collection of [TaxValue](pricing.md#taxvalue)s | Tax values for the net value amount |
 
 ### TaxValue
 
@@ -69,4 +69,4 @@ In API response it is represented as this:
 }
 ```
 
-This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount](Amount). TotalAmount is dictionary with Currency as a key and [Amount](Amount) as value.
+This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount](pricing.md#amount). TotalAmount is dictionary with Currency as a key and [Amount](pricing.md#amount) as value.
