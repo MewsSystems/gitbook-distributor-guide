@@ -1,6 +1,5 @@
 # Pricing
 
-
 * **Net price** is an amount without taxes.
 * **Gross price** is a net price + taxes.
 
