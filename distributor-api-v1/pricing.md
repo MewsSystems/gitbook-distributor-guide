@@ -1,5 +1,6 @@
 # Pricing
 
+
 * **Net price** is an amount without taxes.
 * **Gross price** is a net price + taxes.
 
@@ -41,6 +42,7 @@ The [Amount](Amount) has following structure:
 
 
 In API response it is represented as this:
+
 ```javascript
 {
     "TotalAmount": {
@@ -69,44 +71,3 @@ In API response it is represented as this:
 ```
 
 This "TotalAmount" object will be sent from the API and it will contain values for every currency which is represented by [Amount](Amount). TotalAmount is dictionary with Currency as a key and [Amount](Amount) as value.
-Following is an example request for pricing
-
-### Request [PlatformAddress]/api/distributor/v1/reservations/getPricing:
-
-```javascript
-{
-    "HotelId": "...",
-    "LanguageCode": "en-GB",
-    "StartUtc": "2019-12-25T00:00:00.000Z",
-    "EndUtc": "2019-12-26T00:00:00.000Z",
-    "RoomCategoryId": "...",
-    "ProductIds": [],
-    "Client": "...",
-    "Session": "...",
-    "Occupancies": [
-        {
-            "AdultCount": 1,
-            "ChildCount": 1
-        }
-    ]
-}
-```
-
-### Response:
-
-```javascript
-{
-    "OccupancyPrices": [
-        {
-            "Pricing": [
-                {
-                    "RateId": "2744408c-a97e-459a-b6b6-ab0400f650b0",
-                    "TotalAmount": Amount[]
-                }
-            ],
-            "AdultCount": 1,
-            "ChildCount": 1
-        }
-    ]
-}
-```
