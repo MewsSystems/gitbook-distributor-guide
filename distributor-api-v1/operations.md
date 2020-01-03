@@ -104,6 +104,28 @@ Preferred initial call used to obtain all static data about distributor configur
                         "Prices": {
                             "EUR": 5,
                             "CZK": 150
+                        },
+                        "Amounts": {
+                            "EUR": {
+                                "GrossValue": 5.00,
+                                "NetValue": 4.5,
+                                "TaxValues": [
+                                    {
+                                        "TaxRateCode": "DE-R",
+                                        "Value": 0.5
+                                    }
+                                ]
+                            },
+                            "CZK": {
+                                "GrossValue": 150.00,
+                                "NetValue": 140.00,
+                                "TaxValues": [
+                                    {
+                                        "TaxRateCode": "DE-R",
+                                        "Value": 10.00
+                                    }
+                                ]
+                            }
                         }
                         "RelativePrice":null
                     }
@@ -258,6 +280,28 @@ Alternative initial call used to obtain all static data about hotel relevant for
                 "CZK": 258,
                 "EUR": 10,
             },
+            "Amounts": {
+                "EUR": {
+                    "GrossValue": 5.00,
+                    "NetValue": 4.5,
+                    "TaxValues": [
+                        {
+                            "TaxRateCode": "DE-R",
+                            "Value": 0.5
+                        }
+                    ]
+                },
+                "CZK": {
+                    "GrossValue": 150.00,
+                    "NetValue": 140.00,
+                    "TaxValues": [
+                        {
+                            "TaxRateCode": "DE-R",
+                            "Value": 10.00
+                        }
+                    ]
+                }
+            }
             "RelativePrice": null,
             "Charging": "Once",
             "Posting": "Once",
@@ -382,6 +426,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
 | `Prices` | [CurrencyValues](operations.md#currencyvalues) | required | Price of the product. |
+| `Amounts` | [Amount](pricing.md#amount) | required | [Amount](pricing.md#amount) of the product. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -529,11 +574,15 @@ Gives availabilities and pricings for given date interval with product prices in
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
                             "Price": {
                                 "Total": { },
-                                "AveragePerNight": { }
+                                "AveragePerNight": { },
+                                "TotalAmount": { },
+                                "AverageAmountPerNight": { }
                             },
                             "MaxPrice": {
                                 "Total": { },
-                                "AveragePerNight": { }
+                                "AveragePerNight": { },
+                                "TotalAmount": { },
+                                "AverageAmountPerNight": { }
                             }
                         }
                     ]
@@ -588,6 +637,8 @@ Gives availabilities and pricings for given date interval with product prices in
 | :--- | :--- | :--- | :--- |
 | `Total` | [CurrencyValues](operations.md#currencyvalues) | required | Total price of the room for whole reservation. |
 | `AveragePerNight` | [CurrencyValues](operations.md#currencyvalues) | required | Average price per night. |
+| `TotalAmount` | [Amount](pricing.md#amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerNight` | [Amount](pricing.md#amount) | required | Average amount per night. |
 
 ## Get Reservations Pricing   <a id="get-reservations-pricing"></a>
 
@@ -644,12 +695,16 @@ Gives a pricing information for the given configuration.
             "Pricing": [
                 {
                     "MaxPrice": {
-                        "AveragePerNight": {},
-                        "Total": {}
+                        "Total": { },
+                        "AveragePerNight": { },
+                        "TotalAmount": { },
+                        "AverageAmountPerNight": { }
                     },
                     "Price": {
-                        "AveragePerNight": {},
-                        "Total": {}
+                        "Total": { },
+                        "AveragePerNight": { },
+                        "TotalAmount": { },
+                        "AverageAmountPerNight": { }
                     },
                     "RateId": "b34330be-7e19-453e-8959-592c4e820f85"
                 }
