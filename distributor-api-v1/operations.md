@@ -101,10 +101,6 @@ Preferred initial call used to obtain all static data about distributor configur
                         "Name": {
                             "en-US": "Breakfast"
                         },
-                        "Prices": {
-                            "EUR": 5,
-                            "CZK": 150
-                        },
                         "Amounts": {
                             "EUR": {
                                 "GrossValue": 5.00,
@@ -276,10 +272,6 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "ImageId": "ec643f33-cd6c-4250-accd-518182165ffe",
             "IncludedByDefault": false,
             "AlwaysIncluded": false,
-            "Prices": {
-                "CZK": 258,
-                "EUR": 10,
-            },
             "Amounts": {
                 "EUR": {
                     "GrossValue": 5.00,
@@ -425,8 +417,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
-| `Prices` | [CurrencyValues](operations.md#currencyvalues) | required | Price of the product. |
-| `Amounts` | [Amount](pricing.md#amount) | required | [Amount](pricing.md#amount) of the product. |
+| `Amounts` | array of [Amount](operations.md##amount) | required | Array of amounts of the product.  |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -442,17 +433,39 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * `Once`
 * `Daily`
 
-#### CurrencyValues   <a id="currencyvalues"></a>
+#### Amount <a id="amount"></a>
 
-An object where field names correspond to currency ISO codes and field values to amounts. Only currencies that the hotel accepts are listed, for example:
+An object that represents a structure that holds gross price, net price and tax values.
 
 ```javascript
 {
-    "EUR": 100.00,
-    "USD": 120.50,
-    "CZK": 2500
+    "USD":
+        {
+            "GrossValue": 100.00,
+            "NetValue": 93.46,
+            "TaxValues": [
+                {
+                    "TaxRateCode": "DE-R",
+                    "Value": 6.54
+                }
+            ]
+        }
 }
 ```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `USD` | string | An ISO code of currency |
+| `GrossValue` | Number | An amount without taxes  |
+| `NetValue` | Number | A net price + taxes |
+| `TaxValues` | Collection of [TaxValue](operations.md#taxvalue)s | Tax values for the net value amount |
+
+#### TaxValue <a id="taxvalue"></a>
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `TaxRateCode` | string | Unique identifier of the rate. |
+| `Value` | Number | Amount of tax |
 
 #### RoomCategory   <a id="roomcategory"></a>
 
@@ -573,14 +586,10 @@ Gives availabilities and pricings for given date interval with product prices in
                         {
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
                             "Price": {
-                                "Total": { },
-                                "AveragePerNight": { },
                                 "TotalAmount": { },
                                 "AverageAmountPerNight": { }
                             },
                             "MaxPrice": {
-                                "Total": { },
-                                "AveragePerNight": { },
                                 "TotalAmount": { },
                                 "AverageAmountPerNight": { }
                             }
@@ -635,10 +644,8 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Total` | [CurrencyValues](operations.md#currencyvalues) | required | Total price of the room for whole reservation. |
-| `AveragePerNight` | [CurrencyValues](operations.md#currencyvalues) | required | Average price per night. |
-| `TotalAmount` | [Amount](pricing.md#amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerNight` | [Amount](pricing.md#amount) | required | Average amount per night. |
+| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerNight` | [Amount](operations.md#amount) | required | Average amount per night. |
 
 ## Get Reservations Pricing   <a id="get-reservations-pricing"></a>
 
@@ -695,14 +702,10 @@ Gives a pricing information for the given configuration.
             "Pricing": [
                 {
                     "MaxPrice": {
-                        "Total": { },
-                        "AveragePerNight": { },
                         "TotalAmount": { },
                         "AverageAmountPerNight": { }
                     },
                     "Price": {
-                        "Total": { },
-                        "AveragePerNight": { },
                         "TotalAmount": { },
                         "AverageAmountPerNight": { }
                     },
@@ -897,11 +900,11 @@ Gives a pricing information for the given configuration.
                 "d0e88da5-ae64-411c-b773-60ed68954f64"
             ],
             "Notes": "Quiet room please.",
-            "Cost": { },
+            "Amount": { },
             "Number": "1234"
         }
     ],
-    "TotalCost": { }
+    "TotalAmount": { }
 }
 ```
 
@@ -910,7 +913,7 @@ Gives a pricing information for the given configuration.
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
-| `TotalCost` | [CurrencyValues](operations.md#currencyvalues) | required | Total cost of the whole group. |
+| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the whole group. |
 
 ### Reservation   <a id="reservation"></a>
 
@@ -926,7 +929,7 @@ Gives a pricing information for the given configuration.
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `Notes` | string | optional | Additional notes. |
-| `Cost` | [CurrencyValues](operations.md#currencyvalues) | required | Total cost of the reservation. |
+| `Amount` | [Amount](operations.md#amount) | required | Total amount of the reservation. |
 
 ### Error Response   <a id="error-response"></a>
 
