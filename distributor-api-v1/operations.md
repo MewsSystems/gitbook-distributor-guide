@@ -435,7 +435,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 #### Amount <a id="amount"></a>
 
-An object that represents a structure that holds gross price, net price and tax values.
+An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values. Only currencies that the hotel accepts are listed
 
 ```javascript
 {
@@ -455,7 +455,6 @@ An object that represents a structure that holds gross price, net price and tax 
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| `USD` | string | An ISO code of currency |
 | `GrossValue` | Number | An amount without taxes  |
 | `NetValue` | Number | A net price + taxes |
 | `TaxValues` | Collection of [TaxValue](operations.md#taxvalue)s | Tax values for the net value amount |
