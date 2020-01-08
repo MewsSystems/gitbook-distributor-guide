@@ -435,7 +435,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 #### Amount <a id="amount"></a>
 
-An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values. Only currencies that the hotel accepts are listed
+An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values. Only currencies that the property accepts are listed.
 
 ```javascript
 {
@@ -959,4 +959,3 @@ In case of an error caused by insufficient availability \(which might have decre
 ### Response   <a id="response-7"></a>
 
 Same as in [Create Reservation Group](operations.md#create-reservation-group).
-
