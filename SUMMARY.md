@@ -11,7 +11,6 @@
   * [General Guidelines](distributor-api-v1/general-guidelines.md)
   * [Authorization](distributor-api-v1/authorization.md)
   * [Operations](distributor-api-v1/operations.md)
-  * [Pricing](distributor-api-v1/pricing.md)
   * [Images](distributor-api-v1/images.md)
   * [Payment Gateway Data](distributor-api-v1/payment-gateway-data.md)
   * [Environments](distributor-api-v1/environments.md)
