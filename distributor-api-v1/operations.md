@@ -417,7 +417,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
-| `Amounts` | array of [Amount](operations.md##amount) | required | Array of amounts of the product.  |
+| `Amounts` | array of [Amount](operations.md##amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -435,7 +435,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 #### Amount <a id="amount"></a>
 
-An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values. Only currencies that the property accepts are listed.
+An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values.
 
 ```javascript
 {
