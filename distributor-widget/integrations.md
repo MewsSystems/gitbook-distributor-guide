@@ -237,6 +237,10 @@ Alternative dates were displayed.
 
 Alternative dates when there is no availability selected.
 
+#### distributorCategoryGalleryOpened   <a id="distributorcategorygalleryopened"></a>
+
+Category gallery was opened.
+
 #### distributorRoomSelected   <a id="distributorroomselected"></a>
 
 A room \(or other space type\) was selected.
