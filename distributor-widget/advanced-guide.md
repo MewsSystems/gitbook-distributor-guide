@@ -61,7 +61,7 @@ Recognised parameters are:
 | language | a language code \(`xx-YY`\) |
 | currency | a currency code \(`XXX`\) |
 
-In addition, Distributor in multihotel mode also recoqnize:
+In addition, Distributor in multihotel mode also supports:
 
 | Name | Description |
 | :--- | :--- |
