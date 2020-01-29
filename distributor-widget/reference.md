@@ -60,11 +60,27 @@ Sets currency of the Distributor’s localization. Currency code should be in [I
 
 Sets start date for a new availability query, currently loaded availability list is not affected. If a`date`is not a valid Date object or its value isn’t allowed as start date - nothing happens.
 
+* Example - good:
+
+        distributor.setStartDate(new Date(2019, 12, 18))
+
+* Example - wrong:
+
+        distributor.setStartDate(2019-12-18)
+
 #### setEndDate\(date\) <a id="setenddatedate"></a>
 
 * `date` Type: `Date` - The end date to set
 
 Sets end date for a new availability query, currently loaded availability list is not affected. If a`date`is not a valid Date object - nothing happens.
+
+* Example - good:
+
+        distributor.setEndDate(new Date(2019, 12, 18))
+
+* Example - wrong:
+
+        distributor.setEndDate(2019-12-18)
 
 #### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
 
