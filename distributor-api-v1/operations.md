@@ -603,8 +603,21 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `RateGroups` | array of [RateGroup](operations.md#rategroup) | required | Information about all available rate groups. |
 | `Rates` | array of [Rate](operations.md#rate) | required | Information about all available rates. |
 | `RoomCategoryAvailabilites` | array of [RoomCategoryAvailability](operations.md#roomcategoryavailability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
+
+#### RateGroup   <a id="rategroup"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the rate. |
+| `SettlementType` | string | required | `Automatic`, `Manual`. Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
+| `SettlementAction` | string | required | `Charge payment card`, `Create preauthorization`. Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementTrigger` | string | required | Moment that extent cost is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the extent cost when items are created). If settlement is manual, a task will be created at this moment. |
+| `SettlementOffset` | string | required | Time added before or after selected settlement trigger (for example, '-1 day' will charge extent cost 1 day before). |
+| `SettlementValue` | string | required | Percentage of the total extent cost that's charged automatically (for example, a 100 settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
+| `SettlementMaximumNights` | string | required | Maximum number of nights that will be charged automatically (Only applies to automatic settlements). Rest will be charged manualy. |
 
 #### Rate   <a id="rate"></a>
 
