@@ -550,6 +550,17 @@ Gives availabilities and pricings for given date interval with product prices in
 
 ```javascript
 {
+    "RateGroups": [
+        {
+            "Id": "634d4625-e127-4282-a17d-ab51010e4deb",
+            "SettlementType": "Manual",
+            "SettlementAction": "ChargeCreditCard",
+            "SettlementTrigger": "Start",
+            "SettlementOffset": "P0M0DT0H0M0S",
+            "SettlementValue": 1.00000000,
+            "SettlementMaximumNights": null
+        }
+    ],
     "Rates": [
         {
             "Id": "c1d48c54-9382-4ceb-a820-772bf370573d",
@@ -613,7 +624,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the rate. |
 | `SettlementType` | string | required | `Automatic`, `Manual`. Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
-| `SettlementAction` | string | required | `Charge payment card`, `Create preauthorization`. Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementAction` | string | required | `ChargeCreditCard`, `CreatePreauthorization`. Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
 | `SettlementTrigger` | string | required | Moment that extent cost is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the extent cost when items are created). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Time added before or after selected settlement trigger (for example, '-1 day' will charge extent cost 1 day before). |
 | `SettlementValue` | string | required | Percentage of the total extent cost that's charged automatically (for example, a 100 settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
