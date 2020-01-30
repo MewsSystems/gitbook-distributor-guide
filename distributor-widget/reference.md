@@ -62,11 +62,15 @@ Sets start date for a new availability query, currently loaded availability list
 
 * Example - good:
 
-        distributor.setStartDate(new Date(2019, 12, 18))
+ ```text
+distributor.setStartDate(new Date(2019, 12, 18))
+ ```
 
 * Example - wrong:
 
-        distributor.setStartDate(2019-12-18)
+ ```text
+distributor.setStartDate(2019-12-18)
+ ```
 
 #### setEndDate\(date\) <a id="setenddatedate"></a>
 
@@ -76,11 +80,15 @@ Sets end date for a new availability query, currently loaded availability list i
 
 * Example - good:
 
+ ```javascript
         distributor.setEndDate(new Date(2019, 12, 18))
+ ```
 
 * Example - wrong:
 
+ ```javascript
         distributor.setEndDate(2019-12-18)
+ ```
 
 #### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
 
