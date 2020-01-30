@@ -62,13 +62,13 @@ Sets start date for a new availability query, currently loaded availability list
 
 * Example - good:
 
- ```text
+ ```javascript
 distributor.setStartDate(new Date(2019, 12, 18))
  ```
 
 * Example - wrong:
 
- ```text
+ ```javascript
 distributor.setStartDate(2019-12-18)
  ```
 
