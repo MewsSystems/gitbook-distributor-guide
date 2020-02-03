@@ -58,13 +58,41 @@ Sets currency of the Distributor’s localization. Currency code should be in [I
 
 * `date` Type: `Date` - The start date to set
 
-Sets start date for a new availability query, currently loaded availability list is not affected. If a`date`is not a valid Date object or its value isn’t allowed as start date - nothing happens.
+Sets start date for a new availability query, currently loaded availability list is not affected. If a `date` is not a valid Date object or its value isn’t allowed as start date - nothing happens.
+
+`monthIndex` starts with `0` for January to `11` for December - ([click here for more details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date#Individual_date_and_time_component_values)).
+
+* Example - good (18 January 2019):
+
+ ```javascript
+distributor.setStartDate(new Date(2019, 0, 18))
+ ```
+
+* Example - wrong:
+
+ ```javascript
+distributor.setStartDate("2019-01-18")
+ ```
 
 #### setEndDate\(date\) <a id="setenddatedate"></a>
 
 * `date` Type: `Date` - The end date to set
 
-Sets end date for a new availability query, currently loaded availability list is not affected. If a`date`is not a valid Date object - nothing happens.
+Sets end date for a new availability query, currently loaded availability list is not affected. If a `date` is not a valid Date object - nothing happens.
+
+`monthIndex` starts with `0` for January to `11` for December - ([click here for more details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date#Individual_date_and_time_component_values)).
+
+* Example - good (18 December 2019):
+
+ ```javascript
+        distributor.setEndDate(new Date(2019, 11, 18))
+ ```
+
+* Example - wrong:
+
+ ```javascript
+        distributor.setEndDate("2019-12-18")
+ ```
 
 #### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
 
