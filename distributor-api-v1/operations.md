@@ -628,7 +628,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `SettlementTrigger` | string | required | Moment that amount is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the amount when items are created). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Time in ISO 8601 format added before or after selected settlement trigger (for example, '-1 day' will charge extent cost 1 day before). |
 | `SettlementValue` | decimal | required | Percentage of the total extent cost that's charged automatically (for example, a 100 settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
-| `SettlementMaximumNights` | nullable int | required | Maximum number of nights that will be charged automatically (Only applies to automatic settlements). Rest will be charged manualy. |
+| `SettlementMaximumNights` | nullable int | required | Maximum number of nights that will be charged automatically (only applies to automatic settlements). The rest will be charged manually. |
 
 #### Rate   <a id="rate"></a>
 
