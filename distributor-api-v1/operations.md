@@ -550,6 +550,17 @@ Gives availabilities and pricings for given date interval with product prices in
 
 ```javascript
 {
+    "RateGroups": [
+        {
+            "Id": "634d4625-e127-4282-a17d-ab51010e4deb",
+            "SettlementType": "Manual",
+            "SettlementAction": "ChargeCreditCard",
+            "SettlementTrigger": "Start",
+            "SettlementOffset": "P0M0DT0H0M0S",
+            "SettlementValue": 1.00000000,
+            "SettlementMaximumNights": null
+        }
+    ],
     "Rates": [
         {
             "Id": "c1d48c54-9382-4ceb-a820-772bf370573d",
@@ -603,8 +614,21 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `RateGroups` | array of [RateGroup](operations.md#rategroup) | required | Information about all available rate groups. |
 | `Rates` | array of [Rate](operations.md#rate) | required | Information about all available rates. |
 | `RoomCategoryAvailabilites` | array of [RoomCategoryAvailability](operations.md#roomcategoryavailability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
+
+#### RateGroup   <a id="rategroup"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the rate. |
+| `SettlementType` | string | required | `Automatic`, `Manual`. Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
+| `SettlementAction` | string | required | `ChargeCreditCard`, `CreatePreauthorization`. Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementTrigger` | string | required | Moment that amount is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the amount when items are created). If settlement is manual, a task will be created at this moment. Possible triggers: `Confirmation`, `Start`, `End`, `StartDate`, `EndDate`. |
+| `SettlementOffset` | string | required | Time in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) added before or after selected settlement trigger (for example, '-1 day' will charge the amount 1 day before).|
+| `SettlementValue` | decimal | required | Percentage of the total extent cost that's charged automatically (for example, a 100 settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
+| `SettlementMaximumNights` | nullable int | required | Maximum number of nights that will be charged automatically (only applies to automatic settlements). The rest will be charged manually. |
 
 #### Rate   <a id="rate"></a>
 
