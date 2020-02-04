@@ -89,7 +89,7 @@ distributor.setEndDate(new Date(2019, 11, 18))
 
 * Example - wrong:
 
- ```javascript
+```javascript
 distributor.setEndDate("2019-12-18")
  ```
 
