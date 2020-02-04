@@ -86,7 +86,6 @@ Sets end date for a new availability query, currently loaded availability list i
 
 ```javascript
 distributor.setEndDate(new Date(2019, 11, 18))
- ```
 
 * Example - wrong:
 
