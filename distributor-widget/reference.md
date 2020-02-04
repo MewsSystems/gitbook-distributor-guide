@@ -84,7 +84,7 @@ Sets end date for a new availability query, currently loaded availability list i
 
 * Example - good (18 December 2019):
 
- ```javascript
+```javascript
 distributor.setEndDate(new Date(2019, 11, 18))
  ```
 
@@ -143,4 +143,3 @@ Mews.Distributor(
 #### string dataBaseUrl
 
 Allows you to define custom URL which is used for distributor API calls and static assets. In the example above, the Distributor will be run against our Demo environment.
-
