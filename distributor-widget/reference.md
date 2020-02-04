@@ -91,7 +91,6 @@ distributor.setEndDate(new Date(2019, 11, 18))
 
 ```javascript
 distributor.setEndDate("2019-12-18")
- ```
 
 #### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
 
