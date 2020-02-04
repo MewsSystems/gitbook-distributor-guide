@@ -64,15 +64,15 @@ Sets start date for a new availability query, currently loaded availability list
 
 * Example - good (18 January 2019):
 
- ```javascript
+```javascript
 distributor.setStartDate(new Date(2019, 0, 18))
- ```
+```
 
 * Example - wrong:
 
- ```javascript
+```javascript
 distributor.setStartDate("2019-01-18")
- ```
+```
 
 #### setEndDate\(date\) <a id="setenddatedate"></a>
 
@@ -84,15 +84,15 @@ Sets end date for a new availability query, currently loaded availability list i
 
 * Example - good (18 December 2019):
 
- ```javascript
-        distributor.setEndDate(new Date(2019, 11, 18))
- ```
+```javascript
+distributor.setEndDate(new Date(2019, 11, 18))
+```
 
 * Example - wrong:
 
- ```javascript
-        distributor.setEndDate("2019-12-18")
- ```
+```javascript
+distributor.setEndDate("2019-12-18")
+```
 
 #### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
 
@@ -143,4 +143,3 @@ Mews.Distributor(
 #### string dataBaseUrl
 
 Allows you to define custom URL which is used for distributor API calls and static assets. In the example above, the Distributor will be run against our Demo environment.
-
