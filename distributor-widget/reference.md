@@ -85,13 +85,13 @@ Sets end date for a new availability query, currently loaded availability list i
 * Example - good (18 December 2019):
 
  ```javascript
-        distributor.setEndDate(new Date(2019, 11, 18))
+distributor.setEndDate(new Date(2019, 11, 18))
  ```
 
 * Example - wrong:
 
  ```javascript
-        distributor.setEndDate("2019-12-18")
+distributor.setEndDate("2019-12-18")
  ```
 
 #### setVoucherCode\(code\) <a id="setvouchercodecode"></a>
