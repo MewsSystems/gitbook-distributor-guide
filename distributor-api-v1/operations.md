@@ -843,7 +843,7 @@ Gives a pricing information for the given configuration.
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
-| `ConfigurationId` | string | optional | GUID of the used Distributor configuration |
+| `ConfigurationId` | string | optional | GUID of the used Distributor configuration. If not specified, the configuration id which is set as property/hotel default will be used. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](operations.md#customer) | required | Information about customer who creates the order. |
 | `Booker` | [Booker](operations.md#booker) | optional | Information about booker. |
