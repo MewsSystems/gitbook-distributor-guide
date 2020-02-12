@@ -8,7 +8,7 @@
 
 | Name | Type | Default value | Description |
 | :--- | :--- | :--- | :--- |
-| configurationIds \(required\) | array of`string` | `''` | GUID of the used Distributor configurations.  You can get GUID of a configuration from it’s details page in Commander. The GUID is shown there as Identifier. |
+| configurationIds \(required\) | array of`string` | `''` | Unique identifier of the used Distributor configurations.  You can get unique identifier of a configuration from it’s details page in Commander. The unique identifier is shown there as Identifier. |
 | openElements | `string` | `''` | A list of comma-separated CSS selectors of elements, which will automatically get attached click event listeners for opening Distributor. The string is given as an argument to the`document.querySelectorAll`function, you get more info about its resemblance[here](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)for example.  The click event is being delegated, meaning that each element is being looked up on a website dynamically after the click happens. This way you can pass a selector to the elements that don’t exist yet during the initialization. |
 
 ## API Reference <a id="api-reference"></a>
