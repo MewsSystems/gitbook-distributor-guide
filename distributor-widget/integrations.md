@@ -224,7 +224,7 @@ Each item in the`availableRooms`array contains following data:
 | Name | Description |
 | :--- | :--- |
 | roomName | Name of the room. |
-| roomId | Guid of the room. |
+| roomId | Unique identifier of the room. |
 | availableRateIds | List of available rate ids for the room |
 | lowestPrice | Price of the room in hotel's default rate currency |
 | price | All prices of the room in all available currencies as `(key: currency, value: price)` dictionary/object. |
@@ -247,7 +247,7 @@ A room \(or other space type\) was selected.
 
 | Data Layer Variable Name | Description |
 | :--- | :--- |
-| roomId | Guid of the selected room. |
+| roomId | Unique identifier of the selected room. |
 | roomName | Name of the selected room in the hotel’s default language. |
 | spaceType | Name of the selected room’s space type, one of`Room`,`Bed`or`Dorm`. |
 
@@ -284,7 +284,7 @@ A product was added to the order.
 
 | Data Layer Variable Name | Description |
 | :--- | :--- |
-| productId | Guid of the added product. |
+| productId | Unique identifier of the added product. |
 | productName | Name of the product in the hotel’s default language. |
 
 #### distributorProductRemoved   <a id="distributorproductremoved"></a>
@@ -293,7 +293,7 @@ A product was removed from the order.
 
 | Data Layer Variable Name | Description |
 | :--- | :--- |
-| productId | Guid of the removed product. |
+| productId | Unique identifier of the removed product. |
 | productName | Name of product in the hotel’s default language. |
 
 #### distributorRoomAdded   <a id="distributorroomadded"></a>
@@ -302,11 +302,11 @@ A room/multiple rooms were added to the order.
 
 | Data Layer Variable Name | Description |
 | :--- | :--- |
-| reservations.orderId | Unique ID used only within session to identify order items |
-| reservations.hotelId | Guid of selected hotel |
-| reservations.roomId | Guid of selected room |
-| reservations.rateId | Guid of selected rate |
-| reservations.productIds | Collection of selected product guids |
+| reservations.orderId | Unique identifier used only within session to identify order items |
+| reservations.hotelId | Unique identifier of selected hotel |
+| reservations.roomId | Unique identifier of selected room |
+| reservations.rateId | Unique identifier of selected rate |
+| reservations.productIds | Collection of selected product unique identifiers |
 | reservations.startDate | Reservation start date |
 | reservations.endDate | Reservation end date |
 | reservations.adultCount | Number of selected adults |
@@ -319,8 +319,8 @@ The quantity of rooms in the order was increased or decreased
 | Data Layer Variable Name | Description |
 | :--- | :--- |
 | orderId | Unique ID used only within session to identify order items |
-| roomId | Guid of selected room |
-| rateId | Guid of selected rate |
+| roomId | Unique identifier of selected room |
+| rateId | Unique identifier of selected rate |
 | countChange | Change of quantity \(e.g. 1, -1\) |
 
 #### distributorBookingPrepared   <a id="distributorbookingprepared"></a>
