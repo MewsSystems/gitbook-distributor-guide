@@ -744,9 +744,9 @@ Gives a pricing information for the given configuration.
 | :--- | :--- | :--- | :--- |
 | `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
 
-## Get Payment Configuration   <a id="get-payment-configuration"></a>
+## Get Payment Gateway   <a id="create-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration`   <a id="request-getpaymentconfiguration"></a>
+### Request`[PlatformAddress]/api/distributor/v1/payments/getPaymentGateway`   <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
 
 ```javascript
 {
@@ -766,39 +766,28 @@ Gives a pricing information for the given configuration.
 | `LanguageCode` | string | required | Language code |
 | `CultureCode` | string | required | Culture Code |
 
-### Response   <a id="reponse-getpaymentconfiguration"></a>
+### Response   <a id="response-5"></a>
 
 ```javascript
 {
-    "PaymentGateway": {
-        "PaymentGatewayType": "PciProxy",
-        "PaymentCardStorageType": "PciProxy",
-        "IsMerchant": true,
+    {
+        "PaymentGatewayType": "Adyen",
+        "IsMerchant": false,
         "SupportedCreditCardTypes": [
             "MasterCard",
             "Visa"
         ],
-        "PublicKey": "1100016614",
-        "DefaultCurrencyCode": "EUR"
-    },
-    "SurchargeConfiguration": {
-        "SurchargeServiceId": null,
-        "SurchargeFees": {}
+        "PublicKey": "..."
     }
 }
 ```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes Payment gateway of the enterprise |
-| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object that describes surcharge configuration that enterprise uses |
-
-#### Surcharge Configuration <a id="surcharge-configuration"></a>
-
-|  | Property | Type | Description |
-| :--- | :--- | :--- | :--- |
-| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service  |
-| `SurchargeFees` | dictionary of string/decimal  | optional | Dictionary of surcharge fees where string is `PatmentCardType`(such as Visa, MasterCard, Amex ...) and decimal is amount of the surcharge fee itself |
+| PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\) |
+| IsMerchant | boolean | required | Whether the gateway is processed through Mews Merchant or not |
+| SupportedCreditCardTypes | array of strings | required | The list of supported credit cards, should be used to enhance UX |
+| PublicKey | string | required | A key used by the payment gateway's client side library for authentication |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
