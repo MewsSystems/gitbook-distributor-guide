@@ -760,11 +760,11 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `HotelId` | string | required | Unique identifier of hotel |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization) |
-| `Session` | number | required | Session number |
-| `LanguageCode` | string | required | Language code |
-| `CultureCode` | string | required | Culture Code |
+| `HotelId` | string | required | Unique identifier of hotel. |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Session` | number | required | Session number. |
+| `LanguageCode` | string | required | Language code. |
+| `CultureCode` | string | required | Culture Code. |
 
 ### Response  <a id="response-getpaymentconfiguration"></a>
 
@@ -790,15 +790,15 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes Payment gateway of the enterprise |
-| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object that describes surcharge configuration that enterprise uses |
+| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes Payment gateway of the enterprise. |
+| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object that describes surcharge configuration that enterprise uses. |
 
 #### Surcharge Configuration <a id="surcharge-configuration"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service  |
-| `SurchargeFees` | dictionary of string/decimal  | optional | Dictionary of surcharge fees where string is `PatmentCardType`(such as Visa, MasterCard, Amex ...) and decimal is amount of the surcharge fee itself |
+| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service, if enterprise uses surcharge feature this Id will be provided. |
+| `SurchargeFees` | dictionary of string/decimal | optional | Dictionary of surcharge fees where string is `PatmentCardType`(such as Visa, MasterCard, Amex ...) and decimal is amount of the surcharge fee itself. |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
