@@ -396,7 +396,7 @@ TBC
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
-#### Payment Gateway   <a id="payment-gateway"></a>
+#### PaymentGateway   <a id="payment-gateway"></a>
 
 If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
 
@@ -750,8 +750,8 @@ Gives a pricing information for the given configuration.
 
 ```javascript
 {
-    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Client": "My Client 1.0.0",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",    
     "Session": "...",
     "LanguageCode": "en-GB",
     "CultureCode": "en-GB"
@@ -760,8 +760,8 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `HotelId` | string | required | Unique identifier of hotel. |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `HotelId` | string | required | Unique identifier of hotel. |
 | `Session` | number | required | Session number. |
 | `LanguageCode` | string | required | Language code. |
 | `CultureCode` | string | required | Culture Code. |
@@ -790,15 +790,15 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes Payment gateway of the enterprise. |
+| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
 | `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object that describes surcharge configuration that enterprise uses. |
 
-#### Surcharge Configuration <a id="surcharge-configuration"></a>
+#### SurchargeConfiguration <a id="surcharge-configuration"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `SurchargeServiceId` | string | optional | Unique identifier of surcharge service, if enterprise uses surcharge feature this Id will be provided. |
-| `SurchargeFees` | dictionary of string/decimal | optional | Dictionary of surcharge fees where string is `PatmentCardType`(such as Visa, MasterCard, Amex ...) and decimal is amount of the surcharge fee itself. |
+| `SurchargeFees` | dictionary of string/number | optional | Dictionary of surcharge fees where string is `PatmentCardType`(such as Visa, MasterCard, Amex ...) and number is amount of the surcharge fee itself. |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
