@@ -417,7 +417,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
-| `Amounts` | array of [Amount](operations.md##amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Amounts` | array of [Amount](operations.md#amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -782,8 +782,12 @@ Gives a pricing information for the given configuration.
         "DefaultCurrencyCode": "EUR"
     },
     "SurchargeConfiguration": {
-        "SurchargeServiceId": null,
-        "SurchargeFees": {}
+        "SurchargeServiceId": "74d5eb0a-784a-4870-b34a-ab6500a1136e",
+        "SurchargeFees": {
+            "MasterCard": 0.02,
+            "Visa": 0.01,
+            "Amex": 0.0125
+        }
     }
 }
 ```
@@ -798,7 +802,7 @@ Gives a pricing information for the given configuration.
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `SurchargeServiceId` | string | optional | Unique identifier of surcharge service, if enterprise uses surcharge feature this Id will be provided. |
-| `SurchargeFees` | dictionary of string/number | optional | Dictionary of surcharge fees where string is `PatmentCardType`(such as Visa, MasterCard, Amex ...) and number is amount of the surcharge fee itself. |
+| `SurchargeFees` | Collection of key-value pairs where key is string and value is number | optional | Collection of key-value pairs where key is string representation of CreditCardType (such as Visa, MasterCard, Amex ...) and value is amount of the surcharge fee itself. |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
