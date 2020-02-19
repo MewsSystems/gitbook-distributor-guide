@@ -746,7 +746,7 @@ Gives a pricing information for the given configuration.
 
 ## Get Payment Configuration   <a id="get-payment-configuration"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration`   <a id="request-getpaymentconfiguration"></a>
+### Request `[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration`   <a id="request-getpaymentconfiguration"></a>
 
 ```javascript
 {
