@@ -802,7 +802,18 @@ Gives a pricing information for the given configuration.
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `SurchargeServiceId` | string | optional | Unique identifier of surcharge service, if enterprise does not use surcharge feature this Id will be `null`. |
-| `SurchargeFees` | collection of key-value pairs where key is string and value is number | optional | Collection of key-value pairs where key is string representation of CreditCardType (such as Visa, MasterCard, Amex ...) and value is amount of the surcharge fee itself. If enterprise does not use surcharge feature this will be an empty object. |
+| `SurchargeFees` | collection of key-value pairs where key is string and value is number | optional | Collection of key-value pairs where key is string representation of [Creditcard type](operations.md#creditcard-type) and value is amount of the surcharge fee itself. If enterprise does not use surcharge feature this will be an empty object. |
+
+#### Creditcard Type 
+
+* MasterCard
+* Visa
+* Amex
+* Discover
+* DinersClub
+* Jcb
+* Maestro
+* ...
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
