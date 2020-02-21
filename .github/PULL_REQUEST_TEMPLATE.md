@@ -12,5 +12,5 @@
 - [ ] New operation added in the list of all operations.
 - [ ] Correct formatting
   - [ ] Spacing is consistent between titles, sections, tables, ...
-  - [ ] Correct JSON format - intedation
+  - [ ] Correct JSON format - indentation.
 - [ ] DateTime properties should be allways defined like ISO format
