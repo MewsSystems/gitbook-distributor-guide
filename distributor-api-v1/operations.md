@@ -156,7 +156,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by hotel. |
 | `CityId` | string | required | ID of default city. |
-| `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Fields that enterprise sets up as required. |
+| `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Fields that are set up as required in distributor configuration. |
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | Configurations matching the configuration IDs in request. |
 | `CurrencyCode` | string | optional | Code of default currency accepted by hotel. |
 | `Currencies` | array of [Currency](operations.md#currency) | required | Currencies accepted by hotel. |
@@ -170,7 +170,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Theme` | string | optional | TBC |
 | `VoucherCode` | string | optional | TBC |
 
-#### Requiredfield
+#### RequiredField
 
 * `Telephone`
 
