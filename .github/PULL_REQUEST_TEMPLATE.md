@@ -11,6 +11,6 @@
 - [ ] New properties in the table are added to correct place.  
 - [ ] New operation added in the list of all operations.
 - [ ] Correct formatting
-  - [ ] Spacing bettween titles, sections, tables, ...
+  - [ ] Spacing is consistent between titles, sections, tables, ...
   - [ ] Correct JSON format - intedation
 - [ ] DateTime properties should be allways defined like ISO format
