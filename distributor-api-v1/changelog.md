@@ -1,6 +1,6 @@
 # Changelog
 
-## 15.8.2016 <a id="1582016"></a>
+## 24.02.2020
 
-Added the [Authorization ](authorization.md)section and extended all operations with the `Client` parameter.
+* Added RequiredFields to `configuration/get` endpoint - [commit](https://github.com/MewsSystems/gitbook-distributor-guide/commit/32a9d1796ff4f96e8bc381cee39f6004cd3b8f19).
 
