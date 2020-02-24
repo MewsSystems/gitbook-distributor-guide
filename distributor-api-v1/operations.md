@@ -795,7 +795,7 @@ Gives a pricing information for the given configuration.
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
-| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object that describes surcharge configuration that enterprise uses. |
+| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
 
 #### SurchargeConfiguration <a id="surcharge-configuration"></a>
 
