@@ -1,4 +1,4 @@
-#### Change log notes 
+#### Changelog notes 
 
 ```
 * Added/Extended operations....
