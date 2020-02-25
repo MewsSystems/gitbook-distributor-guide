@@ -412,7 +412,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | :--- | :--- | :--- | :--- |
 | `PaymentGatewayType` | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\). |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
-| `SupportedCreditCardTypes` | array of string | required | The list of supported credit cards, should be used to enhance UX. |
+| `SupportedCreditCardTypes` | string [CreditCardType](operations.md#credit-card-type) | required | The list of supported credit cards, should be used to enhance UX. |
 
 #### Product   <a id="product"></a>
 
@@ -786,7 +786,7 @@ Gives a pricing information for the given configuration.
             "MasterCard",
             "Visa"
         ],
-        "PublicKey": "1100016614",
+        "PublicKey": "1100116614",
         "DefaultCurrencyCode": "EUR"
     },
     "SurchargeConfiguration": {
@@ -809,8 +809,15 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service, if enterprise does not use surcharge feature this Id will be `null`. |
-| `SurchargeFees` | object containing key-value pairs where key is string and value is number | optional | Object containing key-value pairs where key is string representation of [CreditCardType](operations.md#creditcardtype) and value is amount of the surcharge fee itself. If enterprise does not use surcharge feature this will be an empty object. |
+| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service. |
+| `SurchargeFees` | [SurchargeFees](operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by credit card company. |
+
+#### SurchargeFees
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Key` | string [CreditCardType](operations.md#credit-card-type) | required | Credit card types. |
+| `Value` | number | required | Amount of the surcharge fee itself. |
 
 #### CreditCardType 
 
