@@ -410,9 +410,30 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayType` | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\). |
+| `PaymentGatewayType` | string [PaymentGatewayType](operations.md#payment-gateway-type)| required | Type of the payment gateway. |
+| `PaymentCardStorageType` | string [PaymentGatewayType](operations.md#payment-gateway-type) | required | Type of the payment gateway. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | string [CreditCardType](operations.md#credit-card-type) | required | The list of supported credit cards, should be used to enhance UX. |
+| `PublicKey` | boolean | required | Merchant identifier |
+| `DefaultCurrencyCode` | string | required | Currency of default payment gateway. |
+
+#### PaymentGatewayType
+
+* Adyen
+* Stripe
+* PciProxy
+
+#### CreditCardType 
+
+* MasterCard
+* Visa
+* Amex
+* Discover
+* DinersClub
+* Jcb
+* Maestro
+* ...
+
 
 #### Product   <a id="product"></a>
 
@@ -818,17 +839,6 @@ Gives a pricing information for the given configuration.
 | :--- | :--- | :--- | :--- |
 | `Key` | string [CreditCardType](operations.md#credit-card-type) | required | Credit card types. |
 | `Value` | number | required | Amount of the surcharge fee itself. |
-
-#### CreditCardType 
-
-* MasterCard
-* Visa
-* Amex
-* Discover
-* DinersClub
-* Jcb
-* Maestro
-* ...
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
