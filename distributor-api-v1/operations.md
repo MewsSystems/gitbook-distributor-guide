@@ -404,15 +404,35 @@ TBC
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
-#### Payment Gateway   <a id="payment-gateway"></a>
+#### PaymentGateway   <a id="payment-gateway"></a>
 
 If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayType` | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\). |
+| `PaymentCardStorageType` | string [PaymentCardStorageType](operations.md#payment-card-storage-type) | required | Type of the payment card storage used by enterprise. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
-| `SupportedCreditCardTypes` | array of string | required | The list of supported credit cards, should be used to enhance UX. |
+| `SupportedCreditCardTypes` | string [CreditCardType](operations.md#credit-card-type) | required | The list of supported payment cards, should be used to enhance UX. |
+| `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
+| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO format. |
+
+#### PaymentCardStorageType
+
+* Adyen
+* Stripe
+* PciProxy
+
+#### CreditCardType 
+
+* MasterCard
+* Visa
+* Amex
+* Discover
+* DinersClub
+* Jcb
+* Maestro
+* ...
+
 
 #### Product   <a id="product"></a>
 
@@ -425,7 +445,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
-| `Amounts` | array of [Amount](operations.md##amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Amounts` | array of [Amount](operations.md#amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -752,14 +772,14 @@ Gives a pricing information for the given configuration.
 | :--- | :--- | :--- | :--- |
 | `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
 
-## Get Payment Gateway   <a id="create-reservation-group"></a>
+## Get Payment Configuration   <a id="get-payment-configuration"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/payments/getPaymentGateway`   <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
+### Request `[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration`   <a id="request-getpaymentconfiguration"></a>
 
 ```javascript
 {
-    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Client": "My Client 1.0.0",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",    
     "Session": "...",
     "LanguageCode": "en-GB",
     "CultureCode": "en-GB"
@@ -768,34 +788,56 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `HotelId` | string | required | Unique identifier of hotel |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization) |
-| `Session` | number | required | Session number |
-| `LanguageCode` | string | required | Language code |
-| `CultureCode` | string | required | Culture Code |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `HotelId` | string | required | Unique identifier of hotel. |
+| `Session` | number | required | Session number. |
+| `LanguageCode` | string | required | Language code. |
+| `CultureCode` | string | required | Culture Code. |
 
-### Response   <a id="response-5"></a>
+### Response  <a id="response-getpaymentconfiguration"></a>
 
 ```javascript
 {
-    {
-        "PaymentGatewayType": "Adyen",
-        "IsMerchant": false,
+    "PaymentGateway": {
+        "PaymentGatewayType": "PciProxy",
+        "PaymentCardStorageType": "PciProxy",
+        "IsMerchant": true,
         "SupportedCreditCardTypes": [
             "MasterCard",
             "Visa"
         ],
-        "PublicKey": "..."
+        "PublicKey": "1100116614",
+        "DefaultCurrencyCode": "EUR"
+    },
+    "SurchargeConfiguration": {
+        "SurchargeServiceId": "74d5eb0a-784a-4870-b34a-ab6500a1136e",
+        "SurchargeFees": {
+            "MasterCard": 0.02,
+            "Visa": 0.01,
+            "Amex": 0.0125
+        }
     }
 }
 ```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\) |
-| IsMerchant | boolean | required | Whether the gateway is processed through Mews Merchant or not |
-| SupportedCreditCardTypes | array of strings | required | The list of supported credit cards, should be used to enhance UX |
-| PublicKey | string | required | A key used by the payment gateway's client side library for authentication |
+| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
+| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
+
+#### SurchargeConfiguration <a id="surcharge-configuration"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service. |
+| `SurchargeFees` | [SurchargeFees](operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
+
+#### SurchargeFees
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Key` | string [CreditCardType](operations.md#credit-card-type) | required | Credit card types. |
+| `Value` | number | required | Amount of the surcharge fee itself. |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
