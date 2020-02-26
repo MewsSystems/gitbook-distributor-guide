@@ -413,7 +413,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `PaymentCardStorageType` | string [PaymentCardStorageType](operations.md#payment-card-storage-type) | required | Type of the payment card storage used by enterprise. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | string [CreditCardType](operations.md#credit-card-type) | required | The list of supported payment cards, should be used to enhance UX. |
-| `PublicKey` | boolean | required | Merchant identifier for which PCI proxy Iframe is connected. |
+| `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
 | `DefaultCurrencyCode` | string | required | Currency of default payment gateway. |
 
 #### PaymentCardStorageType
