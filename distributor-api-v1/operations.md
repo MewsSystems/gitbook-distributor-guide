@@ -414,7 +414,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | string [CreditCardType](operations.md#credit-card-type) | required | The list of supported payment cards, should be used to enhance UX. |
 | `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
-| `DefaultCurrencyCode` | string | required | Currency of default payment gateway. |
+| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO format. |
 
 #### PaymentCardStorageType
 
