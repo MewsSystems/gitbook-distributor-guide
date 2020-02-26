@@ -125,8 +125,8 @@ Preferred initial call used to obtain all static data about distributor configur
                                     }
                                 ]
                             }
-                        }
-                        "RelativePrice":null
+                        },
+                        "RelativePrice": null
                     }
                 ],
                 "Telephone":"030 6926666",
@@ -301,7 +301,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
                         }
                     ]
                 }
-            }
+            },
             "RelativePrice": null,
             "Charging": "Once",
             "Posting": "Once",
