@@ -38,9 +38,6 @@ Preferred initial call used to obtain all static data about distributor configur
         },
     ],
     "CityId": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
-    "RequiredFields": [
-        "Telephone"
-    ],
     "Configurations": [
         {
             "AdultCount": null,
@@ -156,7 +153,6 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by hotel. |
 | `CityId` | string | required | ID of default city. |
-| `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Fields that are set up as required in distributor configuration. |
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | Configurations matching the configuration IDs in request. |
 | `CurrencyCode` | string | optional | Code of default currency accepted by hotel. |
 | `Currencies` | array of [Currency](operations.md#currency) | required | Currencies accepted by hotel. |
@@ -169,10 +165,6 @@ Preferred initial call used to obtain all static data about distributor configur
 | `StartDateOffset` | string | optional | TBC |
 | `Theme` | string | optional | TBC |
 | `VoucherCode` | string | optional | TBC |
-
-#### RequiredField
-
-* `Telephone`
 
 ## Get Hotel Info   <a id="get-hotel-info"></a>
 
