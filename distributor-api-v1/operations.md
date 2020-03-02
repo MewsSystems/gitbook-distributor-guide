@@ -48,56 +48,56 @@ Preferred initial call used to obtain all static data about distributor configur
             "DisplayRateComparision": null,
             "DisplaySpecialRequests": null,
             "Enterprise": {
-                "AcceptedCurrencyCodes":["EUR"],
-                "AdditionalLegalStatements":[],
+                "AcceptedCurrencyCodes": ["EUR"],
+                "AdditionalLegalStatements": [],
                 "Address": {
-                    "City":"Zeist",
-                    "CountryCode":"NL",
-                    "Latitude":52.0749748,
-                    "Line1":"Arnhemse Bovenweg 31",
-                    "Line2":"",
-                    "Longitude":5.2590181,
-                    "PostalCode":"3708 AA"
+                    "City": "Zeist",
+                    "CountryCode": "NL",
+                    "Latitude": 52.0749748,
+                    "Line1": "Arnhemse Bovenweg 31",
+                    "Line2": "",
+                    "Longitude": 5.2590181,
+                    "PostalCode": "3708 AA"
                 },
-                "Categories":[
+                "Categories": [
                     {
                         "Description": {
-                            "en-US":"Our Single Castleroom is a cozy and comfortable room with a single bed (80x200), spacious bathroom with guest supplies, working desk and a flat screen TV. This quiet non-smoking room of 15m2 has a nice view of the Castle and of course there is free high speed Wi-Fi.\r\n"
+                            "en-US": "Our Single Castleroom is a cozy and comfortable room with a single bed (80x200), spacious bathroom with guest supplies, working desk and a flat screen TV. This quiet non-smoking room of 15m2 has a nice view of the Castle and of course there is free high speed Wi-Fi.\r\n"
                         },
-                        "ExtraBedCount":0,
-                        "Id":"295d96e7-8501-4cbd-b78d-8bf590bf6db9",
-                        "ImageIds":["f987a97c-5049-44ca-9933-5b657e5263e2"],
-                        "Name": {"en-US":"Single Castleroom"},
-                        "NormalBedCount":1,
-                        "SpaceType":"Room"
+                        "ExtraBedCount": 0,
+                        "Id": "295d96e7-8501-4cbd-b78d-8bf590bf6db9",
+                        "ImageIds": ["f987a97c-5049-44ca-9933-5b657e5263e2"],
+                        "Name": {"en-US": "Single Castleroom"},
+                        "NormalBedCount": 1,
+                        "SpaceType": "Room"
                     }
                 ],
-                "CityId":"39db0c2f-6929-47ec-9386-0abdaaef4c9c",
-                "DefaultCurrencyCode":"EUR",
-                "DefaultLanguageCode":"nl-NL",
-                "DefaultRateCurrencyCode":"EUR",
-                "Description":{"nl-NL":""},
-                "Email":"info@kasteelkerckebosch.com",
-                "IanaTimeZoneIdentifier":"Europe\/Berlin",
-                "Id":"7a13590c-6538-461e-b02f-6357400de493",
-                "ImageId":"263c3e5f-e11d-41d8-9746-4bdd0852f04f",
-                "IntroImageId":"f24469f8-c23b-4450-a1f8-3ecd39904e99",
-                "Name":{
+                "CityId": "39db0c2f-6929-47ec-9386-0abdaaef4c9c",
+                "DefaultCurrencyCode": "EUR",
+                "DefaultLanguageCode": "nl-NL",
+                "DefaultRateCurrencyCode": "EUR",
+                "Description": {"nl-NL": ""},
+                "Email": "info@kasteelkerckebosch.com",
+                "IanaTimeZoneIdentifier": "Europe\/Berlin",
+                "Id": "7a13590c-6538-461e-b02f-6357400de493",
+                "ImageId": "263c3e5f-e11d-41d8-9746-4bdd0852f04f",
+                "IntroImageId": "f24469f8-c23b-4450-a1f8-3ecd39904e99",
+                "Name": {
                     "en-US": "Sample Hotel Description"
                 },
-                "Products":[
+                "Products": [
                     {
-                        "AlwaysIncluded":false,
-                        "CategoryId":null,
-                        "Charging":"Once",
-                        "Posting":"Once",
+                        "AlwaysIncluded": false,
+                        "CategoryId": null,
+                        "Charging": "Once",
+                        "Posting": "Once",
                         "Description": {
                             "en-US": "Continental breakfast served in the morning."
                         },
                         "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
                         "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "IncludedByDefault":false,
-                        "Ordering":0,
+                        "IncludedByDefault": false,
+                        "Ordering": 0,
                         "Name": {
                             "en-US": "Breakfast"
                         },
@@ -126,7 +126,7 @@ Preferred initial call used to obtain all static data about distributor configur
                         "RelativePrice": null
                     }
                 ],
-                "Telephone":"030 6926666",
+                "Telephone": "030 6926666",
                 "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
             },
             "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
@@ -138,7 +138,7 @@ Preferred initial call used to obtain all static data about distributor configur
     "CurrencyCodes": [],
     "EndDateOffset": null,
     "GtmContainerId": "",
-    "IntroVideoUrl: "",
+    "IntroVideoUrl": "",
     "LanguageCode": null,
     "NowUtc": "",
     "PrimaryColor": "",
