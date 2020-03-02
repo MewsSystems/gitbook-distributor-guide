@@ -138,7 +138,7 @@ Preferred initial call used to obtain all static data about distributor configur
     "CurrencyCodes": [],
     "EndDateOffset": null,
     "GtmContainerId": "",
-    "IntroVideoUrl: "",
+    "IntroVideoUrl": "",
     "LanguageCode": null,
     "NowUtc": "",
     "PrimaryColor": "",
