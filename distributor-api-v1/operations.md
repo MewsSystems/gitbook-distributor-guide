@@ -905,7 +905,7 @@ Gives a pricing information for the given configuration.
 | `PostalCode` | string | optional | Postal code of the address. |
 | `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
-| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails. When booker is present, this should always be false or null. |
+| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails. When booking for someone else, this should have the value, not [Customer](operations.md#customer) otherwise the information will not be saved. Api accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
 
 #### Booker
 
@@ -915,7 +915,7 @@ Gives a pricing information for the given configuration.
 | `FirstName` | string | required | First name of the booker. |
 | `LastName` | string | required | Last name of the booker. |
 | `Telephone` | string | optional | Telephone number of the booker. |
-| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails. When booking for someone else, this should have the value, not [Customer](operations.md#customer). |
+| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails. When booking for someone else, this should have the value, not [Customer](operations.md#customer) otherwise the information will not be saved. Api accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
 
 #### ReservationData   <a id="reservationdata"></a>
 
