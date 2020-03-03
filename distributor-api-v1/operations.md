@@ -642,12 +642,30 @@ Gives availabilities and pricings for given date interval with product prices in
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the rate. |
-| `SettlementType` | string | required | `Automatic`, `Manual`. Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
-| `SettlementAction` | string | required | `ChargeCreditCard`, `CreatePreauthorization`. Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
-| `SettlementTrigger` | string | required | Moment that amount is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the amount when items are created). If settlement is manual, a task will be created at this moment. Possible triggers: `Confirmation`, `Start`, `End`, `StartDate`, `EndDate`. |
-| `SettlementOffset` | string | required | Time in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) added before or after selected settlement trigger (for example, '-1 day' will charge the amount 1 day before).|
-| `SettlementValue` | decimal | required | Percentage of the total extent cost that's charged automatically (for example, a 100 settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
-| `SettlementMaximumNights` | nullable int | required | Maximum number of nights that will be charged automatically (only applies to automatic settlements). The rest will be charged manually. |
+| `SettlementType` | string [SettlementType](operations.md#settlementtype) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
+| `SettlementAction` | string [SettlementAction](operations.md#settlementaction) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementTrigger` | string [SettlementTrigger](operations.md#settlementtrigger) | required | Moment that amount is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the amount when items are created). If settlement is manual, a task will be created at this moment. |
+| `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) that gets added before or after selected settlement trigger (for example, '-1 day' will charge the amount 1 day before). |
+| `SettlementValue` | decimal | required | Percentage of the total extent cost that's charged automatically (for example, a `1.0` settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
+| `SettlementMaximumNights` | number | optional | Maximum number of nights that will be charged automatically (only applies to automatic settlements). The rest will be charged manually. |
+
+#### SettlementType
+
+* `Automatic`
+* `Manual`
+
+#### SettlementAction
+
+* `ChargeCreditCard`
+* `CreatePreauthorization`
+
+#### SettlementTrigger
+
+* `Confirmation`
+* `Start`
+* `End`
+* `StartDate`
+* `EndDate`
 
 #### Rate   <a id="rate"></a>
 
