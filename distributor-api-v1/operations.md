@@ -404,7 +404,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | :--- | :--- | :--- | :--- |
 | `PaymentCardStorageType` | string [PaymentCardStorageType](operations.md#paymentcardstoragetype) | required | Type of the payment card storage used by enterprise. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
-| `SupportedCreditCardTypes` | string [CreditCardType](operations.md#creditcardtype) | required | The list of supported payment cards, should be used to enhance UX. |
+| `SupportedCreditCardTypes` | string [CreditCardType](operations.md#creditcardtype) | required | Supported payment card, should be used to enhance UX. |
 | `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
 | `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO format. |
 
@@ -845,7 +845,7 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Key` | string [CreditCardType](operations.md#creditcardtype) | required | Credit card types. |
+| `Key` | string [CreditCardType](operations.md#creditcardtype) | required | Credit card type. |
 | `Value` | number | required | Amount of the surcharge fee itself. |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
