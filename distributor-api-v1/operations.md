@@ -31,16 +31,13 @@ Preferred initial call used to obtain all static data about distributor configur
         {
             "Id": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
             "ImageId": "e956201e-ba2f-470f-8070-b43f9cd72194",
-            "Name": { 
-                "ru-RU": "Амстердам", 
+            "Name": {
+                "ru-RU": "Амстердам",
                 "en-US": "Amsterdam"
             },
         },
     ],
     "CityId": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
-    "RequiredFields": [
-        "Telephone"
-    ],
     "Configurations": [
         {
             "AdultCount": null,
@@ -51,56 +48,56 @@ Preferred initial call used to obtain all static data about distributor configur
             "DisplayRateComparision": null,
             "DisplaySpecialRequests": null,
             "Enterprise": {
-                "AcceptedCurrencyCodes":["EUR"],
-                "AdditionalLegalStatements":[],
+                "AcceptedCurrencyCodes": ["EUR"],
+                "AdditionalLegalStatements": [],
                 "Address": {
-                    "City":"Zeist",
-                    "CountryCode":"NL",
-                    "Latitude":52.0749748,
-                    "Line1":"Arnhemse Bovenweg 31",
-                    "Line2":"",
-                    "Longitude":5.2590181,
-                    "PostalCode":"3708 AA"
+                    "City": "Zeist",
+                    "CountryCode": "NL",
+                    "Latitude": 52.0749748,
+                    "Line1": "Arnhemse Bovenweg 31",
+                    "Line2": "",
+                    "Longitude": 5.2590181,
+                    "PostalCode": "3708 AA"
                 },
-                "Categories":[
+                "Categories": [
                     {
                         "Description": {
-                            "en-US":"Our Single Castleroom is a cozy and comfortable room with a single bed (80x200), spacious bathroom with guest supplies, working desk and a flat screen TV. This quiet non-smoking room of 15m2 has a nice view of the Castle and of course there is free high speed Wi-Fi.\r\n"
+                            "en-US": "Our Single Castleroom is a cozy and comfortable room with a single bed (80x200), spacious bathroom with guest supplies, working desk and a flat screen TV. This quiet non-smoking room of 15m2 has a nice view of the Castle and of course there is free high speed Wi-Fi.\r\n"
                         },
-                        "ExtraBedCount":0,
-                        "Id":"295d96e7-8501-4cbd-b78d-8bf590bf6db9",
-                        "ImageIds":["f987a97c-5049-44ca-9933-5b657e5263e2"],
-                        "Name": {"en-US":"Single Castleroom"},
-                        "NormalBedCount":1,
-                        "SpaceType":"Room"
+                        "ExtraBedCount": 0,
+                        "Id": "295d96e7-8501-4cbd-b78d-8bf590bf6db9",
+                        "ImageIds": ["f987a97c-5049-44ca-9933-5b657e5263e2"],
+                        "Name": {"en-US": "Single Castleroom"},
+                        "NormalBedCount": 1,
+                        "SpaceType": "Room"
                     }
                 ],
-                "CityId":"39db0c2f-6929-47ec-9386-0abdaaef4c9c",
-                "DefaultCurrencyCode":"EUR",
-                "DefaultLanguageCode":"nl-NL",
-                "DefaultRateCurrencyCode":"EUR",
-                "Description":{"nl-NL":""},
-                "Email":"info@kasteelkerckebosch.com",
-                "IanaTimeZoneIdentifier":"Europe\/Berlin",
-                "Id":"7a13590c-6538-461e-b02f-6357400de493",
-                "ImageId":"263c3e5f-e11d-41d8-9746-4bdd0852f04f",
-                "IntroImageId":"f24469f8-c23b-4450-a1f8-3ecd39904e99",
-                "Name":{
+                "CityId": "39db0c2f-6929-47ec-9386-0abdaaef4c9c",
+                "DefaultCurrencyCode": "EUR",
+                "DefaultLanguageCode": "nl-NL",
+                "DefaultRateCurrencyCode": "EUR",
+                "Description": {"nl-NL": ""},
+                "Email": "info@kasteelkerckebosch.com",
+                "IanaTimeZoneIdentifier": "Europe\/Berlin",
+                "Id": "7a13590c-6538-461e-b02f-6357400de493",
+                "ImageId": "263c3e5f-e11d-41d8-9746-4bdd0852f04f",
+                "IntroImageId": "f24469f8-c23b-4450-a1f8-3ecd39904e99",
+                "Name": {
                     "en-US": "Sample Hotel Description"
                 },
-                "Products":[
+                "Products": [
                     {
-                        "AlwaysIncluded":false,
-                        "CategoryId":null,
-                        "Charging":"Once",
-                        "Posting":"Once",
+                        "AlwaysIncluded": false,
+                        "CategoryId": null,
+                        "Charging": "Once",
+                        "Posting": "Once",
                         "Description": {
                             "en-US": "Continental breakfast served in the morning."
                         },
                         "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
                         "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "IncludedByDefault":false,
-                        "Ordering":0,
+                        "IncludedByDefault": false,
+                        "Ordering": 0,
                         "Name": {
                             "en-US": "Breakfast"
                         },
@@ -125,11 +122,11 @@ Preferred initial call used to obtain all static data about distributor configur
                                     }
                                 ]
                             }
-                        }
-                        "RelativePrice":null
+                        },
+                        "RelativePrice": null
                     }
                 ],
-                "Telephone":"030 6926666",
+                "Telephone": "030 6926666",
                 "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
             },
             "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
@@ -141,7 +138,7 @@ Preferred initial call used to obtain all static data about distributor configur
     "CurrencyCodes": [],
     "EndDateOffset": null,
     "GtmContainerId": "",
-    "IntroVideoUrl: "",
+    "IntroVideoUrl": "",
     "LanguageCode": null,
     "NowUtc": "",
     "PrimaryColor": "",
@@ -156,7 +153,6 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by hotel. |
 | `CityId` | string | required | ID of default city. |
-| `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Fields that are set up as required in distributor configuration. |
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | Configurations matching the configuration IDs in request. |
 | `CurrencyCode` | string | optional | Code of default currency accepted by hotel. |
 | `Currencies` | array of [Currency](operations.md#currency) | required | Currencies accepted by hotel. |
@@ -169,10 +165,6 @@ Preferred initial call used to obtain all static data about distributor configur
 | `StartDateOffset` | string | optional | TBC |
 | `Theme` | string | optional | TBC |
 | `VoucherCode` | string | optional | TBC |
-
-#### RequiredField
-
-* `Telephone`
 
 ## Get Hotel Info   <a id="get-hotel-info"></a>
 
@@ -301,7 +293,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
                         }
                     ]
                 }
-            }
+            },
             "RelativePrice": null,
             "Charging": "Once",
             "Posting": "Once",
@@ -348,7 +340,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `Languages` | array of [Language](operations.md#language) | required | Languages supported by the hotel. |
 | `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the hotel. |
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the hotel. |
-| `PaymentGateway` | one of [PaymentGateway ](operations.md#payment-gateway)types | optional | Info about payment gateway used by the hotel. |
+| `PaymentGateway` | one of [PaymentGateway](operations.md#payment-gateway) types | optional | Info about payment gateway used by the hotel. |
 | `Products` | array of [Product](operations.md#product) | required | All products orderable with rooms. |
 | `RoomCategories` | array of [RoomCategory](operations.md#roomcategory) | required | All room categories offered by hotel. |
 | `TermsAndConditionsUrl` | string | optional | URL of hotel’s terms and conditions. |
@@ -404,15 +396,34 @@ TBC
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
-#### Payment Gateway   <a id="payment-gateway"></a>
+#### PaymentGateway   <a id="payment-gateway"></a>
 
 If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayType` | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\). |
+| `PaymentCardStorageType` | string [PaymentCardStorageType](operations.md#paymentcardstoragetype) | required | Type of the payment card storage used by enterprise. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
-| `SupportedCreditCardTypes` | array of string | required | The list of supported credit cards, should be used to enhance UX. |
+| `SupportedCreditCardTypes` | string [CreditCardType](operations.md#creditcardtype) | required | The list of supported payment cards, should be used to enhance UX. |
+| `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
+| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO format. |
+
+#### PaymentCardStorageType
+
+* Adyen
+* Stripe
+* PciProxy
+
+#### CreditCardType
+
+* MasterCard
+* Visa
+* Amex
+* Discover
+* DinersClub
+* Jcb
+* Maestro
+* ...
 
 #### Product   <a id="product"></a>
 
@@ -425,7 +436,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
-| `Amounts` | array of [Amount](operations.md##amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Amounts` | array of [Amount](operations.md#amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -752,14 +763,14 @@ Gives a pricing information for the given configuration.
 | :--- | :--- | :--- | :--- |
 | `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
 
-## Get Payment Gateway   <a id="create-reservation-group"></a>
+## Get Payment Configuration   <a id="get-payment-configuration"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/payments/getPaymentGateway`   <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
+### Request `[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration`   <a id="request-getpaymentconfiguration"></a>
 
 ```javascript
 {
-    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Client": "My Client 1.0.0",
+    "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Session": "...",
     "LanguageCode": "en-GB",
     "CultureCode": "en-GB"
@@ -768,34 +779,56 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `HotelId` | string | required | Unique identifier of hotel |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization) |
-| `Session` | number | required | Session number |
-| `LanguageCode` | string | required | Language code |
-| `CultureCode` | string | required | Culture Code |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `HotelId` | string | required | Unique identifier of hotel. |
+| `Session` | number | required | Session number. |
+| `LanguageCode` | string | required | Language code. |
+| `CultureCode` | string | required | Culture Code. |
 
-### Response   <a id="response-5"></a>
+### Response  <a id="response-getpaymentconfiguration"></a>
 
 ```javascript
 {
-    {
-        "PaymentGatewayType": "Adyen",
-        "IsMerchant": false,
+    "PaymentGateway": {
+        "PaymentGatewayType": "PciProxy",
+        "PaymentCardStorageType": "PciProxy",
+        "IsMerchant": true,
         "SupportedCreditCardTypes": [
             "MasterCard",
             "Visa"
         ],
-        "PublicKey": "..."
+        "PublicKey": "1100116614",
+        "DefaultCurrencyCode": "EUR"
+    },
+    "SurchargeConfiguration": {
+        "SurchargeServiceId": "74d5eb0a-784a-4870-b34a-ab6500a1136e",
+        "SurchargeFees": {
+            "MasterCard": 0.02,
+            "Visa": 0.01,
+            "Amex": 0.0125
+        }
     }
 }
 ```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| PaymentGatewayType | string | required | Type of the payment gateway \(`Adyen`, `Stripe` or `PciProxy`\) |
-| IsMerchant | boolean | required | Whether the gateway is processed through Mews Merchant or not |
-| SupportedCreditCardTypes | array of strings | required | The list of supported credit cards, should be used to enhance UX |
-| PublicKey | string | required | A key used by the payment gateway's client side library for authentication |
+| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
+| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
+
+#### SurchargeConfiguration <a id="surcharge-configuration"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `SurchargeServiceId` | string | optional | Unique identifier of surcharge service. |
+| `SurchargeFees` | [SurchargeFees](operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
+
+#### SurchargeFees
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Key` | string [CreditCardType](operations.md#creditcardtype) | required | Credit card types. |
+| `Value` | number | required | Amount of the surcharge fee itself. |
 
 ## Create Reservation Group   <a id="create-reservation-group"></a>
 
