@@ -915,7 +915,7 @@ Gives a pricing information for the given configuration.
 | `FirstName` | string | required | First name of the booker. |
 | `LastName` | string | required | Last name of the booker. |
 | `Telephone` | string | optional | Telephone number of the booker. |
-| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmail` in [Customer](operations.md#customer) should either not have one, `false` or be set to `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
+| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmail` in [Customer](operations.md#customer) should either not have one, be set to `false` or `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
 
 #### ReservationData   <a id="reservationdata"></a>
 
