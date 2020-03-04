@@ -868,13 +868,14 @@ Gives a pricing information for the given configuration.
         "PostalCode": "",
         "StateCode": "",
         "NationalityCode": "",
-        "SendMarketingEmails": true
+        "SendMarketingEmails": false
     },
     "Booker": {
         "Email": "john.doe@snow.com",
         "FirstName": "John",
         "LastName": "Doe",
-        "Telephone": "654257001458"
+        "Telephone": "654257001458",
+        "SendMarketingEmails": true
     },
     "Reservations": [
         {
@@ -909,7 +910,7 @@ Gives a pricing information for the given configuration.
 | `Reservations` | array of [ReservationData](operations.md#reservationdata) | required | Parameters of reservations to be ordered. |
 | `CreditCardData` | [CreditCardData](operations.md#creditcarddata) | optional | Credit card data, required if hotel has payment gateway. |
 
-#### Customer   <a id="customer"></a>
+#### Customer
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -923,9 +924,9 @@ Gives a pricing information for the given configuration.
 | `PostalCode` | string | optional | Postal code of the address. |
 | `StateCode` | string | optional | ISO 3166-2 code of the state, e.g.`US-AL`. |
 | `NationalityCode` | string | optional | ISO 3166-1 Aplha-2 code of the customer’s nation country, e.g.`US`. |
-| `SendMarketingEmail` | boolean | optional | Subscribe to marketing emails |
+| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booker is present, this should be `false` or `null` because customer is not subscribing - the Booker is. |
 
-#### Booker   <a id="booker"></a>
+#### Booker
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -933,6 +934,7 @@ Gives a pricing information for the given configuration.
 | `FirstName` | string | required | First name of the booker. |
 | `LastName` | string | required | Last name of the booker. |
 | `Telephone` | string | optional | Telephone number of the booker. |
+| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmails` in [Customer](operations.md#customer) should either not have one, be set to `false` or `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
 
 #### ReservationData   <a id="reservationdata"></a>
 
