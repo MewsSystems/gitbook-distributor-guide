@@ -1,10 +1,14 @@
 # Changelog
 
+## 04.03.2020
+
+* Added SendMarketingEmail field to Booker.
+
 ## 03.03.2020
 
-* Added enums for RateGroups section and some minor improvements [PR](https://github.com/MewsSystems/gitbook-distributor-guide/pull/30).
+* Added enums for RateGroups section and some minor improvements.
 
 ## 26.02.2020
 
 * Added documentation for `hotels/getPaymentConfiguration`.
-* Deleted old/legacy `payments/getPaymentGateway` [PR](https://github.com/MewsSystems/gitbook-distributor-guide/pull/24).
+* Deleted old/legacy `payments/getPaymentGateway`.
