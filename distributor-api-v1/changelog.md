@@ -2,7 +2,7 @@
 
 ## 18.03.2020
 
-* Added `close()` FE api description 
+* Added `close()` FE api description.
 
 ## 04.03.2020
 
