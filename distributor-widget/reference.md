@@ -40,7 +40,11 @@ Beware that API is slightly different in the\_Single\_and the\_Chain\_modes. The
 
 #### open\(\) <a id="open"></a>
 
-Opens Distributor in it’s overlay.
+Opens Distributor in its overlay.
+
+#### close\(\) <a id="close"></a>
+
+Closes Distributor and its overlay. Even though Distributor is closed, it still responds to API calls.
 
 #### setLanguageCode\(languageCode\) <a id="setlanguagecodelanguagecode"></a>
 
