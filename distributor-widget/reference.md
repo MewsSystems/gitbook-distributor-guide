@@ -104,6 +104,14 @@ distributor.setEndDate("2019-12-18")
 
 Sets a new voucher code value.
 
+#### disableTracking\(\)
+
+Sets all [TrackingConsents](integrations.md#trackingconsents) to false.
+
+#### enableTracking\(\)
+
+Sets all [TrackingConsents](integrations.md#trackingconsents) to true.
+
 ### Only Single mode API calls <a id="only-single-mode-api-calls"></a>
 
 #### showRooms\(\) <a id="showrooms"></a>
