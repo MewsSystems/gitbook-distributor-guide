@@ -126,10 +126,10 @@ Some events expose additional data layer variables. They are described separatel
 
 | | Property | Type | Purpose |
 | :--- | :--- | :--- | :--- |
-| `advertising` | boolean | required | Advertising, e.g. used to help advertisers deliver more relevant advertising or to limit how many times you see an ad. |
-| `functional` | boolean | required | Unnecessary functionality, e.g. remembering user choices made in the past. |
-| `necessary` | boolean | required | Necessary functionality. |
-| `performance` | boolean | required | Performance, e.g. collecting information about how user uses a website, data are anonymized. |
+| advertising | boolean | required | Advertising, e.g. used to help advertisers deliver more relevant advertising or to limit how many times you see an ad. |
+| functional | boolean | required | Unnecessary functionality, e.g. remembering user choices made in the past. |
+| necessary | boolean | required | Necessary functionality. |
+| performance | boolean | required | Performance, e.g. collecting information about how user uses a website, data are anonymized. |
 
 #### distributorLoaded   <a id="distributorloaded"></a>
 
