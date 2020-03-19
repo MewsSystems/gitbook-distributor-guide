@@ -122,7 +122,7 @@ If a hotel is selected, information about it is also added to the event. \(Note:
 
 Some events expose additional data layer variables. They are described separately for each event.
 
-##### TrackingConsents <a id="trackingconsents"></a>
+##### TrackingConsents
 
 | | Property | Type | Purpose |
 | :--- | :--- | :--- | :--- |
@@ -155,7 +155,7 @@ Distributor was opened.
 
 Distributor was closed.
 
-#### distributorTrackingConsentsSet <a id="distributortrackingconsentsset"></a>
+#### distributorTrackingConsentsSet
 
 [TrackingConsents](integrations.md#trackingconsents) were set.
 
