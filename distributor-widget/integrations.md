@@ -131,6 +131,8 @@ Some events expose additional data layer variables. They are described separatel
 | necessary | boolean | required | Necessary functionality. |
 | performance | boolean | required | Performance, e.g. collecting information about how user uses a website, data are anonymized. |
 
+---
+
 #### distributorLoaded   <a id="distributorloaded"></a>
 
 The Distributor application was initialized \(triggers once per session even with a Merchant redirect\).
