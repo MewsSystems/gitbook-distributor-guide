@@ -122,7 +122,7 @@ If a hotel is selected, information about it is also added to the event. \(Note:
 
 Some events expose additional data layer variables. They are described separately for each event.
 
-##### TrackingConsents   <a id="trackingconsents"></a>
+#### TrackingConsents
 
 | | Property | Type | Purpose |
 | :--- | :--- | :--- | :--- |
@@ -130,6 +130,8 @@ Some events expose additional data layer variables. They are described separatel
 | functional | boolean | required | Unnecessary functionality, e.g. remembering user choices made in the past. |
 | necessary | boolean | required | Necessary functionality. |
 | performance | boolean | required | Performance, e.g. collecting information about how user uses a website, data are anonymized. |
+
+---
 
 #### distributorLoaded   <a id="distributorloaded"></a>
 
