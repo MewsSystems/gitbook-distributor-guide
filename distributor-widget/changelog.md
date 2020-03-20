@@ -1,5 +1,5 @@
 # Changelog
 
-## 18.03.2020
+## 20.03.2020
 
 * Added tracking consents integration.
