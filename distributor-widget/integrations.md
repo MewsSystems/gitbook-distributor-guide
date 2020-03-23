@@ -86,16 +86,16 @@ Commonly used integration which often needs a tracking consent is Universal Anal
 
 Let's see how you can fire Universal Analytics tag only when [TrackingConsents](integrations.md#trackingconsents) permit it.
 
-0. Set up Universal Analytics in Google Tag Manager:
+0\. Set up Universal Analytics in Google Tag Manager:
 * See previous section about [Universal Analytics](integrations.md#universal-analytics).
 
-1. Let Distributor know what the tracking consents should be:
+1\. Let Distributor know what the tracking consents should be:
 * Call Distributor api methods [enableTracking](reference.md#enableTracking) or [disableTracking](reference.md#disableTracking) when the Distributor widget starts.
 * Calling the api methods at the start guarantees all events have the correct consents.
 * Don't rely on defaults since they can be changed in the future. Defaults are there only for backwards compatibility.
 * You can also call mentioned api calls again later e.g. after user agrees with tracking in your cookie banner.
 
-2. Create data layer variable for performance tracking consent:
+2\. Create data layer variable for performance tracking consent:
 * Open Google Tag Manager.
 * Go to Variables section.
 * Click New.
@@ -104,7 +104,7 @@ Let's see how you can fire Universal Analytics tag only when [TrackingConsents](
 * Set the Data Layer Variable Name to `trackingConsents.performance`.
 * Click Save.
 
-3. Create trigger for all distributor events where performance consent is given/true:
+3\. Create trigger for all distributor events where performance consent is given/true:
 * Go to Triggers.
 * Click New.
 * Name the trigger - e.g. "All Distributor events with performance consent".
@@ -115,7 +115,7 @@ Let's see how you can fire Universal Analytics tag only when [TrackingConsents](
 * Select condition `performanceConsent equals true`.
 * Click Save.
 
-4. Use created trigger to fire Universal Analytics tag:
+4\. Use created trigger to fire Universal Analytics tag:
 * Go to Tags.
 * Click Universal Analytics tag.
 * Click inside Triggering section.
@@ -123,7 +123,9 @@ Let's see how you can fire Universal Analytics tag only when [TrackingConsents](
 * Add trigger "All Distributor events with performance consent".
 * Click Save.
 
-5. All is set up now. So either Preview or Submit your changes. From now on, Universal Analytics will fire only when the performance consent is given.
+5\. All is set up now. 
+* Preview or Submit your changes. 
+* From now on, Universal Analytics will fire only when the performance consent is given.
 
 ### Troubleshooting   <a id="troubleshooting"></a>
 
