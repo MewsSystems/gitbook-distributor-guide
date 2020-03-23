@@ -78,6 +78,53 @@ Be sure to also enable Enhanced Ecommerce in you Google Analytics under Admin &g
 
 When you have Mews Merchant set up, a payment by a customer is legally required to happen on our domain. Therefore, all the transactions during a checkout are attributed to Mews domain. This is an unfortunate limitation of the checkout process that we cannot currently overcome.
 
+### Using tracking consents to conditionally track users using Universal Analytics
+
+To be compliant with privacy laws and regulations, Distributor adds [TrackingConsents](integrations.md#trackingconsents) data layer variable to each event.
+
+Based on this information you can use Google Tag Manager integrations only when permitted.
+
+What do you need to do to fire Universal Analytics tag only when [TrackingConsents](integrations.md#trackingconsents) permit it?
+
+0. Set up Universal Analytics in Google Tag Manager:
+* See previous section [Universal Analytics](#integrations.md#universal-analytics).
+
+1. Let Distributor know what the tracking consents should be:
+* Call Distributor api methods [enableTracking](reference.md#enableTracking) or [disableTracking](reference.md#disableTracking) when the Distributor widget starts.
+* Calling the api methods at the start guarantees all events have the correct consents.
+* Don't rely on defaults since they can be changed in the future. Defaults are there only for backwards compatibility.
+* You can also call mentioned api calls later e.g. when user agrees to tracking in your cookie banner.
+
+2. Create data layer variable for performance tracking consent:
+* Open Google Tag Manager.
+* Go to Variables section.
+* Click New.
+* Name the variable - e.g. performanceConsent.
+* Select Variable type to be Data Layer Variable.
+* Set the Data Layer Variable Name to `trackingConsents.performance`.
+* Click Save.
+
+3. Create trigger for all distributor events where performance consent is given/true:
+* Go to Triggers.
+* Click New.
+* Name the trigger - e.g. "All Distributor events with performance consent".
+* Select trigger type Custom Event.
+* Inside Event name add `^distributor`.
+* Tick Use regex matching.
+* Select Some Custom Events.
+* Select condition `performanceConsent equals true`.
+* Click Save.
+
+4. Use created trigger to fire Universal Analytics tag:
+* Go to Tags.
+* Click Universal Analytics tag.
+* Click inside Triggering section.
+* Remove previous trigger/s for distributor events if there are any.
+* Add trigger "All Distributor events with performance consent".
+* Click Save.
+
+5. All is set up now. So either Preview or Submit your changes. From now on, Universal Analytics will fire only when the performance consent is given.
+
 ### Troubleshooting   <a id="troubleshooting"></a>
 
 #### There are no events or ecommerce transactions tracked after a redirect to the Mews Merchant page   <a id="there-are-no-events-or-ecommerce-transactions-tracked-after-a-redirect-to-the-mews-merchant-page"></a>
