@@ -90,7 +90,7 @@ Let's see how you can fire Universal Analytics tag only when [TrackingConsents](
 * See previous section about [Universal Analytics](integrations.md#universal-analytics).
 
 2\. Let Distributor know what the tracking consents should be:
-* Call Distributor API methods [enableTracking](reference.md#enableTracking) or [disableTracking](reference.md#disableTracking) when the Distributor widget starts.
+* Call Distributor API methods [enableTracking](reference.md#enabletracking) or [disableTracking](reference.md#disabletracking) when the Distributor widget starts.
 * Calling the API methods at the start guarantees all events have the correct consents.
 * Don't rely on defaults since they can be changed in the future. Defaults are there only for backwards compatibility.
 * You can also call mentioned API calls again later, e.g. after user agrees with tracking in your cookie banner.
