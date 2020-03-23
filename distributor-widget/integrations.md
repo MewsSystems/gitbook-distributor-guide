@@ -78,22 +78,22 @@ Be sure to also enable Enhanced Ecommerce in you Google Analytics under Admin &g
 
 When you have Mews Merchant set up, a payment by a customer is legally required to happen on our domain. Therefore, all the transactions during a checkout are attributed to Mews domain. This is an unfortunate limitation of the checkout process that we cannot currently overcome.
 
-### Using tracking consents to conditionally track users using Universal Analytics
+### Conditionally firing tags based on tracking consents
 
-To be compliant with privacy laws and regulations, Distributor adds [TrackingConsents](integrations.md#trackingconsents) data layer variable to each event.
+Google Tag Manager integrations are very often used to track users, be it with cookies or other approaches. You can use [TrackingConsents](integrations.md#trackingconsents) and Google Tag Manager to use integrations only when permitted.
 
-Based on this information you can use Google Tag Manager integrations only when permitted.
+Commonly used integration which often needs a tracking consent is Universal Analytics.
 
-What do you need to do to fire Universal Analytics tag only when [TrackingConsents](integrations.md#trackingconsents) permit it?
+Let's see how you can fire Universal Analytics tag only when [TrackingConsents](integrations.md#trackingconsents) permit it.
 
 0. Set up Universal Analytics in Google Tag Manager:
-* See previous section [Universal Analytics](#integrations.md#universal-analytics).
+* See previous section about [Universal Analytics](integrations.md#universal-analytics).
 
 1. Let Distributor know what the tracking consents should be:
 * Call Distributor api methods [enableTracking](reference.md#enableTracking) or [disableTracking](reference.md#disableTracking) when the Distributor widget starts.
 * Calling the api methods at the start guarantees all events have the correct consents.
 * Don't rely on defaults since they can be changed in the future. Defaults are there only for backwards compatibility.
-* You can also call mentioned api calls later e.g. when user agrees to tracking in your cookie banner.
+* You can also call mentioned api calls again later e.g. after user agrees with tracking in your cookie banner.
 
 2. Create data layer variable for performance tracking consent:
 * Open Google Tag Manager.
