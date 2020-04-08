@@ -158,9 +158,9 @@ Preferred initial call used to obtain all static data about distributor configur
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `NowUtc` | string | required | UTC Time in ISO format when configuration was asked for. |
-| `LanguageCode` | string | required | Language code used for Distributor. |
-| `CurrencyCode` | string | required | Currency code used for Distributor. |
+| `NowUtc` | string | required | UTC Time when configuration was asked for in ISO format. |
+| `LanguageCode` | string | required | Language code in ISO format used for Distributor. |
+| `CurrencyCode` | string | required | Currency code in ISO format used for Distributor. |
 | `IntroVideoUrl` | string | required | Url to intro video for Distributor. |
 | `Theme` | [Theme](operations.md#theme) | required | Distributor's theme. |
 | `PrimaryColor` | string | required | Distributor's primary color in Hex format.  |
@@ -195,15 +195,15 @@ Preferred initial call used to obtain all static data about distributor configur
 | `AdultCount` | number | optional | Default number of adults. |
 | `ChildCount` | number | optional | Default number of children. |
 | `DisplaySpecialRequests` | boolean | optional | Information whether enterprise wants to include a field for guests to add special requests to their reservation when filled in. |
-| `DisplayRateComparison` | boolean | optional | Information whether enterprise wants to rate comparison. |
+| `DisplayRateComparison` | boolean | optional | Information whether enterprise wants to display rate comparison. |
 | `ChildSelectionEnabled` | boolean | optional | Information whether enterprise wants to include an option to add children to reservations (true by default). |
-| `DisplayAvailability` | boolean | optional | Information whether enterprise wants to show /property's availability next to maximum occupancy in each space category (availability will be shown by default). |
-| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Information how does enterprise want to handle payment cards. |
+| `DisplayAvailability` | boolean | optional | Information whether enterprise wants to show property's availability next to maximum occupancy in each space category (availability will be shown by default). |
+| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Information about how does enterprise want to handle payment cards. |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Fields that are set up as required in distributor configuration. |
 | `OnlineTravelAgencies` | array of string | required | List of travel agencies enterprise wants to include in comparison banner. |
 | `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. (for example, `20% online booking discount` or `Breakfast included`). |
 | `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices (listed in the rate comparison banner if `DisplayRateComparison` is set to `true`) will be shown, compared to enterprise's Best Available Rate (BAR). For example, if enterprise's BAR costs 50, and entered here is "100", their rate will be shown as 50. If here is entered "110", their rate will be shown as 55 (as here is added a 10% markup). |
-| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise that this `Configuration` belongs to. |
+| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise that the `Configuration` belongs to. |
 
 #### PaymentCardInput
 
@@ -238,7 +238,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `TaxEnvironmentCode` | string | required | Tax environment code. |
 | `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method that enterprise uses. |
 | `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | List of active room categories of the enterprise. |
-| `Products` | array of [Product](operations.md#product) | required | List of active products that can be offered to the customer. |
+| `Products` | array of [Product](operations.md#product) | required | List of active products which can be offered to the customer. |
 | `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
 
 #### Address
