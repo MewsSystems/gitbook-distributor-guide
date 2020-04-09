@@ -40,6 +40,7 @@ Preferred initial call used to obtain all static data about distributor configur
     "CityId": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
     "Configurations": [
         {
+            "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
             "AdultCount": null,
             "ChildCount": null,
             "ChildSelectionEnabled": null,
@@ -48,7 +49,6 @@ Preferred initial call used to obtain all static data about distributor configur
             "DisplayRateComparision": null,
             "DisplaySpecialRequests": null,
             "Enterprise": {
-                "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
                 "AcceptedCurrencyCodes": ["EUR"],
                 "AdditionalLegalStatements": [],
                 "Address": {
