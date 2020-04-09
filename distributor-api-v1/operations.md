@@ -33,8 +33,8 @@ Preferred initial call used to obtain all static data about distributor configur
             "ImageId": "e956201e-ba2f-470f-8070-b43f9cd72194",
             "Name": {
                 "en-US": "Amsterdam"
-            },
-        },
+            }
+        }
     ],
     "CityId": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
     "Configurations": [
@@ -53,9 +53,9 @@ Preferred initial call used to obtain all static data about distributor configur
             "DisplaySpecialRequests": null,
             "Enterprise": {
                 "AcceptedCurrencyCodes": ["EUR"],
-                "AdditionalLegalStatements": [
+                "AdditionalLegalStatements": {
                     "en-US": "Lorem ipsum."
-                ],
+                },
                 "Address": {
                     "City": "Zeist",
                     "CountryCode": "NL",
@@ -94,7 +94,7 @@ Preferred initial call used to obtain all static data about distributor configur
                 },
                 "Pricing": "Gross",
                 "PrivacyPolicyUrl": {
-                    "en-US": "https://localhost/en",
+                    "en-US": "https://localhost/en"
                 },
                 "Products": [
                     {
@@ -140,13 +140,13 @@ Preferred initial call used to obtain all static data about distributor configur
                 "TaxEnvironmentCode": "NL",
                 "Telephone": "030 6926666",
                 "TermsAndConditionsUrl": {
-                    "en-US": "https://website.com/terms-and-conditions.html",
+                    "en-US": "https://website.com/terms-and-conditions.html"
                 }
             },
             "OnlineTravelAgencies": [],
             "PaymentCardInput": "NotRequested",
             "RequiredFields": ["Telephone"],
-            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
+            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee"
         }
     ],
     "CurrencyCode": null,
@@ -160,7 +160,7 @@ Preferred initial call used to obtain all static data about distributor configur
     "PrimaryColor": "",
     "StartDateOffset": null,
     "Theme": null,
-    "VoucherCode": "",
+    "VoucherCode": ""
 }
 ```
 
