@@ -48,6 +48,7 @@ Preferred initial call used to obtain all static data about distributor configur
             "DisplayRateComparision": null,
             "DisplaySpecialRequests": null,
             "Enterprise": {
+                "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
                 "AcceptedCurrencyCodes": ["EUR"],
                 "AdditionalLegalStatements": [],
                 "Address": {
@@ -129,20 +130,20 @@ Preferred initial call used to obtain all static data about distributor configur
                 "Telephone": "030 6926666",
                 "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
             },
-            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
-            "PaymentCardInput": "NotRequested",
-            "RequiredFields": ["Telephone"],
             "CompetitorRateDescription": {
                     "en-US": "Comptetitor Rate Description"
                 },
             "CompetitorPriceRelativeAdjustment": "110",
-            "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
+            "PaymentCardInput": "NotRequested",
+            "RequiredFields": ["Telephone"],
+            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
             "OnlineTravelAgencies": [],
             "PaymentGatewayEnabled": false,
         }
     ],
     "CurrencyCode": null,
     "CurrencyCodes": [],
+    "DisplayVoucherCode": null,
     "EndDateOffset": null,
     "GtmContainerId": "",
     "IntroVideoUrl": "",
@@ -152,15 +153,14 @@ Preferred initial call used to obtain all static data about distributor configur
     "StartDateOffset": null,
     "Theme": null,
     "VoucherCode": null,
-    "DisplayVoucherCode": null,
 }
 ```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by enterprise. |
-| `CityId` | string | required | ID of the default city. |
-| `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the [Configuration] IDs in request. |
+| `CityId` | string | required | Unique identifier of the default city. |
+| `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the [Configuration] Unique identifiers in request. |
 | `CurrencyCode` | string | required | Currency code in ISO format which Distributor should use. |
 | `DisplayVoucherCode` | boolean | optional | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
 | `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
