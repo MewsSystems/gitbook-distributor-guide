@@ -40,7 +40,6 @@ Preferred initial call used to obtain all static data about distributor configur
     "Configurations": [
         {
             "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
-            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
             "AdultCount": null,
             "ChildCount": null,
             "ChildSelectionEnabled": null,
@@ -138,27 +137,31 @@ Preferred initial call used to obtain all static data about distributor configur
                         "RelativePrice": null
                     }
                 ],
+                "TaxEnvironmentCode": "NL",
                 "Telephone": "030 6926666",
-                "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
+                "TermsAndConditionsUrl": {
+                    "en-US": "https://www.google.ca",
+                }
             },
-            "PaymentCardInput": "NotRequested",
-            "RequiredFields": ["Telephone"],
             "OnlineTravelAgencies": [],
+            "PaymentCardInput": "NotRequested",
             "PaymentGatewayEnabled": false,
+            "RequiredFields": ["Telephone"],
+            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
         }
     ],
     "CurrencyCode": null,
     "CurrencyCodes": [],
-    "DisplayVoucherCode": null,
+    "DisplayVoucherCode": false,
     "EndDateOffset": null,
     "GtmContainerId": "",
     "IntroVideoUrl": "",
     "LanguageCode": null,
-    "NowUtc": "",
+    "NowUtc": "2020-04-09T07:18:48Z",
     "PrimaryColor": "",
     "StartDateOffset": null,
-    "Theme": null,
-    "VoucherCode": null,
+    "Theme": "Dark",
+    "VoucherCode": "",
 }
 ```
 
@@ -167,10 +170,11 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by enterprise. |
 | `CityId` | string | required | Unique identifier of the default city. |
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the [Configuration] Unique identifiers in request. |
-| `CurrencyCode` | string | required | Currency code in ISO format which Distributor should use. |
+| `CurrencyCode` | string | optional | Currency code in ISO format which Distributor should use. |
+| `CurrencyCodes` | string | optional | List currency codes in ISO format which ???. |
 | `DisplayVoucherCode` | boolean | optional | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
 | `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
-| `GtmContainerId` | string | optional | Google tag manager identifier. |
+| `GtmContainerId` | string | required | Google tag manager identifier. |
 | `IntroVideoUrl` | string | required | Distributor intro video URL. |
 | `LanguageCode` | string | required | Language code in ISO format which Distributor should use. |
 | `NowUtc` | string | required | Server UTC time of when configuration was requested in ISO format. |
