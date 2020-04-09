@@ -145,7 +145,7 @@ Preferred initial call used to obtain all static data about distributor configur
             },
             "OnlineTravelAgencies": [],
             "PaymentCardInput": "NotRequested",
-            "RequiredFields": ["Telephone"],
+            "RequiredFields": [],
             "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee"
         }
     ],
