@@ -194,7 +194,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the city. |
 | `ImageId` | string | optional | Unique identifier of the city image. |
-| `Name` | string | required | Name of the city. |
+| `Name` | string | [LocalizedText](operations.md#localizedtext) | City name. |
 
 #### Configuration
 
@@ -211,7 +211,8 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
 | `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise that the `Configuration` belongs to. |
 | `OnlineTravelAgencies` | array of string | required | List of travel agencies to include in comparison banner. |
-| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines to handle payment cards. |
+| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
+| `PaymentGatewayEnabled` | boolean | required | Determines ??? |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 
