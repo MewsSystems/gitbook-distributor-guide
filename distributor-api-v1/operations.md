@@ -175,7 +175,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `GtmContainerId` | string | optional | Google Tag Manager identifier. |
 | `IntroVideoUrl` | string | optional | Distributor intro video URL. |
 | `LanguageCode` | string | optional | Language code in ISO format which Distributor should use. |
-| `NowUtc` | string | required | Server UTC time of when configuration was requested in ISO format. |
+| `NowUtc` | string | required | Server UTC time of when configuration was requested. In ISO format. |
 | `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
 | `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
 | `Theme` | [Theme](operations.md#theme) | optional | Distributor's theme variant. |
@@ -207,7 +207,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories (availability will be shown by default). |
 | `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
-| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise that the `Configuration` belongs to. |
+| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
 | `OnlineTravelAgencies` | array of string | required | List of travel agencies to include in comparison banner. |
 | `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
@@ -231,7 +231,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `AcceptedCurrencyCodes` | array of string | required | List of currency codes accepted by the enterprise. |
 | `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
 | `Address` | [Address](operation.md#address) | required | Address of the enterprise. |
-| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | List of enterprise active room categories. |
+| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | List of active room categories of the enterprise. |
 | `CityId` | string | required | Unique identifier of the city. |
 | `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO format. |
 | `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
@@ -243,7 +243,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `IntroImageId` | string | optional | Unique identifier of the enterprise intro image. |
 | `Name` | [LocalizedText](operations.md#localizedtext) | required | Enterprise name. |
 | `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method used by the enterprise. |
-| `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise Privacy policy URL. |
+| `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise privacy policy URL. |
 | `Products` | array of [Product](operations.md#product) | required | List of active products which can be offered to the customer. |
 | `TaxEnvironmentCode` | string | required | Tax environment code. |
 | `Telephone` | string | required | Telephone of the enterprise. |
@@ -599,7 +599,7 @@ An object where name corresponds to ISO code and value represents a structure th
 
 ## Validate Voucher   <a id="validate-voucher"></a>
 
-Can be used to deterimne whether a voucher code is valid.
+Can be used to determine whether a voucher code is valid.
 
 ### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate`   <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
 
