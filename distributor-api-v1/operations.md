@@ -140,12 +140,11 @@ Preferred initial call used to obtain all static data about distributor configur
                 "TaxEnvironmentCode": "NL",
                 "Telephone": "030 6926666",
                 "TermsAndConditionsUrl": {
-                    "en-US": "https://www.google.ca",
+                    "en-US": "https://website.com/terms-and-conditions.html",
                 }
             },
             "OnlineTravelAgencies": [],
             "PaymentCardInput": "NotRequested",
-            "PaymentGatewayEnabled": false,
             "RequiredFields": ["Telephone"],
             "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
         }
