@@ -172,14 +172,14 @@ Preferred initial call used to obtain all static data about distributor configur
 | `CurrencyCode` | string | optional | Currency code in ISO format which Distributor should use. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
 | `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
-| `GtmContainerId` | string | required | Google tag manager identifier. |
-| `IntroVideoUrl` | string | required | Distributor intro video URL. |
+| `GtmContainerId` | string | optional | Google tag manager identifier. |
+| `IntroVideoUrl` | string | optional | Distributor intro video URL. |
 | `LanguageCode` | string | optional | Language code in ISO format which Distributor should use. |
 | `NowUtc` | string | required | Server UTC time of when configuration was requested in ISO format. |
-| `PrimaryColor` | string | required | Distributor's primary color in Hex format. |
+| `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
 | `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
 | `Theme` | [Theme](operations.md#theme) | optional | Distributor's theme variant. |
-| `VoucherCode` | string | required | Voucher code which enables special rate offerings. |
+| `VoucherCode` | string | optional | Voucher code which enables special rate offerings. |
 
 #### Theme
 
