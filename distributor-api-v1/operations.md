@@ -168,7 +168,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `IntroVideoUrl` | string | required | Distributor intro video URL. |
 | `LanguageCode` | string | required | Language code in ISO format which Distributor should use. |
 | `NowUtc` | string | required | Server UTC time of when configuration was requested in ISO format. |
-| `PrimaryColor` | string | required | Distributor's primary color in Hex format.  |
+| `PrimaryColor` | string | required | Distributor's primary color in Hex format. |
 | `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
 | `Theme` | [Theme](operations.md#theme) | required | Distributor's theme variant. |
 | `VoucherCode` | string | required | Voucher code which enables special rate offerings. |
