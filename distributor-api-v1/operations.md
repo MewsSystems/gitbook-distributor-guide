@@ -32,7 +32,6 @@ Preferred initial call used to obtain all static data about distributor configur
             "Id": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
             "ImageId": "e956201e-ba2f-470f-8070-b43f9cd72194",
             "Name": {
-                "ru-RU": "Амстердам",
                 "en-US": "Amsterdam"
             },
         },
@@ -41,16 +40,23 @@ Preferred initial call used to obtain all static data about distributor configur
     "Configurations": [
         {
             "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
+            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
             "AdultCount": null,
             "ChildCount": null,
             "ChildSelectionEnabled": null,
+            "CompetitorRateDescription": {
+                    "en-US": "Comptetitor Rate Description"
+                },
+            "CompetitorPriceRelativeAdjustment": "110",
             "DisplayAvailability": null,
             "DisplayPromoCode": null,
             "DisplayRateComparision": null,
             "DisplaySpecialRequests": null,
             "Enterprise": {
                 "AcceptedCurrencyCodes": ["EUR"],
-                "AdditionalLegalStatements": [],
+                "AdditionalLegalStatements": [
+                    "en-US": "Lorem ipsum."
+                ],
                 "Address": {
                     "City": "Zeist",
                     "CountryCode": "NL",
@@ -70,6 +76,7 @@ Preferred initial call used to obtain all static data about distributor configur
                         "ImageIds": ["f987a97c-5049-44ca-9933-5b657e5263e2"],
                         "Name": {"en-US": "Single Castleroom"},
                         "NormalBedCount": 1,
+                        "Ordering": 0,
                         "SpaceType": "Room"
                     }
                 ],
@@ -86,22 +93,14 @@ Preferred initial call used to obtain all static data about distributor configur
                 "Name": {
                     "en-US": "Sample Hotel Description"
                 },
+                "Pricing": "Gross",
+                "PrivacyPolicyUrl": {
+                    "en-US": "https://localhost/en",
+                },
                 "Products": [
                     {
-                        "AlwaysIncluded": false,
-                        "CategoryId": null,
-                        "Charging": "Once",
-                        "Posting": "Once",
-                        "Description": {
-                            "en-US": "Continental breakfast served in the morning."
-                        },
                         "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "IncludedByDefault": false,
-                        "Ordering": 0,
-                        "Name": {
-                            "en-US": "Breakfast"
-                        },
+                        "AlwaysIncluded": false,
                         "Amounts": {
                             "EUR": {
                                 "GrossValue": 5.00,
@@ -124,19 +123,26 @@ Preferred initial call used to obtain all static data about distributor configur
                                 ]
                             }
                         },
+                        "CategoryId": null,
+                        "Charging": "Once",
+                        "Description": {
+                            "en-US": "Continental breakfast served in the morning."
+                        },
+                        "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
+                        "IncludedByDefault": false,
+                        "Name": {
+                            "en-US": "Breakfast"
+                        },
+                        "Ordering": 0,
+                        "Posting": "Once",
                         "RelativePrice": null
                     }
                 ],
                 "Telephone": "030 6926666",
                 "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
             },
-            "CompetitorRateDescription": {
-                    "en-US": "Comptetitor Rate Description"
-                },
-            "CompetitorPriceRelativeAdjustment": "110",
             "PaymentCardInput": "NotRequested",
             "RequiredFields": ["Telephone"],
-            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
             "OnlineTravelAgencies": [],
             "PaymentGatewayEnabled": false,
         }
