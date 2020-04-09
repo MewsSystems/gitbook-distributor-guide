@@ -158,20 +158,20 @@ Preferred initial call used to obtain all static data about distributor configur
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `NowUtc` | string | required | Server UTC time of when configuration was requested in ISO format. |
-| `LanguageCode` | string | required | Language code in ISO format which Distributor should use. |
-| `CurrencyCode` | string | required | Currency code in ISO format which Distributor should use. |
-| `IntroVideoUrl` | string | required | Distributor intro video URL. |
-| `Theme` | [Theme](operations.md#theme) | required | Distributor's theme variant. |
-| `PrimaryColor` | string | required | Distributor's primary color in Hex format.  |
-| `VoucherCode` | string | required | Voucher code which enables special rate offerings. |
-| `DisplayVoucherCode` | boolean | optional | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
-| `GtmContainerId` | string | optional | Google tag manager identifier. |
-| `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
-| `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
+| `Cities` | array of [City](operations.md#city) | required | Cities supported by enterprise. |
 | `CityId` | string | required | ID of the default city. |
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the [Configuration] IDs in request. |
-| `Cities` | array of [City](operations.md#city) | required | Cities supported by enterprise. |
+| `CurrencyCode` | string | required | Currency code in ISO format which Distributor should use. |
+| `DisplayVoucherCode` | boolean | optional | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
+| `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
+| `GtmContainerId` | string | optional | Google tag manager identifier. |
+| `IntroVideoUrl` | string | required | Distributor intro video URL. |
+| `LanguageCode` | string | required | Language code in ISO format which Distributor should use. |
+| `NowUtc` | string | required | Server UTC time of when configuration was requested in ISO format. |
+| `PrimaryColor` | string | required | Distributor's primary color in Hex format.  |
+| `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
+| `Theme` | [Theme](operations.md#theme) | required | Distributor's theme variant. |
+| `VoucherCode` | string | required | Voucher code which enables special rate offerings. |
 
 #### Theme
 
@@ -191,19 +191,19 @@ Preferred initial call used to obtain all static data about distributor configur
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the configuration. |
-| `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 | `AdultCount` | number | optional | Default number of adults. |
 | `ChildCount` | number | optional | Default number of children. |
-| `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
-| `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
 | `ChildSelectionEnabled` | boolean | optional | Determines whether to allow adding children to reservations (true by default). |
+| `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices (listed in the rate comparison banner if `DisplayRateComparison` is set to `true`) will be shown, compared to enterprise's Best Available Rate (BAR). For example, if enterprise's BAR costs 50, and entered here is "100", their rate will be shown as 50. If here is entered "110", their rate will be shown as 55 (as here is added a 10% markup). |
+| `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. (for example, `20% online booking discount` or `Breakfast included`). |
 | `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories (availability will be shown by default). |
+| `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
+| `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
+| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise that the `Configuration` belongs to. |
+| `OnlineTravelAgencies` | array of string | required | List of travel agencies to include in comparison banner. |
 | `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines to handle payment cards. |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
-| `OnlineTravelAgencies` | array of string | required | List of travel agencies to include in comparison banner. |
-| `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. (for example, `20% online booking discount` or `Breakfast included`). |
-| `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices (listed in the rate comparison banner if `DisplayRateComparison` is set to `true`) will be shown, compared to enterprise's Best Available Rate (BAR). For example, if enterprise's BAR costs 50, and entered here is "100", their rate will be shown as 50. If here is entered "110", their rate will be shown as 55 (as here is added a 10% markup). |
-| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise that the `Configuration` belongs to. |
+| `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 
 #### PaymentCardInput
 
@@ -220,38 +220,38 @@ Preferred initial call used to obtain all static data about distributor configur
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the enterprise. |
-| `Name` | [LocalizedText](operations.md#localizedtext) | required | Enterprise name. |
-| `Description` | [LocalizedText](operations.md#localizedtext) | required | Enterprise description. |
+| `AcceptedCurrencyCodes` | array of string | required | List of currency codes accepted by the enterprise. |
+| `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
 | `Address` | [Address](operation.md#address) | required | Address of the enterprise. |
+| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | List of enterprise active room categories. |
 | `CityId` | string | required | Unique identifier of the city. |
+| `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO format. |
+| `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
+| `DefaultRateCurrencyCode` | string | required | Default enterprise rate currency code in ISO format. |
+| `Description` | [LocalizedText](operations.md#localizedtext) | required | Enterprise description. |
+| `Email` | string | required | Email of the enterprise. |
+| `IanaTimeZoneIdentifier` | string | required | IANA time zone identifer. |
 | `ImageId` | string | optional | Unique identifier of the enterprise logo. |
 | `IntroImageId` | string | optional | Unique identifier of the enterprise intro image. |
-| `Email` | string | required | Email of the enterprise. |
+| `Name` | [LocalizedText](operations.md#localizedtext) | required | Enterprise name. |
+| `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method used by the enterprise. |
+| `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise Privacy policy URL. |
+| `Products` | array of [Product](operations.md#product) | required | List of active products which can be offered to the customer. |
+| `TaxEnvironmentCode` | string | required | Tax environment code. |
 | `Telephone` | string | required | Telephone of the enterprise. |
 | `TermsAndConditionsUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise Terms and Conditions URL. |
-| `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise Privacy policy URL. |
-| `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
-| `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO format. |
-| `DefaultRateCurrencyCode` | string | required | Default enterprise rate currency code in ISO format. |
-| `IanaTimeZoneIdentifier` | string | required | IANA time zone identifer. |
-| `AcceptedCurrencyCodes` | array of string | required | List of currency codes accepted by the enterprise. |
-| `TaxEnvironmentCode` | string | required | Tax environment code. |
-| `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method used by the enterprise. |
-| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | List of enterprise active room categories. |
-| `Products` | array of [Product](operations.md#product) | required | List of active products which can be offered to the customer. |
-| `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
 
 #### Address
 
 | Property | Type |  | Description |
 | --- | --- | --- | --- |
-| `Line1` | string | optional | First address line. |
-| `Line2` | string | optional | Second address line. |
 | `City` | string | optional | City. |
-| `PostalCode` | string | optional | Postal code. |
 | `CountryCode` | string | optional | ISO 3166-1 code of the [Country](operations.md#country). |
 | `Latitude` | number | optional | The latitude. |
+| `Line1` | string | optional | First address line. |
+| `Line2` | string | optional | Second address line. |
 | `Longitude` | number | optional | The longitude. |
+| `PostalCode` | string | optional | Postal code. |
 
 #### Pricing
 
