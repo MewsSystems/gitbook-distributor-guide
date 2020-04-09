@@ -166,14 +166,14 @@ Preferred initial call used to obtain all static data about distributor configur
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Cities` | array of [City](operations.md#city) | required | Cities supported by enterprise. |
+| `Cities` | array of [City](operations.md#city) | required | Cities supported by the enterprise. |
 | `CityId` | string | required | Unique identifier of the default city. |
-| `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the [Configuration] unique identifiers in request. |
+| `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the unique configuration identifiers in the request. |
 | `CurrencyCode` | string | optional | Currency code in ISO format which Distributor should use. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
 | `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
 | `GtmContainerId` | string | optional | Google Tag Manager identifier. |
-| `IntroVideoUrl` | string | optional | Distributor intro video URL. |
+| `IntroVideoUrl` | string | optional | Distributor's intro video URL. |
 | `LanguageCode` | string | optional | Language code in ISO format which Distributor should use. |
 | `NowUtc` | string | required | Server UTC time of when configuration was requested. In ISO format. |
 | `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
@@ -247,7 +247,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Products` | array of [Product](operations.md#product) | required | List of active products which can be offered to the customer. |
 | `TaxEnvironmentCode` | string | required | Tax environment code. |
 | `Telephone` | string | required | Telephone of the enterprise. |
-| `TermsAndConditionsUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise Terms and Conditions URL. |
+| `TermsAndConditionsUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise terms and conditions URL. |
 
 #### Address
 
