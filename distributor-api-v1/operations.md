@@ -21,7 +21,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `PrimaryId` | string | required | Primary configuration id. |
-| `Ids` | array of strings | required | List of configuration ids. |
+| `Ids` | array of strings | required | Array of configuration ids. |
 
 ### Response   <a id="response-platformaddressapidistributorv1configuratioget"></a>
 
@@ -46,7 +46,7 @@ Preferred initial call used to obtain all static data about distributor configur
             "CompetitorRateDescription": {
                     "en-US": "Comptetitor Rate Description"
                 },
-            "CompetitorPriceRelativeAdjustment": "110",
+            "CompetitorPriceRelativeAdjustment": 1.1,
             "DisplayAvailability": null,
             "DisplayPromoCode": null,
             "DisplayRateComparision": null,
@@ -168,16 +168,16 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by the enterprise. |
 | `CityId` | string | required | Unique identifier of the default city. |
-| `Configurations` | array of [Configuration](operations.md#configuration) | required | List of [Configuration](operations.md#configuration)s matching the unique configuration identifiers in the request. |
-| `CurrencyCode` | string | optional | Currency code in ISO format which Distributor should use. |
+| `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s matching the unique configuration identifiers in the request. |
+| `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
+| `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
 | `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
 | `GtmContainerId` | string | optional | Google Tag Manager identifier. |
 | `IntroVideoUrl` | string | optional | Distributor's intro video URL. |
-| `LanguageCode` | string | optional | Language code in ISO format which Distributor should use. |
-| `NowUtc` | string | required | Server UTC time of when configuration was requested. In ISO format. |
+| `LanguageCode` | string | optional | Language code in BCP 47 which Distributor should use. |
+| `NowUtc` | string | required | Current server date and time in UTC timezone in ISO 8601 format. |
 | `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
-| `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
 | `Theme` | [Theme](operations.md#theme) | optional | Distributor's theme variant. |
 | `VoucherCode` | string | optional | Voucher code which enables special rate offerings. |
 
@@ -208,7 +208,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
 | `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
-| `OnlineTravelAgencies` | array of string | required | List of travel agencies to include in comparison banner. |
+| `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
 | `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
@@ -228,14 +228,14 @@ Preferred initial call used to obtain all static data about distributor configur
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the enterprise. |
-| `AcceptedCurrencyCodes` | array of string | required | List of currency codes accepted by the enterprise. |
+| `AcceptedCurrencyCodes` | array of string | required | Array of currency codes accepted by the enterprise. |
 | `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
 | `Address` | [Address](operation.md#address) | required | Address of the enterprise. |
-| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | List of active room categories of the enterprise. |
-| `CityId` | string | required | Unique identifier of the city. |
-| `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO format. |
+| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | Array of active room categories of the enterprise. |
+| `CityId` | string | required | Unique identifier of the [City](operations.md#city). |
+| `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO 4217 format. |
 | `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
-| `DefaultRateCurrencyCode` | string | required | Default enterprise rate currency code in ISO format. |
+| `DefaultRateCurrencyCode` | string | required | Default enterprise rate currency code in ISO 4217 format. |
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Enterprise description. |
 | `Email` | string | required | Email of the enterprise. |
 | `IanaTimeZoneIdentifier` | string | required | IANA time zone identifer. |
@@ -244,7 +244,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Name` | [LocalizedText](operations.md#localizedtext) | required | Enterprise name. |
 | `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method used by the enterprise. |
 | `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise privacy policy URL. |
-| `Products` | array of [Product](operations.md#product) | required | List of active products which can be offered to the customer. |
+| `Products` | array of [Product](operations.md#product) | required | Array of active products which can be offered to the customer. |
 | `TaxEnvironmentCode` | string | required | Tax environment code. |
 | `Telephone` | string | required | Telephone of the enterprise. |
 | `TermsAndConditionsUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise terms and conditions URL. |
@@ -256,15 +256,16 @@ Preferred initial call used to obtain all static data about distributor configur
 | `City` | string | optional | City. |
 | `CountryCode` | string | optional | ISO 3166-1 code of the [Country](operations.md#country). |
 | `Latitude` | number | optional | The latitude. |
+| `Longitude` | number | optional | The longitude. |
 | `Line1` | string | optional | First address line. |
 | `Line2` | string | optional | Second address line. |
-| `Longitude` | number | optional | The longitude. |
 | `PostalCode` | string | optional | Postal code. |
 
 #### Pricing
 
-* `Gross`
-* `Net`
+* `Gross` - The enterprise shows amount with gross prices.
+* `Net` - The enterprise shows amount with net prices.
+
 
 ## Get Hotel Info   <a id="get-hotel-info"></a>
 
@@ -471,7 +472,7 @@ TBC
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Code` | string | required | Code of the currency in the ISO format. |
+| `Code` | string | required | Code of the currency in ISO 4217 format. |
 | `Symbol` | string | required | Symbol of the currency. |
 | `ValueFormat` | string | required | Format of a currency value \(for both positive and negative values, including symbol\). |
 | `DecimalPlaces` | number | required | Number of decimal places used with the currency value. |
@@ -481,7 +482,7 @@ TBC
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Code` | string | required | Code of the language in the ISO format. |
+| `Code` | string | required | Language code in BCP 47 format. |
 | `Name` | string | required | Name of the language. |
 | `DefaultCulture` | [Culture](operations.md#culture) | required | Specifics of a default culture for the language. |
 
@@ -506,7 +507,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | array of [CreditCardType](operations.md#creditcardtype) | required | Supported payment cards, should be used to enhance UX. |
 | `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
-| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO format. |
+| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO 4217 format. |
 
 #### PaymentCardStorageType
 
