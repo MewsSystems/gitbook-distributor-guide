@@ -168,7 +168,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Cities` | array of [City](operations.md#city) | required | Cities supported by the enterprise. |
 | `CityId` | string | required | Unique identifier of the default city. |
-| `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s matching the unique configuration identifiers in the request. |
+| `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
 | `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
