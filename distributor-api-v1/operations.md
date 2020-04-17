@@ -228,7 +228,7 @@ Preferred initial call used to obtain all static data about distributor configur
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the enterprise. |
-| `AcceptedCurrencyCodes` | array of string | required | Array of currency codes accepted by the enterprise. |
+| `AcceptedCurrencyCodes` | array of string | required | Array of currency codes in ISO 4217 format accepted by the enterprise. |
 | `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
 | `Address` | [Address](operation.md#address) | required | Address of the enterprise. |
 | `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | Array of active room categories of the enterprise. |
