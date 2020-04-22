@@ -171,11 +171,11 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
-| `StartDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
-| `EndDateOffset` | string | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
+| `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
+| `EndDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
 | `GtmContainerId` | string | optional | Google Tag Manager identifier. |
 | `IntroVideoUrl` | string | optional | Distributor's intro video URL. |
-| `LanguageCode` | string | optional | Language code in BCP 47 format which Distributor should use. |
+| `LanguageCode` | string | optional | Language code which Distributor should use. |
 | `NowUtc` | string | required | Current server date and time in UTC timezone in ISO 8601 format. |
 | `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
 | `Theme` | [Theme](operations.md#theme) | optional | Distributor's theme variant. |
@@ -482,7 +482,7 @@ TBC
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Code` | string | required | Language code in BCP 47 format. |
+| `Code` | string | required | Language code. |
 | `Name` | string | required | Name of the language. |
 | `DefaultCulture` | [Culture](operations.md#culture) | required | Specifics of a default culture for the language. |
 
