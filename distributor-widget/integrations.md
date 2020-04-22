@@ -192,7 +192,7 @@ Initial values were configured. When there is no custom value, it propagates the
 | :--- | :--- |
 | startDate | Start date in ISO 8601 format YYYY-MM-DD, i.e.`2017-01-20`. |
 | endDate | End date in ISO 8601 format YYYY-MM-DD, i.e.`2017-01-22`. |
-| languageCode | Language code, i.e.`en-US`. |
+| languageCode | Language code, i.e. `en-US`. |
 | currencyCode | Currency code in ISO format, i.e`EUR` |
 | promoCode | Value of the promo code, i.e.`promo`. |
 

@@ -21,7 +21,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `PrimaryId` | string | required | Primary configuration id. |
-| `Ids` | array of strings | required | List of configuration ids. |
+| `Ids` | array of strings | required | Array of configuration ids. |
 
 ### Response   <a id="response-platformaddressapidistributorv1configuratioget"></a>
 
@@ -32,24 +32,30 @@ Preferred initial call used to obtain all static data about distributor configur
             "Id": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
             "ImageId": "e956201e-ba2f-470f-8070-b43f9cd72194",
             "Name": {
-                "ru-RU": "Амстердам",
                 "en-US": "Amsterdam"
-            },
-        },
+            }
+        }
     ],
     "CityId": "9044b0bf-cbe0-4df5-beeb-b32e19bcd073",
     "Configurations": [
         {
+            "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
             "AdultCount": null,
             "ChildCount": null,
             "ChildSelectionEnabled": null,
+            "CompetitorRateDescription": {
+                    "en-US": "Comptetitor Rate Description"
+                },
+            "CompetitorPriceRelativeAdjustment": 1.1,
             "DisplayAvailability": null,
             "DisplayPromoCode": null,
             "DisplayRateComparision": null,
             "DisplaySpecialRequests": null,
             "Enterprise": {
                 "AcceptedCurrencyCodes": ["EUR"],
-                "AdditionalLegalStatements": [],
+                "AdditionalLegalStatements": {
+                    "en-US": "Lorem ipsum."
+                },
                 "Address": {
                     "City": "Zeist",
                     "CountryCode": "NL",
@@ -69,6 +75,7 @@ Preferred initial call used to obtain all static data about distributor configur
                         "ImageIds": ["f987a97c-5049-44ca-9933-5b657e5263e2"],
                         "Name": {"en-US": "Single Castleroom"},
                         "NormalBedCount": 1,
+                        "Ordering": 0,
                         "SpaceType": "Room"
                     }
                 ],
@@ -85,22 +92,14 @@ Preferred initial call used to obtain all static data about distributor configur
                 "Name": {
                     "en-US": "Sample Hotel Description"
                 },
+                "Pricing": "Gross",
+                "PrivacyPolicyUrl": {
+                    "en-US": "https://localhost/en"
+                },
                 "Products": [
                     {
-                        "AlwaysIncluded": false,
-                        "CategoryId": null,
-                        "Charging": "Once",
-                        "Posting": "Once",
-                        "Description": {
-                            "en-US": "Continental breakfast served in the morning."
-                        },
                         "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "IncludedByDefault": false,
-                        "Ordering": 0,
-                        "Name": {
-                            "en-US": "Breakfast"
-                        },
+                        "AlwaysIncluded": false,
                         "Amounts": {
                             "EUR": {
                                 "GrossValue": 5.00,
@@ -123,48 +122,150 @@ Preferred initial call used to obtain all static data about distributor configur
                                 ]
                             }
                         },
+                        "CategoryId": null,
+                        "Charging": "Once",
+                        "Description": {
+                            "en-US": "Continental breakfast served in the morning."
+                        },
+                        "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
+                        "IncludedByDefault": false,
+                        "Name": {
+                            "en-US": "Breakfast"
+                        },
+                        "Ordering": 0,
+                        "Posting": "Once",
                         "RelativePrice": null
                     }
                 ],
+                "TaxEnvironmentCode": "NL",
                 "Telephone": "030 6926666",
-                "TermsAndConditionsUrl": "https://website.com/terms-and-conditions.html"
+                "TermsAndConditionsUrl": {
+                    "en-US": "https://website.com/terms-and-conditions.html"
+                }
             },
-            "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
             "OnlineTravelAgencies": [],
-            "PaymentGatewayEnabled": false,
+            "PaymentCardInput": "NotRequested",
+            "RequiredFields": [],
+            "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee"
         }
     ],
     "CurrencyCode": null,
     "CurrencyCodes": [],
+    "DisplayVoucherCode": false,
     "EndDateOffset": null,
     "GtmContainerId": "",
     "IntroVideoUrl": "",
     "LanguageCode": null,
-    "NowUtc": "",
+    "NowUtc": "2020-04-09T07:18:48Z",
     "PrimaryColor": "",
     "StartDateOffset": null,
     "Theme": null,
-    "VoucherCode": null,
-    "DisplayVoucherCode": null,
+    "VoucherCode": ""
 }
 ```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Cities` | array of [City](operations.md#city) | required | Cities supported by hotel. |
-| `CityId` | string | required | ID of default city. |
-| `Configurations` | array of [Configuration](operations.md#configuration) | required | Configurations matching the configuration IDs in request. |
-| `CurrencyCode` | string | optional | Code of default currency accepted by hotel. |
-| `Currencies` | array of [Currency](operations.md#currency) | required | Currencies accepted by hotel. |
-| `EndDateOffset` | string | optional | TBC |
-| `GtmContainerId` | string | optional | Google tag manager indentifier. |
-| `IntroVideoUrl` | string | optional | TBC |
-| `LanguageCode` | string | optional | Code of default language. |
-| `NowUtc` | string | required | Server UTC date and time. |
-| `PrimaryColor` | string | optional | TBC |
-| `StartDateOffset` | string | optional | TBC |
-| `Theme` | string | optional | TBC |
-| `VoucherCode` | string | optional | TBC |
+| `Cities` | array of [City](operations.md#city) | required | Cities supported by the enterprise. |
+| `CityId` | string | required | Unique identifier of the default city. |
+| `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s. |
+| `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
+| `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
+| `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
+| `EndDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
+| `GtmContainerId` | string | optional | Google Tag Manager identifier. |
+| `IntroVideoUrl` | string | optional | Distributor's intro video URL. |
+| `LanguageCode` | string | optional | Language code which Distributor should use. |
+| `NowUtc` | string | required | Current server date and time in UTC timezone in ISO 8601 format. |
+| `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
+| `Theme` | [Theme](operations.md#theme) | optional | Distributor's theme variant. |
+| `VoucherCode` | string | optional | Voucher code which enables special rate offerings. |
+
+#### Theme
+
+* `Light`
+* `Dark`
+
+#### City   
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the city. |
+| `ImageId` | string | optional | Unique identifier of the city image. |
+| `Name` | string | [LocalizedText](operations.md#localizedtext) | City name. |
+
+#### Configuration
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the configuration. |
+| `AdultCount` | number | optional | Default number of adults. |
+| `ChildCount` | number | optional | Default number of children. |
+| `ChildSelectionEnabled` | boolean | optional | Determines whether to allow adding children to reservations (true by default). |
+| `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices (listed in the rate comparison banner if `DisplayRateComparison` is set to `true`) will be shown, compared to enterprise's Best Available Rate (BAR). For example, if enterprise's BAR costs 50, and entered here is `1`, their rate will be shown as 50. If here is entered `1.1`, their rate will be shown as 55 (as here is added a 10% markup). |
+| `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. (for example, `20% online booking discount` or `Breakfast included`). |
+| `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories (availability will be shown by default). |
+| `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
+| `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
+| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
+| `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
+| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
+| `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
+| `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
+
+#### PaymentCardInput
+
+* `NotRequested` - Payment card info is not requested.
+* `Requested` - Payment card info is requested, but not validated.
+* `Required` - Payment card info is requested and validated. 
+
+#### RequiredField
+
+* `Telephone`
+
+#### Enterprise 
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the enterprise. |
+| `AcceptedCurrencyCodes` | array of string | required | Array of currency codes in ISO 4217 format accepted by the enterprise. |
+| `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
+| `Address` | [Address](operation.md#address) | required | Address of the enterprise. |
+| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | Array of active room categories of the enterprise. |
+| `CityId` | string | required | Unique identifier of the [City](operations.md#city). |
+| `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO 4217 format. |
+| `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
+| `DefaultRateCurrencyCode` | string | required | Default enterprise rate currency code in ISO 4217 format. |
+| `Description` | [LocalizedText](operations.md#localizedtext) | required | Enterprise description. |
+| `Email` | string | required | Email of the enterprise. |
+| `IanaTimeZoneIdentifier` | string | required | IANA time zone identifer. |
+| `ImageId` | string | optional | Unique identifier of the enterprise logo. |
+| `IntroImageId` | string | optional | Unique identifier of the enterprise intro image. |
+| `Name` | [LocalizedText](operations.md#localizedtext) | required | Enterprise name. |
+| `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method used by the enterprise. |
+| `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise privacy policy URL. |
+| `Products` | array of [Product](operations.md#product) | required | Array of active products which can be offered to the customer. |
+| `TaxEnvironmentCode` | string | required | Tax environment code. |
+| `Telephone` | string | required | Telephone of the enterprise. |
+| `TermsAndConditionsUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise terms and conditions URL. |
+
+#### Address
+
+| Property | Type |  | Description |
+| --- | --- | --- | --- |
+| `City` | string | optional | City. |
+| `CountryCode` | string | optional | ISO 3166-1 code of the [Country](operations.md#country). |
+| `Latitude` | number | optional | The latitude. |
+| `Longitude` | number | optional | The longitude. |
+| `Line1` | string | optional | First address line. |
+| `Line2` | string | optional | Second address line. |
+| `PostalCode` | string | optional | Postal code. |
+
+#### Pricing
+
+* `Gross` - The enterprise shows amount with gross prices.
+* `Net` - The enterprise shows amount with net prices.
+
 
 ## Get Hotel Info   <a id="get-hotel-info"></a>
 
@@ -371,7 +472,7 @@ TBC
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Code` | string | required | Code of the currency in the ISO format. |
+| `Code` | string | required | Code of the currency in ISO 4217 format. |
 | `Symbol` | string | required | Symbol of the currency. |
 | `ValueFormat` | string | required | Format of a currency value \(for both positive and negative values, including symbol\). |
 | `DecimalPlaces` | number | required | Number of decimal places used with the currency value. |
@@ -381,7 +482,7 @@ TBC
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `Code` | string | required | Code of the language in the ISO format. |
+| `Code` | string | required | Language code. |
 | `Name` | string | required | Name of the language. |
 | `DefaultCulture` | [Culture](operations.md#culture) | required | Specifics of a default culture for the language. |
 
@@ -392,7 +493,7 @@ TBC
 | `CurrencyDecimalSeparator` | string | required | Symbol used to separate decimal places in the currency value format. |
 | `CurrencyGroupSeparator` | string | required | Symbol used to separate thousands in the currency value format. |
 
-#### LocalizedText   <a id="localizedtext"></a>
+#### LocalizedText
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
@@ -406,7 +507,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
 | `SupportedCreditCardTypes` | array of [CreditCardType](operations.md#creditcardtype) | required | Supported payment cards, should be used to enhance UX. |
 | `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
-| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO format. |
+| `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO 4217 format. |
 
 #### PaymentCardStorageType
 
@@ -499,7 +600,7 @@ An object where name corresponds to ISO code and value represents a structure th
 
 ## Validate Voucher   <a id="validate-voucher"></a>
 
-Can be used to deterimne whether a voucher code is valid.
+Can be used to determine whether a voucher code is valid.
 
 ### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate`   <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
 
@@ -515,7 +616,7 @@ Can be used to deterimne whether a voucher code is valid.
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
-| `VoucherCode` | string | required | Code of voucher to validate, case sensitive. |
+| `VoucherCode` | string | required | Voucher code enabling special rate offerings. Case sensitive. |
 
 ### Response   <a id="response-1"></a>
 
@@ -739,7 +840,7 @@ Gives a pricing information for the given configuration.
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
 | `EndUtc` | string | required | End date of the reservation \(departure date\). |
-| `VoucherCode` | string | optional | A voucher code. |
+| `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `RoomCategoryId` | string | required | Identifier of the requested room category. |
 | `Occupancies` | array of [Occupancy](operations.md#occupancy) | required | Occupancies of the reservations. |
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
