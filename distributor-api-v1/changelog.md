@@ -1,5 +1,9 @@
 # Changelog
 
+## 22.04.2020
+
+* Added following sections: Configuration, Theme, City, PaymentCardInput, RequiredField, Enterprise and Address.
+
 ## 18.03.2020
 
 * Added `close()` FE api description.
