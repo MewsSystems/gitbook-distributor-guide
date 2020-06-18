@@ -75,7 +75,7 @@ Be aware that Naming of fields in PCI Proxy and Distributor API is different but
 | PaymentGatewayData   | transactionId  |
 | PublicKey            | merchantId     |
 
-### List steps to add payment cards support
+### To add payment cards support
 * Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#payment-gateway) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
 * Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle payment card data securely.
 * Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
