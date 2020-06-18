@@ -62,9 +62,9 @@ This is the relation between the human readable names and the field names which 
 | Expiration date     | Expiration            |
 | CVV                 | PaymentGatewayData    |
 
-`Expiration` and `HolderName` need no special handling. You can just get them from the user in any way you want and send them to the Distributor API as is.
+`Expiration` and `HolderName` are not sensitive data in terms of PCI DSS and plain text can be used. The expiration does need to follow a format that is described below.
 
-`PaymentGatewayData`, which is an encoded string representing card number and CVV, needs more setup. 
+`PaymentGatewayData`, represents encoded string via payment card storage provider (LINK TO THE https://github.com/MewsSystems/gitbook-distributor-guide/blob/master/distributor-api-v1/payment-gateway-data.md). Those data are sensitive in terms of PCI DSS and therefore the implementation can not handle it in a plain text. 
 
 Because of security reasons you can't just let user enter payment card data such as CVV and card number and send them to Distributor API.
 
