@@ -43,7 +43,7 @@ Some errors may also contain additional information relevant to the error on top
 
 ## How to support payment cards in custom Distributor client
 
-As part of creating your own custom Distributor client, you may want to have a form within your client where customers can enter their payment card data and send this data to Distributor API for further use. Payment card data can then be used by Mews in several ways for example for charging the customer.
+As part of creating your own custom Distributor client you may want to have a form within your client where customers can enter their payment card data and send this data to Distributor API for further use. Payment card data can then be used by Mews in several ways for example for charging the customer.
 
 To do that some Distributor API endpoints support or require [CreditCardData](operations.md#creditcarddata) (represents payment card data with name `CreditCardData` for legacy and compatibility reasons) in the request. You can visit [Operations](operations.md) to see which endpoints they are.
 
@@ -62,50 +62,26 @@ This is the relation between the human readable names and the field names which 
 | Expiration date     | Expiration            |
 | CVV                 | PaymentGatewayData    |
 
-`Expiration` and `HolderName` are not sensitive data in terms of PCI DSS and plain text can be used. The expiration does need to follow a format that is described below.
+`Expiration` and `HolderName` are not sensitive data in terms of PCI DSS and plain text can be used. The `Expiration` does need to follow the format described in [CreditCardData](operations.md#creditcarddata).
 
-`PaymentGatewayData`, represents encoded string via payment card storage provider (LINK TO THE https://github.com/MewsSystems/gitbook-distributor-guide/blob/master/distributor-api-v1/payment-gateway-data.md). Those data are sensitive in terms of PCI DSS and therefore the implementation can not handle it in a plain text. 
+[PaymentGatewayData](payment-gateway-data.md) is a string encoded through payment card storage provider. `PaymentGatewayData` are sensitive in terms of PCI DSS and therefore the implementation can not handle them in plain text. 
 
-Because of security reasons you can't just let user enter payment card data such as CVV and card number and send them to Distributor API.
+You should use PCI Proxy and its [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the card sensitive data and to obtain `PaymentGatewayData`.
 
-Instead you need to:
-* Collect and store payment card data securely with PCI Proxy.
-* Receive `transactionId` from PCI Proxy.
-* Use `transactionId` and other collected payment card data mentioned earlier to create and send [CreditCardData](operations.md#creditcarddata) to Distributor API.
-* Mews can then use [CreditCardData](operations.md#creditcarddata). For example for charging the user.
+Be aware that Naming of fields in PCI Proxy and Distributor API is different but they represent the same things:
 
-### Collecting and storing card data securely with PCI Proxy
+| Distributor API name | PCI Proxy name |
+| :-----------------   | :------------  |
+| PaymentGatewayData   | transactionId  |
+| PublicKey            | merchantId     |
 
-Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#payment-gateway) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
+### List steps to add payment cards support
+* Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#payment-gateway) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
+* Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle payment card data securely.
+* Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
 
-You can then use [PCI Proxy guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to help you set up secure fields and payment form which is going to allow secure collecting and storing of card data.
+| Name               | Used in         | Source          |
+| :----------------- | :------------   | :-----          |
+| PaymentGatewayData | Distributor API | PCI Proxy       |
+| PublicKey          | PCI Proxy       | Distributor API |
 
-In places where PCI Proxy expects `merchantId` pass the value of [PublicKey](operations.md#payment-gateway) which you can receive from [Distributor API](operations.md):
-
-| Distributor API    | PCI Proxy     |
-| :----------------- | :------------ |
-| PublicKey          | merchantId    |
-
-For example in the guide you can see that you need `merchantId` for initializing the secure fields. So use [PublicKey](operations.md#payment-gateway) in its place.
-
-You also need to obtain the `transactionId` from PCI Proxy for the next step of the guide. Please reference [PCI Proxy guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes#3-retrieve-a-transaction-id) to see how to do that.
-
-This `transactionId` is then used in places where Distributor API expects `PaymentGatewayData`.
-
-| Distributor API       | PCI Proxy        |
-| :-------------------- | :--------------- |
-| PaymentGatewayData    | transactionId    |
-
-### Preparing [CreditCardData](operations.md#creditcarddata) and sending it to Distributor API
-
-At this point you should have all the data you need for creating [CreditCardData](operations.md#creditcarddata):
-
-| Distributor API       | Where you got it                |
-| :-------------------- | :------------------------------ |
-| HolderName            | custom implementation           |
-| Expiration            | custom implementation           |
-| PaymentGatewayData    | `transactionId` from PCI Proxy  |
-
-So all you need to do is send the [CreditCardData](operations.md#creditcarddata) with other necessary data to the correct endpoint. 
-
-See [Operations](operations.md) for details which endpoints support [CreditCardData](operations.md#creditcarddata). 
