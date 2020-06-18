@@ -99,7 +99,6 @@ Preferred initial call used to obtain all static data about distributor configur
                 "Products": [
                     {
                         "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "AlwaysIncluded": false,
                         "Amounts": {
                             "EUR": {
                                 "GrossValue": 5.00,
@@ -372,7 +371,6 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
             "ImageId": "ec643f33-cd6c-4250-accd-518182165ffe",
             "IncludedByDefault": false,
-            "AlwaysIncluded": false,
             "Amounts": {
                 "EUR": {
                     "GrossValue": 5.00,
@@ -536,7 +534,6 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the product localized into all supported languages. |
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
-| `AlwaysIncluded` | boolean | required | Indicates whether the product is always included \(= cannot be removed\). |
 | `Amounts` | array of [Amount](operations.md#amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |

@@ -1,5 +1,9 @@
 # Changelog
 
+## 18.06.2020
+
+* Removed **AlwaysIncluded** field from [Product](operations.md#product).
+
 ## 22.04.2020
 
 * Added following sections: Configuration, Theme, City, PaymentCardInput, RequiredField, Enterprise and Address.
