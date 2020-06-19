@@ -66,20 +66,19 @@ This is the relation between the human readable names and the field names which 
 
 [PaymentGatewayData](payment-gateway-data.md) is a string representing some card data (CVV and card number) which are encoded via payment card storage provider. Those card data are sensitive in terms of PCI DSS and therefore the implementation should not handle them in plain text. 
 
-You should use PCI Proxy and its [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `PaymentGatewayData`.
+### To add payment cards support
 
-Be aware that names of fields in PCI Proxy and Distributor API differ but they represent the same things:
+Please be aware that names of fields in PCI Proxy and Distributor API differ but they represent the same things:
 
 | Distributor API      | PCI Proxy       |
 | :-----------------   | :------------   |
 | `PublicKey`          | `merchantId`    |
 | `PaymentGatewayData` | `transactionId` |
 
-### To add payment cards support
 * Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#paymentcardstoragetype) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
-* Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle payment card data securely.
+* Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `Paymentgatewaydata`.
 * Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
-
+ 
 | Name                 | Used in         | Source          |
 | :-----------------   | :------------   | :-----          |
 | `PublicKey`          | PCI Proxy       | Distributor API |
