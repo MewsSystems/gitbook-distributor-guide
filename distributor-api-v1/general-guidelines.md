@@ -64,7 +64,7 @@ This is the relation between the human readable names and the field names which 
 
 `Expiration` and `HolderName` are not sensitive data in terms of PCI DSS and plain text can be used. The `Expiration` does need to follow the format described in [CreditCardData](operations.md#creditcarddata).
 
-[PaymentGatewayData](payment-gateway-data.md) is a string representing card data which are encoded via payment card storage provider. Those card data are sensitive in terms of PCI DSS and therefore the implementation should not handle them in plain text. 
+[PaymentGatewayData](payment-gateway-data.md) is a string representing card data (CVV and card number) which are encoded via payment card storage provider. Those card data are sensitive in terms of PCI DSS and therefore the implementation should not handle them in plain text. 
 
 You should use PCI Proxy and its [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `PaymentGatewayData`.
 
