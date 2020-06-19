@@ -57,10 +57,10 @@ This is the relation between the human readable names and the field names which 
 
 | Human readable      | Distributor API       |
 | :------------------ | :-------------------- |
-| Card holder name    | HolderName            |
-| Card number         | PaymentGatewayData    |
-| Expiration date     | Expiration            |
-| CVV                 | PaymentGatewayData    |
+| Card holder name    | `HolderName`          |
+| Card number         | `PaymentGatewayData`  |
+| Expiration date     | `Expiration`          |
+| CVV                 | `PaymentGatewayData`  |
 
 `Expiration` and `HolderName` are not sensitive data in terms of PCI DSS and plain text can be used. The `Expiration` does need to follow the format described in [CreditCardData](operations.md#creditcarddata).
 
@@ -68,20 +68,20 @@ This is the relation between the human readable names and the field names which 
 
 You should use PCI Proxy and its [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `PaymentGatewayData`.
 
-Be aware that Naming of fields in PCI Proxy and Distributor API is different but they represent the same things:
+Be aware that names of fields in PCI Proxy and Distributor API differ but they represent the same things:
 
-| Distributor API name | PCI Proxy name |
-| :-----------------   | :------------  |
-| PaymentGatewayData   | transactionId  |
-| PublicKey            | merchantId     |
+| Distributor API      | PCI Proxy       |
+| :-----------------   | :------------   |
+| `PublicKey`          | `merchantId`    |
+| `PaymentGatewayData` | `transactionId` |
 
 ### To add payment cards support
-* Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#payment-gateway) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
+* Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#paymentcardstoragetype) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
 * Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle payment card data securely.
 * Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
 
-| Name               | Used in         | Source          |
-| :----------------- | :------------   | :-----          |
-| PaymentGatewayData | Distributor API | PCI Proxy       |
-| PublicKey          | PCI Proxy       | Distributor API |
+| Name                 | Used in         | Source          |
+| :-----------------   | :------------   | :-----          |
+| `PublicKey`          | PCI Proxy       | Distributor API |
+| `PaymentGatewayData` | Distributor API | PCI Proxy       |
 
