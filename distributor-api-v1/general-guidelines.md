@@ -47,7 +47,7 @@ As part of creating your own custom Distributor client you may want to have a fo
 
 To do that some Distributor API endpoints support or require [CreditCardData](operations.md#creditcarddata) (represents payment card data with name `CreditCardData` for legacy and compatibility reasons) in the request. You can visit [Operations](operations.md) to see which endpoints they are.
 
-To send the correct [CreditCardData](operations.md#creditcarddata) you need (check the [docs](operations.md#creditcarddata) to see which are required):
+To send the correct [CreditCardData](operations.md#creditcarddata) you need (check the [docs](operations.md#creditcarddata) to see which fields are required):
 * Card holder name
 * Card number
 * CVV
