@@ -79,8 +79,8 @@ Please be aware that names of fields in PCI Proxy and Distributor API differ but
 * Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `PaymentGatewayData`.
 * Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
  
-| Name                 | Used in         | Source          |
-| :-----------------   | :------------   | :-----          |
-| `PublicKey`          | PCI Proxy       | Distributor API |
-| `PaymentGatewayData` | Distributor API | PCI Proxy       |
+| Distributor API Field | Used in         | Source          |
+| :-----------------    | :------------   | :-----          |
+| `PublicKey`           | PCI Proxy       | Distributor API |
+| `PaymentGatewayData`  | Distributor API | PCI Proxy       |
 
