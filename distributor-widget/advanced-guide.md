@@ -93,17 +93,17 @@ In addition, Distributor in multihotel mode also supports:
 
 The deeplinks are also supported by standalone Distributor.
 
-### Payment Card Storages
+### Payment card storages
 
-Payment Card Storage is used to safely collect and store information about a customer's payment card. A configuration is done once, when the property is set up. Currently Distributor supports these payment card storages:
+Payment card storage is used to safely collect and store information about a customer's payment card. Currently Distributor supports these payment card storages:
 
 * [PCI Proxy](https://www.pci-proxy.com)
 
-### Payment Gateways
+### Payment gateways
 
 Payment gateway is used to securely handle customer payments. A configuration is done once, when the property is set up. Official Mews Distributor client can use it with minimal setup. Currently Distributor supports these payment gateways:
 
-* [Mews Merchant](https://www.mews.com/products/merchan://www.mews.com/products/merchant) 
+* [Mews Merchant](https://www.mews.com/products/merchant) 
 
 Using payment gateway is not mandatory, as reservations can be created without providing a payment card information.
 
