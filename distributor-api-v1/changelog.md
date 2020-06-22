@@ -1,5 +1,12 @@
 # Changelog
 
+## 22.06.2020
+
+* Added section describing payment card support.
+* Improved `PaymentGatewayData` description.
+* Removed deprecated payment gateways.
+* Improved `CreditCardData` description.
+
 ## 22.04.2020
 
 * Added following sections: Configuration, Theme, City, PaymentCardInput, RequiredField, Enterprise and Address.
