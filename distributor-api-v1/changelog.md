@@ -6,7 +6,7 @@
 * Improved `PaymentGatewayData` description.
 * Removed deprecated payment gateways.
 * Improved `CreditCardData` description.
-* [36](https://github.com/MewsSystems/gitbook-distributor-guide/pull/36/files)
+* [PR 36](https://github.com/MewsSystems/gitbook-distributor-guide/pull/36/files)
 
 ## 22.04.2020
 
