@@ -41,3 +41,46 @@ In case of any error, the returned JSON object describes the error and has the f
 
 Some errors may also contain additional information relevant to the error on top of this two properties. But that depends on the operation and is specificly described in the operation documentation.
 
+## How to support payment cards in custom Distributor client
+
+As part of creating your own custom Distributor client you may want to have a form within your client where customers can enter their payment card data and send this data to Distributor API for further use. Payment card data can then be used by Mews in several ways for example for charging the customer.
+
+To do that some Distributor API endpoints support or require [CreditCardData](operations.md#creditcarddata) (represents payment card data with name `CreditCardData` for legacy and compatibility reasons) in the request. You can visit [Operations](operations.md) to see which endpoints they are.
+
+To send the correct [CreditCardData](operations.md#creditcarddata) you need (check the [docs](operations.md#creditcarddata) to see which fields are required):
+* Card holder name
+* Card number
+* CVV
+* Expiration date
+
+This is the relation between the human readable names and the field names which Distributor API uses:
+
+| Human readable      | Distributor API       |
+| :------------------ | :-------------------- |
+| Card holder name    | `HolderName`          |
+| Card number         | `PaymentGatewayData`  |
+| Expiration date     | `Expiration`          |
+| CVV                 | `PaymentGatewayData`  |
+
+`Expiration` and `HolderName` are not sensitive data in terms of PCI DSS and plain text can be used. The `Expiration` does need to follow the format described in [CreditCardData](operations.md#creditcarddata).
+
+[PaymentGatewayData](payment-gateway-data.md) is a string representing some card data (CVV and card number) which are encoded via payment card storage provider. Those card data are sensitive in terms of PCI DSS and therefore the implementation should not handle them in plain text. 
+
+### To add payment cards support
+
+Please be aware that names of fields in PCI Proxy and Distributor API differ but they represent the same things:
+
+| Distributor API      | PCI Proxy       |
+| :-----------------   | :------------   |
+| `PublicKey`          | `merchantId`    |
+| `PaymentGatewayData` | `transactionId` |
+
+* Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#paymentcardstoragetype) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
+* Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `PaymentGatewayData`.
+* Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
+ 
+| Distributor API Field | Used in         | Source          |
+| :-----------------    | :------------   | :-----          |
+| `PublicKey`           | PCI Proxy       | Distributor API |
+| `PaymentGatewayData`  | Distributor API | PCI Proxy       |
+

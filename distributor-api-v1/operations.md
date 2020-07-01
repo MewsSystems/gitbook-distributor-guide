@@ -509,8 +509,6 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 #### PaymentCardStorageType
 
-* Adyen
-* Stripe
 * PciProxy
 
 #### CreditCardType
@@ -992,8 +990,8 @@ Gives a pricing information for the given configuration.
     ],
     "CreditCardData": {
         "PaymentGatewayData": "...",
-        "ObfuscatedCreditCardNumber": "411111******1111",
-        "Expiration": "2020-10"
+        "Expiration": "2030-10"
+        "HolderName": "John Smith",
     }
 }
 ```
@@ -1052,9 +1050,9 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayData` | string | required | Encoded credit card data obtained from the payment gateway specific library. More details [here](payment-gateway-data.md). |
-| `ObfuscatedCreditCardNumber` | string | required | Obfuscated credit card number, e.g.`411111******1111`. |
-| `Expiration` | string | required | Expiration of credit card in format `YYYY-MM`. Required with PCI Proxy payment gateway type. |
+| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. More details [here](payment-gateway-data.md). |
+| `Expiration` | string | required | Expiration of payment card in format `YYYY-MM`. |
+| `HolderName` | string | required | Card holder name. |
 
 ### Response   <a id="response-6"></a>
 

@@ -1,8 +1,7 @@
 # Payment Gateway Data
 
-To obtain`PaymentGatewayData`, you have to use client side encryption library provided by given payment gateway. You can find them here:
+`PaymentGatewayData` is an encoded representation of card number and CVV which is used to provide payment card data to Distributor API.
 
-* [Adyen](https://github.com/Adyen/CSE-JS)
-* [Stripe](https://stripe.com/docs/stripe.js)
-* [PCI Proxy](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes)
+You can use a combination of [PCI Proxy client side encryption library](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) and your own custom implementation of Distributor client to obtain in.
 
+You can then use it to [add payment cards support to custom Distributor client](general-guidelines.md#howtosupportpaymentcardsincustomdistributorclient).

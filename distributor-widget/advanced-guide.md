@@ -93,19 +93,19 @@ In addition, Distributor in multihotel mode also supports:
 
 The deeplinks are also supported by standalone Distributor.
 
-### Payment Gateways  <a id="payment-gateways"></a>
+### Payment card storages
 
-Payment gateway is used to safely collect information about a customer’s credit card. A configuration is done once, when the hotel is set up. Distributor would use it automatically. Currently Distributor supports these gateways:
+Payment card storage is used to safely collect and store information about a customer's payment card. Currently Distributor supports these payment card storages:
 
-* [Braintree](https://www.braintreepayments.com/)
-* [Adyen](https://www.adyen.com/home)
-* Mews Merchant
+* [PCI Proxy](https://www.pci-proxy.com)
 
-Using payment gateway is not mandatory, as reservations can be created without providing a credit card information.
+### Payment gateways
 
-**Important:** PCI Security Standard requires you to use **SSL Certificate** on your website to be allowed to collect any payments info. This happens when using Braintree or Adyen gateways.
+Payment gateway is used to securely handle customer payments. A configuration is done once, when the property is set up. Official Mews Distributor client can use it with minimal setup. Currently Distributor supports these payment gateways:
 
-#### Mews Merchant  <a id="mews-merchant"></a>
+* [Mews Merchant](https://www.mews.com/products/merchant) 
 
-When using the Mews Merchant gateway integration in Distributor on your website, a customer will be redirected to a mirroring Distributor hosted at [https://wwww.mews.li/](https://wwww.mews.li/) just before entering their payment details. This is a requirement when using Mews Merchant. When closing the Distributor, the customer will be redirected back to your website
+Using payment gateway is not mandatory, as reservations can be created without providing a payment card information.
+
+**Important:** PCI Security Standard requires you to use **SSL Certificate** on your website to be allowed to collect any payments info.
 
