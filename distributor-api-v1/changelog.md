@@ -8,6 +8,10 @@
 * Improved `CreditCardData` description.
 * [PR 36](https://github.com/MewsSystems/gitbook-distributor-guide/pull/36/files)
 
+## 18.06.2020
+
+* Removed `AlwaysIncluded` field from [Product](operations.md#product) ([37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
+
 ## 22.04.2020
 
 * Added following sections: Configuration, Theme, City, PaymentCardInput, RequiredField, Enterprise and Address.
