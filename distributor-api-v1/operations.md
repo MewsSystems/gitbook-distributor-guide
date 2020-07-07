@@ -19,6 +19,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `PrimaryId` | string | required | Primary configuration id. |
 | `Ids` | array of strings | required | Array of configuration ids. |
 
@@ -281,6 +282,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response   <a id="response"></a>
@@ -610,6 +612,7 @@ Can be used to determine whether a voucher code is valid.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `VoucherCode` | string | required | Voucher code enabling special rate offerings. Case sensitive. |
 
@@ -651,6 +654,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Reservation end date \(departure date\) in ISO 8601 format. |
@@ -830,6 +834,7 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
 | `EndUtc` | string | required | End date of the reservation \(departure date\). |
@@ -888,6 +893,7 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
 ### Response  <a id="response-getpaymentconfiguration"></a>
@@ -989,6 +995,7 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `ConfigurationId` | string | optional | Unique identifier of the used Distributor configuration. If not specified, the configuration id which is set as property/hotel default will be used. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](operations.md#customer) | required | Information about customer who creates the order. |
@@ -1125,6 +1132,7 @@ In case of an error caused by insufficient availability \(which might have decre
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
 
