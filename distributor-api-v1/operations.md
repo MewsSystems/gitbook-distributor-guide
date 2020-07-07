@@ -206,7 +206,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories (availability will be shown by default). |
 | `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
-| `Enterprise` | [Enterprise](operation.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
+| `Enterprise` | [Enterprise](operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
 | `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
 | `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
@@ -222,14 +222,14 @@ Preferred initial call used to obtain all static data about distributor configur
 
 * `Telephone`
 
-#### Enterprise 
+#### Enterprise
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the enterprise. |
 | `AcceptedCurrencyCodes` | array of string | required | Array of currency codes in ISO 4217 format accepted by the enterprise. |
 | `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
-| `Address` | [Address](operation.md#address) | required | Address of the enterprise. |
+| `Address` | [Address](operations.md#address) | required | Address of the enterprise. |
 | `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | Array of active room categories of the enterprise. |
 | `CityId` | string | required | Unique identifier of the [City](operations.md#city). |
 | `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO 4217 format. |
