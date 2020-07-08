@@ -19,6 +19,23 @@ The API accepts only`HTTP POST`requests with`Content-Type`set to`application/jso
 * **Operation**
   * Name of the operation to be performed.
 
+### Body <a id="body"></a>
+```javascript
+{
+    "Client": "My Client 1.0.0",
+    "LanguageCode": null,
+    "CultureCode": null 
+}
+```
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Client` | string | required | Identification of the client as described in [Authorization](authorization.md). |
+| `LanguageCode` | string | optional | Code of the language. |
+| `CultureCode` | string | optional | Code of the culture. |
+
+All operations of the API require Client to be present in the request.
+All operations of the API optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce language and culture of the operation which affects e.g. names of entities, descriptions or error messages. Both of these values must be defined together otherwise default values of the [Enterprise](operations.md#enterprise) are used.
+
 ## Responses  <a id="responses"></a>
 
 The API responds with`Content-Type`set to`application/json`and JSON content. In case of success, the HTTP status code is 200 and the content contains result according to the call. In case of error, there are multiple HTTP status codes for different types of errors:
