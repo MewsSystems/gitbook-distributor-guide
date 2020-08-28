@@ -1,5 +1,9 @@
 # Changelog
 
+## 28.08.2020
+
+* Added `CurrencyCode` parameter to [GetAvailability](operations.md#get-availability) endpoint
+
 ## 22.06.2020
 
 * Added section describing payment card support.
@@ -10,7 +14,7 @@
 
 ## 18.06.2020
 
-* Removed `AlwaysIncluded` field from [Product](operations.md#product) ([37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
+* Removed `AlwaysIncluded` field from [Product](operations.md#product) \([37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)\). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
 
 ## 22.04.2020
 
@@ -32,3 +36,4 @@
 
 * Added documentation for `hotels/getPaymentConfiguration`.
 * Deleted old/legacy `payments/getPaymentGateway`.
+

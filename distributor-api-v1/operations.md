@@ -1,10 +1,10 @@
 # Operations
 
-## Get Configuration Info   <a id="get-configuration-info"></a>
+## Get Configuration Info <a id="get-configuration-info"></a>
 
 Preferred initial call used to obtain all static data about distributor configuration for the client.
 
-### Request`[PlatformAddress]/api/distributor/v1/configuration/get`   <a id="request-platformaddressapidistributorv1hotelsget"></a>
+### Request`[PlatformAddress]/api/distributor/v1/configuration/get` <a id="request-platformaddressapidistributorv1hotelsget"></a>
 
 ```javascript
 {
@@ -23,7 +23,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `PrimaryId` | string | required | Primary configuration id. |
 | `Ids` | array of strings | required | Array of configuration ids. |
 
-### Response   <a id="response-platformaddressapidistributorv1configuratioget"></a>
+### Response <a id="response-platformaddressapidistributorv1configuratioget"></a>
 
 ```javascript
 {
@@ -169,9 +169,9 @@ Preferred initial call used to obtain all static data about distributor configur
 | `CityId` | string | required | Unique identifier of the default city. |
 | `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
-| `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor (voucher codes are listed by default). |
-| `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th). If left blank, the default will be 0. |
-| `EndDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  (for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd). If left blank, the default will be `4`. |
+| `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor \(voucher codes are listed by default\). |
+| `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th\). If left blank, the default will be 0. |
+| `EndDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default end date in the date picker  \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default end date will be the 3rd\). If left blank, the default will be `4`. |
 | `GtmContainerId` | string | optional | Google Tag Manager identifier. |
 | `IntroVideoUrl` | string | optional | Distributor's intro video URL. |
 | `LanguageCode` | string | optional | Language code which Distributor should use. |
@@ -185,7 +185,7 @@ Preferred initial call used to obtain all static data about distributor configur
 * `Light`
 * `Dark`
 
-#### City   
+#### City
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -200,10 +200,10 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Id` | string | required | Unique identifier of the configuration. |
 | `AdultCount` | number | optional | Default number of adults. |
 | `ChildCount` | number | optional | Default number of children. |
-| `ChildSelectionEnabled` | boolean | optional | Determines whether to allow adding children to reservations (true by default). |
-| `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices (listed in the rate comparison banner if `DisplayRateComparison` is set to `true`) will be shown, compared to enterprise's Best Available Rate (BAR). For example, if enterprise's BAR costs 50, and entered here is `1`, their rate will be shown as 50. If here is entered `1.1`, their rate will be shown as 55 (as here is added a 10% markup). |
-| `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. (for example, `20% online booking discount` or `Breakfast included`). |
-| `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories (availability will be shown by default). |
+| `ChildSelectionEnabled` | boolean | optional | Determines whether to allow adding children to reservations \(true by default\). |
+| `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices \(listed in the rate comparison banner if `DisplayRateComparison` is set to `true`\) will be shown, compared to enterprise's Best Available Rate \(BAR\). For example, if enterprise's BAR costs 50, and entered here is `1`, their rate will be shown as 50. If here is entered `1.1`, their rate will be shown as 55 \(as here is added a 10% markup\). |
+| `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. \(for example, `20% online booking discount` or `Breakfast included`\). |
+| `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories \(availability will be shown by default\). |
 | `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
 | `Enterprise` | [Enterprise](operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
@@ -251,7 +251,7 @@ Preferred initial call used to obtain all static data about distributor configur
 #### Address
 
 | Property | Type |  | Description |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | `City` | string | optional | City. |
 | `CountryCode` | string | optional | ISO 3166-1 code of the [Country](operations.md#country). |
 | `Latitude` | number | optional | The latitude. |
@@ -265,12 +265,11 @@ Preferred initial call used to obtain all static data about distributor configur
 * `Gross` - The enterprise shows amount with gross prices.
 * `Net` - The enterprise shows amount with net prices.
 
-
-## Get Hotel Info   <a id="get-hotel-info"></a>
+## Get Hotel Info <a id="get-hotel-info"></a>
 
 Alternative initial call used to obtain all static data about hotel relevant for the client.
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/get`   <a id="request-platformaddressapidistributorv1hotelsget"></a>
+### Request`[PlatformAddress]/api/distributor/v1/hotels/get` <a id="request-platformaddressapidistributorv1hotelsget"></a>
 
 ```javascript
 {
@@ -284,7 +283,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response   <a id="response"></a>
+### Response <a id="response"></a>
 
 ```javascript
 {
@@ -445,9 +444,9 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `TermsAndConditionsUrl` | string | optional | URL of hotel’s terms and conditions. |
 | `ImageBaseUrl` | string | required | Base URL of images. |
 
-### API Response entites   <a id="entities"></a>
+### API Response entites <a id="entities"></a>
 
-#### City   <a id="city"></a>
+#### City <a id="city"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -455,18 +454,18 @@ Alternative initial call used to obtain all static data about hotel relevant for
 | `ImageId` | string | optional | Identifier of image assigned to city. |
 | `Name` | string | required | Name of the city. |
 
-#### Configuration   <a id="configuration"></a>
+#### Configuration <a id="configuration"></a>
 
 TBC
 
-#### Country   <a id="country"></a>
+#### Country <a id="country"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Code` | string | required | ISO 3166-1 Aplha-2 code of the country. |
 | `Name` | string | required | Name of the country. |
 
-#### Currency   <a id="currency"></a>
+#### Currency <a id="currency"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -476,7 +475,7 @@ TBC
 | `DecimalPlaces` | number | required | Number of decimal places used with the currency value. |
 | `SymbolIsBehindValue` | boolean | required | Indicates whether the symbol stands behind a value in standard formatting. |
 
-#### Language   <a id="language"></a>
+#### Language <a id="language"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -484,7 +483,7 @@ TBC
 | `Name` | string | required | Name of the language. |
 | `DefaultCulture` | [Culture](operations.md#culture) | required | Specifics of a default culture for the language. |
 
-#### Culture   <a id="culture"></a>
+#### Culture <a id="culture"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -495,7 +494,7 @@ TBC
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
-#### PaymentGateway   <a id="payment-gateway"></a>
+#### PaymentGateway <a id="payment-gateway"></a>
 
 If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
 
@@ -522,7 +521,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * Maestro
 * ...
 
-#### Product   <a id="product"></a>
+#### Product <a id="product"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -570,7 +569,7 @@ An object where name corresponds to ISO code and value represents a structure th
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| `GrossValue` | Number | An amount without taxes  |
+| `GrossValue` | Number | An amount without taxes |
 | `NetValue` | Number | A net price + taxes |
 | `TaxValues` | Collection of [TaxValue](operations.md#taxvalue)s | Tax values for the net value amount |
 
@@ -581,7 +580,7 @@ An object where name corresponds to ISO code and value represents a structure th
 | `TaxRateCode` | string | Unique identifier of the rate. |
 | `Value` | Number | Amount of tax |
 
-#### RoomCategory   <a id="roomcategory"></a>
+#### RoomCategory <a id="roomcategory"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -593,11 +592,11 @@ An object where name corresponds to ISO code and value represents a structure th
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
 | `SpaceType` | string | required | Type of the room category - “Room” or “Bed”. |
 
-## Validate Voucher   <a id="validate-voucher"></a>
+## Validate Voucher <a id="validate-voucher"></a>
 
 Can be used to determine whether a voucher code is valid.
 
-### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate`   <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
+### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate` <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
 
 ```javascript
 {
@@ -613,7 +612,7 @@ Can be used to determine whether a voucher code is valid.
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `VoucherCode` | string | required | Voucher code enabling special rate offerings. Case sensitive. |
 
-### Response   <a id="response-1"></a>
+### Response <a id="response-1"></a>
 
 ```javascript
 {
@@ -625,11 +624,11 @@ Can be used to determine whether a voucher code is valid.
 | :--- | :--- | :--- | :--- |
 | `IsValid` | boolean | required | Indicates whether the voucher code is valid. |
 
-## Get Availability   <a id="get-availability"></a>
+## Get Availability <a id="get-availability"></a>
 
 Gives availabilities and pricings for given date interval with product prices included for each room category. Categorized by applicable rates and person counts from 1 to full room. If room category is not available, it is left out from response.
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/getAvailability`   <a id="request-platformaddressapidistributorv1hotelsgetavailability"></a>
+### Request`[PlatformAddress]/api/distributor/v1/hotels/getAvailability` <a id="request-platformaddressapidistributorv1hotelsgetavailability"></a>
 
 ```javascript
 {
@@ -640,6 +639,7 @@ Gives availabilities and pricings for given date interval with product prices in
     "ProductIds": [
         "d0e88da5-ae64-411c-b773-60ed68954f64"
     ],
+    "CurrencyCode": "EUR",
     "VoucherCode": "Discount2042",
     "AdultCount": 2,
     "ChildCount": 0,
@@ -656,12 +656,13 @@ Gives availabilities and pricings for given date interval with product prices in
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Reservation end date \(departure date\) in ISO 8601 format. |
 | `ProductIds` | array of string | optional | Ids of products which should be included into pricing calculations. |
+| `CurrencyCode` | string | optional | ISO 4217 code of the currency. If specified the prices in response will contain only single currency based on the code provided. |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support given values, nearest applicable are found. |
 | `ChildCount` | number | optional | Requested number of children. |
 | `CategoryIds` | array of string | optional | Ids of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 
-### Response   <a id="response-2"></a>
+### Response <a id="response-2"></a>
 
 ```javascript
 {
@@ -733,17 +734,17 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Rates` | array of [Rate](operations.md#rate) | required | Information about all available rates. |
 | `RoomCategoryAvailabilites` | array of [RoomCategoryAvailability](operations.md#roomcategoryavailability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
 
-#### RateGroup   <a id="rategroup"></a>
+#### RateGroup <a id="rategroup"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the rate. |
 | `SettlementType` | string [SettlementType](operations.md#settlementtype) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
 | `SettlementAction` | string [SettlementAction](operations.md#settlementaction) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
-| `SettlementTrigger` | string [SettlementTrigger](operations.md#settlementtrigger) | required | Moment when amount is automatically charged, with offset applying to this time (for example, a 'Creation' trigger with no offset will charge the amount when items are created). If settlement is manual, a task will be created at this moment. |
-| `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger (for example, '-1 day' will charge the amount 1 day before). |
-| `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically (for example, a `1.0` settlement value will charge the full cost of extent included below). Value is charged at the time of settlement trigger plus time difference from offset. |
-| `SettlementMaximumNights` | number | optional | Maximum number of nights that will be charged automatically (only applies to automatic settlements). The rest will be charged manually. |
+| `SettlementTrigger` | string [SettlementTrigger](operations.md#settlementtrigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
+| `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger \(for example, '-1 day' will charge the amount 1 day before\). |
+| `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. |
+| `SettlementMaximumNights` | number | optional | Maximum number of nights that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
 
 #### SettlementType
 
@@ -763,7 +764,7 @@ Gives availabilities and pricings for given date interval with product prices in
 * `StartDate`
 * `EndDate`
 
-#### Rate   <a id="rate"></a>
+#### Rate <a id="rate"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -772,7 +773,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the rate localized into all supported languages. |
 | `IsPrivate` | boolean | required | Set to `true` for promotion rate enabled by provided `VoucherCode` |
 
-#### RoomCategoryAvailability   <a id="roomcategoryavailability"></a>
+#### RoomCategoryAvailability <a id="roomcategoryavailability"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -780,7 +781,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `RoomOccupancyAvailabilities` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Availabilities of rooms in the category by the room occupancy. |
 | `AvailableRoomCount` | number | required | Number of available rooms from the room category. |
 
-#### RoomOccupancyAvailability   <a id="roomoccupancyavailability"></a>
+#### RoomOccupancyAvailability <a id="roomoccupancyavailability"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -788,7 +789,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `ChildCount` | number | required | Number of childs for the associated pricing. |
 | `Pricing` | array of [Pricing](operations.md#pricing) | required | Pricing information. |
 
-#### Pricing   <a id="pricing"></a>
+#### Pricing <a id="pricing"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -796,18 +797,18 @@ Gives availabilities and pricings for given date interval with product prices in
 | `Price` | [RoomPrice](operations.md#roomprice) | required | Price of the room. |
 | `MaxPrice` | [RoomPrice](operations.md#roomprice) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
 
-#### RoomPrice   <a id="roomprice"></a>
+#### RoomPrice <a id="roomprice"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the room for whole reservation. |
 | `AverageAmountPerNight` | [Amount](operations.md#amount) | required | Average amount per night. |
 
-## Get Reservations Pricing   <a id="get-reservations-pricing"></a>
+## Get Reservations Pricing <a id="get-reservations-pricing"></a>
 
 Gives a pricing information for the given configuration.
 
-### Request`[PlatformAddress]/api/distributor/v1/reservations/getPricing`   <a id="request-platformaddressapidistributorv1reservationsgetpricing"></a>
+### Request`[PlatformAddress]/api/distributor/v1/reservations/getPricing` <a id="request-platformaddressapidistributorv1reservationsgetpricing"></a>
 
 ```javascript
 {
@@ -840,14 +841,14 @@ Gives a pricing information for the given configuration.
 | `Occupancies` | array of [Occupancy](operations.md#occupancy) | required | Occupancies of the reservations. |
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 
-#### Occupancy   <a id="occupancy"></a>
+#### Occupancy <a id="occupancy"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
 
-### Response   <a id="response-3"></a>
+### Response <a id="response-3"></a>
 
 ```javascript
 {
@@ -877,9 +878,9 @@ Gives a pricing information for the given configuration.
 | :--- | :--- | :--- | :--- |
 | `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
 
-## Get Payment Configuration   <a id="get-payment-configuration"></a>
+## Get Payment Configuration <a id="get-payment-configuration"></a>
 
-### Request `[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration`   <a id="request-getpaymentconfiguration"></a>
+### Request `[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration` <a id="request-getpaymentconfiguration"></a>
 
 ```javascript
 {
@@ -893,7 +894,7 @@ Gives a pricing information for the given configuration.
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response  <a id="response-getpaymentconfiguration"></a>
+### Response <a id="response-getpaymentconfiguration"></a>
 
 ```javascript
 {
@@ -938,9 +939,9 @@ Gives a pricing information for the given configuration.
 | `Key` | string [CreditCardType](operations.md#creditcardtype) | required | Credit card type. |
 | `Value` | number | required | Amount of the surcharge fee itself. |
 
-## Create Reservation Group   <a id="create-reservation-group"></a>
+## Create Reservation Group <a id="create-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/create`   <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
+### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/create` <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
 
 ```javascript
 {
@@ -1026,7 +1027,7 @@ Gives a pricing information for the given configuration.
 | `Telephone` | string | optional | Telephone number of the booker. |
 | `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmails` in [Customer](operations.md#customer) should either not have one, be set to `false` or `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
 
-#### ReservationData   <a id="reservationdata"></a>
+#### ReservationData <a id="reservationdata"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -1040,7 +1041,7 @@ Gives a pricing information for the given configuration.
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `Notes` | string | optional | Additional notes. |
 
-#### CreditCardData   <a id="creditcarddata"></a>
+#### CreditCardData <a id="creditcarddata"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -1048,7 +1049,7 @@ Gives a pricing information for the given configuration.
 | `Expiration` | string | required | Expiration of payment card in format `YYYY-MM`. |
 | `HolderName` | string | required | Card holder name. |
 
-### Response   <a id="response-6"></a>
+### Response <a id="response-6"></a>
 
 ```javascript
 {
@@ -1091,7 +1092,7 @@ Gives a pricing information for the given configuration.
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
 | `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the whole group. |
 
-### Reservation   <a id="reservation"></a>
+### Reservation <a id="reservation"></a>
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
@@ -1107,7 +1108,7 @@ Gives a pricing information for the given configuration.
 | `Notes` | string | optional | Additional notes. |
 | `Amount` | [Amount](operations.md#amount) | required | Total amount of the reservation. |
 
-### Error Response   <a id="error-response"></a>
+### Error Response <a id="error-response"></a>
 
 In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top the standard ones:
 
@@ -1115,9 +1116,9 @@ In case of an error caused by insufficient availability \(which might have decre
 | :--- | :--- | :--- | :--- |
 | `ExceedingReservationIndexes` | array of number | optional | Indexes of reservations from the request that are not available anymore. |
 
-## Get Reservation Group   <a id="get-reservation-group"></a>
+## Get Reservation Group <a id="get-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/get`   <a id="request-platformaddressapidistributorv1reservationgroupsget"></a>
+### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/get` <a id="request-platformaddressapidistributorv1reservationgroupsget"></a>
 
 ```javascript
 {
@@ -1133,6 +1134,7 @@ In case of an error caused by insufficient availability \(which might have decre
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
 
-### Response   <a id="response-7"></a>
+### Response <a id="response-7"></a>
 
 Same as in [Create Reservation Group](operations.md#create-reservation-group).
+
