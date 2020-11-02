@@ -94,6 +94,7 @@ Please be aware that names of fields in PCI Proxy and Distributor API differ but
 
 * Confirm that property supports PCI Proxy by checking the field [PaymentCardStorageType](operations.md#paymentcardstoragetype) in Distributor API response. Also read docs about [PaymentGateway](operations.md#payment-gateway) to see what other API data you could potentially use for your implemention.
 * Use [PublicKey](operations.md#payment-gateway) as `merchantId` and PCI Proxy with their [guide](https://docs.pci-proxy.com/collect-and-store-cards/capture-iframes) to handle the sensitive card data and to obtain `PaymentGatewayData`.
+* PCI Proxy documentation only highlights the sandbox endpoints. If you want to have access to the production endpoint, you have too omit the `sandbox.` part from the address. For example `https://pay.sandbox.datatrans.com/upp/payment/js/secure-fields-2.0.0.min.js` then becomes `https://pay.datatrans.com/upp/payment/js/secure-fields-2.0.0.min.js` .
 * Use `transactionId` from PCI Proxy as `PaymentGatewayData` inside [CreditCardData](operations.md#creditcarddata). 
  
 | Distributor API Field | Used in         | Source          |
