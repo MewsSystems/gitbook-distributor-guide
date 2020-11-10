@@ -8,7 +8,7 @@ Address of the Distributor standalone page has the following format:
 https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee
 ```
 
-The`aaaa-bbbb-cccc-dddd-eeeeeeee`part should be replaced with id of your Distributor configuration. You can also use the Enterprise ID \(this will use the hotels default distributor configuration set up\). 
+The`aaaa-bbbb-cccc-dddd-eeeeeeee`part should be replaced with id of your Distributor configuration. You can also use the Enterprise ID \(this will use the hotels default distributor configuration set up\). In case of multiple hotel configuration, you are NOT able to use a mixture of Distributor configuration ID and Enterprise ID.
 
 ## Chain Distributor <a id="chain-distributor"></a>
 
