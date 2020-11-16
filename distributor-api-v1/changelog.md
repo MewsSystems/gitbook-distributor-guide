@@ -1,5 +1,9 @@
 # Changelog
 
+## 16.11.2020
+
+* Made `ConfigurationId` parameter in [CreateReservationGroup](operations.md#create-reservation-group) endpoint required
+
 ## 28.08.2020
 
 * Added `CurrencyCode` parameter to [GetAvailability](operations.md#get-availability) endpoint
