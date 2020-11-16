@@ -1,6 +1,6 @@
 # Distributor Widget
 
-**Note: In order to embed the distributor into your webpage, your site must be securely served over https. Any distributor widget that is implemented on an insecure http site will be redirected to the standalone distributor.**
+**Note: In order to embed the Distributor into your webpage, your site must be securely served over https. Any Distributor widget that is implemented on an insecure http site will be redirected to the standalone Distributor.**
 
 ## Script <a id="script"></a>
 

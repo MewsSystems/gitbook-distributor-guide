@@ -1,6 +1,6 @@
 # Changelog
 
-## 22.06.2020.
+## 22.06.2020
 
 * Updated info about payment gateways and payment card storages. 
 * [PR 36](https://github.com/MewsSystems/gitbook-distributor-guide/pull/36/files)
