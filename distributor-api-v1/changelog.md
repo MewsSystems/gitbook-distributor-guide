@@ -1,9 +1,10 @@
 # Changelog
 
-## 19.11.2020
+## 20.11.2020
 
 * Made `ConfigurationId` parameter in [CreateReservationGroup](operations.md#create-reservation-group) endpoint required.
 * Added `ConfigurationId` parameter to [GetAvailability](operations.md#get-availability) endpoint.
+* Previous variant of sending `HotelId` without `ConfigurationId` to these endpoints was deprecated.
 
 ## 28.08.2020
 
