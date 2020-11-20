@@ -15,4 +15,5 @@
   * [Payment Gateway Data](distributor-api-v1/payment-gateway-data.md)
   * [Environments](distributor-api-v1/environments.md)
   * [Changelog](distributor-api-v1/changelog.md)
+* [Changelog](changelog.md)
 

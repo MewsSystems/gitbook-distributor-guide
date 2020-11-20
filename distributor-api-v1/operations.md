@@ -633,6 +633,7 @@ Gives availabilities and pricings for given date interval with product prices in
 ```javascript
 {
     "Client": "My Client 1.0.0",
+    "ConfigurationId": "5dfgaeb5-5848-81b3-40b7-d102e96kcf52",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "StartUtc": "2015-01-01T00:00:00Z",
     "EndUtc": "2015-01-03T00:00:00Z",
@@ -652,6 +653,7 @@ Gives availabilities and pricings for given date interval with product prices in
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Reservation end date \(departure date\) in ISO 8601 format. |
@@ -994,7 +996,7 @@ Gives a pricing information for the given configuration.
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
-| `ConfigurationId` | string | optional | Unique identifier of the used Distributor configuration. If not specified, the configuration id which is set as property/hotel default will be used. |
+| `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](operations.md#customer) | required | Information about customer who creates the order. |
 | `Booker` | [Booker](operations.md#booker) | optional | Information about booker. |
