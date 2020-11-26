@@ -1,5 +1,9 @@
 # Changelog
 
+## 26.11.2020
+
+* Changed of [API Client Authorization](authorization.md). Where the client needs to be registered.
+
 ## 20.11.2020
 
 * Made `ConfigurationId` parameter in [CreateReservationGroup](operations.md#create-reservation-group) endpoint required.
