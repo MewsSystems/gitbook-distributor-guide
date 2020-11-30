@@ -9,7 +9,7 @@
 | Name | Type | Default value | Description |
 | :--- | :--- | :--- | :--- |
 | configurationIds \(required\) | array of`string` | `''` | Unique identifier of the used Distributor configurations.  You can get unique identifier of a configuration from it’s details page in Commander. The unique identifier is shown there as Identifier. |
-| openElements | `string` | `''` | A list of comma-separated CSS selectors of elements, which will automatically get attached click event listeners for opening Distributor. The string is given as an argument to the`document.querySelectorAll`function, you get more info about its resemblance[here](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)for example.  The click event is being delegated, meaning that each element is being looked up on a website dynamically after the click happens. This way you can pass a selector to the elements that don’t exist yet during the initialization. |
+| openElements | `string` | `''` | A list of comma-separated CSS selectors of elements, which will automatically get attached click event listeners for opening Distributor. The string is given as an argument to the `document.querySelectorAll` function, you get more info about its resemblance [here](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) for example.  The click event is being delegated, meaning that each element is being looked up on a website dynamically after the click happens. This way you can pass a selector to the elements that don’t exist yet during the initialization. |
 
 ## API Reference <a id="api-reference"></a>
 
@@ -104,6 +104,12 @@ distributor.setEndDate("2019-12-18")
 
 Sets a new voucher code value.
 
+#### setRooms\(rooms\) <a id="setroomsrooms"></a>	
+
+* `rooms` Type: `Array` - The list of unique identifiers of room categories to be displayed
+
+Sets a new list of the displayed room types, overwriting the initial Rooms option value. The currently loaded availability list is not affected.	
+
 #### disableTracking()
 
 Sets all [TrackingConsents](integrations.md#trackingconsents) to false.
@@ -116,13 +122,13 @@ Sets all [TrackingConsents](integrations.md#trackingconsents) to true.
 
 #### showRooms\(\) <a id="showrooms"></a>
 
-Sets Distributor to the`Rooms`step.
+Sets Distributor to the `Rooms` step.
 
 #### showRates\(roomId\) <a id="showratesroomid"></a>
 
-* `roomId` Type: `string` - an ID of a room to be selected \(see[`rooms`](https://mewssystems.github.io/public/content/distributor/widget/reference.html#rooms)option for more details about those Ids\)
+* `roomId` Type: `string` - unique identifier of a room category to be selected
 
-Sets Distributor to the third step \(`Rates`\) as if you selected a room on the second screen.
+Sets Distributor to the third step \(`Rates`\) as if you selected a room category on the second screen.
 
 ### Only Chain mode API calls <a id="only-chain-mode-api-calls"></a>
 
