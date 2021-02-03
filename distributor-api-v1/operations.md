@@ -569,8 +569,8 @@ An object where name corresponds to ISO code and value represents a structure th
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| `GrossValue` | Number | An amount without taxes |
-| `NetValue` | Number | A net price + taxes |
+| `GrossValue` | Number | Net price + taxes |
+| `NetValue` | Number | Amount without taxes |
 | `TaxValues` | Collection of [TaxValue](operations.md#taxvalue)s | Tax values for the net value amount |
 
 #### TaxValue <a id="taxvalue"></a>
