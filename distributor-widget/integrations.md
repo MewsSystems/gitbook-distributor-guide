@@ -1,21 +1,5 @@
 # Integrations
 
-> **Deprecation notice:** <a id="deprecated-options"></a>
->
-> The following widget configuration options are deprecated and will be removed from the distributor on the 30th of September 2019. Google tag manager is the de facto method for adding 3rd party tags and tracking services to the Distributor.
-> ```
-> facebookPixelId
-> hashEvents
-> analyticsTrackingId
-> gaTrackerName
-> ecommerce
-> ecommerceTrackerName
-> adwords
-> adwordsConversionId
-> adwordsConversionLabel
-> onBookingFinished
-> ```
-
 ## Google Tag Manager   <a id="google-tag-manager"></a>
 
 This guide assumes at least basic knowledge of [Google Tag Manager](https://www.google.com/analytics/tag-manager/) - how to create and publish a container, how to setup a triggers and custom events and how to connect them to a tags.
