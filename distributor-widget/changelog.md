@@ -1,5 +1,9 @@
 # Changelog
 
+## 16.02.2021
+
+* Removed deprecation notice for no longer supported integrations which can be set up via [GTM integration](integrations.md#google-tag-manager). 
+
 ## 22.06.2020
 
 * Updated info about payment gateways and payment card storages. 
