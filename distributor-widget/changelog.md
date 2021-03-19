@@ -1,5 +1,9 @@
 # Changelog
 
+## 19.03.2021
+
+* Changed urls for testing (demo) environments.
+
 ## 16.02.2021
 
 * Removed deprecation notice for no longer supported integrations which can be set up via [GTM integration](integrations.md#google-tag-manager). 

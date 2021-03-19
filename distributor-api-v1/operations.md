@@ -312,7 +312,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "Name": "Czech Republic"
         }
     ],
-    "ImageBaseUrl": "https://cdn.demo.mews.li/Media/Image",
+    "ImageBaseUrl": "https://app.mews-demo.com/Media/Image",
     "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Name": {
         "en-US": "Distributor api hotel"
@@ -408,7 +408,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
         ],
         "PublicKey": "1100016827"
     },
-    "TermsAndConditionsUrl": "https://demo.mews.li/Commander/Home/TermsAndConditions/3edbe1b4-6739-40b7-81b3-d369d9469c48",
+    "TermsAndConditionsUrl": "https://app.mews-demo.com/Platform/Document/TermsAndConditions/3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "IanaTimeZoneIdentifier": "Europe/Budapest",
     "Email": "distributor-api@mews.li",
     "Telephone": "+",
