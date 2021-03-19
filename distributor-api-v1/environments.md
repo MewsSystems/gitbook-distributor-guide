@@ -4,7 +4,7 @@
 
 This environment is meant to be used during implementation of the client applications. We have prepared one hotel where you can fetch availability and create reservation. You can use the following information to access it:
 
-* **Platform Address** - `https://app.mews-demo.com`
+* **Platform Address** - `https://api.mews-demo.com`
 * **Hotel Id** - `3edbe1b4-6739-40b7-81b3-d369d9469c48`
 * **Configuration Id** - `93e27b6f-cba7-4e0b-a24a-819e1b7b388a`
 
