@@ -1,5 +1,9 @@
 # Changelog
 
+## 19.03.2021
+
+* Changed urls for testing (demo) environments.
+
 ## 26.11.2020
 
 * Changed of [API Client Authorization](authorization.md). Where the client needs to be registered.
