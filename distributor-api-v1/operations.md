@@ -312,7 +312,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "Name": "Czech Republic"
         }
     ],
-    "ImageBaseUrl": "https://app.mews-demo.com/Media/Image",
+    "ImageBaseUrl": "https://cdn.mews-demo.com/Media/Image",
     "Id": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "Name": {
         "en-US": "Distributor api hotel"
