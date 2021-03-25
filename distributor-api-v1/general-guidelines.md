@@ -9,11 +9,11 @@ Distributor API is a public API with no authorization that is designed to be con
 The API accepts only`HTTP POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
 
 ```text
-[PlatformAddress]/api/distributor/v1/[Resource]/[Operation]
+[ApiBaseUrl]/api/distributor/v1/[Resource]/[Operation]
 ```
 
-* **PlatformAddress**
-  * Base address of the MEWS platform, depends on environment \(testing, staging, production\).
+* **ApiBaseUrl**
+  * Base address of the MEWS API, depends on environment \([staging](environments.md#staging-environment), [production](environments.md#production-environment)\).
 * **Resource**
   * Logical group of operations, in most cases identifies target of the operations.
 * **Operation**

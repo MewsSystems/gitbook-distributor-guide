@@ -4,7 +4,7 @@
 
 Preferred initial call used to obtain all static data about distributor configuration for the client.
 
-### Request`[PlatformAddress]/api/distributor/v1/configuration/get` <a id="request-platformaddressapidistributorv1hotelsget"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/configuration/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
 
 ```javascript
 {
@@ -23,7 +23,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `PrimaryId` | string | required | Primary configuration id. |
 | `Ids` | array of strings | required | Array of configuration ids. |
 
-### Response <a id="response-platformaddressapidistributorv1configuratioget"></a>
+### Response <a id="response-apibaseurlapidistributorv1configuratioget"></a>
 
 ```javascript
 {
@@ -269,7 +269,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 Alternative initial call used to obtain all static data about hotel relevant for the client.
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/get` <a id="request-platformaddressapidistributorv1hotelsget"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/hotels/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
 
 ```javascript
 {
@@ -596,7 +596,7 @@ An object where name corresponds to ISO code and value represents a structure th
 
 Can be used to determine whether a voucher code is valid.
 
-### Request`[PlatformAddress]/api/distributor/v1/vouchers/validate` <a id="request-platformaddressapidistributorv1vouchersvalidate"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/vouchers/validate` <a id="request-apibaseurlapidistributorv1vouchersvalidate"></a>
 
 ```javascript
 {
@@ -628,7 +628,7 @@ Can be used to determine whether a voucher code is valid.
 
 Gives availabilities and pricings for given date interval with product prices included for each room category. Categorized by applicable rates and person counts from 1 to full room. If room category is not available, it is left out from response.
 
-### Request`[PlatformAddress]/api/distributor/v1/hotels/getAvailability` <a id="request-platformaddressapidistributorv1hotelsgetavailability"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/hotels/getAvailability` <a id="request-apibaseurlapidistributorv1hotelsgetavailability"></a>
 
 ```javascript
 {
@@ -810,7 +810,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 Gives a pricing information for the given configuration.
 
-### Request`[PlatformAddress]/api/distributor/v1/reservations/getPricing` <a id="request-platformaddressapidistributorv1reservationsgetpricing"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/reservations/getPricing` <a id="request-apibaseurlapidistributorv1reservationsgetpricing"></a>
 
 ```javascript
 {
@@ -882,7 +882,7 @@ Gives a pricing information for the given configuration.
 
 ## Get Payment Configuration <a id="get-payment-configuration"></a>
 
-### Request `[PlatformAddress]/api/distributor/v1/hotels/getPaymentConfiguration` <a id="request-getpaymentconfiguration"></a>
+### Request `[ApiBaseUrl]/api/distributor/v1/hotels/getPaymentConfiguration` <a id="request-getpaymentconfiguration"></a>
 
 ```javascript
 {
@@ -943,7 +943,7 @@ Gives a pricing information for the given configuration.
 
 ## Create Reservation Group <a id="create-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/create` <a id="request-platformaddressapidistributorv1reservationgroupscreate"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/create` <a id="request-apibaseurlapidistributorv1reservationgroupscreate"></a>
 
 ```javascript
 {
@@ -1120,7 +1120,7 @@ In case of an error caused by insufficient availability \(which might have decre
 
 ## Get Reservation Group <a id="get-reservation-group"></a>
 
-### Request`[PlatformAddress]/api/distributor/v1/reservationGroups/get` <a id="request-platformaddressapidistributorv1reservationgroupsget"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/get` <a id="request-apibaseurlapidistributorv1reservationgroupsget"></a>
 
 ```javascript
 {
