@@ -1,5 +1,9 @@
 # Changelog
 
+## 25.03.2021
+
+* Changed naming of URL variables used in the documentation to make clear distinction between application URLs and API URLs.
+
 ## 19.03.2021
 
 * Changed urls for testing (demo) environments.
