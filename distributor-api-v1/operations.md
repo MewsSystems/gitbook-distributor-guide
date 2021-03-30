@@ -1182,7 +1182,7 @@ additional data.
 - `Pending` - Non-finite state. Awaiting a next action.
 - `Completed` - Finite state. Payment request that has been covered by payment.
 - `Canceled` - Finite state. Payment request has been manually canceled by the creator (enterprise).
-- `Expired` - Finite state. Payment request has not been completed withing its expiration time.
+- `Expired` - Finite state. Payment request has not been completed within its expiration time.
 
 ### Payment <a id="payment"></a>
 
