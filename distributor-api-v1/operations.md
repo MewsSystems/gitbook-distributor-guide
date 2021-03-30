@@ -531,7 +531,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the product localized into all supported languages. |
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
-| `Amounts` | array of [Amount](operations.md#amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Amounts` | array of [Amount](operations.md#multicurrency-amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -547,7 +547,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * `Once`
 * `Daily`
 
-#### Amount <a id="amount"></a>
+#### Multi-currency Amount <a id="multicurrency-amount"></a>
 
 An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values.
 
@@ -803,8 +803,8 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerNight` | [Amount](operations.md#amount) | required | Average amount per night. |
+| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerNight` | [Amount](operations.md#multicurrency-amount) | required | Average amount per night. |
 
 ## Get Reservations Pricing <a id="get-reservations-pricing"></a>
 
@@ -1093,8 +1093,8 @@ Gives a pricing information for the given configuration.
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
-| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](use-cases/on-session-payments.md). |
-| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the whole group. |
+| `PaymentRequestId` | string | optional | Unique identifier of [PaymentRequest](operations.md#payment-request) that can be used to complete [on session payment](use-cases/on-session-payments.md). |
+| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
 
 ### Reservation <a id="reservation"></a>
 
@@ -1110,7 +1110,7 @@ Gives a pricing information for the given configuration.
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `Notes` | string | optional | Additional notes. |
-| `Amount` | [Amount](operations.md#amount) | required | Total amount of the reservation. |
+| `Amount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the reservation. |
 
 ### Error Response <a id="error-response"></a>
 
@@ -1141,9 +1141,9 @@ In case of an error caused by insufficient availability \(which might have decre
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
-| `Extent` | Object of [ReservationGroup Extent](operations.md#reservation-group-get-extent) | optional | Extent of data to be returned. e.g it is possible to specify that together with the reservation group, payment request and payments will be returned. |
+| `Extent` | Object of [ReservationGroup Extent](operations.md#reservation-group-extent) | optional | Extent of data to be returned. e.g it is possible to specify that together with the reservation group, payment request and payments will be returned. |
 
-### ReservationGroup Extent <a id="reservation-group-get-extent"></a>
+### Reservation Group Extent <a id="reservation-group-extent"></a>
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `PaymentRequests` | boolean | optional | Whether the response should contain PaymentRequests related to the reservation group. |
@@ -1151,10 +1151,6 @@ In case of an error caused by insufficient availability \(which might have decre
 
 
 ### Response <a id="response-7"></a>
-
-Response is the same as in [Create Reservation Group](operations.md#create-reservation-group).
-If the [ReservationGroup Extent](operations.md#reservation-group-get-extent) is requested the response will contain
-additional data. 
 
 ```json
 {
@@ -1225,9 +1221,9 @@ additional data.
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
 | `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](use-cases/on-session-payments.md). |
-| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the whole group. |
-| `PaymentRequests` | array of [PaymentRequest](operations.md#payment-request) | optional | Payment requests related to the reservation group. |
-| `Payments` | array of [Payment](operations.md#payment) | optional | Payment attempts related to the Payment requests. |
+| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
+| `PaymentRequests` | array of [PaymentRequest](operations.md#payment-request) | optional | Contains payment requests related to the reservation group. |
+| `Payments` | array of [Payment](operations.md#payment) | optional | Contains Payments related to the payment requests. |
 
 ### PaymentRequest <a id="payment-request"></a>
 
@@ -1249,14 +1245,14 @@ additional data.
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment. |
-| `Amount` | [SingleCurrencyAmount](operations.md#single-currency-amount) | required | Amount in a currency which was used to create PaymentRequest - usually default currency of the enterprise. |
-| `ChargeAmount` | [SingleCurrencyAmount](operations.md#single-currency-amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
+| `Amount` | [SingleCurrencyAmount](operations.md#amount) | required | Amount in a currency which was used to create PaymentRequest - usually default currency of the enterprise. |
+| `ChargeAmount` | [SingleCurrencyAmount](operations.md#amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
 | `CreatedUtc` | string | required | Date and time of the payment creation in UTC timezone in ISO 8601 format. |
 | `EnterpriseId` | string | required | Identifier of the enterprise receiving the payment. |
 | `PaymentRequestId` | string | required | Identifier of the payment request. |
 | `State` | string [PaymentState](operations.md#payment-state) | required | State of the payment attempt. |
 
-#### SingleCurrencyAmount <a id="single-currency-amount"></a>
+#### Amount <a id="amount"></a>
 
 ```json
 {
