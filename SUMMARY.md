@@ -10,6 +10,8 @@
 * [Distributor API \(v1\)](distributor-api-v1/README.md)
   * [General Guidelines](distributor-api-v1/general-guidelines.md)
   * [Authorization](distributor-api-v1/authorization.md)
+  * [Use Cases](distributor-api-v1/use-cases/README.md)
+    * [On session payments](distributor-api-v1/use-cases/on-session-payments.md)
   * [Operations](distributor-api-v1/operations.md)
   * [Images](distributor-api-v1/images.md)
   * [Payment Gateway Data](distributor-api-v1/payment-gateway-data.md)

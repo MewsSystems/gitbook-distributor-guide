@@ -1146,8 +1146,8 @@ In case of an error caused by insufficient availability \(which might have decre
 ### ReservationGroup Extent <a id="reservation-group-get-extent"></a>
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentRequests` | boolean | optional | Whether the response should contain PaymentRequests related to the reservation group |
-| `Payments` | boolean | optional | Whether the response should contain Payment attempts related to the PaymentRequest for reservation group |
+| `PaymentRequests` | boolean | optional | Whether the response should contain PaymentRequests related to the reservation group. |
+| `Payments` | boolean | optional | Whether the response should contain Payment attempts related to the PaymentRequest for reservation group. |
 
 
 ### Response <a id="response-7"></a>
@@ -1166,8 +1166,8 @@ additional data.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentRequests` | Array of [PaymentRequests](operations.md#payment-request) | optional | Payment requests related to the reservation group. |
-| `Payments` | Array of [Payment](operations.md#payments) | optional | Payment attempts related to the Payment requests. |
+| `PaymentRequests` | array of [PaymentRequest](operations.md#payment-request) | optional | Payment requests related to the reservation group. |
+| `Payments` | array of [Payment](operations.md#payment) | optional | Payment attempts related to the Payment requests. |
 
 ### PaymentRequest <a id="payment-request"></a>
 
