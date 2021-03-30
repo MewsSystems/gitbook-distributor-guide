@@ -987,8 +987,8 @@ Gives a pricing information for the given configuration.
     ],
     "CreditCardData": {
         "PaymentGatewayData": "...",
-        "Expiration": "2030-10"
-        "HolderName": "John Smith",
+        "Expiration": "2030-10",
+        "HolderName": "John Smith"
     }
 }
 ```
@@ -1158,14 +1158,74 @@ additional data.
 
 ```json
 {
-    ...
-    "PaymentRequests": [],
-    "Payments": []
+    "Id": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
+    "CustomerId": "7ac6ca0d-7c08-4ab1-8da8-9b44979d8855",
+    "Reservations": [
+        {
+            "Id": "123456ec-a59d-43f1-9d97-d6c984764e8c",
+            "RoomCategoryId": "4037c0ec-a59d-43f1-9d97-d6c984764e8c",
+            "StartUtc": "2015-01-01T00:00:00Z",
+            "EndUtc": "2015-01-03T00:00:00Z",
+            "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
+            "Rate": {
+                "Id": "c1d48c54-9382-4ceb-a820-772bf370573d",
+                "Name": {
+                    "en-US": "Rate"
+                },
+                "Description": {
+                    "en-US": "Best rate available."
+                }
+            },
+            "AdultCount": 3,
+            "ChildCount": 0, 
+            "ProductIds": [
+                "d0e88da5-ae64-411c-b773-60ed68954f64"
+            ],
+            "Notes": "Quiet room please.",
+            "Amount": { },
+            "Number": "1234"
+        }
+    ],
+    "PaymentRequestId": "2e3a700a-7b10-4e61-8e9f-acfa00ee00df",
+    "TotalAmount": { },
+    "PaymentRequests": [
+        {
+            "Id": "ace78dac-a0f3-420e-8a42-acfb00b9e1e5",
+            "ReservationGroupId": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
+            "State": "Completed"
+        }
+    ],
+    "Payments": [
+        {
+            "Id": "21639c17-edad-47f9-8348-acfb00b9f569",
+            "EnterpriseId": "8a51f050-8467-4e92-84d5-abc800c810b8",
+            "PaymentRequestId": "ace78dac-a0f3-420e-8a42-acfb00b9e1e5",
+            "CreatedUtc": "2021-03-30T11:17:03Z",
+            "State": "Charged",
+            "Amount": {
+                "Currency": "EUR",
+                "GrossValue": 929.70,
+                "NetValue": 929.70,
+                "TaxValues": []
+            },
+            "ChargeAmount": {
+              "Currency": "EUR",
+              "GrossValue": 929.70,
+              "NetValue": 929.70,
+              "TaxValues": []
+            }
+        }
+    ]
 }
 ```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the created reservation group. |
+| `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
+| `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
+| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](use-cases/on-session-payments.md). |
+| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the whole group. |
 | `PaymentRequests` | array of [PaymentRequest](operations.md#payment-request) | optional | Payment requests related to the reservation group. |
 | `Payments` | array of [Payment](operations.md#payment) | optional | Payment attempts related to the Payment requests. |
 
@@ -1212,7 +1272,7 @@ additional data.
 | `Currency` | string | ISO 4217 code of the currency. |
 | `GrossValue` | number | Value of the payment amount. |
 | `NetValue` | number | Value of the payment amount. |
-| `TaxValues` | Array of [TaxValue](operations.md#taxvalue)s | Tax values will be an empty array for payments. |
+| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | Tax values will be an empty array for payments. |
 
 #### PaymentState <a id="payment-state"></a>
 
