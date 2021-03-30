@@ -6,7 +6,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/configuration/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "Ids": [
@@ -25,7 +25,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 ### Response <a id="response-apibaseurlapidistributorv1configuratioget"></a>
 
-```javascript
+```json
 {
     "Cities": [
         {
@@ -271,7 +271,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/hotels/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
@@ -285,7 +285,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 ### Response <a id="response"></a>
 
-```javascript
+```json
 {
     "Languages": [
         {
@@ -551,7 +551,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 
 An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values.
 
-```javascript
+```json
 {
     "USD":
         {
@@ -598,7 +598,7 @@ Can be used to determine whether a voucher code is valid.
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/vouchers/validate` <a id="request-apibaseurlapidistributorv1vouchersvalidate"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
@@ -614,7 +614,7 @@ Can be used to determine whether a voucher code is valid.
 
 ### Response <a id="response-1"></a>
 
-```javascript
+```json
 {
     "IsValid": false
 }
@@ -630,7 +630,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/hotels/getAvailability` <a id="request-apibaseurlapidistributorv1hotelsgetavailability"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "ConfigurationId": "5dfgaeb5-5848-81b3-40b7-d102e96kcf52",
@@ -666,7 +666,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 ### Response <a id="response-2"></a>
 
-```javascript
+```json
 {
     "RateGroups": [
         {
@@ -812,7 +812,7 @@ Gives a pricing information for the given configuration.
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/reservations/getPricing` <a id="request-apibaseurlapidistributorv1reservationsgetpricing"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
@@ -852,7 +852,7 @@ Gives a pricing information for the given configuration.
 
 ### Response <a id="response-3"></a>
 
-```javascript
+```json
 {
     "OccupancyPrices": [
         {
@@ -884,7 +884,7 @@ Gives a pricing information for the given configuration.
 
 ### Request `[ApiBaseUrl]/api/distributor/v1/hotels/getPaymentConfiguration` <a id="request-getpaymentconfiguration"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
@@ -898,7 +898,7 @@ Gives a pricing information for the given configuration.
 
 ### Response <a id="response-getpaymentconfiguration"></a>
 
-```javascript
+```json
 {
     "PaymentGateway": {
         "PaymentGatewayType": "PciProxy",
@@ -945,7 +945,7 @@ Gives a pricing information for the given configuration.
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/create` <a id="request-apibaseurlapidistributorv1reservationgroupscreate"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "ConfigurationId": "5dfgaeb5-5848-81b3-40b7-d102e96kcf52",
@@ -1053,7 +1053,7 @@ Gives a pricing information for the given configuration.
 
 ### Response <a id="response-6"></a>
 
-```javascript
+```json
 {
     "Id": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
     "CustomerId": "7ac6ca0d-7c08-4ab1-8da8-9b44979d8855",
@@ -1083,6 +1083,7 @@ Gives a pricing information for the given configuration.
             "Number": "1234"
         }
     ],
+    "PaymentRequestId": "2e3a700a-7b10-4e61-8e9f-acfa00ee00df",
     "TotalAmount": { }
 }
 ```
@@ -1122,11 +1123,15 @@ In case of an error caused by insufficient availability \(which might have decre
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/get` <a id="request-apibaseurlapidistributorv1reservationgroupsget"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
     "ReservationGroupId": "f6fa7e62-eb22-4176-bc49-e521d0524dee"
+    "Extent": {
+        "PaymentRequests": false,
+        "Payments": false
+    }
 }
 ```
 
@@ -1135,8 +1140,81 @@ In case of an error caused by insufficient availability \(which might have decre
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
+| `Extent` | Object of [Extent](operations.md#reservation-group-get-extent) | optional | Object specifying whether to return related data |
+
+### Extent <a id="reservation-group-get-extent"></a>
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `PaymentRequests` | boolean | optional | Whether the response should contain PaymentRequests related to the reservation group |
+| `Payments` | boolean | optional | Whether the response should contain Payment attempts related to the PaymentRequest for reservation group |
+
 
 ### Response <a id="response-7"></a>
 
-Same as in [Create Reservation Group](operations.md#create-reservation-group).
+```json
+{
+    "Id": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
+    "CustomerId": "7ac6ca0d-7c08-4ab1-8da8-9b44979d8855",
+    "Reservations": [],
+    "TotalAmount": { },
+    "PaymentRequestId": "2e3a700a-7b10-4e61-8e9f-acfa00ee00df",
+    "PaymentRequests": [],
+    "Payments": []
+}
+```
 
+This part provide documentation only for the related data in `PaymentRequests` & `Payments` rest of the response is the
+same as in [Create Reservation Group](operations.md#create-reservation-group).
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `PaymentRequests` | Array of [PaymentRequests](operations.md#payment-request) | optional | Payment requests related to the reservation group. |
+| `Payments` | Array of [Payment](operations.md#payments) | optional | Payment attempts related to the Payment requests. |
+
+### PaymentRequest <a id="payment-request"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Identifier of the payment request. |
+| `ReservationGroupId` | string | required | Id of the related reservation group. |
+| `State` | string [PaymentRequestState](operations.md#payment-request-state) | required | State of the payment request. |
+
+#### PaymentRequestState <a id="payment-request-state"></a>
+
+- `Pending` - Non-finite state. Awaiting a next action.
+- `Completed` - Finite state. Payment request that has been covered by payment.
+- `Canceled` - Finite state. Payment request has been manually canceled by the creator (enterprise).
+- `Expired` - Finite state. Payment request has not been completed withing its expiration time.
+
+### Payment <a id="payment"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Identifier of the payment. |
+| `Amount` | [SingleCurrencyAmount](operations.md#single-currency-amount) | required | Amount in a currency which was used to create PaymentRequest - usually default currency of the enterprise. |
+| `ChargeAmount` | [SingleCurrencyAmount](operations.md#single-currency-amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
+| `CreatedUtc` | string | required | Date and time of the payment creation in UTC timezone in ISO 8601 format. |
+| `EnterpriseId` | string | required | Total amount of the reservation. |
+| `PaymentRequestId` | string | required | Identifier of the payment request. |
+| `State` | string [PaymentState](operations.md#payment-state) | required | State of the payment attempt. |
+
+#### SingleCurrencyAmount <a id="single-currency-amount"></a>
+
+An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values.
+
+```json
+{
+    "Currency": "EUR",
+    "GrossValue": 115.00,
+    "NetValue": 115.00,
+    "TaxValues": []
+}
+```
+
+#### PaymentState <a id="payment-state"></a>
+
+- `Pending` - Non-finite state. Payment has been created, but the state is not known yet.
+- `Verifying` - Non-finite state. Payment is awaiting a 3DS verification.
+- `Charged` - Finite state. Payment has been successfully charged.
+- `Canceled` - Finite state. Payment has been canceled, and it has not been charged.
+- `Failed` - Finite state. Payment has not been charged.

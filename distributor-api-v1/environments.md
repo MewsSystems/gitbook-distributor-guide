@@ -10,14 +10,14 @@ This environment is meant to be used during implementation of the client applica
 
 You will also have access into the system so it is possible for you to check whether the reservations sent to the API are correctly posted to the system. To sign into the system, use the following credentials:
 
-* **Mews Commander application** - `https://app.mews-demo.com`
+* **Mews Applications BaseUrl** - `https://app.mews-demo.com`
 * **Email** - `distributor-api@mews.li`
 * **Password** - `distributor-api`
 
 ## Production Environment <a id="production-environment"></a>
 
 * **API Base Url** - `https://www.mews.li`
-* **Mews Commander application** - `https://www.mews.li`
+* **Mews Applications BaseUrl** - `https://www.mews.li`
 * **Hotel Id** - Depends on the hotel, should be provided to you by the hotel administrator.
 * **Configuration Id** - Depends on the hotel setup, can be found in `Mews Commander` administration.
 
