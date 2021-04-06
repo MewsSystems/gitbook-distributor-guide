@@ -1266,9 +1266,9 @@ In case of an error caused by insufficient availability \(which might have decre
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | `Currency` | string | ISO 4217 code of the currency. |
-| `GrossValue` | number | Value of the payment amount. |
-| `NetValue` | number | Value of the payment amount. |
-| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | Tax values will be an empty array for payments. |
+| `GrossValue` | number | Gross value of the amount. (Net + sum of TaxValues) |
+| `NetValue` | number | Net value of the amount. |
+| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | Tax values of the amount. |
 
 #### PaymentState <a id="payment-state"></a>
 
