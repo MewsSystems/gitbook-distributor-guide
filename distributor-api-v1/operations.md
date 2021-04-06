@@ -6,7 +6,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/configuration/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "Ids": [
@@ -25,7 +25,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 ### Response <a id="response-apibaseurlapidistributorv1configuratioget"></a>
 
-```javascript
+```json
 {
     "Cities": [
         {
@@ -271,7 +271,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/hotels/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
@@ -285,7 +285,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
 
 ### Response <a id="response"></a>
 
-```javascript
+```json
 {
     "Languages": [
         {
@@ -531,7 +531,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the product localized into all supported languages. |
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
-| `Amounts` | array of [Amount](operations.md#amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Amounts` | array of [Amount](operations.md#multicurrency-amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
 | `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
 
@@ -547,11 +547,11 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * `Once`
 * `Daily`
 
-#### Amount <a id="amount"></a>
+#### Multi-currency Amount <a id="multicurrency-amount"></a>
 
 An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values.
 
-```javascript
+```json
 {
     "USD":
         {
@@ -598,7 +598,7 @@ Can be used to determine whether a voucher code is valid.
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/vouchers/validate` <a id="request-apibaseurlapidistributorv1vouchersvalidate"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
@@ -614,7 +614,7 @@ Can be used to determine whether a voucher code is valid.
 
 ### Response <a id="response-1"></a>
 
-```javascript
+```json
 {
     "IsValid": false
 }
@@ -630,7 +630,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/hotels/getAvailability` <a id="request-apibaseurlapidistributorv1hotelsgetavailability"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "ConfigurationId": "5dfgaeb5-5848-81b3-40b7-d102e96kcf52",
@@ -666,7 +666,7 @@ Gives availabilities and pricings for given date interval with product prices in
 
 ### Response <a id="response-2"></a>
 
-```javascript
+```json
 {
     "RateGroups": [
         {
@@ -803,8 +803,8 @@ Gives availabilities and pricings for given date interval with product prices in
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerNight` | [Amount](operations.md#amount) | required | Average amount per night. |
+| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerNight` | [Amount](operations.md#multicurrency-amount) | required | Average amount per night. |
 
 ## Get Reservations Pricing <a id="get-reservations-pricing"></a>
 
@@ -812,7 +812,7 @@ Gives a pricing information for the given configuration.
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/reservations/getPricing` <a id="request-apibaseurlapidistributorv1reservationsgetpricing"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
@@ -852,7 +852,7 @@ Gives a pricing information for the given configuration.
 
 ### Response <a id="response-3"></a>
 
-```javascript
+```json
 {
     "OccupancyPrices": [
         {
@@ -884,7 +884,7 @@ Gives a pricing information for the given configuration.
 
 ### Request `[ApiBaseUrl]/api/distributor/v1/hotels/getPaymentConfiguration` <a id="request-getpaymentconfiguration"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48"
@@ -898,7 +898,7 @@ Gives a pricing information for the given configuration.
 
 ### Response <a id="response-getpaymentconfiguration"></a>
 
-```javascript
+```json
 {
     "PaymentGateway": {
         "PaymentGatewayType": "PciProxy",
@@ -945,7 +945,7 @@ Gives a pricing information for the given configuration.
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/create` <a id="request-apibaseurlapidistributorv1reservationgroupscreate"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "ConfigurationId": "5dfgaeb5-5848-81b3-40b7-d102e96kcf52",
@@ -987,8 +987,8 @@ Gives a pricing information for the given configuration.
     ],
     "CreditCardData": {
         "PaymentGatewayData": "...",
-        "Expiration": "2030-10"
-        "HolderName": "John Smith",
+        "Expiration": "2030-10",
+        "HolderName": "John Smith"
     }
 }
 ```
@@ -1053,7 +1053,7 @@ Gives a pricing information for the given configuration.
 
 ### Response <a id="response-6"></a>
 
-```javascript
+```json
 {
     "Id": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
     "CustomerId": "7ac6ca0d-7c08-4ab1-8da8-9b44979d8855",
@@ -1083,6 +1083,7 @@ Gives a pricing information for the given configuration.
             "Number": "1234"
         }
     ],
+    "PaymentRequestId": "2e3a700a-7b10-4e61-8e9f-acfa00ee00df",
     "TotalAmount": { }
 }
 ```
@@ -1092,7 +1093,8 @@ Gives a pricing information for the given configuration.
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
-| `TotalAmount` | [Amount](operations.md#amount) | required | Total amount of the whole group. |
+| `PaymentRequestId` | string | optional | Unique identifier of [PaymentRequest](operations.md#payment-request) that can be used to complete [on session payment](use-cases/on-session-payments.md). |
+| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
 
 ### Reservation <a id="reservation"></a>
 
@@ -1108,7 +1110,7 @@ Gives a pricing information for the given configuration.
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `Notes` | string | optional | Additional notes. |
-| `Amount` | [Amount](operations.md#amount) | required | Total amount of the reservation. |
+| `Amount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the reservation. |
 
 ### Error Response <a id="error-response"></a>
 
@@ -1122,11 +1124,15 @@ In case of an error caused by insufficient availability \(which might have decre
 
 ### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/get` <a id="request-apibaseurlapidistributorv1reservationgroupsget"></a>
 
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "HotelId": "3edbe1b4-6739-40b7-81b3-d369d9469c48",
-    "ReservationGroupId": "f6fa7e62-eb22-4176-bc49-e521d0524dee"
+    "ReservationGroupId": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
+    "Extent": {
+        "PaymentRequests": false,
+        "Payments": false
+    }
 }
 ```
 
@@ -1135,8 +1141,139 @@ In case of an error caused by insufficient availability \(which might have decre
 | `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
+| `Extent` | Object of [ReservationGroup Extent](operations.md#reservation-group-extent) | optional | Extent of data to be returned. e.g it is possible to specify that together with the reservation group, payment request and payments will be returned. |
+
+### Reservation Group Extent <a id="reservation-group-extent"></a>
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `PaymentRequests` | boolean | optional | Whether the response should contain PaymentRequests related to the reservation group. |
+| `Payments` | boolean | optional | Whether the response should contain Payment attempts related to the PaymentRequest for reservation group. |
+
 
 ### Response <a id="response-7"></a>
 
-Same as in [Create Reservation Group](operations.md#create-reservation-group).
+```json
+{
+    "Id": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
+    "CustomerId": "7ac6ca0d-7c08-4ab1-8da8-9b44979d8855",
+    "Reservations": [
+        {
+            "Id": "123456ec-a59d-43f1-9d97-d6c984764e8c",
+            "RoomCategoryId": "4037c0ec-a59d-43f1-9d97-d6c984764e8c",
+            "StartUtc": "2015-01-01T00:00:00Z",
+            "EndUtc": "2015-01-03T00:00:00Z",
+            "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
+            "Rate": {
+                "Id": "c1d48c54-9382-4ceb-a820-772bf370573d",
+                "Name": {
+                    "en-US": "Rate"
+                },
+                "Description": {
+                    "en-US": "Best rate available."
+                }
+            },
+            "AdultCount": 3,
+            "ChildCount": 0, 
+            "ProductIds": [
+                "d0e88da5-ae64-411c-b773-60ed68954f64"
+            ],
+            "Notes": "Quiet room please.",
+            "Amount": { },
+            "Number": "1234"
+        }
+    ],
+    "PaymentRequestId": "2e3a700a-7b10-4e61-8e9f-acfa00ee00df",
+    "TotalAmount": { },
+    "PaymentRequests": [
+        {
+            "Id": "ace78dac-a0f3-420e-8a42-acfb00b9e1e5",
+            "ReservationGroupId": "f6fa7e62-eb22-4176-bc49-e521d0524dee",
+            "State": "Completed"
+        }
+    ],
+    "Payments": [
+        {
+            "Id": "21639c17-edad-47f9-8348-acfb00b9f569",
+            "EnterpriseId": "8a51f050-8467-4e92-84d5-abc800c810b8",
+            "PaymentRequestId": "ace78dac-a0f3-420e-8a42-acfb00b9e1e5",
+            "CreatedUtc": "2021-03-30T11:17:03Z",
+            "State": "Charged",
+            "Amount": {
+                "Currency": "EUR",
+                "GrossValue": 929.70,
+                "NetValue": 929.70,
+                "TaxValues": []
+            },
+            "ChargeAmount": {
+              "Currency": "EUR",
+              "GrossValue": 929.70,
+              "NetValue": 929.70,
+              "TaxValues": []
+            }
+        }
+    ]
+}
+```
 
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the created reservation group. |
+| `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
+| `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
+| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](use-cases/on-session-payments.md). |
+| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
+| `PaymentRequests` | array of [PaymentRequest](operations.md#payment-request) | optional | Contains payment requests related to the reservation group. |
+| `Payments` | array of [Payment](operations.md#payment) | optional | Contains Payments related to the payment requests. |
+
+### PaymentRequest <a id="payment-request"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the payment request. |
+| `ReservationGroupId` | string | required | Identifier of the related reservation group. |
+| `State` | string [PaymentRequestState](operations.md#payment-request-state) | required | State of the payment request. |
+
+#### PaymentRequestState <a id="payment-request-state"></a>
+
+- `Pending` - Non-finite state. Awaiting a next action.
+- `Completed` - Finite state. Payment request that has been covered by payment.
+- `Canceled` - Finite state. Payment request has been manually canceled by the creator (enterprise).
+- `Expired` - Finite state. Payment request has not been completed within its expiration time.
+
+### Payment <a id="payment"></a>
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the payment. |
+| `Amount` | [SingleCurrencyAmount](operations.md#amount) | required | Amount in a currency which was used to create PaymentRequest - usually default currency of the enterprise. |
+| `ChargeAmount` | [SingleCurrencyAmount](operations.md#amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
+| `CreatedUtc` | string | required | Date and time of the payment creation in UTC timezone in ISO 8601 format. |
+| `EnterpriseId` | string | required | Identifier of the enterprise receiving the payment. |
+| `PaymentRequestId` | string | required | Identifier of the payment request. |
+| `State` | string [PaymentState](operations.md#payment-state) | required | State of the payment attempt. |
+
+#### Amount <a id="amount"></a>
+
+```json
+{
+    "Currency": "EUR",
+    "GrossValue": 115.00,
+    "NetValue": 115.00,
+    "TaxValues": []
+}
+```
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `Currency` | string | ISO 4217 code of the currency. |
+| `GrossValue` | number | Gross value of the amount. (Net + sum of TaxValues) |
+| `NetValue` | number | Net value of the amount. |
+| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | Tax values of the amount. |
+
+#### PaymentState <a id="payment-state"></a>
+
+- `Pending` - Non-finite state. Payment has been created, but the state is not known yet.
+- `Verifying` - Non-finite state. Payment is awaiting a 3DS verification.
+- `Charged` - Finite state. Payment has been successfully charged.
+- `Canceled` - Finite state. Payment has been canceled, and it has not been charged.
+- `Failed` - Finite state. Payment has not been charged.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 30.03.2021
+
+* Added Use case for [On session payments](use-cases/on-session-payments.md).
+
 ## 25.03.2021
 
 * Changed naming of URL variables used in the documentation to make clear distinction between application URLs and API URLs.
