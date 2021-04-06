@@ -17,12 +17,12 @@ with `Extent` for `PaymentRequests` and optionally for `Payments` which you want
 mainly on the [Payment request State](../operations.md#payment-request-state) and optionally [Payment State](../operations.md#payment-state).
 
 ## Step by step workflow
-1) [Create new reservation group](../operations.md#request-apibaseurlapidistributorv1reservationgroupscreate)
-2) Get `PaymentRequestId` from the response
-3) Create a `ReturnUrl` via encoding your url by `Base64` e.g. Javascript example would be `btoa(urlWhereUserShouldReturn)`
-4) Redirect the user to the gateway on url `https://[MewsApplicationsBaseUrl]/navigator/payment-requests/detail/[PaymentRequestId]?returnUrl=[ReturnUrl]`. You can find out the `MewsApplicationBaseUrl` in [Environments](../environments.md) section.
-5) After the user returns to the `ReturnUrl` in your booking engine you can verify the state by using [reservation group detail](../operations.md#request-apibaseurlapidistributorv1reservationgroupsget) with a specified [Extent](../operations.md#reservation-group-extent)
-6) Validate the state of the Payment request in the response
+1. [Create new reservation group](../operations.md#request-apibaseurlapidistributorv1reservationgroupscreate)  
+2. Get `PaymentRequestId` from the response  
+3. Create a `ReturnUrl` via encoding your url by `Base64` e.g. Javascript example would be `btoa(urlWhereUserShouldReturn)`  
+4. Redirect the user to the gateway on url `https://[MewsApplicationsBaseUrl]/navigator/payment-requests/detail/[PaymentRequestId]?returnUrl=[ReturnUrl]`. You can find out the `MewsApplicationBaseUrl` in [Environments](../environments.md) section.  
+5. After the user returns to the `ReturnUrl` in your booking engine you can verify the state by using [reservation group detail](../operations.md#request-apibaseurlapidistributorv1reservationgroupsget) with a specified [Extent](../operations.md#reservation-group-extent)  
+6. Validate the state of the Payment request in the response  
 
 {% hint style="info" %}
 Until the Payment request enters its [finite state](../operations.md#payment-request-state) you can redirect the user again e.g. with "Try to pay again" button.
