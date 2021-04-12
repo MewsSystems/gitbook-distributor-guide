@@ -208,15 +208,23 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
 | `Enterprise` | [Enterprise](operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
 | `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
-| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
+| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | **Deprecated**, use [PaymentCardRequirement](operations.md#paymentcardrequirement) instead. Determines how to handle payment cards. |
+| `PaymentCardRequirement` | string [PaymentCardRequirement](operations.md#paymentcardrequirement) | required |  Determines how to handle payment cards. |
 | `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 
 #### PaymentCardInput
 
+**Deprecated**. We introduced new field with new options: [PaymentCardRequirement](operations.md#paymentcardrequirement)
 * `NotRequested` - Payment card info is not requested.
 * `Requested` - Payment card info is requested, but not validated.
 * `Required` - Payment card info is requested and validated. 
+
+#### PaymentCardRequirement
+* `NotRequired` - Payment card info is not required. 
+* `AlwaysRequired` - Payment card info is always requested and validated.
+* `NotRequiredForFullyPaidBookings` - Payment card info is not required for fully paid bookings.
+* `NotRequiredForFullyOrPartiallyPaidBookings` - Payment card info is not required for fully or partially paid bookings.
 
 #### RequiredField
 
