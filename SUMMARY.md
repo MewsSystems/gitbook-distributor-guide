@@ -16,6 +16,8 @@
   * [Images](distributor-api-v1/images.md)
   * [Payment Gateway Data](distributor-api-v1/payment-gateway-data.md)
   * [Environments](distributor-api-v1/environments.md)
+  * [Deprecations](distributor-api-v1/deprecations/README.md)
+    * [PaymentCardInput](distributor-api-v1/deprecations/payment-card-input.md)
   * [Changelog](distributor-api-v1/changelog.md)
 * [Changelog](changelog.md)
 
