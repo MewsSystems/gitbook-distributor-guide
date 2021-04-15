@@ -142,7 +142,7 @@
 }
 ```
 
-### PaymentCardInput
+### ~~PaymentCardInput~~
 * `NotRequested` - Payment card info is not requested.
 * `Requested` - Payment card info is requested, but not validated.
 * `Required` - Payment card info is requested and validated.
