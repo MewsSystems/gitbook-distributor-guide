@@ -12,6 +12,7 @@
   * [Authorization](distributor-api-v1/authorization.md)
   * [Use Cases](distributor-api-v1/use-cases/README.md)
     * [On session payments](distributor-api-v1/use-cases/on-session-payments.md)
+    * [How to support payment cards in Distributor client application](distributor-api-v1/use-cases/how-to-support-payment-cards-in-distributor-client-application.md)
   * [Operations](distributor-api-v1/operations.md)
   * [Images](distributor-api-v1/images.md)
   * [Payment Gateway Data](distributor-api-v1/payment-gateway-data.md)

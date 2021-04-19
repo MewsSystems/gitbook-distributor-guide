@@ -1,5 +1,9 @@
 # Changelog
 
+## 19.04.2021
+
+* Moved use case on [How to support payment card in client application](use-cases/how-to-support-payment-cards-in-distributor-client-application.md).
+
 ## 30.03.2021
 
 * Added Use case for [On session payments](use-cases/on-session-payments.md).

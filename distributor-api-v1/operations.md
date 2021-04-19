@@ -1047,9 +1047,9 @@ Gives a pricing information for the given configuration.
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. More details [here](payment-gateway-data.md). |
-| `Expiration` | string | required | Expiration of payment card in format `YYYY-MM`. |
-| `HolderName` | string | required | Card holder name. |
+| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. More details [here](../use-cases/how-to-support-payment-cards-in-distributor-client-application.md#payment-gateway-data). |
+| `Expiration` | string | required | Expiration date of payment card in format `YYYY-MM`. |
+| `HolderName` | string | required | Name of the Card holder. |
 
 ### Response <a id="response-6"></a>
 

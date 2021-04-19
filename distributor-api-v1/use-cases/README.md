@@ -4,3 +4,4 @@ This section describes, how to use the Distributor API in order to implement wel
 The following types scenarios can be achieved:
 
 * [On session payments](./on-session-payments.md)
+* [How to support payment card in Distributor client application](./how-to-support-payment-cards-in-distributor-client-application.md)
