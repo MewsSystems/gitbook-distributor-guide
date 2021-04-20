@@ -2,7 +2,7 @@
 
 ## 19.04.2021
 
-* Moved use case on [How to support payment card in client application](use-cases/how-to-support-payment-cards-in-distributor-client-application.md).
+* Moved use case on [How to support payment card in booking engine client application](use-cases/how-to-support-payment-cards-in-booking-engine-client-application.md).
 
 ## 30.03.2021
 
