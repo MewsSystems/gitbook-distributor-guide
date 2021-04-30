@@ -1311,9 +1311,9 @@ In case of an error caused by insufficient availability \(which might have decre
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentCards` | array of [PaymentCard](operations.md#payment-card)s | required | Payment cards that has been requested. |
+| `PaymentCards` | array of [Payment card](operations.md#payment-card)s | required | The payment cards. |
 
-#### PaymentState <a id="payment-card"></a>
+#### Payment card <a id="payment-card"></a>
 
 ```json
 {
@@ -1327,7 +1327,7 @@ In case of an error caused by insufficient availability \(which might have decre
 | `Id` | string | required | Unique identifier of the payment card. |
 | `AuthorizationState` | string [AuthorizationState](operations.md#authorization-state) | required | State of the payment attempt. |
 
-#### AuthorizationState <a id="authorization-state"></a>
+#### Authorization state <a id="authorization-state"></a>
 
 - `Authorized` - Finite state. The payment card has been authorized.
 - `Authorizable` - Non-finite state. The payment card can be authorized.
@@ -1357,11 +1357,11 @@ In case of an error caused by insufficient availability \(which might have decre
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
-| `EnterpriseId` | string | required | Unique identifier of the enterprise in which the card is stored. |
+| `EnterpriseId` | string | required | Unique identifier of the enterprise which does have access to the payment card. |
 | `PaymentCardId` | string | required | Unique identifier of the payment card. |
-| `BrowserInfo` | [BrowserInfo](operations.md#browser-info) | required | Information about the users browser. |
+| `BrowserInfo` | [Browser info](operations.md#browser-info) | required | Information about the users browser. |
 
-#### BrowserInfo <a id="browser-info"></a>
+#### Browser info <a id="browser-info"></a>
 
 ```json
 {
@@ -1398,9 +1398,9 @@ In case of an error caused by insufficient availability \(which might have decre
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment card authorization attempt. |
 | `PaymentCardId` | string | required | Unique identifier of the payment card being authorized. |
-| `State` | string [PaymentCardAuthorizationState](operations.md#payment-card-authorization-state) | required | State of the authorization attempt. |
+| `State` | string [Payment card authorization state](operations.md#payment-card-authorization-state) | required | State of the authorization attempt. |
 
-#### PaymentCardAuthorizationState <a id="payment-card-authorization-state"></a>
+#### Payment card authorization state <a id="payment-card-authorization-state"></a>
 
 - `Authorized` - Finite state. The payment card authorization has been successfully completed.
 - `Requested` - Non-finite state. The payment card authorization is requested from the user.
