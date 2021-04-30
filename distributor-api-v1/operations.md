@@ -1084,6 +1084,7 @@ Gives a pricing information for the given configuration.
         }
     ],
     "PaymentRequestId": "2e3a700a-7b10-4e61-8e9f-acfa00ee00df",
+    "PaymentCardId": "dc2f8608-9d71-47fd-9d41-ad1a009913c6",
     "TotalAmount": { }
 }
 ```
@@ -1094,6 +1095,7 @@ Gives a pricing information for the given configuration.
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
 | `PaymentRequestId` | string | optional | Unique identifier of [PaymentRequest](operations.md#payment-request) that can be used to complete [on session payment](use-cases/on-session-payments.md). |
+| `PaymentCardId` | string | optional | Unique identifier of [PaymentCard](operations.md#payment-card) that can be used to complete [on session payment card authorization](use-cases/on-session-payment-card-authorization.md). |
 | `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
 
 ### Reservation <a id="reservation"></a>
@@ -1263,12 +1265,12 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| `Currency` | string | ISO 4217 code of the currency. |
-| `GrossValue` | number | Gross value of the amount. (Net + sum of TaxValues) |
-| `NetValue` | number | Net value of the amount. |
-| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | Tax values of the amount. |
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Currency` | string | required | ISO 4217 code of the currency. |
+| `GrossValue` | number | required | Gross value of the amount. (Net + sum of TaxValues) |
+| `NetValue` | number | required | Net value of the amount. |
+| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | required | Tax values of the amount. |
 
 #### PaymentState <a id="payment-state"></a>
 
@@ -1277,3 +1279,131 @@ In case of an error caused by insufficient availability \(which might have decre
 - `Charged` - Finite state. Payment has been successfully charged.
 - `Canceled` - Finite state. Payment has been canceled, and it has not been charged.
 - `Failed` - Finite state. Payment has not been charged.
+
+## Get Payment Cards <a id="get-payment-cards"></a>
+
+### Request`[ApiBaseUrl]/api/distributor/v1/paymentCards/getAll` <a id="request-apibaseurlapidistributorv1paymentcardsgetall"></a>
+
+```json
+{
+    "Client": "My Client 1.0.0",
+    "PaymentCardIds": [
+        "dc2f8608-9d71-47fd-9d41-ad1a009913c6"
+    ]
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `PaymentCardIds` | array of string | required | Collection of unique identifiers of the cards. |
+
+### Response <a id="response-8"></a>
+```json
+{
+    "PaymentCards": [
+        {
+            "Id": "dc2f8608-9d71-47fd-9d41-ad1a009913c6",
+            "AuthorizationState": "Authorizable"
+        }
+    ]
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `PaymentCards` | array of [PaymentCard](operations.md#payment-card)s | required | Payment cards that has been requested. |
+
+#### PaymentState <a id="payment-card"></a>
+
+```json
+{
+    "Id": "dc2f8608-9d71-47fd-9d41-ad1a009913c6",
+    "AuthorizationState": "Authorizable"
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the payment card. |
+| `AuthorizationState` | string [AuthorizationState](operations.md#authorization-state) | required | State of the payment attempt. |
+
+#### AuthorizationState <a id="authorization-state"></a>
+
+- `Authorized` - Finite state. The payment card has been authorized.
+- `Authorizable` - Non-finite state. The payment card can be authorized.
+- `Unauthorizable` - Finite state. The payment card can't be authorized.
+
+
+## Authorize Payment Card <a id="authorize-payment-card"></a>
+
+### Request`[ApiBaseUrl]/api/distributor/v1/paymentCards/authorize` <a id="request-apibaseurlapidistributorv1paymentCardsauthorize"></a>
+
+```json
+{
+    "Client": "My Client 1.0.0",
+    "EnterpriseId": "8a51f050-8467-4e92-84d5-abc800c810b8",
+    "PaymentCardId": "dc2f8608-9d71-47fd-9d41-ad1a009913c6",
+    "BrowserInfo": {
+        "ScreenWidth": 2560,
+        "ScreenHeight": 1440,
+        "ColorDepth": 24,
+        "UserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36",
+        "Language": "cs",
+        "JavaEnabled": false,
+        "TimeZoneOffset": -120
+    }
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `EnterpriseId` | string | required | Unique identifier of the enterprise in which the card is stored. |
+| `PaymentCardId` | string | required | Unique identifier of the payment card. |
+| `BrowserInfo` | [BrowserInfo](operations.md#browser-info) | required | Information about the users browser. |
+
+#### BrowserInfo <a id="browser-info"></a>
+
+```json
+{
+    "ScreenWidth": 2560,
+    "ScreenHeight": 1440,
+    "ColorDepth": 24,
+    "UserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36",
+    "Language": "cs",
+    "JavaEnabled": false,
+    "TimeZoneOffset": -120
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `ScreenWidth` | number | required | Integer value of the [user screen width](https://developer.mozilla.org/en-US/docs/Web/API/Screen/width). |
+| `ScreenHeight` | number | required | Integer value of the [user screen height](https://developer.mozilla.org/en-US/docs/Web/API/Screen/height). |
+| `ColorDepth` | number | required | Integer value of the [user screen color depth](https://developer.mozilla.org/en-US/docs/Web/API/Screen/colorDepth). |
+| `UserAgent` | string | required | Value of the browser [user agent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent). |
+| `Language` | string | required | Value of the browser [language](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language). |
+| `JavaEnabled` | boolean | required | Value of the browser information whether [Java is enabled](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/javaEnabled). This will be always `false`. |
+| `TimeZoneOffset` | number | required | Integer value of the user [timezone offset](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset). |
+
+### Response <a id="response-9"></a>
+```json
+{
+    "Id": "94835eb5-24e1-421f-9915-ad1a009de562",
+    "PaymentCardId": "dc2f8608-9d71-47fd-9d41-ad1a009913c6",
+    "State": "Authorized"
+}
+```
+
+|  | Property | Type | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the payment card authorization attempt. |
+| `PaymentCardId` | string | required | Unique identifier of the payment card being authorized. |
+| `State` | string [PaymentCardAuthorizationState](operations.md#payment-card-authorization-state) | required | State of the authorization attempt. |
+
+#### PaymentCardAuthorizationState <a id="payment-card-authorization-state"></a>
+
+- `Authorized` - Finite state. The payment card authorization has been successfully completed.
+- `Requested` - Non-finite state. The payment card authorization is requested from the user.
+- `Pending` - Non-finite state. The payment card authorization is waiting to be requested from the user.
+- `Declined` - Finite state. The payment card authorization has been declined.
+- `Canceled` - Finite state. The payment card authorization has been canceled.
