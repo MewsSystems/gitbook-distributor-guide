@@ -1,12 +1,16 @@
 # Changelog
 
+## 03.05.2021
+
+* Added use case on [On session payment card authorization](use-cases/on-session-payment-card-authorization.md).
+
 ## 19.04.2021
 
 * Moved use case on [How to support payment card in booking engine client application](use-cases/how-to-support-payment-cards-in-booking-engine-application.md).
 
 ## 30.03.2021
 
-* Added Use case for [On session payments](use-cases/on-session-payments.md).
+* Added use case for [On session payments](use-cases/on-session-payments.md).
 
 ## 25.03.2021
 
