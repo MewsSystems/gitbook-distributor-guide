@@ -14,7 +14,7 @@ your booking engine after successful payment or in case the user decides to aban
 be a `Base64` encoded absolute url e.g. in JavaScript via `btoa` function. After the user returns to your
 booking engine you can verify the state of the payment request by calling [get reservation group API](../operations.md#get-reservation-group)
 with `Extent` for `PaymentRequests` and optionally for `Payments` which you want to validate. Validation should be done
-mainly on the [Payment request State](../operations.md#payment-request-state) and optionally [Payment State](../operations.md#payment-state).
+mainly on the [Payment request State](../operations.md#payment-request-state) and optionally [Payment state](../operations.md#payment-state).
 
 ## Step by step workflow
 1. [Create new reservation group](../operations.md#create-reservation-group)  

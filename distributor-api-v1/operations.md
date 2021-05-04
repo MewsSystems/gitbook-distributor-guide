@@ -557,7 +557,7 @@ An object where name corresponds to ISO code and value represents a structure th
 | :--- | :--- | :--- |
 | `GrossValue` | Number | Net price + taxes |
 | `NetValue` | Number | Amount without taxes |
-| `TaxValues` | Collection of [TaxValue](./operations.md#tax-value)s | Tax values for the net value amount |
+| `TaxValues` | Collection of [Tax value](./operations.md#tax-value)s | Tax values for the net value amount |
 
 #### Tax value
 
@@ -718,18 +718,18 @@ Gives availabilities and pricings for given date interval with product prices in
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `RateGroups` | array of [RateGroup](./operations.md#rate-group) | required | Information about all available rate groups. |
+| `RateGroups` | array of [Rate group](./operations.md#rate-group) | required | Information about all available rate groups. |
 | `Rates` | array of [Rate](./operations.md#rate) | required | Information about all available rates. |
-| `RoomCategoryAvailabilites` | array of [RoomCategoryAvailability](./operations.md#room-category-availability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
+| `RoomCategoryAvailabilites` | array of [Room category availability](./operations.md#room-category-availability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
 
 #### Rate group
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the rate. |
-| `SettlementType` | string [SettlementType](./operations.md#settlement-type) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
-| `SettlementAction` | string [SettlementAction](./operations.md#settlement-action) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
-| `SettlementTrigger` | string [SettlementTrigger](./operations.md#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
+| `SettlementType` | string [Settlement type](./operations.md#settlement-type) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
+| `SettlementAction` | string [Settlement action](./operations.md#settlement-action) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementTrigger` | string [Settlement trigger](./operations.md#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger \(for example, '-1 day' will charge the amount 1 day before\). |
 | `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. |
 | `SettlementMaximumNights` | number | optional | Maximum number of nights that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
@@ -766,7 +766,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `RoomCategoryId` | string | required | Unique identifier of the room category. |
-| `RoomOccupancyAvailabilities` | array of [RoomOccupancyAvailability](./operations.md#room-occupancy-availability) | required | Availabilities of rooms in the category by the room occupancy. |
+| `RoomOccupancyAvailabilities` | array of [Room occupancy availability](./operations.md#room-occupancy-availability) | required | Availabilities of rooms in the category by the room occupancy. |
 | `AvailableRoomCount` | number | required | Number of available rooms from the room category. |
 
 #### Room occupancy availability
@@ -782,8 +782,8 @@ Gives availabilities and pricings for given date interval with product prices in
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `RateId` | string | required | Unique identifier of a rate. |
-| `Price` | [RoomPrice](./operations.md#room-price) | required | Price of the room. |
-| `MaxPrice` | [RoomPrice](./operations.md#room-price) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
+| `Price` | [Room price](./operations.md#room-price) | required | Price of the room. |
+| `MaxPrice` | [Room price](./operations.md#room-price) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
 
 #### Room price
 
@@ -864,7 +864,7 @@ Gives a pricing information for the given configuration.
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `OccupancyPrices` | array of [RoomOccupancyAvailability](./operations.md#room-occupancy-availability) | required | Pricing information. |
+| `OccupancyPrices` | array of [Room occupancy availability](./operations.md#room-occupancy-availability) | required | Pricing information. |
 
 ## Get payment configuration
 
@@ -910,21 +910,21 @@ Gives a pricing information for the given configuration.
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGateway` | [PaymentGateway](./operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
-| `SurchargeConfiguration` | [SurchargeConfiguration](./operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
+| `PaymentGateway` | [Payment gateway](./operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
+| `SurchargeConfiguration` | [Surcharge configuration](./operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
 
 #### Surcharge configuration
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `SurchargeServiceId` | string | optional | Unique identifier of surcharge service. |
-| `SurchargeFees` | [SurchargeFees](./operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
+| `SurchargeFees` | [Surcharge fees](./operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
 
 #### Surcharge fees
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Key` | string [CreditCardType](./operations.md#credit-card-type) | required | Credit card type. |
+| `Key` | string [Credit card type](./operations.md#credit-card-type) | required | Credit card type. |
 | `Value` | number | required | Amount of the surcharge fee itself. |
 
 ## Create reservation group
@@ -986,8 +986,8 @@ Gives a pricing information for the given configuration.
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `Customer` | [Customer](./operations.md#customer) | required | Information about customer who creates the order. |
 | `Booker` | [Booker](./operations.md#booker) | optional | Information about booker. |
-| `Reservations` | array of [ReservationData](./operations.md#reservation-data) | required | Parameters of reservations to be ordered. |
-| `CreditCardData` | [CreditCardData](./operations.md#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
+| `Reservations` | array of [Reservation data](./operations.md#reservation-data) | required | Parameters of reservations to be ordered. |
+| `CreditCardData` | [Credit card data](./operations.md#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
 
 #### Customer
 
@@ -1080,8 +1080,8 @@ Gives a pricing information for the given configuration.
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
 | `Reservations` | array of [Reservation](./operations.md#reservation) | required | The created reservations in group. |
-| `PaymentRequestId` | string | optional | Unique identifier of [PaymentRequest](./operations.md#payment-request) that can be used to complete [on session payment](./use-cases/on-session-payments.md). |
-| `PaymentCardId` | string | optional | Unique identifier of [PaymentCard](./operations.md#payment-card) that can be used to complete [on session payment card authorization](./use-cases/on-session-payment-card-authorization.md). |
+| `PaymentRequestId` | string | optional | Unique identifier of [Payment request](./operations.md#payment-request) that can be used to complete [on session payment](./use-cases/on-session-payments.md). |
+| `PaymentCardId` | string | optional | Unique identifier of [Payment card](./operations.md#payment-card) that can be used to complete [on session payment card authorization](./use-cases/on-session-payment-card-authorization.md). |
 | `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the whole group. |
 
 ### Reservation
