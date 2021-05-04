@@ -1256,15 +1256,6 @@ In case of an error caused by insufficient availability \(which might have decre
 
 #### Amount <a id="amount"></a>
 
-```json
-{
-    "Currency": "EUR",
-    "GrossValue": 115.00,
-    "NetValue": 115.00,
-    "TaxValues": []
-}
-```
-
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Currency` | string | required | ISO 4217 code of the currency. |
@@ -1315,13 +1306,6 @@ In case of an error caused by insufficient availability \(which might have decre
 
 #### Payment card <a id="payment-card"></a>
 
-```json
-{
-    "Id": "dc2f8608-9d71-47fd-9d41-ad1a009913c6",
-    "AuthorizationState": "Authorizable"
-}
-```
-
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment card. |
@@ -1362,18 +1346,6 @@ In case of an error caused by insufficient availability \(which might have decre
 | `BrowserInfo` | [Browser info](operations.md#browser-info) | required | Information about the users browser. |
 
 #### Browser info <a id="browser-info"></a>
-
-```json
-{
-    "ScreenWidth": 2560,
-    "ScreenHeight": 1440,
-    "ColorDepth": 24,
-    "UserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36",
-    "Language": "cs",
-    "JavaEnabled": false,
-    "TimeZoneOffset": -120
-}
-```
 
 |  | Property | Type | Description |
 | :--- | :--- | :--- | :--- |
