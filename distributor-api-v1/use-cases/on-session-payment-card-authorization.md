@@ -23,7 +23,7 @@ The `returnUrl` value should be a `Base64` encoded absolute url e.g. in JavaScri
 After the user returns to your booking engine you can verify the card authorization state via [requesting details of the card](../operations.md#get-payment-cards) and by checking that the [AuthorizationState](../operations.md#authorization-state) of the card is `Authorized`.
 
 ## Step by step workflow
-1. [Create new reservation group](../operations.md#request-apibaseurlapidistributorv1reservationgroupscreate) with [CreditCardData](../operations.md#creditcarddata)
+1. [Create new reservation group](../operations.md#create-reservation-group) with [CreditCardData](../operations.md#credit-card-data)
 2. Get `PaymentCardId` from the response
 3. Validate that the card [AuthorizationState](../operations.md#authorization-state) is `Authorizable` via [Get Payment Cards](../operations.md#get-payment-cards) endpoint. **If not the workflow ends here**.
 4. Try to authorize the card via [Authorize Payment Card](../operations.md#authorize-payment-card) endpoint and check that the [State](../operations.md#payment-card-authorization-state) in the response is either `Pending` or `Requested`. **If not the workflow ends here**.
