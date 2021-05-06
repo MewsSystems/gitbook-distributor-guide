@@ -1,9 +1,9 @@
 # Changelog
 
-## 04.05.2021
+## 10.05.2021
 
-* Fixed inconsistency in naming in the documentation
-* Fixed DTOs table heading to reflect the columns
+* Fixed inconsistency in naming in the documentation.
+* Fixed DTOs table heading to reflect the columns.
 
 ## 03.05.2021
 

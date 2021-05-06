@@ -265,7 +265,7 @@ Preferred initial call used to obtain all static data about distributor configur
 * `Gross` - The enterprise shows amount with gross prices.
 * `Net` - The enterprise shows amount with net prices.
 
-## Get hotel
+## Get hotels
 
 Alternative initial call used to obtain all static data about hotel relevant for the client.
 
