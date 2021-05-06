@@ -12,6 +12,7 @@
   * [Authorization](distributor-api-v1/authorization.md)
   * [Use Cases](distributor-api-v1/use-cases/README.md)
     * [On session payments](distributor-api-v1/use-cases/on-session-payments.md)
+    * [On session payment card authorization](distributor-api-v1/use-cases/on-session-payment-card-authorization.md)
     * [How to support payment cards in booking engine application](distributor-api-v1/use-cases/how-to-support-payment-cards-in-booking-engine-application.md)
   * [Operations](distributor-api-v1/operations.md)
   * [Images](distributor-api-v1/images.md)
