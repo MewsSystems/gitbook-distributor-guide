@@ -191,7 +191,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the city. |
 | `ImageId` | string | optional | Unique identifier of the city image. |
-| `Name` | string | [Localized text](./operations.md#localized-text) | City name. |
+| `Name` | [Localized text](./operations.md#localized-text) | required | City name. |
 
 #### Configuration
 
