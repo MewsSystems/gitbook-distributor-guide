@@ -20,5 +20,5 @@ Before the registration of your **Client** is confirmed you can use a sample cli
 
 ## Where to go next
 
-You can start your first request in our [Operations section](./operations.md)
+You can start your first request in our [operations section](./operations.md).
 
