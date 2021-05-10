@@ -1,16 +1,21 @@
 # Changelog
 
+## 10.05.2021
+
+* Fixed inconsistency in naming in the documentation.
+* Fixed DTOs table heading to reflect the columns.
+
 ## 03.05.2021
 
-* Added use case on [On session payment card authorization](use-cases/on-session-payment-card-authorization.md).
+* Added use case on [On session payment card authorization](./use-cases/on-session-payment-card-authorization.md).
 
 ## 19.04.2021
 
-* Moved use case on [How to support payment card in booking engine client application](use-cases/how-to-support-payment-cards-in-booking-engine-application.md).
+* Moved use case on [How to support payment card in booking engine client application](./use-cases/how-to-support-payment-cards-in-booking-engine-application.md).
 
 ## 30.03.2021
 
-* Added use case for [On session payments](use-cases/on-session-payments.md).
+* Added use case for [On session payments](./use-cases/on-session-payments.md).
 
 ## 25.03.2021
 
@@ -22,17 +27,17 @@
 
 ## 26.11.2020
 
-* Changed of [API Client Authorization](authorization.md). Where the client needs to be registered.
+* Changed of [API Client Authorization](./authorization.md). Where the client needs to be registered.
 
 ## 20.11.2020
 
-* Made `ConfigurationId` parameter in [CreateReservationGroup](operations.md#create-reservation-group) endpoint required.
-* Added `ConfigurationId` parameter to [GetAvailability](operations.md#get-availability) endpoint.
+* Made `ConfigurationId` parameter in [Create reservation group](./operations.md#create-reservation-group) endpoint required.
+* Added `ConfigurationId` parameter to [Get availability](./operations.md#get-availability) endpoint.
 * Previous variant of sending `HotelId` without `ConfigurationId` to these endpoints was deprecated.
 
 ## 28.08.2020
 
-* Added `CurrencyCode` parameter to [GetAvailability](operations.md#get-availability) endpoint.
+* Added `CurrencyCode` parameter to [Get availability](./operations.md#get-availability) endpoint.
 
 ## 22.06.2020
 
@@ -44,7 +49,7 @@
 
 ## 18.06.2020
 
-* Removed `AlwaysIncluded` field from [Product](operations.md#product) \([37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)\). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
+* Removed `AlwaysIncluded` field from [Product](./operations.md#product) \([37](https://github.com/MewsSystems/gitbook-distributor-guide/pull/37/files)\). In order to pre-select a product during a booking, you can use `IncludedByDefault` field.
 
 ## 22.04.2020
 

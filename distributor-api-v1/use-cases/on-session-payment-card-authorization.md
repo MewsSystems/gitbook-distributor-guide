@@ -9,7 +9,7 @@ the risk of a future payment being rejected.
 ## Creating a reservation group with verified card
 
 First step of the entire workflow is to [create a reservation group via our API](../operations.md#create-reservation-group) with [payment card data](./how-to-support-payment-cards-in-booking-engine-application.md).
-Next step is to check whether the card needs authorization via [requesting details of the card](../operations.md#get-payment-cards) and validating if the [AuthorizationState](../operations.md#authorization-state) of the card is `Authorizable`.
+Next step is to check whether the card needs authorization via [requesting details of the card](../operations.md#get-payment-cards) and validating if the [Authorization state](../operations.md#authorization-state) of the card is `Authorizable`.
 
 We can try to [authorize the card](../operations.md#authorize-payment-card) immediately. The response contains a [State](../operations.md#payment-card-authorization-state) of the authorization where no further action is needed unless the [State](../operations.md#payment-card-authorization-state) is not finite (`Pending` or `Requested`). In any other cases the card is either authorized without any
 user action, or the authorization is not possible.
@@ -20,16 +20,16 @@ Simply navigate the user to url `https://[MewsApplicationsBaseUrl]/navigator/car
 A `returnUrl` query parameter is optional and will be used by the application to return the user into your booking engine after successful payment card authorization or in case the user decides to abandon the flow.
 The `returnUrl` value should be a `Base64` encoded absolute url e.g. in JavaScript via `btoa` function.
 
-After the user returns to your booking engine you can verify the card authorization state via [requesting details of the card](../operations.md#get-payment-cards) and by checking that the [AuthorizationState](../operations.md#authorization-state) of the card is `Authorized`.
+After the user returns to your booking engine you can verify the card authorization state via [requesting details of the card](../operations.md#get-payment-cards) and by checking that the [Authorization state](../operations.md#authorization-state) of the card is `Authorized`.
 
 ## Step by step workflow
-1. [Create new reservation group](../operations.md#request-apibaseurlapidistributorv1reservationgroupscreate) with [CreditCardData](../operations.md#creditcarddata)
+1. [Create new reservation group](../operations.md#create-reservation-group) with [Credit card data](../operations.md#credit-card-data)
 2. Get `PaymentCardId` from the response
-3. Validate that the card [AuthorizationState](../operations.md#authorization-state) is `Authorizable` via [Get Payment Cards](../operations.md#get-payment-cards) endpoint. **If not the workflow ends here**.
-4. Try to authorize the card via [Authorize Payment Card](../operations.md#authorize-payment-card) endpoint and check that the [State](../operations.md#payment-card-authorization-state) in the response is either `Pending` or `Requested`. **If not the workflow ends here**.
+3. Validate that the card [Authorization state](../operations.md#authorization-state) is `Authorizable` via [Get payment cards](../operations.md#get-payment-cards) endpoint. **If not the workflow ends here**.
+4. Try to authorize the card via [Authorize payment card](../operations.md#authorize-payment-card) endpoint and check that the [State](../operations.md#payment-card-authorization-state) in the response is either `Pending` or `Requested`. **If not the workflow ends here**.
 5. Create a `ReturnUrl` via encoding your url by `Base64` e.g. JavaScript example would be `btoa(urlWhereUserShouldReturn)`.
 6. Redirect the user to the gateway on url `https://[MewsApplicationsBaseUrl]/navigator/card-authorization/detail/[PaymentCardId]?returnUrl=[ReturnUrl]`. You can find out the `MewsApplicationBaseUrl` in [Environments](../environments.md) section.
-7. After the user returns to the `ReturnUrl` in your booking engine you can verify the state by using [Get Payment Cards](../operations.md#get-payment-cards) and verify the [AuthorizationState](../operations.md#authorization-state) is `Authorized`.
+7. After the user returns to the `ReturnUrl` in your booking engine you can verify the state by using [Get payment cards](../operations.md#get-payment-cards) and verify the [Authorization state](../operations.md#authorization-state) is `Authorized`.
 
 ### Workflow diagram
 

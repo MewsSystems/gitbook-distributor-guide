@@ -1,10 +1,10 @@
 # Operations
 
-## Get Configuration Info <a id="get-configuration-info"></a>
+## Get configuration
 
 Preferred initial call used to obtain all static data about distributor configuration for the client.
 
-### Request`[ApiBaseUrl]/api/distributor/v1/configuration/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/configuration/get`
 
 ```json
 {
@@ -17,13 +17,13 @@ Preferred initial call used to obtain all static data about distributor configur
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `PrimaryId` | string | required | Primary configuration id. |
 | `Ids` | array of strings | required | Array of configuration ids. |
 
-### Response <a id="response-apibaseurlapidistributorv1configuratioget"></a>
+### Response
 
 ```json
 {
@@ -163,11 +163,11 @@ Preferred initial call used to obtain all static data about distributor configur
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Cities` | array of [City](operations.md#city) | required | Cities supported by the enterprise. |
+| `Cities` | array of [City](./operations.md#city) | required | Cities supported by the enterprise. |
 | `CityId` | string | required | Unique identifier of the default city. |
-| `Configurations` | array of [Configuration](operations.md#configuration) | required | Array of [Configuration](operations.md#configuration)s. |
+| `Configurations` | array of [Configuration](./operations.md#configuration)s | required | Configurations of the booking engine instances. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor \(voucher codes are listed by default\). |
 | `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th\). If left blank, the default will be 0. |
@@ -177,7 +177,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `LanguageCode` | string | optional | Language code which Distributor should use. |
 | `NowUtc` | string | required | Current server date and time in UTC timezone in ISO 8601 format. |
 | `PrimaryColor` | string | optional | Distributor's primary color in Hex format. |
-| `Theme` | [Theme](operations.md#theme) | optional | Distributor's theme variant. |
+| `Theme` | [Theme](./operations.md#theme) | optional | Distributor's theme variant. |
 | `VoucherCode` | string | optional | Voucher code which enables special rate offerings. |
 
 #### Theme
@@ -187,89 +187,89 @@ Preferred initial call used to obtain all static data about distributor configur
 
 #### City
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the city. |
 | `ImageId` | string | optional | Unique identifier of the city image. |
-| `Name` | string | [LocalizedText](operations.md#localizedtext) | City name. |
+| `Name` | string | [Localized text](./operations.md#localized-text) | City name. |
 
 #### Configuration
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the configuration. |
 | `AdultCount` | number | optional | Default number of adults. |
 | `ChildCount` | number | optional | Default number of children. |
 | `ChildSelectionEnabled` | boolean | optional | Determines whether to allow adding children to reservations \(true by default\). |
 | `CompetitorPriceRelativeAdjustment` | number | optional | Percentage markup with which competitor's prices \(listed in the rate comparison banner if `DisplayRateComparison` is set to `true`\) will be shown, compared to enterprise's Best Available Rate \(BAR\). For example, if enterprise's BAR costs 50, and entered here is `1`, their rate will be shown as 50. If here is entered `1.1`, their rate will be shown as 55 \(as here is added a 10% markup\). |
-| `CompetitorRateDescription` | [LocalizedText](operations.md#localizedtext) | required | Description differentiating enterprise's online booking from competitors booking. \(for example, `20% online booking discount` or `Breakfast included`\). |
+| `CompetitorRateDescription` | [Localized text](./operations.md#localized-text) | required | Description differentiating enterprise's online booking from competitors booking. \(for example, `20% online booking discount` or `Breakfast included`\). |
 | `DisplayAvailability` | boolean | optional | Determines whether to display property's availability next to maximum occupancy in space categories \(availability will be shown by default\). |
 | `DisplayRateComparison` | boolean | optional | Determines whether to display rate comparison. |
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
-| `Enterprise` | [Enterprise](operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
+| `Enterprise` | [Enterprise](./operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
 | `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
-| `PaymentCardInput` | string [PaymentCardInput](operations.md#paymentcardinput) | required | Determines how to handle payment cards. |
-| `RequiredFields` | array of [RequiredField](operations.md#requiredfield) | required | Form fields which are required and need to be filled in. |
+| `PaymentCardInput` | string [Payment card input](./operations.md#payment-card-input) | required | Determines how to handle payment cards. |
+| `RequiredFields` | array of [Required field](./operations.md#required-field) | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 
-#### PaymentCardInput
+#### Payment card input
 
 * `NotRequested` - Payment card info is not requested.
 * `Requested` - Payment card info is requested, but not validated.
 * `Required` - Payment card info is requested and validated. 
 
-#### RequiredField
+#### Required field
 
 * `Telephone`
 
 #### Enterprise
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the enterprise. |
 | `AcceptedCurrencyCodes` | array of string | required | Array of currency codes in ISO 4217 format accepted by the enterprise. |
-| `AdditionalLegalStatements` | array of [LocalizedText](operations.md#localizedtext) | required | Additional legal statements. |
-| `Address` | [Address](operations.md#address) | required | Address of the enterprise. |
-| `Categories` | array of [RoomCategory](operations.md#roomcategory) | required | Array of active room categories of the enterprise. |
-| `CityId` | string | required | Unique identifier of the [City](operations.md#city). |
+| `AdditionalLegalStatements` | array of [Localized text](./operations.md#localized-text) | required | Additional legal statements. |
+| `Address` | [Address](./operations.md#address) | required | Address of the enterprise. |
+| `Categories` | array of [Room category](./operations.md#room-category) | required | Array of active room categories of the enterprise. |
+| `CityId` | string | required | Unique identifier of the [City](./operations.md#city). |
 | `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO 4217 format. |
 | `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
 | `DefaultRateCurrencyCode` | string | required | Default enterprise rate currency code in ISO 4217 format. |
-| `Description` | [LocalizedText](operations.md#localizedtext) | required | Enterprise description. |
+| `Description` | [Localized text](./operations.md#localized-text) | required | Enterprise description. |
 | `Email` | string | required | Email of the enterprise. |
 | `IanaTimeZoneIdentifier` | string | required | IANA time zone identifer. |
 | `ImageId` | string | optional | Unique identifier of the enterprise logo. |
 | `IntroImageId` | string | optional | Unique identifier of the enterprise intro image. |
-| `Name` | [LocalizedText](operations.md#localizedtext) | required | Enterprise name. |
-| `Pricing` | string [Pricing](operations.md#pricing) | required | Pricing method used by the enterprise. |
-| `PrivacyPolicyUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise privacy policy URL. |
-| `Products` | array of [Product](operations.md#product) | required | Array of active products which can be offered to the customer. |
+| `Name` | [Localized text](./operations.md#localized-text) | required | Enterprise name. |
+| `Pricing` | string [Pricing method](./operations.md#pricing-method) | required | Pricing method used by the enterprise. |
+| `PrivacyPolicyUrl` | [Localized text](./operations.md#localized-text) | required | Enterprise privacy policy URL. |
+| `Products` | array of [Product](./operations.md#product) | required | Array of active products which can be offered to the customer. |
 | `TaxEnvironmentCode` | string | required | Tax environment code. |
 | `Telephone` | string | required | Telephone of the enterprise. |
-| `TermsAndConditionsUrl` | [LocalizedText](operations.md#localizedtext) | required | Enterprise terms and conditions URL. |
+| `TermsAndConditionsUrl` | [Localized text](./operations.md#localized-text) | required | Enterprise terms and conditions URL. |
 
 #### Address
 
 | Property | Type |  | Description |
 | :--- | :--- | :--- | :--- |
 | `City` | string | optional | City. |
-| `CountryCode` | string | optional | ISO 3166-1 code of the [Country](operations.md#country). |
+| `CountryCode` | string | optional | ISO 3166-1 code of the [Country](./operations.md#country). |
 | `Latitude` | number | optional | The latitude. |
 | `Longitude` | number | optional | The longitude. |
 | `Line1` | string | optional | First address line. |
 | `Line2` | string | optional | Second address line. |
 | `PostalCode` | string | optional | Postal code. |
 
-#### Pricing
+#### Pricing method
 
 * `Gross` - The enterprise shows amount with gross prices.
 * `Net` - The enterprise shows amount with net prices.
 
-## Get Hotel Info <a id="get-hotel-info"></a>
+## Get hotels
 
 Alternative initial call used to obtain all static data about hotel relevant for the client.
 
-### Request`[ApiBaseUrl]/api/distributor/v1/hotels/get` <a id="request-apibaseurlapidistributorv1hotelsget"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/hotels/get`
 
 ```json
 {
@@ -278,12 +278,12 @@ Alternative initial call used to obtain all static data about hotel relevant for
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response <a id="response"></a>
+### Response
 
 ```json
 {
@@ -425,49 +425,35 @@ Alternative initial call used to obtain all static data about hotel relevant for
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Countries` | array of [Country](operations.md#country) | required | Countries supported by hotel. |
-| `Currencies` | array of [Currency](operations.md#currency) | required | Currencies accepted by hotel. |
+| `Countries` | array of [Country](./operations.md#country) | required | Countries supported by hotel. |
+| `Currencies` | array of [Currency](./operations.md#currency) | required | Currencies accepted by hotel. |
 | `DefaultCurrencyCode` | string | required | Code of hotel’s default currency. |
 | `DefaultLanguageCode` | string | required | Code of hotel’s default language. |
 | `DefaultRateCurrencyCode` | string | required | Code of currency of hotel’s default rate. |
 | `IanaTimezoneIdentifier` | string | required | Iana identifier of hotel’s time zone |
 | `ImageId` | string | optional | Unique identifier of hotel’s logo image. |
 | `IntroImageId` | string | optional | Unique identifier of hotel’s intro image \(usable as background image\). |
-| `Languages` | array of [Language](operations.md#language) | required | Languages supported by the hotel. |
-| `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the hotel. |
-| `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the hotel. |
-| `PaymentGateway` | one of [PaymentGateway](operations.md#payment-gateway) types | optional | Info about payment gateway used by the hotel. |
-| `Products` | array of [Product](operations.md#product) | required | All products orderable with rooms. |
-| `RoomCategories` | array of [RoomCategory](operations.md#roomcategory) | required | All room categories offered by hotel. |
+| `Languages` | array of [Language](./operations.md#language) | required | Languages supported by the hotel. |
+| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the hotel. |
+| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the hotel. |
+| `PaymentGateway` | one of [Payment gateway](./operations.md#payment-gateway) types | optional | Info about payment gateway used by the hotel. |
+| `Products` | array of [Product](./operations.md#product) | required | All products orderable with rooms. |
+| `RoomCategories` | array of [Room category](./operations.md#room-category) | required | All room categories offered by hotel. |
 | `TermsAndConditionsUrl` | string | optional | URL of hotel’s terms and conditions. |
 | `ImageBaseUrl` | string | required | Base URL of images. |
 
-### API Response entites <a id="entities"></a>
+#### Country
 
-#### City <a id="city"></a>
-
-|  | Property | Type | Description |
-| :--- | :--- | :--- | :--- |
-| `Id` | string | required | City identifier. |
-| `ImageId` | string | optional | Identifier of image assigned to city. |
-| `Name` | string | required | Name of the city. |
-
-#### Configuration <a id="configuration"></a>
-
-TBC
-
-#### Country <a id="country"></a>
-
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Code` | string | required | ISO 3166-1 Aplha-2 code of the country. |
 | `Name` | string | required | Name of the country. |
 
-#### Currency <a id="currency"></a>
+#### Currency
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Code` | string | required | Code of the currency in ISO 4217 format. |
 | `Symbol` | string | required | Symbol of the currency. |
@@ -475,42 +461,42 @@ TBC
 | `DecimalPlaces` | number | required | Number of decimal places used with the currency value. |
 | `SymbolIsBehindValue` | boolean | required | Indicates whether the symbol stands behind a value in standard formatting. |
 
-#### Language <a id="language"></a>
+#### Language
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Code` | string | required | Language code. |
 | `Name` | string | required | Name of the language. |
-| `DefaultCulture` | [Culture](operations.md#culture) | required | Specifics of a default culture for the language. |
+| `DefaultCulture` | [Culture](./operations.md#culture) | required | Specifics of a default culture for the language. |
 
-#### Culture <a id="culture"></a>
+#### Culture
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `CurrencyDecimalSeparator` | string | required | Symbol used to separate decimal places in the currency value format. |
 | `CurrencyGroupSeparator` | string | required | Symbol used to separate thousands in the currency value format. |
 
-#### LocalizedText
+#### Localized text
 
 A localized text is an object of the property values localized into languages supported by hotel, indexed by language codes.
 
-#### PaymentGateway <a id="payment-gateway"></a>
+#### Payment gateway
 
 If the hotel does not use any payment gateway, the value is null. If it does, then you should use a specific api call and the gateway’s library to encode credit card data. The main purpose of a payment gateway is to securely obtain credit card of the customer before a reservation is created. You can decide not to support any of them and just ignore it, in which case reservations are created with note about missing credit card.
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentCardStorageType` | string [PaymentCardStorageType](operations.md#paymentcardstoragetype) | required | Type of the payment card storage used by enterprise. |
+| `PaymentCardStorageType` | string [Payment card storage type](./operations.md#payment-card-storage-type) | required | Type of the payment card storage used by enterprise. |
 | `IsMerchant` | boolean | required | Whether the gateway is processed through Mews Merchant or not. |
-| `SupportedCreditCardTypes` | array of [CreditCardType](operations.md#creditcardtype) | required | Supported payment cards, should be used to enhance UX. |
+| `SupportedCreditCardTypes` | array of [Credit card type](./operations.md#credit-card-type) | required | Supported payment cards, should be used to enhance UX. |
 | `PublicKey` | string | required | Merchant identifier for which PCI proxy Iframe is connected. |
 | `DefaultCurrencyCode` | string | required | Currency code of default payment gateway in ISO 4217 format. |
 
-#### PaymentCardStorageType
+#### Payment card storage type
 
 * PciProxy
 
-#### CreditCardType
+#### Credit card type
 
 * MasterCard
 * Visa
@@ -521,19 +507,19 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * Maestro
 * ...
 
-#### Product <a id="product"></a>
+#### Product
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the product. |
 | `CategoryId` | string | optional | Unique identifier of the product category. |
-| `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the product localized into all supported languages. |
-| `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the product localized into all supported languages. |
+| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the product localized into all supported languages. |
+| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the product localized into all supported languages. |
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
-| `Amounts` | array of [Amount](operations.md#multicurrency-amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
-| `Charging` | string [Product charging](operations.md#product-charging) | required | Charging of the product. |
-| `Posting` | string [Product posting](operations.md#product-posting) | required | Posting of the product. |
+| `Amounts` | array of [Amount](./operations.md#multi-currency-amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Charging` | string [Product charging](./operations.md#product-charging) | required | Charging of the product. |
+| `Posting` | string [Product posting](./operations.md#product-posting) | required | Posting of the product. |
 
 #### Product charging
 
@@ -547,7 +533,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * `Once`
 * `Daily`
 
-#### Multi-currency Amount <a id="multicurrency-amount"></a>
+#### Multi-currency amount
 
 An object where name corresponds to ISO code and value represents a structure that holds gross price, net price and tax values.
 
@@ -571,32 +557,32 @@ An object where name corresponds to ISO code and value represents a structure th
 | :--- | :--- | :--- |
 | `GrossValue` | Number | Net price + taxes |
 | `NetValue` | Number | Amount without taxes |
-| `TaxValues` | Collection of [TaxValue](operations.md#taxvalue)s | Tax values for the net value amount |
+| `TaxValues` | Collection of [Tax value](./operations.md#tax-value)s | Tax values for the net value amount |
 
-#### TaxValue <a id="taxvalue"></a>
+#### Tax value
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
 | `TaxRateCode` | string | Unique identifier of the rate. |
 | `Value` | Number | Amount of tax |
 
-#### RoomCategory <a id="roomcategory"></a>
+#### Room category
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the room category. |
-| `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the room category localized into all supported languages. |
-| `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the room category localized into all supported languages. |
+| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the room category localized into all supported languages. |
+| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the room category localized into all supported languages. |
 | `ImageIds` | array of strings | required | Unique identifiers of images attached with the room category. |
 | `NormalBedCount` | number | required | Number of normal beds in the room category. |
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
 | `SpaceType` | string | required | Type of the room category - “Room” or “Bed”. |
 
-## Validate Voucher <a id="validate-voucher"></a>
+## Validate voucher
 
 Can be used to determine whether a voucher code is valid.
 
-### Request`[ApiBaseUrl]/api/distributor/v1/vouchers/validate` <a id="request-apibaseurlapidistributorv1vouchersvalidate"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/vouchers/validate`
 
 ```json
 {
@@ -606,13 +592,13 @@ Can be used to determine whether a voucher code is valid.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `VoucherCode` | string | required | Voucher code enabling special rate offerings. Case sensitive. |
 
-### Response <a id="response-1"></a>
+### Response
 
 ```json
 {
@@ -620,15 +606,15 @@ Can be used to determine whether a voucher code is valid.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `IsValid` | boolean | required | Indicates whether the voucher code is valid. |
 
-## Get Availability <a id="get-availability"></a>
+## Get availability
 
 Gives availabilities and pricings for given date interval with product prices included for each room category. Categorized by applicable rates and person counts from 1 to full room. If room category is not available, it is left out from response.
 
-### Request`[ApiBaseUrl]/api/distributor/v1/hotels/getAvailability` <a id="request-apibaseurlapidistributorv1hotelsgetavailability"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/hotels/getAvailability`
 
 ```json
 {
@@ -650,9 +636,9 @@ Gives availabilities and pricings for given date interval with product prices in
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
@@ -664,7 +650,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `ChildCount` | number | optional | Requested number of children. |
 | `CategoryIds` | array of string | optional | Ids of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 
-### Response <a id="response-2"></a>
+### Response
 
 ```json
 {
@@ -730,35 +716,35 @@ Gives availabilities and pricings for given date interval with product prices in
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `RateGroups` | array of [RateGroup](operations.md#rategroup) | required | Information about all available rate groups. |
-| `Rates` | array of [Rate](operations.md#rate) | required | Information about all available rates. |
-| `RoomCategoryAvailabilites` | array of [RoomCategoryAvailability](operations.md#roomcategoryavailability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
+| `RateGroups` | array of [Rate group](./operations.md#rate-group) | required | Information about all available rate groups. |
+| `Rates` | array of [Rate](./operations.md#rate) | required | Information about all available rates. |
+| `RoomCategoryAvailabilites` | array of [Room category availability](./operations.md#room-category-availability) | required | Availabilities of room categories. If a room category is not available, it is not included. |
 
-#### RateGroup <a id="rategroup"></a>
+#### Rate group
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the rate. |
-| `SettlementType` | string [SettlementType](operations.md#settlementtype) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
-| `SettlementAction` | string [SettlementAction](operations.md#settlementaction) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
-| `SettlementTrigger` | string [SettlementTrigger](operations.md#settlementtrigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
+| `SettlementType` | string [Settlement type](./operations.md#settlement-type) | required | Determines if system will charge reservation cost automatically or if you'd like employees to manually process payments. |
+| `SettlementAction` | string [Settlement action](./operations.md#settlement-action) | required | Determines how payment will be taken at time of automatic trigger. Valid if settlement is automatic only. |
+| `SettlementTrigger` | string [Settlement trigger](./operations.md#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger \(for example, '-1 day' will charge the amount 1 day before\). |
 | `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. |
 | `SettlementMaximumNights` | number | optional | Maximum number of nights that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
 
-#### SettlementType
+#### Settlement type
 
 * `Automatic`
 * `Manual`
 
-#### SettlementAction
+#### Settlement action
 
 * `ChargeCreditCard`
 * `CreatePreauthorization`
 
-#### SettlementTrigger
+#### Settlement trigger
 
 * `Confirmation`
 * `Start`
@@ -766,51 +752,51 @@ Gives availabilities and pricings for given date interval with product prices in
 * `StartDate`
 * `EndDate`
 
-#### Rate <a id="rate"></a>
+#### Rate
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the rate. |
-| `Name` | [LocalizedText](operations.md#localizedtext) | required | Name of the rate localized into all supported languages. |
-| `Description` | [LocalizedText](operations.md#localizedtext) | required | Description of the rate localized into all supported languages. |
+| `Name` | [Localized text](./operations.md#localized-text) | required | Name of the rate localized into all supported languages. |
+| `Description` | [Localized text](./operations.md#localized-text) | required | Description of the rate localized into all supported languages. |
 | `IsPrivate` | boolean | required | Set to `true` for promotion rate enabled by provided `VoucherCode` |
 
-#### RoomCategoryAvailability <a id="roomcategoryavailability"></a>
+#### Room category availability
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `RoomCategoryId` | string | required | Unique identifier of the room category. |
-| `RoomOccupancyAvailabilities` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Availabilities of rooms in the category by the room occupancy. |
+| `RoomOccupancyAvailabilities` | array of [Room occupancy availability](./operations.md#room-occupancy-availability) | required | Availabilities of rooms in the category by the room occupancy. |
 | `AvailableRoomCount` | number | required | Number of available rooms from the room category. |
 
-#### RoomOccupancyAvailability <a id="roomoccupancyavailability"></a>
+#### Room occupancy availability
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `AdultCount` | number | required | Number of adults for the associated pricing. |
 | `ChildCount` | number | required | Number of childs for the associated pricing. |
-| `Pricing` | array of [Pricing](operations.md#pricing) | required | Pricing information. |
+| `Pricing` | array of [Pricing](./operations.md#pricing) | required | Pricing information. |
 
-#### Pricing <a id="pricing"></a>
+#### Pricing
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `RateId` | string | required | Unique identifier of a rate. |
-| `Price` | [RoomPrice](operations.md#roomprice) | required | Price of the room. |
-| `MaxPrice` | [RoomPrice](operations.md#roomprice) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
+| `Price` | [Room price](./operations.md#room-price) | required | Price of the room. |
+| `MaxPrice` | [Room price](./operations.md#room-price) | required | Max price of the room with the same parameters and conditions among other rates. Can be understood \(and possibly displayed\) as the value before discount. |
 
-#### RoomPrice <a id="roomprice"></a>
+#### Room price
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerNight` | [Amount](operations.md#multicurrency-amount) | required | Average amount per night. |
+| `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerNight` | [Amount](./operations.md#multi-currency-amount) | required | Average amount per night. |
 
-## Get Reservations Pricing <a id="get-reservations-pricing"></a>
+## Get reservations pricing
 
 Gives a pricing information for the given configuration.
 
-### Request`[ApiBaseUrl]/api/distributor/v1/reservations/getPricing` <a id="request-apibaseurlapidistributorv1reservationsgetpricing"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/reservations/getPricing`
 
 ```json
 {
@@ -832,25 +818,25 @@ Gives a pricing information for the given configuration.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
 | `EndUtc` | string | required | End date of the reservation \(departure date\). |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `RoomCategoryId` | string | required | Identifier of the requested room category. |
-| `Occupancies` | array of [Occupancy](operations.md#occupancy) | required | Occupancies of the reservations. |
+| `Occupancies` | array of [Occupancy](./operations.md#occupancy) | required | Occupancies of the reservations. |
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 
-#### Occupancy <a id="occupancy"></a>
+#### Occupancy
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
 
-### Response <a id="response-3"></a>
+### Response
 
 ```json
 {
@@ -876,13 +862,13 @@ Gives a pricing information for the given configuration.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `OccupancyPrices` | array of [RoomOccupancyAvailability](operations.md#roomoccupancyavailability) | required | Pricing information. |
+| `OccupancyPrices` | array of [Room occupancy availability](./operations.md#room-occupancy-availability) | required | Pricing information. |
 
-## Get Payment Configuration <a id="get-payment-configuration"></a>
+## Get payment configuration
 
-### Request `[ApiBaseUrl]/api/distributor/v1/hotels/getPaymentConfiguration` <a id="request-getpaymentconfiguration"></a>
+### Request `[ApiBaseUrl]/api/distributor/v1/hotels/getPaymentConfiguration`
 
 ```json
 {
@@ -891,12 +877,12 @@ Gives a pricing information for the given configuration.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `HotelId` | string | required | Unique identifier of hotel. |
 
-### Response <a id="response-getpaymentconfiguration"></a>
+### Response
 
 ```json
 {
@@ -922,28 +908,28 @@ Gives a pricing information for the given configuration.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGateway` | [PaymentGateway](operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
-| `SurchargeConfiguration` | [SurchargeConfiguration](operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
+| `PaymentGateway` | [Payment gateway](./operations.md#payment-gateway) | required | Object that describes payment gateway of the enterprise. |
+| `SurchargeConfiguration` | [Surcharge configuration](./operations.md#surcharge-configuration) | required | Object describing surcharge configuration used by the enterprise. |
 
-#### SurchargeConfiguration <a id="surcharge-configuration"></a>
+#### Surcharge configuration
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `SurchargeServiceId` | string | optional | Unique identifier of surcharge service. |
-| `SurchargeFees` | [SurchargeFees](operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
+| `SurchargeFees` | [Surcharge fees](./operations.md#surcharge-fees) | required | Surcharge fees are additional fees charged by payment card company. |
 
-#### SurchargeFees
+#### Surcharge fees
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Key` | string [CreditCardType](operations.md#creditcardtype) | required | Credit card type. |
+| `Key` | string [Credit card type](./operations.md#credit-card-type) | required | Credit card type. |
 | `Value` | number | required | Amount of the surcharge fee itself. |
 
-## Create Reservation Group <a id="create-reservation-group"></a>
+## Create reservation group
 
-### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/create` <a id="request-apibaseurlapidistributorv1reservationgroupscreate"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/create`
 
 ```json
 {
@@ -993,19 +979,19 @@ Gives a pricing information for the given configuration.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `ConfigurationId` | string | required | Unique identifier of the used Distributor configuration. |
 | `HotelId` | string | required | Unique identifier of the hotel. |
-| `Customer` | [Customer](operations.md#customer) | required | Information about customer who creates the order. |
-| `Booker` | [Booker](operations.md#booker) | optional | Information about booker. |
-| `Reservations` | array of [ReservationData](operations.md#reservationdata) | required | Parameters of reservations to be ordered. |
-| `CreditCardData` | [CreditCardData](operations.md#creditcarddata) | optional | Credit card data, required if hotel has payment gateway. |
+| `Customer` | [Customer](./operations.md#customer) | required | Information about customer who creates the order. |
+| `Booker` | [Booker](./operations.md#booker) | optional | Information about booker. |
+| `Reservations` | array of [Reservation data](./operations.md#reservation-data) | required | Parameters of reservations to be ordered. |
+| `CreditCardData` | [Credit card data](./operations.md#credit-card-data) | optional | Credit card data, required if hotel has payment gateway. |
 
 #### Customer
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Email` | string | required | Email of the customer. |
 | `FirstName` | string | required | First name of the customer. |
@@ -1021,17 +1007,17 @@ Gives a pricing information for the given configuration.
 
 #### Booker
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Email` | string | required | Email of the booker. |
 | `FirstName` | string | required | First name of the booker. |
 | `LastName` | string | required | Last name of the booker. |
 | `Telephone` | string | optional | Telephone number of the booker. |
-| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmails` in [Customer](operations.md#customer) should either not have one, be set to `false` or `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
+| `SendMarketingEmails` | boolean | optional | Subscribe to marketing emails. When booking on behalf of somebody else, this field should have the value and the field `SendMarketingEmails` in [Customer](./operations.md#customer) should either not have one, be set to `false` or `null`. API accepts following values: `true` - the subscription is created, `false` - subscription is disabled, not supplied or `null` - subscription remains untouched. |
 
-#### ReservationData <a id="reservationdata"></a>
+#### Reservation data
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `RoomCategoryId` | string | required | Identifier of the requested room category. |
 | `StartUtc` | string | required | Start date of the reservation \(arrival date\). |
@@ -1043,15 +1029,15 @@ Gives a pricing information for the given configuration.
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `Notes` | string | optional | Additional notes. |
 
-#### CreditCardData <a id="creditcarddata"></a>
+#### Credit card data
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. More details [here](../use-cases/how-to-support-payment-cards-in-booking-engine-application.md#payment-gateway-data). |
+| `PaymentGatewayData` | string | required | Encoded payment card data obtained from the payment gateway specific library. More details [here](./use-cases/how-to-support-payment-cards-in-booking-engine-application.md). |
 | `Expiration` | string | required | Expiration date of payment card in format `YYYY-MM`. |
 | `HolderName` | string | required | Name of the card holder. |
 
-### Response <a id="response-6"></a>
+### Response
 
 ```json
 {
@@ -1089,18 +1075,18 @@ Gives a pricing information for the given configuration.
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
-| `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
-| `PaymentRequestId` | string | optional | Unique identifier of [PaymentRequest](operations.md#payment-request) that can be used to complete [on session payment](use-cases/on-session-payments.md). |
-| `PaymentCardId` | string | optional | Unique identifier of [PaymentCard](operations.md#payment-card) that can be used to complete [on session payment card authorization](use-cases/on-session-payment-card-authorization.md). |
-| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
+| `Reservations` | array of [Reservation](./operations.md#reservation) | required | The created reservations in group. |
+| `PaymentRequestId` | string | optional | Unique identifier of [Payment request](./operations.md#payment-request) that can be used to complete [on session payment](./use-cases/on-session-payments.md). |
+| `PaymentCardId` | string | optional | Unique identifier of [Payment card](./operations.md#payment-card) that can be used to complete [on session payment card authorization](./use-cases/on-session-payment-card-authorization.md). |
+| `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the whole group. |
 
-### Reservation <a id="reservation"></a>
+### Reservation
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Identifier of the reservation. |
 | `Number` | string | required | Confirmation number of the reservation. |
@@ -1112,19 +1098,19 @@ Gives a pricing information for the given configuration.
 | `ProductIds` | array of string | optional | Identifiers of the requested products. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `Notes` | string | optional | Additional notes. |
-| `Amount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the reservation. |
+| `Amount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the reservation. |
 
-### Error Response <a id="error-response"></a>
+### Error response
 
 In case of an error caused by insufficient availability \(which might have decreased since the time it was provided to the client\), the error response may contain the following fields on top the standard ones:
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `ExceedingReservationIndexes` | array of number | optional | Indexes of reservations from the request that are not available anymore. |
 
-## Get Reservation Group <a id="get-reservation-group"></a>
+## Get reservation group
 
-### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/get` <a id="request-apibaseurlapidistributorv1reservationgroupsget"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/reservationGroups/get`
 
 ```json
 {
@@ -1138,21 +1124,21 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](https://mews-systems.gitbook.io/distributor-guide/distributor-api-v1/authorization). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `HotelId` | string | required | Unique identifier of the hotel. |
 | `ReservationGroupId` | string | required | Unique identifier of the reservation group. |
-| `Extent` | Object of [ReservationGroup Extent](operations.md#reservation-group-extent) | optional | Extent of data to be returned. e.g it is possible to specify that together with the reservation group, payment request and payments will be returned. |
+| `Extent` | Object of [ReservationGroup Extent](./operations.md#reservation-group-extent) | optional | Extent of data to be returned. e.g it is possible to specify that together with the reservation group, payment request and payments will be returned. |
 
-### Reservation Group Extent <a id="reservation-group-extent"></a>
-|  | Property | Type | Description |
+### Reservation group extent
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `PaymentRequests` | boolean | optional | Whether the response should contain PaymentRequests related to the reservation group. |
 | `Payments` | boolean | optional | Whether the response should contain Payment attempts related to the PaymentRequest for reservation group. |
 
 
-### Response <a id="response-7"></a>
+### Response
 
 ```json
 {
@@ -1217,53 +1203,53 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the created reservation group. |
 | `CustomerId` | string | required | Unique identifier of customer who created reservation group. |
-| `Reservations` | array of [Reservation](operations.md#reservation) | required | The created reservations in group. |
-| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](use-cases/on-session-payments.md). |
-| `TotalAmount` | [Amount](operations.md#multicurrency-amount) | required | Total amount of the whole group. |
-| `PaymentRequests` | array of [PaymentRequest](operations.md#payment-request) | optional | Contains payment requests related to the reservation group. |
-| `Payments` | array of [Payment](operations.md#payment) | optional | Contains Payments related to the payment requests. |
+| `Reservations` | array of [Reservation](./operations.md#reservation) | required | The created reservations in group. |
+| `PaymentRequestId` | string | optional | Unique identifier of payment request that can be used to complete [on session payment](./use-cases/on-session-payments.md). |
+| `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the whole group. |
+| `PaymentRequests` | array of [PaymentRequest](./operations.md#payment-request) | optional | Contains payment requests related to the reservation group. |
+| `Payments` | array of [Payment](./operations.md#payment) | optional | Contains Payments related to the payment requests. |
 
-### PaymentRequest <a id="payment-request"></a>
+### Payment request
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment request. |
 | `ReservationGroupId` | string | required | Identifier of the related reservation group. |
-| `State` | string [PaymentRequestState](operations.md#payment-request-state) | required | State of the payment request. |
+| `State` | string [PaymentRequestState](./operations.md#payment-request-state) | required | State of the payment request. |
 
-#### PaymentRequestState <a id="payment-request-state"></a>
+#### Payment request state
 
 - `Pending` - Non-finite state. Awaiting a next action.
 - `Completed` - Finite state. Payment request that has been covered by payment.
 - `Canceled` - Finite state. Payment request has been manually canceled by the creator (enterprise).
 - `Expired` - Finite state. Payment request has not been completed within its expiration time.
 
-### Payment <a id="payment"></a>
+### Payment
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment. |
-| `Amount` | [SingleCurrencyAmount](operations.md#amount) | required | Amount in a currency which was used to create PaymentRequest - usually default currency of the enterprise. |
-| `ChargeAmount` | [SingleCurrencyAmount](operations.md#amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
+| `Amount` | [SingleCurrencyAmount](./operations.md#amount) | required | Amount in a currency which was used to create PaymentRequest - usually default currency of the enterprise. |
+| `ChargeAmount` | [SingleCurrencyAmount](./operations.md#amount) | required | Amount in currency which was used for the payment during the charge. i.e. currency that will be visible on the user bank statement for the payment. |
 | `CreatedUtc` | string | required | Date and time of the payment creation in UTC timezone in ISO 8601 format. |
 | `EnterpriseId` | string | required | Identifier of the enterprise receiving the payment. |
 | `PaymentRequestId` | string | required | Identifier of the payment request. |
-| `State` | string [PaymentState](operations.md#payment-state) | required | State of the payment attempt. |
+| `State` | string [PaymentState](./operations.md#payment-state) | required | State of the payment attempt. |
 
-#### Amount <a id="amount"></a>
+#### Amount
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Currency` | string | required | ISO 4217 code of the currency. |
 | `GrossValue` | number | required | Gross value of the amount. (Net + sum of TaxValues) |
 | `NetValue` | number | required | Net value of the amount. |
-| `TaxValues` | array of [TaxValue](operations.md#taxvalue)s | required | Tax values of the amount. |
+| `TaxValues` | array of [TaxValue](./operations.md#tax-value)s | required | Tax values of the amount. |
 
-#### PaymentState <a id="payment-state"></a>
+#### Payment state
 
 - `Pending` - Non-finite state. Payment has been created, but the state is not known yet.
 - `Verifying` - Non-finite state. Payment is awaiting a 3DS verification.
@@ -1271,9 +1257,9 @@ In case of an error caused by insufficient availability \(which might have decre
 - `Canceled` - Finite state. Payment has been canceled, and it has not been charged.
 - `Failed` - Finite state. Payment has not been charged.
 
-## Get Payment Cards <a id="get-payment-cards"></a>
+## Get payment cards
 
-### Request`[ApiBaseUrl]/api/distributor/v1/paymentCards/getAll` <a id="request-apibaseurlapidistributorv1paymentcardsgetall"></a>
+### Request `[ApiBaseUrl]/api/distributor/v1/paymentCards/getAll`
 
 ```json
 {
@@ -1284,11 +1270,11 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `PaymentCardIds` | array of string | required | Collection of unique identifiers of the cards. |
 
-### Response <a id="response-8"></a>
+### Response
 ```json
 {
     "PaymentCards": [
@@ -1300,27 +1286,27 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentCards` | array of [Payment card](operations.md#payment-card)s | required | The payment cards. |
+| `PaymentCards` | array of [Payment card](./operations.md#payment-card)s | required | The payment cards. |
 
-#### Payment card <a id="payment-card"></a>
+#### Payment card
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment card. |
-| `AuthorizationState` | string [AuthorizationState](operations.md#authorization-state) | required | State of the payment attempt. |
+| `AuthorizationState` | string [AuthorizationState](./operations.md#authorization-state) | required | State of the payment attempt. |
 
-#### Authorization state <a id="authorization-state"></a>
+#### Authorization state
 
 - `Authorized` - Finite state. The payment card has been authorized.
 - `Authorizable` - Non-finite state. The payment card can be authorized.
 - `Unauthorizable` - Finite state. The payment card can't be authorized.
 
 
-## Authorize Payment Card <a id="authorize-payment-card"></a>
+## Authorize payment card
 
-### Request`[ApiBaseUrl]/api/distributor/v1/paymentCards/authorize` <a id="request-apibaseurlapidistributorv1paymentCardsauthorize"></a>
+### Request`[ApiBaseUrl]/api/distributor/v1/paymentCards/authorize`
 
 ```json
 {
@@ -1339,15 +1325,15 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `EnterpriseId` | string | required | Unique identifier of the enterprise which does have access to the payment card. |
 | `PaymentCardId` | string | required | Unique identifier of the payment card. |
-| `BrowserInfo` | [Browser info](operations.md#browser-info) | required | Information about the users browser. |
+| `BrowserInfo` | [Browser info](./operations.md#browser-info) | required | Information about the users browser. |
 
-#### Browser info <a id="browser-info"></a>
+#### Browser info
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `ScreenWidth` | number | required | Integer value of the [user screen width](https://developer.mozilla.org/en-US/docs/Web/API/Screen/width). |
 | `ScreenHeight` | number | required | Integer value of the [user screen height](https://developer.mozilla.org/en-US/docs/Web/API/Screen/height). |
@@ -1357,7 +1343,7 @@ In case of an error caused by insufficient availability \(which might have decre
 | `JavaEnabled` | boolean | required | Value of the browser information whether [Java is enabled](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorPlugins/javaEnabled). This will be always `false`. |
 | `TimeZoneOffset` | number | required | Integer value of the user [timezone offset](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset). |
 
-### Response <a id="response-9"></a>
+### Response
 ```json
 {
     "Id": "94835eb5-24e1-421f-9915-ad1a009de562",
@@ -1366,13 +1352,13 @@ In case of an error caused by insufficient availability \(which might have decre
 }
 ```
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Id` | string | required | Unique identifier of the payment card authorization attempt. |
 | `PaymentCardId` | string | required | Unique identifier of the payment card being authorized. |
-| `State` | string [Payment card authorization state](operations.md#payment-card-authorization-state) | required | State of the authorization attempt. |
+| `State` | string [Payment card authorization state](./operations.md#payment-card-authorization-state) | required | State of the authorization attempt. |
 
-#### Payment card authorization state <a id="payment-card-authorization-state"></a>
+#### Payment card authorization state
 
 - `Authorized` - Finite state. The payment card authorization has been successfully completed.
 - `Requested` - Non-finite state. The payment card authorization is requested from the user.

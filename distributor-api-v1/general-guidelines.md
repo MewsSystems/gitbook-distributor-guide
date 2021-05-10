@@ -1,10 +1,10 @@
 # General Guidelines
 
-## Usage  <a id="Usage"></a>
+## Usage
 
 Distributor API is a public API with no authorization that is designed to be consumed directly by frontend clients. It is unsuitable for continuous polling by a single server due to the built in anti-scraping protection and such requests can fail. For server to server communication, please refer to [Connector API](https://mews-systems.gitbook.io/connector-api/)
 
-## Requests  <a id="requests"></a>
+## Requests
 
 The API accepts only`HTTP POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
 
@@ -13,30 +13,30 @@ The API accepts only`HTTP POST`requests with`Content-Type`set to`application/jso
 ```
 
 * **ApiBaseUrl**
-  * Base address of the MEWS API, depends on environment \([staging](environments.md#staging-environment), [production](environments.md#production-environment)\).
+  * Base address of the MEWS API, depends on environment \([staging](./environments.md#stagingtesting-environment), [production](./environments.md#production-environment)\).
 * **Resource**
   * Logical group of operations, in most cases identifies target of the operations.
 * **Operation**
   * Name of the operation to be performed.
 
 ### Body <a id="body"></a>
-```javascript
+```json
 {
     "Client": "My Client 1.0.0",
     "LanguageCode": null,
     "CultureCode": null 
 }
 ```
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](authorization.md). |
+| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
 | `LanguageCode` | string | optional | Code of the language. |
 | `CultureCode` | string | optional | Code of the culture. |
 
 All operations of the API require Client to be present in the request.
-All operations of the API optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce language and culture of the operation which affects e.g. names of entities, descriptions or error messages. Both of these values must be defined together otherwise default values of the [Enterprise](operations.md#enterprise) are used.
+All operations of the API optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce language and culture of the operation which affects e.g. names of entities, descriptions or error messages. Both of these values must be defined together otherwise default values of the [Enterprise](./operations.md#enterprise) are used.
 
-## Responses  <a id="responses"></a>
+## Responses
 
 The API responds with`Content-Type`set to`application/json`and JSON content. In case of success, the HTTP status code is 200 and the content contains result according to the call. In case of error, there are multiple HTTP status codes for different types of errors:
 
@@ -51,7 +51,7 @@ The API responds with`Content-Type`set to`application/json`and JSON content. In 
 
 In case of any error, the returned JSON object describes the error and has the following properties:
 
-|  | Property | Type | Description |
+| Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Message` | string | required | Description of the error. |
 | `Details` | string | optional | Additional details about the error \(request, headers, server stack trace, inner exceptions etc.\). Only available on development environment. |
