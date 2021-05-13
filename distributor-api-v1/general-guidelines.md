@@ -1,4 +1,4 @@
-# General Guidelines
+# General guidelines
 
 ## Usage
 
@@ -19,7 +19,7 @@ The API accepts only`HTTP POST`requests with`Content-Type`set to`application/jso
 * **Operation**
   * Name of the operation to be performed.
 
-### Body <a id="body"></a>
+### Body
 ```json
 {
     "Client": "My Client 1.0.0",
@@ -29,12 +29,12 @@ The API accepts only`HTTP POST`requests with`Content-Type`set to`application/jso
 ```
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `Client` | string | required | Identification of the client as described in [Authorization](./authorization.md). |
+| `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
 | `LanguageCode` | string | optional | Code of the language. |
 | `CultureCode` | string | optional | Code of the culture. |
 
 All operations of the API require Client to be present in the request.
-All operations of the API optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce language and culture of the operation which affects e.g. names of entities, descriptions or error messages. Both of these values must be defined together otherwise default values of the [Enterprise](./operations.md#enterprise) are used.
+All operations of the API optionally accept `LanguageCode` and `CultureCode`. These can be used to enforce language and culture of the operation which affects e.g. names of entities, descriptions or error messages. Both of these values must be defined together otherwise default values of the [enterprise](./operations.md#enterprise) are used.
 
 ## Responses
 
