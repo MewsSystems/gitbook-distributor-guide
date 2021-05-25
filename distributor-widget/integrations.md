@@ -22,7 +22,7 @@ In previous versions, Distributor supported direct integrations with Google Anal
 
 ### Triggers   <a id="triggers"></a>
 
-This is a basic description of how to set up a Distributor event as a Trigger. You can get full reference of all Distributor events [here](reference.md).
+This is a basic description of how to set up a Distributor event as a Trigger. You can get full reference of all Distributor events [here](./integrations.md#triggers-reference).
 
 For an integration with Google Tag Manager, Distributor provides a set of _Custom Events \_that you can set up as_ Triggers\_. To setup a Trigger for an event, match it with its name:
 
@@ -36,7 +36,7 @@ If you want to track multiple events with one Trigger, you can easily use regex 
 
 #### Universal Analytics   <a id="universal-analytics"></a>
 
-You can track all the events for further statistical computations about behaviour of your customers. Use the Google Universal Analytics tag with the`Event`track type. The Trigger should be a regex grouping of all the events you want to track \(to track all events, you can use`^distributor`regex as described [here](integrations.md#triggers)\).
+You can track all the events for further statistical computations about behaviour of your customers. Use the Google Universal Analytics tag with the`Event`track type. The Trigger should be a regex grouping of all the events you want to track \(to track all events, you can use`^distributor`regex as described [here](./integrations.md#triggers)\).
 
 ![events\_tag](../.gitbook/assets/eventstag.png)
 
@@ -64,17 +64,17 @@ When you have Mews Merchant set up, a payment by a customer is legally required 
 
 ### Conditionally firing tags based on tracking consents
 
-Google Tag Manager integrations are very often used to track users, be it with cookies or other approaches. You can use [TrackingConsents](integrations.md#trackingconsents) and Google Tag Manager to use integrations only when permitted.
+Google Tag Manager integrations are very often used to track users, be it with cookies or other approaches. You can use [TrackingConsents](./integrations.md#trackingconsents) and Google Tag Manager to use integrations only when permitted.
 
 Commonly used integration which often needs a tracking consent is Universal Analytics.
 
-Let's see how you can fire Universal Analytics tag only when [TrackingConsents](integrations.md#trackingconsents) permit it.
+Let's see how you can fire Universal Analytics tag only when [TrackingConsents](./integrations.md#trackingconsents) permit it.
 
 1\. Set up Universal Analytics in Google Tag Manager:
-* See previous section about [Universal Analytics](integrations.md#universal-analytics).
+* See previous section about [Universal Analytics](./integrations.md#universal-analytics).
 
 2\. Let Distributor know what the tracking consents should be:
-* Call Distributor API methods [enableTracking](reference.md#enabletracking) or [disableTracking](reference.md#disabletracking) when the Distributor widget starts.
+* Call Distributor API methods [enableTracking](./reference.md#enabletracking) or [disableTracking](./reference.md#disabletracking) when the Distributor widget starts.
 * Calling the API methods at the start guarantees all events have the correct consents.
 * Don't rely on defaults since they can be changed in the future. Defaults are there only for backwards compatibility.
 * You can also call mentioned API calls again later, e.g. after user agrees with tracking in your cookie banner.
@@ -144,7 +144,7 @@ Each event is fired with a standard set of data:
 | Data Layer Variable Name | Description |
 | :--- | :--- |
 | eventName | Name of the event in readable form without prefix, i.e.`Step Dates`. |
-| trackingConsents | [TrackingConsents](integrations.md#trackingconsents) applied at the time when event was created. |
+| trackingConsents | [TrackingConsents](./integrations.md#trackingconsents) applied at the time when event was created. |
 
 If a hotel is selected, information about it is also added to the event. \(Note: The hotel is always selected in the _Singlehotel_ mode\)
 
