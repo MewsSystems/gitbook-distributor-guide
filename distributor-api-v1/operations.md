@@ -214,7 +214,7 @@ Preferred initial call used to obtain all static data about distributor configur
 
 #### PaymentCardRequirement
 * `NotRequired` - Payment card info is never required. 
-* `AlwaysRequired` - Payment card info is always requested and validated.
+* `AlwaysRequired` - Payment card info is always required and validated.
 * `NotRequiredForFullyPaidBookings` - Payment card info is not required for fully paid bookings. Otherwise required.
 * `NotRequiredForFullyOrPartiallyPaidBookings` - Payment card info is not required for fully or partially paid bookings. Otherwise required.
 
