@@ -143,7 +143,7 @@ Preferred initial call used to obtain all static data about distributor configur
                 }
             },
             "OnlineTravelAgencies": [],
-            "PaymentCardInput": "NotRequested",
+            "PaymentCardRequirement": "NotRequired",
             "RequiredFields": [],
             "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee"
         }
@@ -208,15 +208,15 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
 | `Enterprise` | [Enterprise](./operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
 | `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
-| `PaymentCardInput` | string [Payment card input](./operations.md#payment-card-input) | required | Determines how to handle payment cards. |
+| `PaymentCardRequirement` | string [Payment card requirement](./operations.md#payment-card-requirement) | required |  Determines how to handle payment cards. |
 | `RequiredFields` | array of [Required field](./operations.md#required-field)s | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 
-#### Payment card input
-
-* `NotRequested` - Payment card info is not requested.
-* `Requested` - Payment card info is requested, but not validated.
-* `Required` - Payment card info is requested and validated. 
+#### Payment card requirement
+* `NotRequired` - Payment card info is never required. 
+* `AlwaysRequired` - Payment card info is always required and validated.
+* `NotRequiredForFullyPaidBookings` - Payment card info is not required for fully paid bookings. Otherwise required.
+* `NotRequiredForFullyOrPartiallyPaidBookings` - Payment card info is not required for fully or partially paid bookings. Otherwise required.
 
 #### Required field
 
