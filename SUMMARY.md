@@ -8,6 +8,8 @@
   * [Integrations](distributor-widget/integrations.md)
   * [Changelog](distributor-widget/changelog.md)
 * [Distributor API \(v1\)](distributor-api-v1/README.md)
+  * [⚠️Deprecations](distributor-api-v1/deprecations/README.md)
+    * [PaymentCardInput](distributor-api-v1/deprecations/payment-card-input.md)
   * [General Guidelines](distributor-api-v1/general-guidelines.md)
   * [Authorization](distributor-api-v1/authorization.md)
   * [Use Cases](distributor-api-v1/use-cases/README.md)
@@ -16,8 +18,6 @@
   * [Images](distributor-api-v1/images.md)
   * [Payment Gateway Data](distributor-api-v1/payment-gateway-data.md)
   * [Environments](distributor-api-v1/environments.md)
-  * [Deprecations](distributor-api-v1/deprecations/README.md)
-    * [PaymentCardInput](distributor-api-v1/deprecations/payment-card-input.md)
   * [Changelog](distributor-api-v1/changelog.md)
 * [Changelog](changelog.md)
 
