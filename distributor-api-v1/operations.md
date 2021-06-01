@@ -208,11 +208,11 @@ Preferred initial call used to obtain all static data about distributor configur
 | `DisplaySpecialRequests` | boolean | optional | Determines whether to display special requests field during checkout. |
 | `Enterprise` | [Enterprise](./operations.md#enterprise) | required | Enterprise to which the `Configuration` belongs. |
 | `OnlineTravelAgencies` | array of string | required | Array of travel agencies to include in comparison banner. |
-| `PaymentCardRequirement` | string [PaymentCardRequirement](./operations.md#paymentcardrequirement) | required |  Determines how to handle payment cards. |
+| `PaymentCardRequirement` | string [Payment card requirement](./operations.md#paymentcardrequirement) | required |  Determines how to handle payment cards. |
 | `RequiredFields` | array of [Required field](./operations.md#required-field)s | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
 
-#### PaymentCardRequirement
+#### Payment card requirement
 * `NotRequired` - Payment card info is never required. 
 * `AlwaysRequired` - Payment card info is always required and validated.
 * `NotRequiredForFullyPaidBookings` - Payment card info is not required for fully paid bookings. Otherwise required.
