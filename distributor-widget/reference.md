@@ -1,6 +1,6 @@
 # Reference
 
-## Options Reference <a id="options-reference"></a>
+## Options reference
 
 > **Note:**
 >
@@ -11,7 +11,7 @@
 | configurationIds \(required\) | array of`string` | `''` | Unique identifier of the used Distributor configurations.  You can get unique identifier of a configuration from it’s details page in Commander. The unique identifier is shown there as Identifier. |
 | openElements | `string` | `''` | A list of comma-separated CSS selectors of elements, which will automatically get attached click event listeners for opening Distributor. The string is given as an argument to the`document.querySelectorAll`function, you get more info about its resemblance[here](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)for example.  The click event is being delegated, meaning that each element is being looked up on a website dynamically after the click happens. This way you can pass a selector to the elements that don’t exist yet during the initialization. |
 
-## API Reference <a id="api-reference"></a>
+## API reference
 
 API calls are defined on the Distributor instance, which is created with the initialization call. This instance is returned to you as an argument of a callback function that you can pass as the second parameter to the initialization call. The following simple example shows how to use the calls to set up start and end dates, and then open the Distributor:
 
