@@ -1,6 +1,6 @@
 # Changelog
 
-## 08.06.2021
+## 15.06.2021
 
 * Rephrased and restructured main, Distributor Widget and Distributor Standalone introduction.
 * Added FAQ about configuration ids.
