@@ -7,13 +7,13 @@ You can use it:
 * or as a [JavaScript Widget](./README.md#widget) which can be embedded into an arbitrary website,
 * or you can create your own custom booking engine with the help of [Distributor API](./README.md#api).
 
-If you encounter any issue, have a question or any other request, please contact [support@mews.com](mailto://support@mews.com).
+If you encounter any issue, have a question or any other request, please contact [support@mews.com](mailto:support@mews.com).
 
 ## What should I use?
 
 ### Standalone
 
-If you’re not sure which version to use, go with the standalone option. It’s the simplest way how to connect your website with the booking engine. We will provide you with a link to page where your Distributor instance is located. For further information, see [Distributor Standalone](./distributor-standalone.md) or contact our support team at [support@mews.com](mailto://support@mews.com).
+If you’re not sure which version to use, go with the standalone option. It’s the simplest way how to connect your website with the booking engine. We will provide you with a link to page where your Distributor instance is located. For further information, see [Distributor Standalone](./distributor-standalone.md) or contact our support team at [support@mews.com](mailto:support@mews.com).
 
 ### Widget
 
@@ -21,4 +21,4 @@ If you are a developer, you might be interested in a more advanced way how to in
 
 ### API
 
-In case you’d like to implement your own custom booking engine that would be connected with MEWS, you should have a look at [Distributor API](./distributor-api-v1). Please contact [customersuccess@mews.com](mailto://customersuccess@mews.com) to activate this function.
+In case you’d like to implement your own custom booking engine that would be connected with MEWS, you should have a look at [Distributor API](./distributor-api-v1). Please contact [customersuccess@mews.com](mailto:customersuccess@mews.com) to activate this function.
