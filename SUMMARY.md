@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [FAQ](faq.md)
 * [Distributor Standalone](distributor-standalone.md)
 * [Distributor Widget](distributor-widget/README.md)
   * [Advanced Guide](distributor-widget/advanced-guide.md)

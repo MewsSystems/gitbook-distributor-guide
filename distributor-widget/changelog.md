@@ -1,5 +1,10 @@
 # Changelog
 
+## 15.06.2021
+
+* Rephrased and restructured main, Distributor Widget and Distributor Standalone introduction.
+* Added FAQ about configuration ids.
+
 ## 19.03.2021
 
 * Changed urls for testing (demo) environments.
