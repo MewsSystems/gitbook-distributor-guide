@@ -3,6 +3,8 @@
 * [Introduction](README.md)
 * [FAQ](faq.md)
 * [Distributor Standalone](distributor-standalone.md)
+  * [Quick start](distributor-standalone/quick-start.md)
+  * [Deeplinks](distributor-standalone/deeplinks.md)
 * [Distributor Widget](distributor-widget/README.md)
   * [Quick start](distributor-widget/quick-start.md)
   * [Advanced guide](distributor-widget/advanced-guide.md)
