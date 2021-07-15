@@ -1,6 +1,4 @@
-# Distributor Standalone
-
-Distributor for your hotel is available as standalone version, hosted on our servers. You can simply provide a link from your website and not worry about anything else.
+# Quick start
 
 Address of the Distributor standalone page has the following format:
 
