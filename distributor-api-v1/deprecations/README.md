@@ -4,4 +4,5 @@ This page contains a list of past and future deprecations in the API. Deprecatio
 
 | Deprecation | Object | Property | Replaced by | Deprecation notice | Removal date |
 |:------------|:------------|:-------------------|:-------------|:-------------|:-------------|
-| [PaymentCardInput](./payment-card-input.md) | [Configuration](../operations.md#configuration) | `PaymentCardInput` | `PaymentCardRequirement` | 18.4.2021 | 31.7.2021 |
+| [Product pricing](./product-pricing.md) | [Product](../operations.md#product) | `Amounts` & `RelativePrice` | `Pricing` | 1.7.2021 | 31.11.2021 |
+| [Payment card input](./payment-card-input.md) | [Configuration](../operations.md#configuration) | `PaymentCardInput` | `PaymentCardRequirement` | 18.4.2021 | 31.7.2021 |

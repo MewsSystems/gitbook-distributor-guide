@@ -20,8 +20,8 @@ Preferred initial call used to obtain all static data about distributor configur
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `Client` | string | required | Identification of the client as described in [authorization](./authorization.md). |
-| `PrimaryId` | string | required | Primary configuration id. |
-| `Ids` | array of strings | required | Array of configuration ids. |
+| `PrimaryId` | string | required | Unique identifier of a primary [configuration](./operations.md#configuration). |
+| `Ids` | array of string | required | Unique identifiers of [configuration](./operations.md#configuration)s. |
 
 ### Response
 
@@ -98,42 +98,69 @@ Preferred initial call used to obtain all static data about distributor configur
                 },
                 "Products": [
                     {
-                        "Id": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "Amounts": {
-                            "EUR": {
-                                "GrossValue": 5.00,
-                                "NetValue": 4.5,
-                                "TaxValues": [
-                                    {
-                                        "TaxRateCode": "DE-R",
-                                        "Value": 0.5
-                                    }
-                                ]
-                            },
-                            "CZK": {
-                                "GrossValue": 150.00,
-                                "NetValue": 140.00,
-                                "TaxValues": [
-                                    {
-                                        "TaxRateCode": "DE-R",
-                                        "Value": 10.00
-                                    }
-                                ]
-                            }
-                        },
-                        "CategoryId": null,
-                        "Charging": "Once",
-                        "Description": {
-                            "en-US": "Continental breakfast served in the morning."
-                        },
-                        "ImageId": "1627aea5-8e0a-4371-9022-9b504344e724",
-                        "IncludedByDefault": false,
+                        "Id": "4fd0e6e0-101c-410d-8c12-ad6000b7e390",
                         "Name": {
                             "en-US": "Breakfast"
                         },
-                        "Ordering": 0,
+                        "Description": {},
+                        "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
+                        "ImageId": null,
+                        "IncludedByDefault": false,
+                        "Pricing": {
+                            "Discriminator": "Absolute",
+                            "Value": {
+                                "CHF": {
+                                    "Currency": "CHF",
+                                    "GrossValue": 108.31,
+                                    "NetValue": 98.46,
+                                    "TaxValues": [
+                                        {
+                                            "TaxRateCode": "CZ-L",
+                                            "Value": 9.85
+                                        }
+                                    ]
+                                },
+                                "EUR": {
+                                    "Currency": "EUR",
+                                    "GrossValue": 100,
+                                    "NetValue": 90.91,
+                                    "TaxValues": [
+                                        {
+                                            "TaxRateCode": "CZ-L",
+                                            "Value": 9.09
+                                        }
+                                    ]
+                                }
+                            },
+                            "Charging": "PerRoomNight",
+                            "Posting": "Daily",
+                            "Ordering": 1
+                        }
+                    },
+                    {
+                        "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
+                        "Name": {
+                            "nl-NL": "Extra bedlinnen",
+                            "en-US": "Extra bedlinnen (Once Off)"
+                        },
+                        "Description": {},
+                        "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
+                        "ImageId": "ec643f33-cd6c-4250-accd-518182165ffe",
+                        "IncludedByDefault": false,
+                        "Pricing": {
+                            "Discriminator": "Relative",
+                            "Value": {
+                                "ProductIds": [],
+                                "TaxRateCodes": [
+                                    "CZ-L"
+                                ],
+                                "Multiplier": 0.05,
+                                "Target": "GrossValue"
+                            }
+                        },
+                        "Charging": "Once",
                         "Posting": "Once",
-                        "RelativePrice": null
+                        "Ordering": 0
                     }
                 ],
                 "TaxEnvironmentCode": "NL",
@@ -361,6 +388,46 @@ Alternative initial call used to obtain all static data about hotel relevant for
     ],
     "Products": [
         {
+            "Id": "4fd0e6e0-101c-410d-8c12-ad6000b7e390",
+            "Name": {
+                "en-US": "Breakfast"
+            },
+            "Description": {},
+            "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
+            "ImageId": null,
+            "IncludedByDefault": false,
+            "Pricing": {
+                "Discriminator": "Absolute",
+                "Value": {
+                    "CHF": {
+                        "Currency": "CHF",
+                        "GrossValue": 108.31,
+                        "NetValue": 98.46,
+                        "TaxValues": [
+                            {
+                                "TaxRateCode": "CZ-L",
+                                "Value": 9.85
+                            }
+                        ]
+                    },
+                    "EUR": {
+                        "Currency": "EUR",
+                        "GrossValue": 100,
+                        "NetValue": 90.91,
+                        "TaxValues": [
+                            {
+                                "TaxRateCode": "CZ-L",
+                                "Value": 9.09
+                            }
+                        ]
+                    }
+                },
+                "Charging": "PerRoomNight",
+                "Posting": "Daily",
+                "Ordering": 1
+            }
+        },
+        {
             "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
             "Name": {
                 "nl-NL": "Extra bedlinnen",
@@ -370,29 +437,17 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
             "ImageId": "ec643f33-cd6c-4250-accd-518182165ffe",
             "IncludedByDefault": false,
-            "Amounts": {
-                "EUR": {
-                    "GrossValue": 5.00,
-                    "NetValue": 4.5,
-                    "TaxValues": [
-                        {
-                            "TaxRateCode": "DE-R",
-                            "Value": 0.5
-                        }
-                    ]
-                },
-                "CZK": {
-                    "GrossValue": 150.00,
-                    "NetValue": 140.00,
-                    "TaxValues": [
-                        {
-                            "TaxRateCode": "DE-R",
-                            "Value": 10.00
-                        }
-                    ]
+            "Pricing": {
+                "Discriminator": "Relative",
+                "Value": {
+                    "ProductIds": [],
+                    "TaxRateCodes": [
+                        "CZ-L"
+                    ],
+                    "Multiplier": 0.05,
+                    "Target": "GrossValue"
                 }
             },
-            "RelativePrice": null,
             "Charging": "Once",
             "Posting": "Once",
             "Ordering": 0
@@ -517,9 +572,36 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `Description` | [Localized text](./operations.md#localized-text) | required | Description of the product localized into all supported languages. |
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
-| `Amounts` | array of [Amount](./operations.md#multi-currency-amount) | required | Array of amounts of the product. Only currencies that the property accepts are listed. |
+| `Pricing` | [Pricing coproduct](./operations.md#pricing-coproduct) | required | Object defining the pricing method and price values. |
 | `Charging` | string [Product charging](./operations.md#product-charging) | required | Charging of the product. |
 | `Posting` | string [Product posting](./operations.md#product-posting) | required | Posting of the product. |
+
+#### Pricing coproduct
+
+| Property | Type | Contract | Description |
+| :--- | :--- | :--- | :--- |
+| `Discriminator` | string [Pricing data discriminator](./operations.md#pricing-discriminator) | required | Determines type of value. |
+| `Value` | [Multi-currency amount](./operations.md#multi-currency-amount) / [Relative price data value](./operations.md#relative-price-data-value) | required | Structure of object depends on the [Pricing data discriminator](./operations.md#pricing-discriminator) |
+
+##### Pricing data discriminator
+
+* `Absolute` - Data specific to absolutely priced product are represented by [Multi-currency amount](./operations.md#multi-currency-amount).
+* `Relative` - Data specific to relatively priced product are represented by [Relative price data value](./operations.md#relative-price-data-value).
+
+##### Relative price data value
+
+| Property | Type | Contract | Description |
+| :--- | :--- | :--- | :--- |
+| `ProductIds` | array of string | required | Unique identifiers of [product](./operations.md#product)s used to calculate the price of the relatively priced product. |
+| `Multiplier` | number | required | Percentage of the relative price. |
+| `Target` | [Relative price target](./operations.md#relative-price-target) | required | Target defining whether the price of a product should be calculated by multiplying gross value, tax value or net value of dependant products. |
+| `TaxRateCodes` | array of string | required | Tax rate codes that should be applied to the price in order to calculate the taxes of the product. |
+
+##### Relative price target
+
+* `GrossValue` - The price of the product should be calculated from gross value of dependant products
+* `TaxValue` - The price of the product should be calculated from tax value of dependant products
+* `NetValue` - The price of the product should be calculated from net value of dependant products
 
 #### Product charging
 
@@ -573,7 +655,7 @@ An object where name corresponds to ISO code and value represents a structure th
 | `Id` | string | required | Unique identifier of the room category. |
 | `Name` | [Localized text](./operations.md#localized-text) | required | Name of the room category localized into all supported languages. |
 | `Description` | [Localized text](./operations.md#localized-text) | required | Description of the room category localized into all supported languages. |
-| `ImageIds` | array of strings | required | Unique identifiers of images attached with the room category. |
+| `ImageIds` | array of string | required | Unique identifiers of images attached with the room category. |
 | `NormalBedCount` | number | required | Number of normal beds in the room category. |
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
 | `SpaceType` | string | required | Type of the room category - “Room” or “Bed”. |
@@ -643,12 +725,12 @@ Gives availabilities and pricings for given date interval with product prices in
 | `HotelId` | string | required | Unique identifier of hotel. |
 | `StartUtc` | string | required | Reservation start date \(arrival date\) in ISO 8601 format. |
 | `EndUtc` | string | required | Reservation end date \(departure date\) in ISO 8601 format. |
-| `ProductIds` | array of string | optional | Ids of products which should be included into pricing calculations. |
+| `ProductIds` | array of string | optional | Unique identifiers of products which should be included into pricing calculations. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency. If specified the prices in response will contain only single currency based on the code provided. |
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `AdultCount` | number | optional | Requested number of adults. If provided together with `ChildCount`, then `RoomOccupancyAvailabilities` will be computed only for that combination instead of all possible. If `RoomCategory` doesn’t support given values, nearest applicable are found. |
 | `ChildCount` | number | optional | Requested number of children. |
-| `CategoryIds` | array of string | optional | Ids of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
+| `CategoryIds` | array of string | optional | Unique identifiers of categories for which should be the availability computed only. If omitted, availability of all categories is returned instead. |
 
 ### Response
 
@@ -789,8 +871,8 @@ Gives availabilities and pricings for given date interval with product prices in
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `TotalAmount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerNight` | [Amount](./operations.md#multi-currency-amount) | required | Average amount per night. |
+| `TotalAmount` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Total amount of the room for whole reservation. |
+| `AverageAmountPerNight` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Average amount per night. |
 
 ## Get reservations pricing
 
@@ -827,7 +909,7 @@ Gives a pricing information for the given configuration.
 | `VoucherCode` | string | optional | Voucher code enabling special rate offerings. |
 | `RoomCategoryId` | string | required | Identifier of the requested room category. |
 | `Occupancies` | array of [Occupancy](./operations.md#occupancy) | required | Occupancies of the reservations. |
-| `ProductIds` | array of string | optional | Identifiers of the requested products. |
+| `ProductIds` | array of string | optional | Unique identifiers of the requested products. |
 
 #### Occupancy
 
@@ -1026,7 +1108,7 @@ Gives a pricing information for the given configuration.
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
-| `ProductIds` | array of string | optional | Identifiers of the requested products. |
+| `ProductIds` | array of string | optional | Unique identifiers of the requested products. |
 | `Notes` | string | optional | Additional notes. |
 
 #### Credit card data
@@ -1095,7 +1177,7 @@ Gives a pricing information for the given configuration.
 | `EndUtc` | string | required | End date of the reservation \(departure date\). |
 | `AdultCount` | number | required | Number of adults. |
 | `ChildCount` | number | required | Number of children. |
-| `ProductIds` | array of string | optional | Identifiers of the requested products. |
+| `ProductIds` | array of string | optional | Unique identifiers of the requested products. |
 | `RateId` | string | required | Identifier of the chosen rate. |
 | `Notes` | string | optional | Additional notes. |
 | `Amount` | [Amount](./operations.md#multi-currency-amount) | required | Total amount of the reservation. |
@@ -1272,7 +1354,7 @@ In case of an error caused by insufficient availability \(which might have decre
 
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
-| `PaymentCardIds` | array of string | required | Collection of unique identifiers of the cards. |
+| `PaymentCardIds` | array of string | required | Unique identifiers of the [payment card](./operations.md#payment-card)s. |
 
 ### Response
 ```json
