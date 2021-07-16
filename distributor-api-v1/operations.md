@@ -386,7 +386,73 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "SpaceType": "Room"
         }
     ],
-    
+    "Products": [
+        {
+            "Id": "4fd0e6e0-101c-410d-8c12-ad6000b7e390",
+            "Name": {
+            "en-US": "Breakfast"
+            },
+            "Description": {},
+            "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
+            "ImageId": null,
+            "IncludedByDefault": false,
+            "Pricing": {
+                "Discriminator": "Absolute",
+                "Value": {
+                    "CHF": {
+                        "Currency": "CHF",
+                        "GrossValue": 108.31,
+                        "NetValue": 98.46,
+                        "TaxValues": [
+                            {
+                                "TaxRateCode": "CZ-L",
+                                "Value": 9.85
+                            }
+                        ]
+                    },
+                    "EUR": {
+                        "Currency": "EUR",
+                        "GrossValue": 100,
+                        "NetValue": 90.91,
+                        "TaxValues": [
+                            {
+                                "TaxRateCode": "CZ-L",
+                                "Value": 9.09
+                            }
+                        ]
+                    }
+                },
+                "Charging": "PerRoomNight",
+                "Posting": "Daily",
+                "Ordering": 1
+            }
+        },
+        {
+            "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
+            "Name": {
+                "nl-NL": "Extra bedlinnen",
+                "en-US": "Extra bedlinnen (Once Off)"
+            },
+            "Description": {},
+            "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
+            "ImageId": "ec643f33-cd6c-4250-accd-518182165ffe",
+            "IncludedByDefault": false,
+            "Pricing": {
+                "Discriminator": "Relative",
+                "Value": {
+                "ProductIds": [],
+                "TaxRateCodes": [
+                    "CZ-L"
+                ],
+                "Multiplier": 0.05,
+                "Target": "GrossValue"
+                }
+            },
+            "Charging": "Once",
+            "Posting": "Once",
+            "Ordering": 0
+        }
+    ],
     "PaymentGateway": {
         "PaymentGatewayType": "PciProxy",
         "IsMerchant": true,
