@@ -390,7 +390,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
         {
             "Id": "4fd0e6e0-101c-410d-8c12-ad6000b7e390",
             "Name": {
-            "en-US": "Breakfast"
+                "en-US": "Breakfast"
             },
             "Description": {},
             "CategoryId": "77e0a18c-f2a5-418f-b578-16d3599c059d",
