@@ -440,12 +440,12 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "Pricing": {
                 "Discriminator": "Relative",
                 "Value": {
-                "ProductIds": [],
-                "TaxRateCodes": [
-                    "CZ-L"
-                ],
-                "Multiplier": 0.05,
-                "Target": "GrossValue"
+                    "ProductIds": [],
+                    "TaxRateCodes": [
+                        "CZ-L"
+                    ],
+                    "Multiplier": 0.05,
+                    "Target": "GrossValue"
                 }
             },
             "Charging": "Once",
