@@ -594,7 +594,7 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | :--- | :--- | :--- | :--- |
 | `ProductIds` | array of string | required | Unique identifiers of [product](./operations.md#product)s used to calculate the price of the relatively priced product. |
 | `Multiplier` | number | required | Percentage of the relative price. |
-| `Target` | [Relative price target](./operations.md#relative-price-target) | required | Target defining whether the price of a product should be calculated from gross or net value of dependant products. |
+| `Target` | [Relative price target](./operations.md#relative-price-target) | required | Target defining whether the price of a product should be calculated by multiplying gross value, tax value or net value of dependant products. |
 | `TaxRateCodes` | array of string | required | Tax rate codes that should be applied to the price in order to calculate the taxes of the product. |
 
 ##### Relative price target
