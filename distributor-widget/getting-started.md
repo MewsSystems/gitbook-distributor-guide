@@ -3,21 +3,21 @@
 {% hint style="info" %}
 In order to embed the Distributor into your webpage, your site must be securely served over HTTPS.
 
-Any Distributor widget that is implemented on an insecure HTTP site will be redirected to the [standalone Distributor](../distributor-standalone.md).
+Any Distributor widget that is implemented on an insecure HTTP site will be redirected to the [standalone Distributor](../distributor-standalone/README.md).
 {% endhint %}
 
 By using Distributor Widget your users can book directly from your website.
 
 At a high level, the steps to start using Distributor Widget are:
-* [Install Distributor loader script](./README.md#install-distributor-loader-script).
-* [Initialize Distributor Widget](./README.md#initialize-distributor-widget) through a global `Mews.Distributor` object that the loader script exposes.
-* [Setup opening of Distributor Widget overlay](./README.md#setup-overlay-opening).
-* Optional: Use callback function to [control Distributor Widget](./README.md#optional-control-distributor-widget).
-* Optional: Know the difference between [single and multi-enterprise Distributor](./README.md#multi-enterprise-distributor) and set it up.
+* [Install Distributor loader script](./getting-started.md#install-distributor-loader-script).
+* [Initialize Distributor Widget](./getting-started.md#initialize-distributor-widget) through a global `Mews.Distributor` object that the loader script exposes.
+* [Setup opening of Distributor Widget overlay](./getting-started.md#setup-overlay-opening).
+* Optional: Use callback function to [control Distributor Widget](./getting-started.md#optional-control-distributor-widget).
+* Optional: Know the difference between [single and multi-enterprise Distributor](./getting-started.md#multi-enterprise-distributor) and set it up.
 
 ## Install Distributor loader script
 
-To use Distributor Widget, you need to install Distributor loader script with a code snippet provided in the [Installation](./README.md#installation) section.
+To use Distributor Widget, you need to install Distributor loader script with a code snippet provided in the [Installation](./getting-started.md#installation) section.
 
 The script will asynchronously prepare global `Mews.Distributor` object which you're going to use in further steps to initialize Distributor Widget.
 
@@ -28,7 +28,7 @@ You need to use the code snippet as is and as described. Doing otherwise will ca
 * Do not place it anywhere else than in the `<head>`.
 * Do not modify it in any way and do not attach the `async` attribute.
 * Do not pack the contents of the script files that the code snippet references into your own JavaScript bundle.
-* If you have a Content Security Policy (CSP) setup on your website, you need to [enable the domains Distributor uses](./README.md#content-security-policy).
+* If you have a Content Security Policy (CSP) setup on your website, you need to [enable the domains Distributor uses](./getting-started.md#content-security-policy).
 
 The script file size is kept as minimal as possible (approx 11 kB gzipped) to allow quick webpage initialization. Also, serving the script from our CDN servers ensures seamless releases of new features, bugfixes and improvements.
 

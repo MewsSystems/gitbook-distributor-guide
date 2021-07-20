@@ -1,10 +1,9 @@
 # Deeplinks
 
-With deeplinks you can create links which, when used, open Distributor standalone in some predefined setup. For example with a specific currency or dates. 
+With deeplinks you can create URLs which, when used, open Distributor standalone in some predefined setup. For example with a specific currency or dates. 
 
-You can deeplink into standalone Distributor from other websites by passing [supported parameters](./deeplinks.md#supported-parameters) in a URL query. 
+You can deeplink into a standalone Distributor from other websites by passing [supported parameters](./deeplinks.md#supported-parameters) in a URL query. For example like this:
 
-Like this:
 ```text
 https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
 ```

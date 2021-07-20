@@ -1,4 +1,4 @@
-# Quick start
+# Getting started
 
 URL of the Distributor standalone page has the following format:
 
