@@ -1,5 +1,10 @@
 # Changelog
 
+## 27.07.2021
+
+* Stopped supporting deeplinks in Distributor widget. Deeplinks are now supported only in [Distributor standalone](../distributor-standalone/deeplinks.md). For widget you can use [Widget API](./reference.md#api-reference) instead.
+* Moved introduction guide to [Getting started](./getting-started.md).
+
 ## 15.06.2021
 
 * Rephrased and restructured main, Distributor Widget and Distributor Standalone introduction.
