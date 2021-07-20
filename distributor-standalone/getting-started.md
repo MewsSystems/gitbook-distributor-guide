@@ -1,6 +1,6 @@
 # Quick start
 
-Address of the Distributor standalone page has the following format:
+URL of the Distributor standalone page has the following format:
 
 ```text
 https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee
@@ -17,3 +17,7 @@ If you want to use a Distributor with multiple enterprises, you can place severa
 ```text
 https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee;ffff-gggg-hhhh-iiii-jjjjjjjj
 ```
+
+## Customization
+
+You can use [deeplinks](./deeplinks.md) to customize Distributor standalone behavior. 

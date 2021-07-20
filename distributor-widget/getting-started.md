@@ -1,4 +1,4 @@
-# Quick start
+# Getting started
 
 {% hint style="info" %}
 In order to embed the Distributor into your webpage, your site must be securely served over HTTPS.

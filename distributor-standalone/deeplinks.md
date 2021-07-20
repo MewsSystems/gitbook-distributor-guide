@@ -1,12 +1,12 @@
 # Deeplinks
 
-With deeplinks you can create links which, when opened, are going to open Distributor standalone in some predefined setup. For example with a specific currency or dates. 
+With deeplinks you can create links which, when used, open Distributor standalone in some predefined setup. For example with a specific currency or dates. 
 
 You can deeplink into standalone Distributor from other websites by passing [supported parameters](./deeplinks.md#supported-parameters) in a URL query. 
 
 Like this:
 ```text
-https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsDistributorOpened&currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
+https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
 ```
 
 ## Supported parameters 
@@ -23,7 +23,7 @@ These parameters can be combined.
 | language | a language code \(`xx-YY`\) |
 | currency | a currency code \(`XXX`\) |
 
-## Additional parameters supported in multi-enterprise mode
+### Additional parameters supported in multi-enterprise mode
 
 In addition, Distributor in multi-enterprise mode also supports:
 
@@ -35,21 +35,20 @@ In addition, Distributor in multi-enterprise mode also supports:
 
 ## Examples
 
-* presets a start date, voucher code and language, but Distributor stays closed
+## Open with specific start date, voucher code and language
 
-  ```text
-  https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsStart=2015-01-01&mewsVoucherCode=special-discount&language=en-US
-  ```
+```text
+https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsStart=2021-01-01&mewsVoucherCode=special-discount&language=en-US
+```
 
-* opens Distributor with preselected room and currency on rate selection step
+## Open with preselected room and currency on rate selection step
 
-  ```text
-  https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsDistributorOpened&currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
-  ```
+```text
+https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
+```
 
-* opens multihotel Distributor with preselected city hotel selection step
+## Opens multi-enterprise Distributor with preselected city hotel selection step
 
-  ```text
-  https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsDistributorOpened&mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
-  ```
-
+```text
+https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
+```
