@@ -1,5 +1,9 @@
 # Changelog
 
+## 21.07.2021
+
+* Added `Services` parameter at [Get configuration](./operations.md#get-configuration) endpoint that uses newly added [Service](./operations.md#service) object.
+
 ## 10.05.2021
 
 * Fixed inconsistency in naming in the documentation.

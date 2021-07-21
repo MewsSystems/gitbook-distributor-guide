@@ -175,6 +175,28 @@ Preferred initial call used to obtain all static data about distributor configur
             "ServiceId": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee"
         }
     ],
+     "Services": [
+        {
+            "Id": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
+            "EnterpriseId": "7a13590c-6538-461e-b02f-6357400de493",
+            "Ordering": 1,
+            "IsActive": true,
+            "Names": {
+                "en-US": "Accommodation"
+            },
+            "ShortNames": {
+                "en-US": "Accommodation"
+            },
+            "Data": {
+                "Discriminator": "Bookable",
+                "Value": {
+                    "StartOffset": "P0M0DT15H0M0S",
+                    "EndOffset": "P0M0DT12H0M0S",
+                    "TimeUnit": "Day"
+                }
+            }
+        }
+    ],
     "CurrencyCode": null,
     "CurrencyCodes": [],
     "DisplayVoucherCode": false,
@@ -195,6 +217,7 @@ Preferred initial call used to obtain all static data about distributor configur
 | `Cities` | array of [City](./operations.md#city) | required | Cities supported by the enterprise. |
 | `CityId` | string | required | Unique identifier of the default city. |
 | `Configurations` | array of [Configuration](./operations.md#configuration)s | required | Configurations of the booking engine instances. |
+| `Services` | array of [Service](./operations.md#service)s | required | Services that the configurations are set up for. |
 | `CurrencyCode` | string | optional | ISO 4217 code of the currency which Distributor should use when displaying prices. |
 | `DisplayVoucherCode` | boolean | required | Determines whether enterprise's voucher codes should be listed in Distributor \(voucher codes are listed by default\). |
 | `StartDateOffset` | number | optional | Number of days after the day that the customer is booking that will be selected as the default start date in the date picker \(for example, if `3` is set and a customer uses the booking engine on the 1st day of the month, the default start date will be the 4th\). If left blank, the default will be 0. |
@@ -238,6 +261,55 @@ Preferred initial call used to obtain all static data about distributor configur
 | `PaymentCardRequirement` | string [Payment card requirement](./operations.md#payment-card-requirement) | required |  Determines how to handle payment cards. |
 | `RequiredFields` | array of [Required field](./operations.md#required-field)s | required | Form fields which are required and need to be filled in. |
 | `ServiceId` | string | required | Unique identifier of the service to which the configuration is bound to. |
+
+#### Service
+
+| Property | Type | Contract | Description |
+| --- | --- | --- | --- |
+| `Id` | string | required | Unique identifier of the service. |
+| `EnterpriseId` | string | required | Identifier of the enterprise the service belongs to. |
+| `Ordering` | number | required | Number defining the ordering of the services. |
+| `CreatedUtc` | string | required | Date and time of the service creation in UTC timezone in ISO 8601 format. |
+| `IsActive` | boolean | required | Whether the service is still active. |
+| `Names` | [Localized text](./operations.md#localized-text) | required | Service name. |
+| `ShortNames` | [Localized text](./operations.md#localized-text) | required | Service short name. |
+| `Data` | [Service data](#service-data) | required | Additional information about the specific service. |
+
+#### Service data
+
+| Property | Type | Contract | Description |
+| --- | --- | --- | --- |
+| `Discriminator` | string [Service data discriminator](#service-data-discriminator) | required | Determines type of value. |
+| `Value` | object | required | Structure of object depends on [Service data discriminator](#service-data-discriminator). |
+
+#### Service data discriminator
+
+* `Bookable` - Data specific to a bookable service.
+
+#### Bookable service data
+
+| Property | Type | Contract | Description |
+| --- | --- | --- | --- |
+| `StartOffset` | string | required | Offset from the start of the time unit defining the default start of the reservations in ISO 8601 duration format. |
+| `EndOffset` | string | required | Offset from the end of the time unit defining the default end of the reservations in ISO 8601 duration format. |
+| `TimeUnit` | [Time unit](#time-unit) | required | Time unit of the service. |
+
+Time units represent a fixed, finite time interval: a minute, a day, a month, etc. A Time unit defines the operable periods for a bookable service. We currently only support the Day unit.
+We think of the daily time unit as the physical time unit that starts at midnight and ends at midnight the following day.
+
+Start offsets are anchored to the start of the time unit and end offsets are anchored to the end of the time unit.
+`StartOffset` and `EndOffset` define the default start and end of the service (so, the service orders).
+
+Positive end offsets of the daily time unit define the nightly service as depicted in the diagram below.
+![](../.gitbook/assets/timeunits-distributor-night.png)
+
+Negative or zero end offsets of the daily time unit define the daily service as depicted on the picture below.
+![](../.gitbook/assets/timeunits-distributor-day.png)
+
+#### Time unit
+
+* `Day`
+* ...
 
 #### Payment card requirement
 * `NotRequired` - Payment card info is never required. 
