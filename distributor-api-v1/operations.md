@@ -134,7 +134,7 @@ Preferred initial call used to obtain all static data about distributor configur
                             }
                         },
                         "ChargingMode": "PerTimeUnit",
-                        "PostingMode": "Daily",
+                        "PostingMode": "PerTimeUnit",
                         "Ordering": 1
                     },
                     {
@@ -424,7 +424,7 @@ Alternative initial call used to obtain all static data about hotel relevant for
                 }
             },
             "ChargingMode": "PerTimeUnit",
-            "PostingMode": "Daily",
+            "PostingMode": "PerTimeUnit",
             "Ordering": 1
         },
         {
