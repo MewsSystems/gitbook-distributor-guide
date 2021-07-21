@@ -180,6 +180,7 @@ Preferred initial call used to obtain all static data about distributor configur
             "Id": "c1eec12a-1101-4bg6-ad24-e48f8dlpb9ee",
             "EnterpriseId": "7a13590c-6538-461e-b02f-6357400de493",
             "Ordering": 1,
+            "CreatedUtc": "2021-03-30T11:17:03Z",
             "IsActive": true,
             "Names": {
                 "en-US": "Accommodation"
