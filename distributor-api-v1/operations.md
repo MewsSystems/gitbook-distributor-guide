@@ -131,11 +131,11 @@ Preferred initial call used to obtain all static data about distributor configur
                                         }
                                     ]
                                 }
-                            },
-                            "ChargingMode": "PerTimeUnit",
-                            "PostingMode": "Daily",
-                            "Ordering": 1
-                        }
+                            }
+                        },
+                        "ChargingMode": "PerTimeUnit",
+                        "PostingMode": "Daily",
+                        "Ordering": 1
                     },
                     {
                         "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
@@ -421,11 +421,11 @@ Alternative initial call used to obtain all static data about hotel relevant for
                             }
                         ]
                     }
-                },
-                "ChargingMode": "PerTimeUnit",
-                "PostingMode": "Daily",
-                "Ordering": 1
-            }
+                }
+            },
+            "ChargingMode": "PerTimeUnit",
+            "PostingMode": "Daily",
+            "Ordering": 1
         },
         {
             "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
