@@ -5,7 +5,6 @@
 * [Distributor Standalone](distributor-standalone/README.md)
   * [Getting started](distributor-standalone/getting-started.md)
   * [Deeplinks](distributor-standalone/deeplinks.md)
-  * [Changelog](distributor-standalone/changelog.md)
 * [Distributor Widget](distributor-widget/README.md)
   * [Getting started](distributor-widget/getting-started.md)
   * [Advanced guide](distributor-widget/advanced-guide.md)
