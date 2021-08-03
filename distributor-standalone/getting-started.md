@@ -6,7 +6,7 @@ URL of the Distributor standalone page has the following format:
 https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee
 ```
 
-The `aaaa-bbbb-cccc-dddd-eeeeeeee` part should be replaced with your Distributor configuration id. See [Where to get configuration id](./faq.md#where-to-get-configuration-id) for details about where to find.
+The `aaaa-bbbb-cccc-dddd-eeeeeeee` part should be replaced with your Distributor configuration id. See [Where to get configuration id](../faq.md#where-to-get-configuration-id) for details about where to find.
 
 ⚠️ Make sure you are using Distributor configuration id, not enterprise id or other id.
 
