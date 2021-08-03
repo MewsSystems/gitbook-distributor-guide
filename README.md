@@ -13,7 +13,7 @@ If you encounter any issue, have a question or any other request, please contact
 
 ### Standalone
 
-If you’re not sure which version to use, go with the standalone option. It’s the simplest way how to connect your website with the booking engine. We will provide you with a link to page where your Distributor instance is located. For further information, see [Distributor Standalone](./distributor-standalone.md) or contact our support team at [support@mews.com](mailto:support@mews.com).
+If you’re not sure which version to use, go with the standalone option. It’s the simplest way how to connect your website with the booking engine. We will provide you with a link to page where your Distributor instance is located. For further information, see [Distributor Standalone](./distributor-standalone/README.md) or contact our support team at [support@mews.com](mailto:support@mews.com).
 
 ### Widget
 

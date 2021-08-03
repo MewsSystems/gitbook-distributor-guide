@@ -44,55 +44,6 @@ function(distributor) {
 
 See that you have just one`<script>`tag containing`Mews.Distributor`call on your page.
 
-### Deeplinks  <a id="deeplinks"></a>
-
-Distributor recognises a set of parameteres passed to it in a URL query. This allows you to deeplink into booking engine from other websites. **Important: This should not be used as a standard way to open Distributor from your own website**
-
-Recognised parameters are:
-
-| Name | Description |
-| :--- | :--- |
-| mewsDistributorOpened | tells the Distributor to open automatically |
-| mewsStart | an arrival date in ISO 8601 format \(`YYYY-MM-DD`\) |
-| mewsEnd | a departure date in ISO 8601 format \(`YYYY-MM-DD`\) |
-| mewsVoucherCode | a voucher code |
-| mewsRoute | opens on specified step \(one of `rooms`, `rates`\) |
-| mewsRoom | opens with specified room selected \(`aaaa-bbbb-cccc-dddd`\) |
-| language | a language code \(`xx-YY`\) |
-| currency | a currency code \(`XXX`\) |
-
-In addition, Distributor in multihotel mode also supports:
-
-| Name | Description |
-| :--- | :--- |
-| mewsCityId | opens with specified city selected \(`aaaa-bbbb-cccc-dddd`\) |
-| mewsHotel | opens with specified hotel selected \(`aaaa-bbbb-cccc-dddd`\) |
-| mewsRoute | in addition to `rooms` and `rates`, supports also `hotels` step |
-
-#### Examples  <a id="examples"></a>
-
-* presets a start date, voucher code and language, but Distributor stays closed
-
-  ```text
-  http://www.yourwebsite.com/?mewsStart=2015-01-01&mewsVoucherCode=special-discount&language=en-US
-  ```
-
-* opens Distributor with preselected room and currency on rate selection step
-
-  ```text
-  http://www.yourwebsite.com/?mewsDistributorOpened&currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
-  ```
-
-* opens multihotel Distributor with preselected city hotel selection step
-
-  ```text
-  http://www.yourwebsite.com/?mewsDistributorOpened&mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
-  ```
-
-#### Note  <a id="note-2"></a>
-
-The deeplinks are also supported by standalone Distributor.
-
 ### Payment card storages
 
 Payment card storage is used to safely collect and store information about a customer's payment card. Currently Distributor supports these payment card storages:
