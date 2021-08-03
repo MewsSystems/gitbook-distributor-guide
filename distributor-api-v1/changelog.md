@@ -1,5 +1,12 @@
 # Changelog
 
+## 08.03.2021
+
+* Added `AverageAmountPerTimeUnit` field to [Room price](./operations.md#room-price) replacing the `AverageAmountPerNight`
+* Added `ChargingMode` field to [Product](./operations.md#product) replacing the `Charging`
+* Added `PostingMode` field to [Product](./operations.md#product) replacing the `Posting`
+* Added `SettlementMaximumTimeUnits` field to [Rate group](./operations.md#rate-group) replacing the `SettlementMaximumNights`
+
 ## 21.07.2021
 
 * Added `Services` parameter at [Get configuration](./operations.md#get-configuration) endpoint that uses newly added [Service](./operations.md#service) object.
