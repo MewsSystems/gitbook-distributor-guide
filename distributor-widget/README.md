@@ -10,3 +10,4 @@ This section describes how to use it.
 * [Advanced Guide](./advanced-guide.md)
 * [Reference](./reference.md)
 * [Integrations](./integrations.md)
+* [Changelog](./changelog.md)
