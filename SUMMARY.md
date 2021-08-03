@@ -11,7 +11,6 @@
   * [Advanced guide](distributor-widget/advanced-guide.md)
   * [Reference](distributor-widget/reference.md)
   * [Integrations](distributor-widget/integrations.md)
-  * [Changelog](distributor-widget/changelog.md)
 * [Distributor API \(v1\)](distributor-api-v1/README.md)
   * [⚠️Deprecations](distributor-api-v1/deprecations/README.md)
     * [PaymentCardInput](distributor-api-v1/deprecations/payment-card-input.md)
