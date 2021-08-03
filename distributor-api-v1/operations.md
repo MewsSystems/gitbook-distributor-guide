@@ -131,11 +131,11 @@ Preferred initial call used to obtain all static data about distributor configur
                                         }
                                     ]
                                 }
-                            },
-                            "Charging": "PerRoomNight",
-                            "Posting": "Daily",
-                            "Ordering": 1
-                        }
+                            }
+                        },
+                        "ChargingMode": "PerTimeUnit",
+                        "PostingMode": "PerTimeUnit",
+                        "Ordering": 1
                     },
                     {
                         "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
@@ -158,8 +158,8 @@ Preferred initial call used to obtain all static data about distributor configur
                                 "Target": "GrossValue"
                             }
                         },
-                        "Charging": "Once",
-                        "Posting": "Once",
+                        "ChargingMode": "Once",
+                        "PostingMode": "Once",
                         "Ordering": 0
                     }
                 ],
@@ -494,11 +494,11 @@ Alternative initial call used to obtain all static data about hotel relevant for
                             }
                         ]
                     }
-                },
-                "Charging": "PerRoomNight",
-                "Posting": "Daily",
-                "Ordering": 1
-            }
+                }
+            },
+            "ChargingMode": "PerTimeUnit",
+            "PostingMode": "PerTimeUnit",
+            "Ordering": 1
         },
         {
             "Id": "5d6de830-8ada-4b65-b72c-60fc1e719f1b",
@@ -521,8 +521,8 @@ Alternative initial call used to obtain all static data about hotel relevant for
                     "Target": "GrossValue"
                 }
             },
-            "Charging": "Once",
-            "Posting": "Once",
+            "ChargingMode": "Once",
+            "PostingMode": "Once",
             "Ordering": 0
         }
     ],
@@ -646,8 +646,8 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 | `ImageId` | string | optional | Unique identifier of the product’s image. |
 | `IncludedByDefault` | boolean | required | Indicates whether the product should be added to order by default. |
 | `Pricing` | [Pricing coproduct](./operations.md#pricing-coproduct) | required | Object defining the pricing method and price values. |
-| `Charging` | string [Product charging](./operations.md#product-charging) | required | Charging of the product. |
-| `Posting` | string [Product posting](./operations.md#product-posting) | required | Posting of the product. |
+| `ChargingMode` | string [Product charging mode](./operations.md#product-charging-mode) | required | Charging mode of the product. |
+| `PostingMode` | string [Product posting mode](./operations.md#product-posting-mode) | required | Posting mode of the product. |
 
 #### Pricing coproduct
 
@@ -676,17 +676,17 @@ If the hotel does not use any payment gateway, the value is null. If it does, th
 * `TaxValue` - The price of the product should be calculated from tax value of dependant products
 * `NetValue` - The price of the product should be calculated from net value of dependant products
 
-#### Product charging
+#### Product charging mode
 
 * `Once`
-* `PerRoomNight`
-* `PerPersonNight`
+* `PerTimeUnit`
+* `PerPersonPerTimeUnit`
 * `PerPerson`
 
-#### Product posting
+#### Product posting mode
 
 * `Once`
-* `Daily`
+* `PerTimeUnit`
 
 #### Multi-currency amount
 
@@ -731,7 +731,14 @@ An object where name corresponds to ISO code and value represents a structure th
 | `ImageIds` | array of string | required | Unique identifiers of images attached with the room category. |
 | `NormalBedCount` | number | required | Number of normal beds in the room category. |
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
-| `SpaceType` | string | required | Type of the room category - “Room” or “Bed”. |
+| `SpaceType` | [Space type](#space-type) | required | Type of the room category. |
+
+#### Space type
+
+* `Room`
+* `Dorm`
+* `Bed`
+* ...
 
 ## Validate voucher
 
@@ -817,7 +824,7 @@ Gives availabilities and pricings for given date interval with product prices in
             "SettlementTrigger": "Start",
             "SettlementOffset": "P0M0DT0H0M0S",
             "SettlementValue": 1.00000000,
-            "SettlementMaximumNights": null
+            "SettlementMaximumTimeUnits": null
         }
     ],
     "Rates": [
@@ -856,11 +863,11 @@ Gives availabilities and pricings for given date interval with product prices in
                             "RateId": "c1d48c54-9382-4ceb-a820-772bf370573d",
                             "Price": {
                                 "TotalAmount": { },
-                                "AverageAmountPerNight": { }
+                                "AverageAmountPerTimeUnit": { }
                             },
                             "MaxPrice": {
                                 "TotalAmount": { },
-                                "AverageAmountPerNight": { }
+                                "AverageAmountPerTimeUnit": { }
                             }
                         }
                     ]
@@ -887,7 +894,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | `SettlementTrigger` | string [Settlement trigger](./operations.md#settlement-trigger) | required | Moment when amount is automatically charged, with offset applying to this time \(for example, a 'Creation' trigger with no offset will charge the amount when items are created\). If settlement is manual, a task will be created at this moment. |
 | `SettlementOffset` | string | required | Start of the interval in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601#Durations) which gets added before or after selected settlement trigger \(for example, '-1 day' will charge the amount 1 day before\). |
 | `SettlementValue` | number | required | Percentage of the total extent cost which is charged automatically \(for example, a `1.0` settlement value will charge the full cost of extent included below\). Value is charged at the time of settlement trigger plus time difference from offset. |
-| `SettlementMaximumNights` | number | optional | Maximum number of nights that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
+| `SettlementMaximumTimeUnits` | number | optional | Maximum number of time units that will be charged automatically \(only applies to automatic settlements\). The rest will be charged manually. |
 
 #### Settlement type
 
@@ -945,7 +952,7 @@ Gives availabilities and pricings for given date interval with product prices in
 | Property | Type | Contract | Description |
 | :--- | :--- | :--- | :--- |
 | `TotalAmount` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Total amount of the room for whole reservation. |
-| `AverageAmountPerNight` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Average amount per night. |
+| `AverageAmountPerTimeUnit` | [Multi-currency amount](./operations.md#multi-currency-amount) | required | Average amount per time unit. |
 
 ## Get reservations pricing
 
@@ -1003,11 +1010,11 @@ Gives a pricing information for the given configuration.
                 {
                     "MaxPrice": {
                         "TotalAmount": { },
-                        "AverageAmountPerNight": { }
+                        "AverageAmountPerTimeUnit": { }
                     },
                     "Price": {
                         "TotalAmount": { },
-                        "AverageAmountPerNight": { }
+                        "AverageAmountPerTimeUnit": { }
                     },
                     "RateId": "b34330be-7e19-453e-8959-592c4e820f85"
                 }
