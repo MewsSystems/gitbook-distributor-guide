@@ -21,4 +21,4 @@ If you are a developer, you might be interested in a more advanced way how to in
 
 ### API
 
-In case you’d like to implement your own custom booking engine that would be connected with MEWS, you should have a look at [Distributor API](./distributor-api-v1). Please contact [customersuccess@mews.com](mailto:customersuccess@mews.com) to activate this function.
+In case you’d like to implement your own custom booking engine that would be connected with MEWS, you should have a look at the [Distributor API](./distributor-api-v1). Note that this option is only available to customers with an Enterprise subscription. Should you be on a different subscription and are interested in this function, please contact [customersuccess@mews.com](mailto:customersuccess@mews.com).
