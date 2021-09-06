@@ -120,7 +120,7 @@ Sets Distributor to the`Rooms`step.
 
 #### showRates\(roomId\) <a id="showratesroomid"></a>
 
-* `roomId` Type: `string` - an ID of a room to be selected \(see[`rooms`](https://mewssystems.github.io/public/content/distributor/widget/reference.html#rooms)option for more details about those Ids\)
+* `roomId` Type: `string` - an ID of a room to be selected
 
 Sets Distributor to the third step \(`Rates`\) as if you selected a room on the second screen.
 
