@@ -23,14 +23,21 @@ The script will asynchronously prepare global `Mews.Distributor` object which yo
 
 ### Requirements
 
-You need to use the code snippet as is and as described. Doing otherwise will cause unexpected problems and is not supported.
+Use the code snippet as is and as described. Doing otherwise will cause unexpected problems and is not supported.
 
-* Do not place it anywhere else than in the `<head>`.
-* Do not modify it in any way and do not attach the `async` attribute.
+#### Code snippet
+* Do not place the snippet anywhere else than in the `<head>`.
+* Do not modify the snippet in any way and do not attach the `async` attribute.
+* Do not use the snippet inside an iframe.
+
+#### Bundles and cache
 * Do not pack the contents of the script files that the code snippet references into your own JavaScript bundle.
-* If you have a Content Security Policy (CSP) setup on your website, you need to [enable the domains Distributor uses](./getting-started.md#content-security-policy).
+* Do not use Distributor script cached by your server, use the one from this guide.
 
 The script file size is kept as minimal as possible (approx 11 kB gzipped) to allow quick webpage initialization. Also, serving the script from our CDN servers ensures seamless releases of new features, bugfixes and improvements.
+
+#### Content Security policy
+* If you have a Content Security Policy (CSP) setup on your website, you need to [enable the domains Distributor uses](./getting-started.md#content-security-policy).
 
 ### Installation
 
@@ -39,6 +46,22 @@ Place the following `<script>` code snippet as is in the `<head>` of your web pa
 ```html
 <script src="https://www.mews.li/distributor/distributor.min.js"></script>
 ```
+
+👎 Examples of **incorrect** script tag - DO NOT DO THIS:
+```html
+<script src="https://www.your_domain.tld/wp-content/cache/min/1/distributor/distributor.min.js?ver=1628071961"></script>
+<script async src="https://www.mews.li/distributor/distributor.min.js"></script>
+<script src="https://apps.mews.li/distributor/prerelease/production/3.924.4/distributor.js"></script>
+```
+
+👍 **Correct** script tag:
+```html
+<script src="https://www.mews.li/distributor/distributor.min.js"></script>
+```
+
+{% hint style="warning" %}
+Please double-check that you've added the script as instructed and followed all the [requirements](./getting-started.md#requirements). If the script tag is not used correctly, it can cause unexpected problems even when it seems everything is working.
+{% endhint %}
 
 #### Content Security Policy
 
