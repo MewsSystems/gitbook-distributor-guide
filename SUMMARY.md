@@ -8,6 +8,8 @@
   * [Changelog](distributor-standalone/changelog.md)
 * [Distributor Widget](distributor-widget/README.md)
   * [Getting started](distributor-widget/getting-started.md)
+  * [Use cases](distributor-widget/use-cases/README.md)
+    * [Testing in demo environment](distributor-widget/use-cases/testing-in-demo-environment.md)
   * [Advanced guide](distributor-widget/advanced-guide.md)
   * [Reference](distributor-widget/reference.md)
   * [Integrations](distributor-widget/integrations.md)
