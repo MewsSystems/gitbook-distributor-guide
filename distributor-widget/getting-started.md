@@ -36,7 +36,7 @@ Use the code snippet as is and as described. Doing otherwise will cause unexpect
 
 The script file size is kept as minimal as possible (approx 11 kB gzipped) to allow quick webpage initialization. Also, serving the script from our CDN servers ensures seamless releases of new features, bugfixes and improvements.
 
-#### Content Security policy
+#### Content Security Policy
 * If you have a Content Security Policy (CSP) setup on your website, you need to [enable the domains Distributor uses](./getting-started.md#content-security-policy).
 
 ### Installation
