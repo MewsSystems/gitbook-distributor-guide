@@ -43,18 +43,18 @@ Available steps differ based on if you use single or multi-enterprise Distributo
 
 #### mewsRoute parameter in single-enterprise mode
 
-| Step | Required parameters |
-| :--- | :--- |
-| `mewsRoute=rooms` | none |
-| `mewsRoute=rates` | mewsRoom |
+| Step | Required parameters | What it does |
+| :--- | :--- | :--- |
+| `mewsRoute=rooms` | none | Application will open a page where user can select a room category. |
+| `mewsRoute=rates` | mewsRoom | Application will open a page where user can select rate, products and occupancy. |
 
 #### mewsRoute parameter in multi-enterprise mode
 
-| Step | Required parameters |
-| :--- | :--- |
-| `mewsRoute=hotels` | mewsCityId |
-| `mewsRoute=rooms` | mewsCityId, mewsHotel |
-| `mewsRoute=rates` | mewsCityId, mewsHotel, mewsRoom |
+| Step | Required parameters | What it does |
+| :--- | :--- | :--- |
+| `mewsRoute=hotels` | mewsCityId | Application will open a page where user can select a hotel. |
+| `mewsRoute=rooms` | mewsCityId, mewsHotel | Application will open a page where user can select a room category. |
+| `mewsRoute=rates` | mewsCityId, mewsHotel, mewsRoom | Application will open a page where user can select rate, products and occupancy. |
 
 ## Examples
 
