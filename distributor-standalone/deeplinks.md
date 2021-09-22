@@ -19,7 +19,7 @@ Parameters can be combined and some have no visible effect unless they are used 
 | mewsStart | an arrival date in ISO 8601 format \(`YYYY-MM-DD`\) | `2023-01-20` for January 20, 2023 |
 | mewsEnd | a departure date in ISO 8601 format \(`YYYY-MM-DD`\) | `2023-01-23` for January 23, 2023 |
 | mewsVoucherCode | a voucher code | `E1A71167851A30043B12` |
-| mewsRoute | [mewsRoute](./deeplinks.md#parameter-mewsRoute) | `rooms` for rooms step |
+| mewsRoute | [mewsRoute](./deeplinks.md#parameter-mewsroute) | `rooms` for rooms step |
 | mewsRoom | opens with specified room selected \(`aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\) | `da394bbb-9685-4bb8-9547-ab7300915967` |
 | language | a language code \(`xx-YY`\) | `en-US` for U.S. English |
 | currency | a currency code \(`XXX`\) | `USD` for United States dollar |
