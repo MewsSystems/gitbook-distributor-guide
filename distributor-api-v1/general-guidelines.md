@@ -6,7 +6,7 @@ The Distributor API is a public API with client name authorization. It is design
 
 ## Requests
 
-The API accepts only`HTTP POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
+The API accepts only`HTTPS POST`requests with`Content-Type`set to`application/json`and JSON content depending on the operation to be performed. All operations follow this address pattern:
 
 ```text
 [ApiBaseUrl]/api/distributor/v1/[Resource]/[Operation]
