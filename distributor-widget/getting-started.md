@@ -29,6 +29,7 @@ Use the code snippet as is and as described. Doing otherwise will cause unexpect
 * Do not place the snippet anywhere else than in the `<head>`.
 * Do not modify the snippet in any way and do not attach the `async` attribute.
 * Do not use the snippet inside an iframe.
+* Do not add the [Distributor standalone](../distributor-standalone/README.md) URL (e.q. `https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee`) to the iframe.
 
 #### Bundles and cache
 * Do not pack the contents of the script files that the code snippet references into your own JavaScript bundle.
@@ -47,14 +48,16 @@ Place the following `<script>` code snippet as is in the `<head>` of your web pa
 <script src="https://www.mews.li/distributor/distributor.min.js"></script>
 ```
 
-👎 Examples of **incorrect** script tag - DO NOT DO THIS:
+👎 Examples of **incorrect** tags - DO NOT DO THIS:
 ```html
 <script src="https://www.your_domain.tld/wp-content/cache/min/1/distributor/distributor.min.js?ver=1628071961"></script>
 <script async src="https://www.mews.li/distributor/distributor.min.js"></script>
 <script src="https://apps.mews.li/distributor/prerelease/production/3.924.4/distributor.js"></script>
+<iframe src="https://www.mews.li/distributor/distributor.min.js"></iframe>
+<iframe src="https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
 ```
 
-👍 **Correct** script tag:
+👍 **Correct** tag:
 ```html
 <script src="https://www.mews.li/distributor/distributor.min.js"></script>
 ```
