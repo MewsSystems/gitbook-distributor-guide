@@ -27,4 +27,4 @@ Go through relevant installation guide and make sure your page and code is doing
 - [Distributor Standalone Getting started guide](../distributor-standalone/getting-started.md)
 - [Distributor Widget Getting started guide](./getting-started.md)
 
-If you are using [Distributor Widget](../README.md), pay special attention to [the requirements section of the Distributor Widget Getting started guide](./getting-started.md#requirements). It has a list of some of the most common things to avoid doing during installation of Distributor.
+If you are using [Distributor Widget](./README.md), pay special attention to [the requirements section of the Distributor Widget Getting started guide](./getting-started.md#requirements). It has a list of some of the most common things to avoid doing during installation of Distributor.
