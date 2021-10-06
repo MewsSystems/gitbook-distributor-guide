@@ -17,7 +17,7 @@ You can try to confirm Distributor is not installed correctly by inspecting the 
 
 There shouldn't be any iframe tag with a `src` attribute pointing to `mews.li` domain.
 
-If you find something like that, the problem could be in the way the Distributor was installed. And even if you didn't find anything like that, it's better to double-check if Distributor is installed correctly.
+If you find something like that, the problem could be in the way the Distributor is installed. And even if you didn't find anything like that, it's better to check if Distributor is installed correctly.
 
 ### How to fix it
 
@@ -27,4 +27,4 @@ Go through relevant installation guide and make sure your page and code is doing
 - [Distributor Standalone Getting started guide](../distributor-standalone/getting-started.md)
 - [Distributor Widget Getting started guide](./getting-started.md)
 
-If you are using [Distributor Widget](./README.md), pay special attention to [the requirements section of the Distributor Widget Getting started guide](./getting-started.md#requirements). It has a list of some of the most common things to avoid doing during installation of Distributor.
+If you are using [Distributor Widget](./README.md), pay special attention to [the requirements section of the Distributor Widget Getting started guide](./getting-started.md#requirements). It has a list of things to do and don't do during the installation of Distributor.
