@@ -8,7 +8,7 @@
 - `[Error] Refused to display 'https://www.mews.li/Distributor' in a frame because it set 'X-Frame-Options' to 'sameorigin'.`
 - `The loading of "https://www.mews.li/Distributor" in a frame is denied by "X-Frame-Options" directive set to "sameorigin".`
 
-Distributor is not installed correctly on your page. Installing Distributor in other way than as guides describe is not supported and can cause errors such as "mews.li refused to connect".
+Distributor is not working because Distributor is not installed correctly on your page. Installing Distributor in other way than as guides describe is not supported and can cause errors such as "mews.li refused to connect".
 
 You can try to confirm Distributor is not installed correctly by inspecting the DOM of the page:
 - Open page with Distributor and make it show the error.
