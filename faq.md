@@ -9,7 +9,7 @@ You can find it in Commander PMS.
 * In a section **Bookable services** select service which has the Distributor configuration. If there's just one, try that one.
 * On the left select **Booking engines**.
 * Select configuration you want to use.
-* At the upper section you have **field Identifier**. This is your configuration id. It has a format `aaaa-bbbb-cccc-dddd-eeeeeeee`.
+* At the upper section you have **field Identifier**. This is your configuration id. It has a format `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`.
 
 ![configuration id in Commander PMS](.gitbook/assets/commander-configuration-id.png)
 

@@ -5,7 +5,7 @@ With deeplinks you can create URLs which, when used, open Distributor standalone
 You can deeplink into a standalone Distributor from other websites by passing [supported parameters](./deeplinks.md#supported-parameters) in a URL query. For example like this:
 
 ```text
-https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
+https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 ```
 
 ## Supported parameters 
@@ -61,17 +61,17 @@ Available steps differ based on if you use single or multi-enterprise Distributo
 ## Open with specific start date, voucher code and language
 
 ```text
-https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsStart=2021-01-01&mewsVoucherCode=special-discount&language=en-US
+https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsStart=2021-01-01&mewsVoucherCode=special-discount&language=en-US
 ```
 
 ## Open with preselected room and currency on rate selection step
 
 ```text
-https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
+https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=EUR&mewsRoute=rates&mewsRoom=aaaa-bbbb-cccc-dddd
 ```
 
 ## Opens multi-enterprise Distributor with preselected city hotel selection step
 
 ```text
-https://www.mews.li/distributor/aaaa-bbbb-cccc-dddd-eeeeeeee?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
+https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
 ```

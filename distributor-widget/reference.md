@@ -19,7 +19,7 @@ API calls are defined on the Distributor instance, which is created with the ini
 <!-- Example of use of an instance to call the API -->
 <script>
 Mews.Distributor({
-    configurationIds: ['aaaa-bbbb-cccc-dddd-eeeeeeee'],
+    configurationIds: ['aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'],
 }, function(distributor) {
    $('.booking-button').click(function() {
      var start = new Date();
@@ -146,7 +146,7 @@ As the third parameter, `Mews.Distributor` accepts optional configuration.
 
 ```javascript
 Mews.Distributor(
-    { configurationIds: ['aaaa-bbbb-cccc-dddd-eeeeeeee'] }, 
+    { configurationIds: ['aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'] }, 
     function (dst) { dst.open(); },
     { dataBaseUrl: 'https://api.mews-demo.com' }
 );

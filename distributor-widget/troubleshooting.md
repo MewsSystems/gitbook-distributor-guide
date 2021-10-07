@@ -15,7 +15,7 @@ Distributor is not working because Distributor is not installed correctly on you
 You can try to confirm Distributor is not installed correctly by inspecting the DOM of the page:
 - Open the page with Distributor and make it show the error.
 - Open your browser developer tools with DOM/elements inspector.
-- In the inspector look for any tags like `<iframe src="https://www.mews.li/distributor/aaaa-bbbb-ccc-ddd">`.
+- In the inspector look for any tags like `<iframe src="https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee">`.
 
 There shouldn't be any iframe tag with a `src` attribute pointing to `mews.li` domain.
 

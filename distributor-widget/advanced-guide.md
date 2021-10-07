@@ -15,7 +15,7 @@ Example with all possible options and their default values follows. To get furth
 Mews.Distributor({
     // required
     configurationIds: [
-        'aaaa-bbbb-cccc-dddd-eeeeeeee'
+        'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'
     ],
     // optionals
     openElements: '',
