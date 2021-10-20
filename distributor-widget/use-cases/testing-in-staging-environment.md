@@ -18,6 +18,6 @@ Mews.Distributor(
 );
 ```
 
-Make sure you use configurationIds from the correct environment. Otherwise, the configurationIds [won't be used](../../faq.md#why-distributor-doesnt-use-the-configuration-ids-ive-provided).
+Make sure you use `configurationIds` from the correct environment. Otherwise, the `configurationIds` [won't be used](../../faq.md#why-distributor-doesnt-use-the-configuration-ids-ive-provided).
 
 After doing this, Distributor Widget will start using the data from [staging/testing environment](../../distributor-api-v1/environments.md), instead of from the production.
