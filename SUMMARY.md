@@ -10,7 +10,7 @@
   * [Getting started](distributor-widget/getting-started.md)
   * [Use cases](distributor-widget/use-cases/README.md)
     * [Testing in demo/staging/testing environment](distributor-widget/use-cases/testing-in-staging-environment.md)
-    * [Connect to date inputs](distributor-widget/use-cases/connect-to-date-inputs.md)
+    * [Use your own Date inputs](distributor-widget/use-cases/use-own-date-inputs.md)
   * [Advanced guide](distributor-widget/advanced-guide.md)
   * [Reference](distributor-widget/reference.md)
   * [Integrations](distributor-widget/integrations.md)

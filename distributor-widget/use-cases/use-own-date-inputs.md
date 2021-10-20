@@ -1,4 +1,4 @@
-# Connect Distributor Widget to date inputs
+# Use your own Date inputs
 
 This guide will show you how to have a form with date inputs which will open Distributor with given dates after users submit it.
 
@@ -39,7 +39,7 @@ Comments with numbers have more details below the code.
                     configurationIds: ["Your Distributor configuration id"],
                 },
                 // Add callback which will enable Submit button and open Distributor Widget upon button click.
-                function (dst) {
+                function (api) {
 
                     // Listen on submit and when users submit, open Distributor with given dates.
                     const listenOnSubmit = () => {
@@ -54,9 +54,9 @@ Comments with numbers have more details below the code.
                             const startDate = new Date(start.value);
                             const endDate = new Date(end.value);
                             // Use Distributor Widget API to set the dates in Distributor Widget and open it.
-                            dst.setStartDate(startDate);
-                            dst.setEndDate(endDate);
-                            dst.open();
+                            api.setStartDate(startDate);
+                            api.setEndDate(endDate);
+                            api.open();
                         });
                     };
 

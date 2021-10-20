@@ -13,7 +13,7 @@ In comparison to the default example, you can set an [optional `dataBaseUrl`](..
 ```javascript
 Mews.Distributor(
     { configurationIds: ['aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'] },
-    function (dst) { dst.open(); },
+    function (api) { api.open(); },
     { dataBaseUrl: 'https://api.mews-demo.com' }
 );
 ```
