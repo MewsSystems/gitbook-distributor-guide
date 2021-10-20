@@ -10,7 +10,7 @@ This guide will show you how to have a form with date inputs which will open Dis
 
 ## Code
 
-Comments with numbers have more details below the code.
+Comments with numbers have more details below the code. [This guide is written for production environment](./use-own-date-inputs.md#4-this-guide-is-written-for-production-environment)
 
 ```html
 <!DOCTYPE html>
@@ -70,7 +70,7 @@ Comments with numbers have more details below the code.
                     };
                     enableSubmit();
                 },
-                // 4. We want to use production data, so we don't pass third configuration parameter with dataBaseUrl. Instead we rely on defaults. But if you want to use environment other than production, you need to set dataBaseUrl here.
+                // 4. This guide is written for production environment.
             );
         </script>
     </body>
@@ -93,13 +93,9 @@ The submit button in the form is disabled at page load, so users can't submit th
 
 If you are not sure where to find the configuration id, see [getting started section for initializing Distributor Widget](../getting-started.md#initialize-distributor-widget) for details.
 
-### 4. Optional dataBaseUrl parameter
+### 4. This guide is written for production environment
 
-{% hint style="warning" %}
-By default Distributor Widget uses production environment and data. If this is what you want, you can ignore this section and not set `dataBaseUrl` in third parameter.
-{% endhint %}
-
-But if you want to use Distributor Widget with demo data, you need to set [dataBaseUrl](../reference.md#string-databaseurl). You can see more details in [testing in demo/staging/testing environment section](./testing-in-staging-environment.md).
+If you want to test this code in different environment, please refer to our guide for [testing in demo/staging/testing environment](./testing-in-staging-environment.md).
 
 ## Conclusion
 
