@@ -145,7 +145,7 @@ If you want to have a more customized setup, or you want to call some API functi
 
 This callback is later called asynchronously with an argument - Distributor instance. By calling methods on this instance you can control Distributor.
 
-Very common example of this is using a custom start and end date selectors that are part of your website and then passing user’s selection to Distributor.
+Very common example of this is [using a custom start and end date selectors that are part of your website and then passing user’s selection to Distributor](./use-cases/connect-to-date-inputs.md):
 
 ```html
 <!-- Example of setting custom dates. Useful if you have i.e. own calendars on website. -->

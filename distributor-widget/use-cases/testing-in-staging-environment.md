@@ -1,4 +1,4 @@
-# How to use Distributor Widget with demo environment
+# Testing Distributor Widget in demo/staging/testing environment
 
 Distributor Widget uses production environment by default.
 
@@ -8,14 +8,14 @@ Most of the steps are the same as in [Getting started section](../getting-starte
 
 The only difference is in the [initialization of the Distributor Widget](../getting-started.md#initialize-distributor-widget).
 
-In comparison to the default example, you can set an [optional `dataBaseUrl`](../reference.md#string-databaseurl.md) property to the testing/staging API URL:
+In comparison to the default example, you can set an [optional `dataBaseUrl`](../reference.md#string-databaseurl) property to the testing/staging API URL:
 
 ```javascript
 Mews.Distributor(
-    { configurationIds: ['aaaa-bbbb-cccc-dddd-eeeeeeee'] }, 
+    { configurationIds: ['aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'] },
     function (dst) { dst.open(); },
     { dataBaseUrl: 'https://api.mews-demo.com' }
 );
 ```
 
-After doing this, Distributor Widget will start using the data from [staging/testing environment](../../distributor-api-v1/environments.md), instead of from the production. 
+After doing this, Distributor Widget will start using the data from [staging/testing environment](../../distributor-api-v1/environments.md), instead of from the production.

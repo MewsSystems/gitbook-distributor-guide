@@ -1,7 +1,6 @@
 # Distributor Widget use cases
 
-This section describes, how to use the Distributor Widget in some well-known scenarios.
-The following types scenarios can be achieved:
+This section describes, how to use the Distributor Widget in some well-known scenarios:
 
-* [Testing in demo](./testing-in-demo-environment.md)
-* [Connecting Widget to date picker](./connecting-to-date-picker.md)
+* [Testing in demo/staging/testing environment](./testing-in-staging-environment.md)
+* [Connect to date inputs](./connect-to-date-inputs.md)
