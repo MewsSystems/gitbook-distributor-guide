@@ -145,7 +145,7 @@ If you want to have a more customized setup, or you want to call some API functi
 
 This callback is later called asynchronously with an argument - Distributor instance. By calling methods on this instance you can control Distributor.
 
-Very common example of this is using a custom start and end date selectors that are part of your website and then passing user’s selection to Distributor.
+Very common example of this is [using a custom start and end date selectors that are part of your website and then passing user’s selection to Distributor](./use-cases/use-own-date-inputs.md):
 
 ```html
 <!-- Example of setting custom dates. Useful if you have i.e. own calendars on website. -->
@@ -157,11 +157,11 @@ Mews.Distributor(
         ],
         openElements: '.distributor-open'
     },
-    function (distributor) {
+    function (api) {
         // you can call API functions on a distributor instance here
         // set different start and end date
-        distributor.setStartDate(new Date(2018, 1, 1));
-        distributor.setEndDate(new Date(2018, 1, 3));
+        api.setStartDate(new Date(2022, 1, 1));
+        api.setEndDate(new Date(2022, 1, 3));
     }
 );
 </script>
