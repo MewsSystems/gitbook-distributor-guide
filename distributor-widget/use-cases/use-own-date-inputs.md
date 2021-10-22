@@ -3,10 +3,10 @@
 This guide will show you how to have a form with date inputs which will open Distributor with given dates after users submit it.
 
 ## Prerequisites
-- You have followed [Getting started guide](../getting-started.md) and understand how Distributor Widget is installed.
-- Some familiarity with JavaScript and HTML.
-- Code needs to be hosted and served from secure location over HTTPS. If you serve it from insecure HTTP site, you will be redirected to the [standalone Distributor](../../distributor-standalone/README.md) and the code will not work. For testing and experimenting, you can also use service such as [CodePen](https://codepen.io).
-- Modern browser with [`<input type="date">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) support.
+* You have followed [Getting started guide](../getting-started.md) and understand how Distributor Widget is installed.
+* Some familiarity with JavaScript and HTML.
+* Code needs to be served from secure location over HTTPS. If you serve it from insecure HTTP site, you will be redirected to the [standalone Distributor](../../distributor-standalone/README.md) and the code will not work. For testing and experimenting, you can also use service such as [CodePen](https://codepen.io).
+* Modern browser with [`<input type="date">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) support.
 
 ## Code
 
@@ -32,21 +32,20 @@ Comments with numbers have more details below the code. [This guide is written f
         </form>
 
         <script>
-            // 3. Initialize Distributor Widget just before the closing </body> tag
+            // 3. Initialize Distributor Widget just before the closing </body> tag.
             Mews.Distributor(
-                // 3.1 Set configuration id of your Distributor
+                // 3.1 Set configuration id of your Distributor.
                 {
-                    configurationIds: ["Your Distributor configuration id"],
+                    configurationIds: ['Your Distributor configuration id'],
                 },
                 // Add callback which will enable Submit button and open Distributor Widget upon button click.
                 function (api) {
-
                     // Listen on submit and when users submit, open Distributor with given dates.
                     const listenOnSubmit = () => {
                         // Find the form in DOM and listen on submit.
-                        const form = document.getElementById("date-form");
+                        const form = document.getElementById('date-form');
 
-                        form.addEventListener("submit", (event) => {
+                        form.addEventListener('submit', event => {
                             // Don't use the default submit button behavior. We want to handle it ourselves.
                             event.preventDefault();
                             // Get the dates from the date form.
@@ -64,12 +63,12 @@ Comments with numbers have more details below the code. [This guide is written f
 
                     // Enable the submit button, because Distributor Widget is ready to be used.
                     const enableSubmit = () => {
-                        const submitButton = document.getElementById("dates-submit");
-                        submitButton.value = "Submit";
+                        const submitButton = document.getElementById('dates-submit');
+                        submitButton.value = 'Submit';
                         submitButton.disabled = false;
                     };
                     enableSubmit();
-                },
+                }
                 // 4. This guide is written for production environment.
             );
         </script>
@@ -91,7 +90,7 @@ The submit button in the form is disabled at page load, so users can't submit th
 
 #### 3.1 Set configuration id of your Distributor
 
-If you are not sure where to find the configuration id, see [getting started section for initializing Distributor Widget](../getting-started.md#initialize-distributor-widget) for details.
+If you are not sure where to find the configuration id, see [where to get configuration id](../../faq.md#where-to-get-configuration-id) for details.
 
 ### 4. This guide is written for production environment
 
@@ -101,4 +100,4 @@ If you want to test this code in different environment, please refer to our guid
 
 In this article, you've learned how to add a simple form with date inputs to your page and connect its submit button to Distributor Widget. So when users select the dates and submit the form, Distributor Widget will open with given dates selected.
 
-Distributor Widget API supports more than setting dates and opening it. See the other [Distributor Widget API options](../reference.md) to find other options you could use.
+Distributor Widget API supports more than setting dates and opening it. See the other [Distributor Widget API options](../reference.md) to find other options you could use. You can also check out some [other use cases](./README.md).

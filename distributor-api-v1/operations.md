@@ -44,8 +44,8 @@ Preferred initial call used to obtain all static data about distributor configur
             "ChildCount": null,
             "ChildSelectionEnabled": null,
             "CompetitorRateDescription": {
-                    "en-US": "Comptetitor Rate Description"
-                },
+                "en-US": "Competitor Rate Description"
+            },
             "CompetitorPriceRelativeAdjustment": 1.1,
             "DisplayAvailability": null,
             "DisplayPromoCode": null,
@@ -73,7 +73,7 @@ Preferred initial call used to obtain all static data about distributor configur
                         "ExtraBedCount": 0,
                         "Id": "295d96e7-8501-4cbd-b78d-8bf590bf6db9",
                         "ImageIds": ["f987a97c-5049-44ca-9933-5b657e5263e2"],
-                        "Name": {"en-US": "Single Castleroom"},
+                        "Name": { "en-US": "Single Castleroom" },
                         "NormalBedCount": 1,
                         "Ordering": 0,
                         "SpaceType": "Room"
@@ -83,9 +83,9 @@ Preferred initial call used to obtain all static data about distributor configur
                 "DefaultCurrencyCode": "EUR",
                 "DefaultLanguageCode": "nl-NL",
                 "DefaultRateCurrencyCode": "EUR",
-                "Description": {"nl-NL": ""},
+                "Description": { "nl-NL": "" },
                 "Email": "info@kasteelkerckebosch.com",
-                "IanaTimeZoneIdentifier": "Europe\/Berlin",
+                "IanaTimeZoneIdentifier": "Europe/Berlin",
                 "Id": "7a13590c-6538-461e-b02f-6357400de493",
                 "ImageId": "263c3e5f-e11d-41d8-9746-4bdd0852f04f",
                 "IntroImageId": "f24469f8-c23b-4450-a1f8-3ecd39904e99",

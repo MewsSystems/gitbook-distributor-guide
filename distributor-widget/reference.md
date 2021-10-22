@@ -146,8 +146,10 @@ As the third parameter, `Mews.Distributor` accepts optional configuration.
 
 ```javascript
 Mews.Distributor(
-    { configurationIds: ['aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'] }, 
-    function (dst) { dst.open(); },
+    { configurationIds: ['aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee'] },
+    function (api) {
+        api.open();
+    },
     { dataBaseUrl: 'https://api.mews-demo.com' }
 );
 ```

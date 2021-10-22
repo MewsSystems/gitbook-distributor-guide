@@ -93,12 +93,12 @@ In the following snippet, **replace the placeholder** `Your Distributor configur
 ```html
 <!-- Distributor's initialization call, it creates new instance of Distributor. Use your Distributor configuration id. -->
 <script>
-Mews.Distributor({
-    configurationIds: [
-        'Your Distributor configuration id'
-    ],
-    openElements: '.distributor-open'
-});
+    Mews.Distributor({
+        configurationIds: [
+            'Your Distributor configuration id',
+        ],
+        openElements: '.distributor-open',
+    });
 </script>
 ```
 
@@ -150,20 +150,20 @@ Very common example of this is [using a custom start and end date selectors that
 ```html
 <!-- Example of setting custom dates. Useful if you have i.e. own calendars on website. -->
 <script>
-Mews.Distributor(
-    {
-        configurationIds: [
-            'Your Distributor configuration id'
-        ],
-        openElements: '.distributor-open'
-    },
-    function (api) {
-        // you can call API functions on a distributor instance here
-        // set different start and end date
-        api.setStartDate(new Date(2022, 1, 1));
-        api.setEndDate(new Date(2022, 1, 3));
-    }
-);
+    Mews.Distributor(
+        {
+            configurationIds: [
+                'Your Distributor configuration id'
+            ],
+            openElements: '.distributor-open',
+        },
+        function (api) {
+            // you can call API functions on a distributor instance here
+            // set different start and end date
+            api.setStartDate(new Date(2022, 1, 1));
+            api.setEndDate(new Date(2022, 1, 3));
+        }
+    );
 </script>
 ```
 
@@ -177,12 +177,12 @@ Distributor can run in two basic modes - for a single enterprise or for multiple
 
 ```html
 <script>
-Mews.Distributor({
-    configurationIds: [
-        'First configuration id',
-        'Second configuration id',
-        // and more...
-    ]
-});
+    Mews.Distributor({
+        configurationIds: [
+            'First configuration id',
+            'Second configuration id',
+            // and more...
+        ],
+    });
 </script>
 ```
