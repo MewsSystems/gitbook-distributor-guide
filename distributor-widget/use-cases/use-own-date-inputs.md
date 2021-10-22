@@ -10,7 +10,7 @@ This guide will show you how to have a form with date inputs which will open Dis
 
 ## Code
 
-Comments with numbers have more details below the code. [This guide is written for production environment](./use-own-date-inputs.md#4-this-guide-is-written-for-production-environment)
+Comments with numbers have more details below the code. [This guide is written for production environment](./use-own-date-inputs.md#4.-this-guide-is-written-for-production-environment)
 
 ```html
 <!DOCTYPE html>
