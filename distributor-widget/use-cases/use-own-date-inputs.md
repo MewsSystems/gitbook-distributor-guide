@@ -2,11 +2,12 @@
 
 This guide will show you how to have a form with date inputs which will open Distributor with given dates after users submit it.
 
+
 ## Prerequisites
-* You have followed [Getting started guide](../getting-started.md) and understand how Distributor Widget is installed.
-* Some familiarity with JavaScript and HTML.
-* Code needs to be served from secure location over HTTPS. If you serve it from insecure HTTP site, you will be redirected to the [standalone Distributor](../../distributor-standalone/README.md) and the code will not work. For testing and experimenting, you can also use service such as [CodePen](https://codepen.io).
-* Modern browser with [`<input type="date">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date) support.
+
+{% hint style="info" %}
+Make sure you fulfill all the required [prerequisites](./prerequisites.md). Without doing so the code can be hard to understand or the behavior of the code can differ.
+{% endhint %}
 
 ## Code
 

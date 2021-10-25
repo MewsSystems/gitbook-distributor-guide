@@ -9,6 +9,7 @@
 * [Distributor Widget](distributor-widget/README.md)
   * [Getting started](distributor-widget/getting-started.md)
   * [Use cases](distributor-widget/use-cases/README.md)
+    * [Prerequisites](distributor-widget/use-cases/prerequisites.md)
     * [Testing in demo/staging/testing environment](distributor-widget/use-cases/testing-in-staging-environment.md)
     * [Use your own Date inputs](distributor-widget/use-cases/use-own-date-inputs.md)
     * [Use multiple enterprises and set preselected city/location](distributor-widget/use-cases/use-multi-enterprise-set-preselected-location.md)
