@@ -11,6 +11,7 @@
   * [Use cases](distributor-widget/use-cases/README.md)
     * [Testing in demo/staging/testing environment](distributor-widget/use-cases/testing-in-staging-environment.md)
     * [Use your own Date inputs](distributor-widget/use-cases/use-own-date-inputs.md)
+    * [Use multiple enterprises and set preselected city/location](distributor-widget/use-cases/use-multi-enterprise-set-preselected-location.md)
   * [Advanced guide](distributor-widget/advanced-guide.md)
   * [Reference](distributor-widget/reference.md)
   * [Integrations](distributor-widget/integrations.md)
