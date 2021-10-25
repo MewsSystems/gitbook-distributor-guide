@@ -7,6 +7,7 @@ It's a more advanced way of integrating Distributor into your website.
 This section describes how to use it.
 
 * [Getting started](./getting-started.md)
+* [Use cases](./use-cases/README.md)
 * [Advanced Guide](./advanced-guide.md)
 * [Reference](./reference.md)
 * [Integrations](./integrations.md)
