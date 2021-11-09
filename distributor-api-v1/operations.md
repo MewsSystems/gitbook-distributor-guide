@@ -460,7 +460,6 @@ Alternative initial call used to obtain all static data about hotel relevant for
             "Description": {
                 "en-US": "The double rooms have two separate beds, 2 x 105 wide."
             },
-            "ImageIds": [],
             "Ordering": 4,
             "NormalBedCount": 2,
             "ExtraBedCount": 0,
