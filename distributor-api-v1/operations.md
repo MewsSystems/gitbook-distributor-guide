@@ -72,11 +72,18 @@ Preferred initial call used to obtain all static data about distributor configur
                         },
                         "ExtraBedCount": 0,
                         "Id": "295d96e7-8501-4cbd-b78d-8bf590bf6db9",
-                        "ImageIds": ["f987a97c-5049-44ca-9933-5b657e5263e2"],
                         "Name": { "en-US": "Single Castleroom" },
                         "NormalBedCount": 1,
                         "Ordering": 0,
                         "SpaceType": "Room"
+                    }
+                ],
+                "CategoryImageAssignments": [
+                    {
+                      "Id": "69832f4b-4b47-4d32-9b89-ac0600de0cd6",
+                      "CategoryId": "295d96e7-8501-4cbd-b78d-8bf590bf6db9",
+                      "ImageId": "f987a97c-5049-44ca-9933-5b657e5263e2",
+                      "Ordering": 2
                     }
                 ],
                 "CityId": "39db0c2f-6929-47ec-9386-0abdaaef4c9c",
@@ -331,6 +338,7 @@ Negative or zero end offsets of the daily time unit define the daily service as 
 | `AdditionalLegalStatements` | array of [Localized text](./operations.md#localized-text) | required | Additional legal statements. |
 | `Address` | [Address](./operations.md#address) | required | Address of the enterprise. |
 | `Categories` | array of [Room category](./operations.md#room-category) | required | Array of active room categories of the enterprise. |
+| `CategoryImageAssignments` | array of [Category image assignment](./operations.md#category-image-assignment) | required | Array of images representing the category image. |
 | `CityId` | string | required | Unique identifier of the [City](./operations.md#city). |
 | `DefaultCurrencyCode` | string | required | Default enterprise currency code in ISO 4217 format. |
 | `DefaultLanguageCode` | string | required | Default enterprise language in ISO format. |
@@ -728,10 +736,19 @@ An object where name corresponds to ISO code and value represents a structure th
 | `Id` | string | required | Unique identifier of the room category. |
 | `Name` | [Localized text](./operations.md#localized-text) | required | Name of the room category localized into all supported languages. |
 | `Description` | [Localized text](./operations.md#localized-text) | required | Description of the room category localized into all supported languages. |
-| `ImageIds` | array of string | required | Unique identifiers of images attached with the room category. |
 | `NormalBedCount` | number | required | Number of normal beds in the room category. |
 | `ExtraBedCount` | number | required | Number of extra beds possible in the room category. |
 | `SpaceType` | [Space type](#space-type) | required | Type of the room category. |
+
+
+#### Category image assignment 
+
+| Property | Type | Contract | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the room category. |
+| `CategoryId` | string | required | Unique identifier of the [Room category](./operations.md#room-category) for which the image is attached. |
+| `ImageId` | string | required | Unique identifier of the image that can be used in the [URL to get the image file](./images.md). |
+| `Ordering` | number | required | Ordinal number of the image that can be used to display the images in order defined in the administration. |
 
 #### Space type
 
