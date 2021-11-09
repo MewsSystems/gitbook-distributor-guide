@@ -1,11 +1,15 @@
 # Changelog
 
+## 09.11.2021
+
+* Added [CategoryImageAssignment](./operations.md#category-image-assignment) docs and [deprecated ImageIds in the RoomCategory](./deprecations/README.md).
+
 ## 08.03.2021
 
-* Added `AverageAmountPerTimeUnit` field to [Room price](./operations.md#room-price) replacing the `AverageAmountPerNight`
-* Added `ChargingMode` field to [Product](./operations.md#product) replacing the `Charging`
-* Added `PostingMode` field to [Product](./operations.md#product) replacing the `Posting`
-* Added `SettlementMaximumTimeUnits` field to [Rate group](./operations.md#rate-group) replacing the `SettlementMaximumNights`
+* Added `AverageAmountPerTimeUnit` field to [Room price](./operations.md#room-price) replacing the `AverageAmountPerNight`.
+* Added `ChargingMode` field to [Product](./operations.md#product) replacing the `Charging`.
+* Added `PostingMode` field to [Product](./operations.md#product) replacing the `Posting`.
+* Added `SettlementMaximumTimeUnits` field to [Rate group](./operations.md#rate-group) replacing the `SettlementMaximumNights`.
 
 ## 21.07.2021
 
