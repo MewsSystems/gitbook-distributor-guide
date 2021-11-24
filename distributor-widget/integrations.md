@@ -318,15 +318,6 @@ An occupation \(adults and children counts\) was changed for the one room \(or s
 | adultCount | Number of the selected adults. |
 | childCount | Number of the selected children. |
 
-#### distributorBedOccupancyChanged   <a id="distributorbedoccupancychanged"></a>
-
-An occupation \(adults and children counts\) was changed for the bed space type.
-
-| Data Layer Variable Name | Description |
-| :--- | :--- |
-| adultCount | Number of the selected adults. |
-| childCount | Number of the selected children. |
-
 #### distributorProductAdded   <a id="distributorproductadded"></a>
 
 A product was added to the order.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 19.11.2021
+
+* Removed `distributorBedOccupancyChanged` event trigger.
+
 ## 03.08.2021
 
 * Stopped supporting deeplinks in Distributor widget. Deeplinks are now supported only in [Distributor standalone](../distributor-standalone/deeplinks.md). For a widget, you can use [Widget API](./reference.md#api-reference) instead.
