@@ -121,7 +121,7 @@ You have probably included the container in your website, however, you haven’t
 
 If you have everything set up correctly and you still cannot see events tracked, please, ensure that you’re not using any ad-blocking or similar software in your browser. They tend to block not only ads, but also tracking software like Google Tag Manager. Disabling the software for testing or adding your website to the exceptions should solve the issue.
 
-**Important:**If you are using Mews Merchant, you need to disable the software for the mews.li domain too.
+**Important:**If you are using Mews Merchant, you need to disable the software for the *.mews.com domain too.
 
 #### The Tag Assistant Chrome extension shows me a warning about multiple installations, but I use only one   <a id="the-tag-assistant-chrome-extension-shows-me-a-warning-about-multiple-installations-but-i-use-only-one"></a>
 

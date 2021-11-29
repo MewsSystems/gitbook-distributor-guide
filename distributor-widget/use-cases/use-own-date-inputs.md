@@ -19,7 +19,7 @@ Comments with numbers have more details below the code. [This guide is written f
     <head>
         <meta charset="utf-8" />
         <!-- 1. Install Distributor loader script as close to the opening <head/> tag as possible -->
-        <script src="https://www.mews.li/distributor/distributor.min.js"></script>
+        <script src="https://api.mews.com/distributor/distributor.min.js"></script>
         <title>My page</title>
     </head>
     <body>

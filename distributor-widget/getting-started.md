@@ -29,7 +29,7 @@ Use the code snippet as is and as described. Doing otherwise will cause unexpect
 * Do not place the snippet anywhere else than in the `<head>`.
 * Do not modify the snippet in any way and do not attach the `async` attribute.
 * Do not use the snippet inside an iframe.
-* Do not add the [Distributor standalone](../distributor-standalone/README.md) URL (e.q. `https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the iframe.
+* Do not add the [Distributor standalone](../distributor-standalone/README.md) URL (e.q. `https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`) to the iframe.
 
 #### Bundles and cache
 * Do not pack the contents of the script files that the code snippet references into your own JavaScript bundle.
@@ -45,21 +45,21 @@ The script file size is kept as minimal as possible (approx 11 kB gzipped) to al
 Place the following `<script>` code snippet as is in the `<head>` of your web page's HTML output, preferably as close to the opening `<head>` tag as possible.
 
 ```html
-<script src="https://www.mews.li/distributor/distributor.min.js"></script>
+<script src="https://api.mews.com/distributor/distributor.min.js"></script>
 ```
 
 👎 Examples of **incorrect** tags - DO NOT DO THIS:
 ```html
 <script src="https://www.your_domain.tld/wp-content/cache/min/1/distributor/distributor.min.js?ver=1628071961"></script>
-<script async src="https://www.mews.li/distributor/distributor.min.js"></script>
-<script src="https://apps.mews.li/distributor/prerelease/production/3.924.4/distributor.js"></script>
-<iframe src="https://www.mews.li/distributor/distributor.min.js"></iframe>
-<iframe src="https://www.mews.li/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
+<script async src="https://api.mews.com/distributor/distributor.min.js"></script>
+<script src="https://apps.mews.com/distributor/prerelease/production/3.924.4/distributor.js"></script>
+<iframe src="https://api.mews.com/distributor/distributor.min.js"></iframe>
+<iframe src="https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"></iframe>
 ```
 
 👍 **Correct** tag:
 ```html
-<script src="https://www.mews.li/distributor/distributor.min.js"></script>
+<script src="https://api.mews.com/distributor/distributor.min.js"></script>
 ```
 
 {% hint style="warning" %}
@@ -71,8 +71,8 @@ Please double-check that you've added the script as instructed and followed all 
 If you have a Content Security Policy (CSP) setup on your website, the following domains should be enabled for Distributor to function correctly.
 
 ```text
-mews.li
-*.mews.li
+api.mews.com
+*.mews.com
 https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
 ```
 
