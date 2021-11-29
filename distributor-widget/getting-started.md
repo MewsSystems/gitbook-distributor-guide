@@ -71,7 +71,6 @@ Please double-check that you've added the script as instructed and followed all 
 If you have a Content Security Policy (CSP) setup on your website, the following domains should be enabled for Distributor to function correctly.
 
 ```text
-api.mews.com
 *.mews.com
 https://pay.datatrans.com/upp/payment/js/secure-fields-1.0.0.js
 ```

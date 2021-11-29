@@ -1,5 +1,9 @@
 # Changelog
 
+## 29.11.2021
+
+* Changed domain from www.mews.li to api.mews.com
+
 ## 19.11.2021
 
 * Removed `distributorBedOccupancyChanged` event trigger.
