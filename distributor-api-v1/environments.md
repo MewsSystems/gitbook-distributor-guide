@@ -16,8 +16,8 @@ You will also have access into the system so it is possible for you to check whe
 
 ## Production environment
 
-* **API base url** - `https://www.mews.li`
-* **Mews applications base url** - `https://www.mews.li`
+* **API base url** - `https://api.mews.com`
+* **Mews applications base url** - `https://app.mews.com`
 * **Hotel Id** - Depends on the hotel, should be provided to you by the hotel administrator.
 * **Configuration Id** - Depends on the hotel setup, can be found in `Mews Commander` administration.
 
