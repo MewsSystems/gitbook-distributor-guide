@@ -3,7 +3,7 @@
 ## 29.11.2021
 
 * Changed domain from www.mews.li to api.mews.com
-* 
+ 
 ## 09.11.2021
 
 * Added [CategoryImageAssignment](./operations.md#category-image-assignment) docs and [deprecated ImageIds in the RoomCategory](./deprecations/README.md).
