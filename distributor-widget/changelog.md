@@ -1,5 +1,9 @@
 # Changelog
 
+## 17.01.2022
+
+* Introduced new methods on API object `setAdultCount` and `setChildCount` to set initial occupancy.
+
 ## 29.11.2021
 
 * Changed domain from www.mews.li to api.mews.com

@@ -104,6 +104,14 @@ distributor.setEndDate("2019-12-18")
 
 Sets a new voucher code value.
 
+#### setAdultCount\(adultCount\)
+
+* `adultCount` Type: `number` - number of adults for pre-selection of room occupancy and price adjustment.
+
+#### setChildCount\(childCount\)
+
+* `childCount` Type: `number` - number of children for pre-selection of room occupancy and price adjustment.
+
 #### disableTracking()
 
 Sets all [TrackingConsents](integrations.md#trackingconsents) to false.

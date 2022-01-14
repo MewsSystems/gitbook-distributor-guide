@@ -21,6 +21,8 @@ Parameters can be combined and some have no visible effect unless they are used 
 | mewsVoucherCode | a voucher code | `E1A71167851A30043B12` |
 | mewsRoute | [mewsRoute](./deeplinks.md#parameter-mewsroute) | `rooms` for rooms step |
 | mewsRoom | opens with specified room selected \(`aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\) | `da394bbb-9685-4bb8-9547-ab7300915967` |
+| mewsAdultCount  | preselect room occupancy with initial adult count. [More details](./deeplinks.md#open-with-specific-initial-occupancy) | `3`                                    |
+| mewsChildCount  | preselect room occupancy with initial child count. [More details](./deeplinks.md#open-with-specific-initial-occupancy) | `1`                                    |
 | language | a language code \(`xx-YY`\) | `en-US` for U.S. English |
 | currency | a currency code \(`XXX`\) | `USD` for United States dollar |
 
@@ -74,4 +76,13 @@ https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?currency=E
 
 ```text
 https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsRoute=hotels&mewsCityId=aaaa-bbbb-cccc-dddd
+```
+
+## Open with specific initial occupancy
+- Parameters can be combined or used separately.
+- When used - the Rates screen will preset the correct room occupancy.
+- Using it with combination of `mewsRoute=rates`, you can immediately open a specific room with a pre-selected occupancy.
+
+```text
+https://api.mews.com/distributor/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee?mewsAdultCount=2&mewsChildCount=1
 ```
