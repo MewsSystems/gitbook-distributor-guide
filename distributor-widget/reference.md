@@ -108,13 +108,13 @@ Sets a new voucher code value.
 
 * `adultCount` Type: `number` - number of adults to set
 
-Sets the number of adults that should be selected by default. Space occupancy for adults on rate screen will be pre-filled according this value 
+Sets the number of adults that should be selected by default. Space occupancy for adults on rate screen will be pre-filled according to this value.
 
 #### setChildCount\(childCount\)
 
 * `childCount` Type: `number` - number of children to set
 
-Sets the number of children that should be selected by default. Space occupancy for children on rate screen will be pre-filled according this value
+Sets the number of children that should be selected by default. Space occupancy for children on rate screen will be pre-filled according to this value.
 
 #### disableTracking()
 
