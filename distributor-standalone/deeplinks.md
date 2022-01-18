@@ -21,6 +21,8 @@ Parameters can be combined and some have no visible effect unless they are used 
 | mewsVoucherCode | a voucher code | `E1A71167851A30043B12` |
 | mewsRoute | [mewsRoute](./deeplinks.md#parameter-mewsroute) | `rooms` for rooms step |
 | mewsRoom | opens with specified room selected \(`aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\) | `da394bbb-9685-4bb8-9547-ab7300915967` |
+| mewsAdultCount  | number of adults that should be selected by default | `3`                                    |
+| mewsChildCount  | number of children that should be selected by default | `1`                                    |
 | language | a language code \(`xx-YY`\) | `en-US` for U.S. English |
 | currency | a currency code \(`XXX`\) | `USD` for United States dollar |
 

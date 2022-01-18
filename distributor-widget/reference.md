@@ -104,6 +104,18 @@ distributor.setEndDate("2019-12-18")
 
 Sets a new voucher code value.
 
+#### setAdultCount\(adultCount\)
+
+* `adultCount` Type: `number` - number of adults to set
+
+Sets the number of adults that should be selected by default. Space occupancy for adults on rate screen will be pre-filled according this value 
+
+#### setChildCount\(childCount\)
+
+* `childCount` Type: `number` - number of children to set
+
+Sets the number of children that should be selected by default. Space occupancy for children on rate screen will be pre-filled according this value
+
 #### disableTracking()
 
 Sets all [TrackingConsents](integrations.md#trackingconsents) to false.

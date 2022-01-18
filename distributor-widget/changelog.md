@@ -1,5 +1,9 @@
 # Changelog
 
+## 18.01.2022
+
+* Introduced new API methods to Distributor instance: [`setAdultCount`](./reference.md#setadultcount-adultcount) and [`setChildCount`](./reference.md#setchildcount-childcount).
+
 ## 29.11.2021
 
 * Changed domain from www.mews.li to api.mews.com
