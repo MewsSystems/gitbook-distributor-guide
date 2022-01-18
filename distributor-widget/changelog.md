@@ -1,8 +1,8 @@
 # Changelog
 
-## 17.01.2022
+## 18.01.2022
 
-* Introduced new methods on API object `setAdultCount` and `setChildCount` to set initial occupancy.
+* Introduced new API methods to Distributor instance: [`setAdultCount`](./reference.md#setadultcount-adultcount) and [`setChildCount`](./reference.md#setchildcount-childcount).
 
 ## 29.11.2021
 

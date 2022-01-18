@@ -1,6 +1,6 @@
 # Changelog
 
-## 17.01.2021
+## 18.01.2021
 
 * Introduced new deeplinks `mewsAdultCount` and `mewsChildCount` to set initial occupancy.
 
