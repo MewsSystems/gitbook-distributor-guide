@@ -51,8 +51,11 @@ Comments with numbers have more details below the code. [This guide is written f
                             event.preventDefault();
                             // Get the dates from the date form.
                             const { start, end } = event.target.elements;
-                            const startDate = new Date(start.value);
-                            const endDate = new Date(end.value);
+                            const [startYears, startMonths, startDays] = start.value.split('-');
+                            const [endYears, endMonths, endDays] = end.value.split('-');
+
+                            const startDate = new Date(startYears, startMonths - 1, startDays);
+                            const endDate = new Date(endYears, endMonths - 1, endDays);
                             // Use Distributor Widget API to set the dates in Distributor Widget and open it.
                             api.setStartDate(startDate);
                             api.setEndDate(endDate);
