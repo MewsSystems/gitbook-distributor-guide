@@ -23,7 +23,7 @@ Comments with numbers have more details below the code. [This guide is written f
         <title>My page</title>
     </head>
     <body>
-        <!-- 2. Add form with date inputs -->
+        <!-- 2. Add form with date inputs. -->
         <form id="date-form">
             <label for="start">Start date:</label>
             <input type="date" id="start" name="start" required />
