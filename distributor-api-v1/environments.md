@@ -12,7 +12,7 @@ You will also have access into the system so it is possible for you to check whe
 
 * **Mews applications base url** - `https://app.mews-demo.com`
 * **Email** - `distributor-api@mews.li`
-* **Password** - `distributor-api`
+* **Password** - `Distributor-api1`
 
 ## Production environment
 
