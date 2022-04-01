@@ -1,5 +1,9 @@
 # Changelog
 
+## 28.03.2022
+
+* Password for test environment changed to Distributor-api1
+
 ## 29.11.2021
 
 * Changed domain from www.mews.li to api.mews.com
