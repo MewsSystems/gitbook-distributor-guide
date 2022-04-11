@@ -1550,7 +1550,7 @@ In case of an error caused by insufficient availability \(which might have decre
 
 ```json
 {
-    "Client": "Mews Distributor 3.1286.1",
+    "Client": "My Client 1.0.0",
     "EnterpriseId": "a82f306a-f303-4664-9323-ae6a00825756",
     "AvailabilityBlockIds": [
         "1523db5b-7bd3-4db5-87b5-ae74009899e1"
