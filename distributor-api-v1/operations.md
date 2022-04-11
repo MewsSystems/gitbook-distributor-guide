@@ -1543,3 +1543,53 @@ In case of an error caused by insufficient availability \(which might have decre
 - `Pending` - Non-finite state. The payment card authorization is waiting to be requested from the user.
 - `Declined` - Finite state. The payment card authorization has been declined.
 - `Canceled` - Finite state. The payment card authorization has been canceled.
+
+## Get availability block
+
+### Request`[ApiBaseUrl]/api/distributor/v1/availabilityBlocks/getAll`
+
+```json
+{
+    "Client": "Mews Distributor 3.1286.1",
+    "EnterpriseId": "a82f306a-f303-4664-9323-ae6a00825756",
+    "AvailabilityBlockIds": [
+        "1523db5b-7bd3-4db5-87b5-ae74009899e1"
+    ]
+}
+```
+
+| Property | Type | Contract | Description |
+| :--- | :--- | :--- | :--- |
+| `EnterpriseId` | string | required | Unique identifier of the enterprise for which availability blocks should be returned. |
+| `AvailabilityBlockIds` | array of string | required | Unique identifiers of availability blocks which should be returned.  |
+
+### Response
+
+```json
+{
+    "AvailabilityBlocks": [
+        {
+            "Id": "1523db5b-7bd3-4db5-87b5-ae74009899e1",
+            "Name": "Block",
+            "ServiceId": "2a97c8f5-ec6a-4928-b653-ae6a008258e0",
+            "RateId": "37a8ed70-0f72-4b3e-b4c5-ae6a00825910",
+            "StartUtc": "2022-04-17T22:00:00Z",
+            "EndUtc": "2022-04-24T22:00:00Z"
+        }
+    ]
+}
+```
+| Property | Type | Contract | Description |
+| :--- | :--- | :--- | :--- |
+| `AvailabilityBlocks` | array of [Availability block](./operations.md#availability-block) | required | Availability blocks. |
+
+#### Availability block
+
+| Property | Type | Contract | Description |
+| :--- | :--- | :--- | :--- |
+| `Id` | string | required | Unique identifier of the availability block. |
+| `Name` | string | optional | Name of the availability block as it is defined in Mews Operations. |
+| `ServiceId` | string | required | Unique identifier of the service of which the availability block is part of. |
+| `RateId` | string | required | Unique identifier of the rate of the availability block. |
+| `StartUtc` | string | required | Date and time (UTC) of the start of the availability block. |
+| `EndUtc` | string | required | Date and time (UTC) of the end of the availability block. |
