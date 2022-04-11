@@ -46,6 +46,8 @@ The API responds with`Content-Type`set to`application/json`and JSON content. In 
   * Error caused by usage of invalid access token.
 * **403 Forbidden**
   * Server error that should be reported to the end user of the client app. Happens for example when the server-side validation fails or when a business-logic check is violated.
+* **429 Too Many Requests**
+  * Error indicating that the user has sent too many requests in a given amount of time. Response contains `Retry-After` header indicating how long the user agent should wait before making a follow-up request.
 * **500 Internal Server Error**
   * Unexpectced error of the server. In most cases, such an error signifies a bug on our side. We are logging it and immediately notified when such error happens. If anything like this happens, feel free to directly contact us or raise an issue here on Github.
 
