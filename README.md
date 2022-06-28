@@ -1,24 +1,11 @@
-# Introduction
+# WE HAVE MOVED!
 
-Mews Distributor is a booking engine which enables guests to create reservations in a property using the MEWS Commander PMS.
+__Mews Distributor__ has been re-branded as __Mews Booking Engine__.
 
-You can use it:
-* through a redirect to a [standalone page](./README.md#standalone) hosted directly by Mews,
-* or as a [JavaScript Widget](./README.md#widget) which can be embedded into an arbitrary website,
-* or you can create your own custom booking engine with the help of [Distributor API](./README.md#api).
+We have built a new and improved documentation site, which can be found [here](https://mews-systems.gitbook.io/booking-engine-guide/).
 
-If you encounter any issue, have a question or any other request, please contact [support@mews.com](mailto:support@mews.com).
+Please update your bookmarks to go to the new site at `https://mews-systems.gitbook.io/booking-engine-guide/`.
 
-## What should I use?
+Thank you!
 
-### Standalone
-
-If you’re not sure which version to use, go with the standalone option. It’s the simplest way how to connect your website with the booking engine. We will provide you with a link to page where your Distributor instance is located. For further information, see [Distributor Standalone](./distributor-standalone/README.md) or contact our support team at [support@mews.com](mailto:support@mews.com).
-
-### Widget
-
-If you are a developer, you might be interested in a more advanced way how to integrate Distributor into your website. For more seamless experience, the Distributor JavaScript widget allows guests to book directly from the website of your hotel without being redirected elsewhere. For more information, consult the [Distributor Widget](./distributor-widget).
-
-### API
-
-In case you’d like to implement your own custom booking engine that would be connected with MEWS, you should have a look at the [Distributor API](./distributor-api-v1). Note that this option is only available to customers with an Enterprise subscription. Should you be on a different subscription and are interested in this function, please contact [customersuccess@mews.com](mailto:customersuccess@mews.com).
+From the Mews Product Team
